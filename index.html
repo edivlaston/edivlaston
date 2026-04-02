@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Edi Vlaston — Psihoterapie pentru bărbați în București. Cabinet la Piața Victoriei. Prima ședință gratuită. Am lucrat 20 ani corporate apoi am facut formare în psihoterapie centrată pe persoană.">
+  <meta name="keywords" content="psihoterapeut barbati bucuresti, terapie barbati, burnout manageri, psiholog piata victoriei, Eduard Vlaston">
+  <meta property="og:title" content="Edi Vlaston — Psihoterapie pentru Bărbați, București">
+  <meta property="og:description" content="Prima ședință gratuită. Cabinet Piața Victoriei. 20 ani corporate + psihoterapie.">
+  <meta property="og:image" content="edi-vlaston.webp">
+  <title>Edi Vlaston — Psihoterapie pentru Bărbați · București</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Calendly widget -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+
+  <style>
+    /* ── Reset & Base ─────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    :root {
+      --sand:    #F7F1E8;
+      --parch:   #EFE6D5;
+      --stone:   #E2D8C8;
+      --bark:    #C4AB8A;
+      --clay:    #A07850;
+      --terra:   #8B5E3C;
+      --deep:    #3D2B18;
+      --ink:     #221808;
+      --warm:    #6B4C30;
+      --muted:   #8A7060;
+      --light:   #B09880;
+      --accent:  #C4784A;
+      --accentl: #D4916A;
+      --white:   #FFFDF8;
+
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans:  'Jost', system-ui, sans-serif;
+      --gap:   clamp(72px, 11vw, 130px);
+      --col:   min(1120px, 92vw);
+    }
+
+    body {
+      font-family: var(--sans);
+      background: var(--sand);
+      color: var(--ink);
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+
+    /* subtle paper texture via noise */
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      opacity: .028;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    .container { max-width: var(--col); margin: 0 auto; padding: 0 clamp(20px,5vw,56px); position: relative; z-index: 1; }
+
+    /* ── Reveal animation ─────────────────────────────── */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+
+    /* ── Buttons ──────────────────────────────────────── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--sans); font-size: .82rem; font-weight: 500;
+      letter-spacing: .1em; text-transform: uppercase;
+      padding: 15px 32px; border-radius: 2px;
+      cursor: pointer; border: none; transition: transform .15s, box-shadow .2s, background .2s;
+      text-decoration: none;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--terra); color: var(--white); box-shadow: 0 4px 20px rgba(139,94,60,.22); }
+    .btn-primary:hover { background: var(--accent); box-shadow: 0 8px 28px rgba(139,94,60,.32); }
+    .btn-ghost { background: transparent; color: var(--terra); border: 1.5px solid var(--bark); }
+    .btn-ghost:hover { border-color: var(--terra); }
+
+    /* ── NAV ──────────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px clamp(20px,5vw,56px);
+      background: rgba(247,241,232,.92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--stone);
+      transition: padding .3s;
+    }
+    .nav-brand {
+      font-family: var(--serif); font-size: 1.15rem; font-weight: 500;
+      color: var(--ink); letter-spacing: .02em;
+    }
+    .nav-brand span { color: var(--terra); }
+    .nav-links { display: flex; gap: 36px; align-items: center; }
+    .nav-links a {
+      font-size: .75rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--muted); transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--terra); }
+    .nav-cta {
+      background: var(--terra) !important; color: var(--white) !important;
+      padding: 10px 24px !important; border-radius: 2px !important;
+      font-weight: 500 !important;
+    }
+    .nav-cta:hover { background: var(--accent) !important; }
+
+    /* ── HERO ─────────────────────────────────────────── */
+    #hero {
+      min-height: 100svh;
+      display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center; gap: 60px;
+      padding: 130px clamp(20px,5vw,56px) var(--gap);
+      max-width: var(--col); margin: 0 auto;
+    }
+
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: .7rem; font-weight: 500; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--terra); margin-bottom: 26px;
+      opacity: 0; animation: fadeUp .6s .1s forwards;
+    }
+    .hero-tag::before { content: ''; display: block; width: 24px; height: 1px; background: var(--terra); }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 5.5vw, 5.4rem);
+      font-weight: 400; line-height: 1.06;
+      color: var(--ink);
+      margin-bottom: 26px;
+      opacity: 0; animation: fadeUp .6s .22s forwards;
+    }
+    h1 em { font-style: italic; color: var(--terra); display: block; }
+
+    .hero-lead {
+      font-size: clamp(.97rem,1.3vw,1.08rem); font-weight: 300;
+      color: var(--warm); line-height: 1.82; max-width: 460px;
+      margin-bottom: 40px;
+      opacity: 0; animation: fadeUp .6s .34s forwards;
+    }
+
+    .hero-actions {
+      display: flex; gap: 14px; flex-wrap: wrap;
+      opacity: 0; animation: fadeUp .6s .46s forwards;
+    }
+
+    /* Hero right */
+    .hero-right {
+      display: flex; flex-direction: column; gap: 20px;
+      opacity: 0; animation: fadeLeft .7s .42s forwards;
+    }
+
+    .photo-wrap {
+      position: relative; border-radius: 8px; overflow: hidden;
+      aspect-ratio: 3/4; background: var(--parch);
+      border: 1px solid var(--stone);
+      box-shadow: 8px 12px 40px rgba(61,43,24,.12);
+    }
+    .photo-wrap img {
+      width: 100%; height: 100%; object-fit: cover; object-position: top center;
+      transition: transform .6s ease;
+    }
+    .photo-wrap:hover img { transform: scale(1.02); }
+
+    .photo-badge {
+      position: absolute; bottom: 16px; left: 16px; right: 16px;
+      background: rgba(247,241,232,.94); backdrop-filter: blur(10px);
+      border: 1px solid var(--stone); border-radius: 4px;
+      padding: 14px 18px; display: flex; align-items: center; gap: 13px;
+    }
+    .badge-dot { width: 9px; height: 9px; border-radius: 50%; background: #5a9e6f; flex-shrink: 0; box-shadow: 0 0 0 3px rgba(90,158,111,.2); }
+    .badge-name { font-family: var(--serif); font-size: .98rem; font-weight: 500; color: var(--ink); }
+    .badge-title { font-size: .7rem; color: var(--muted); margin-top: 2px; letter-spacing: .04em; }
+
+    .stats-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+    .stat {
+      background: var(--white); border: 1px solid var(--stone); border-radius: 4px;
+      padding: 16px 14px; text-align: center;
+    }
+    .stat-n { font-family: var(--serif); font-size: 1.9rem; font-weight: 400; color: var(--terra); line-height: 1; }
+    .stat-l { font-size: .68rem; color: var(--muted); line-height: 1.5; margin-top: 5px; }
+
+    /* ── SECTION COMMON ───────────────────────────────── */
+    section { position: relative; z-index: 1; }
+    .sec-label {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: .68rem; font-weight: 500; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--terra); margin-bottom: 16px;
+    }
+    .sec-label::before { content: ''; display: block; width: 22px; height: 1px; background: var(--terra); }
+
+    h2 {
+      font-family: var(--serif);
+      font-size: clamp(2.1rem,3.8vw,3.3rem); font-weight: 400;
+      line-height: 1.14; color: var(--ink); margin-bottom: 18px;
+    }
+    h2 em { font-style: italic; color: var(--terra); }
+
+    /* ── DESPRE ───────────────────────────────────────── */
+    #despre { padding: var(--gap) 0; background: var(--parch); border-top: 1px solid var(--stone); border-bottom: 1px solid var(--stone); }
+
+    .despre-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 80px; align-items: start; }
+
+    .despre-text p { font-size: .98rem; color: var(--warm); line-height: 1.88; margin-bottom: 16px; font-weight: 300; }
+    .despre-text p strong { color: var(--ink); font-weight: 500; }
+
+    .pull {
+      padding: 28px 32px; margin: 28px 0;
+      border-left: 3px solid var(--terra);
+      background: rgba(139,94,60,.06); border-radius: 0 4px 4px 0;
+    }
+    .pull p {
+      font-family: var(--serif); font-size: clamp(1.1rem,1.5vw,1.3rem);
+      font-style: italic; color: var(--ink); line-height: 1.55; margin: 0 !important;
+    }
+
+    .creds { display: flex; flex-direction: column; gap: 10px; }
+    .cred {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 13px 16px; background: var(--white);
+      border: 1px solid var(--stone); border-radius: 4px;
+      font-size: .86rem; color: var(--warm);
+    }
+    .cred-ico { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+
+    /* ── PROBLEMA ─────────────────────────────────────── */
+    #problema { padding: var(--gap) 0; background: var(--sand); }
+
+    .prob-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+
+    .prob-text p { font-size: .97rem; color: var(--warm); line-height: 1.88; margin-bottom: 18px; font-weight: 300; }
+    .prob-text p strong { color: var(--ink); font-weight: 500; }
+
+    .syms { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+    .sym {
+      display: flex; align-items: center; gap: 10px;
+      padding: 12px 14px; background: var(--white);
+      border: 1px solid var(--stone); border-radius: 4px;
+      font-size: .84rem; color: var(--warm);
+    }
+    .sym::before { content: ''; flex-shrink: 0; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+
+    .stat-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 28px; }
+    .sp {
+      background: var(--terra); border-radius: 4px;
+      padding: 22px 18px; text-align: center; color: var(--white);
+    }
+    .sp-n { font-family: var(--serif); font-size: 2.4rem; line-height: 1; margin-bottom: 6px; }
+    .sp-l { font-size: .76rem; line-height: 1.5; opacity: .88; }
+
+    /* ── ABORDARE ─────────────────────────────────────── */
+    #abordare { padding: var(--gap) 0; background: var(--parch); border-top: 1px solid var(--stone); border-bottom: 1px solid var(--stone); }
+
+    .abord-head { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 56px; align-items: start; }
+    .abord-lead { font-size: .97rem; color: var(--warm); line-height: 1.88; font-weight: 300; }
+
+    .pillars { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    .pillar {
+      background: var(--white); border: 1px solid var(--stone); border-radius: 4px;
+      padding: 30px 24px; transition: border-color .2s, transform .2s, box-shadow .2s;
+      position: relative; overflow: hidden;
+    }
+    .pillar::after {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--terra), var(--accent));
+      opacity: 0; transition: opacity .2s;
+    }
+    .pillar:hover { border-color: var(--bark); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(139,94,60,.1); }
+    .pillar:hover::after { opacity: 1; }
+    .pillar-ico { font-size: 1.3rem; margin-bottom: 16px; }
+    .pillar h3 { font-family: var(--serif); font-size: 1.12rem; font-weight: 500; color: var(--ink); margin-bottom: 10px; }
+    .pillar p { font-size: .84rem; color: var(--muted); line-height: 1.72; }
+
+    /* ── PENTRU CINE ──────────────────────────────────── */
+    #pentru-cine { padding: var(--gap) 0; background: var(--sand); }
+
+    .profiles { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-top: 50px; }
+    .profile {
+      background: var(--white); border: 1px solid var(--stone); border-radius: 4px;
+      padding: 26px 20px; transition: border-color .2s, transform .2s;
+    }
+    .profile:hover { border-color: var(--bark); transform: translateY(-3px); }
+    .prof-age { font-family: var(--serif); font-size: 1.9rem; font-weight: 400; color: var(--terra); margin-bottom: 4px; }
+    .prof-type { font-size: .66rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+    .profile p { font-size: .84rem; color: var(--warm); line-height: 1.68; }
+
+    /* ── PROCES ───────────────────────────────────────── */
+    #proces { padding: var(--gap) 0; background: var(--parch); border-top: 1px solid var(--stone); border-bottom: 1px solid var(--stone); }
+
+    .steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; margin-top: 60px; position: relative; }
+    .steps::before {
+      content: ''; position: absolute; top: 24px; left: 12.5%; right: 12.5%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--bark) 20%, var(--bark) 80%, transparent); opacity: .4;
+    }
+    .step { padding: 0 18px; text-align: center; }
+    .step-n {
+      width: 48px; height: 48px; border-radius: 50%; background: var(--terra); color: var(--white);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 22px; font-family: var(--serif); font-size: 1.3rem; font-weight: 400;
+      position: relative; z-index: 1;
+    }
+    .step h3 { font-family: var(--serif); font-size: 1.08rem; font-weight: 500; color: var(--ink); margin-bottom: 8px; }
+    .step p { font-size: .83rem; color: var(--muted); line-height: 1.68; }
+
+    /* ── CONFIDENTIAL ─────────────────────────────────── */
+    #confidential { padding: 80px 0; background: var(--sand); }
+
+    .conf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .conf-text p { font-size: .97rem; color: var(--warm); line-height: 1.88; margin-bottom: 12px; font-weight: 300; }
+    .conf-list { display: flex; flex-direction: column; gap: 10px; }
+    .conf-item {
+      display: flex; align-items: center; gap: 14px;
+      padding: 13px 16px; background: var(--white);
+      border: 1px solid var(--stone); border-radius: 4px;
+      font-size: .87rem; color: var(--warm);
+    }
+    .conf-ck {
+      width: 24px; height: 24px; border-radius: 50%; flex-shrink: 0;
+      background: rgba(139,94,60,.1); border: 1.5px solid var(--terra);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--terra); font-size: .65rem; font-weight: 700;
+    }
+
+    /* ── PROGRAMARE ───────────────────────────────────── */
+    #programare { padding: var(--gap) 0; background: var(--parch); border-top: 1px solid var(--stone); }
+
+    .prog-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: start; }
+
+    .prog-text p { font-size: .97rem; color: var(--warm); line-height: 1.88; margin-bottom: 18px; font-weight: 300; }
+
+    .contact-rows { display: flex; flex-direction: column; gap: 10px; margin: 24px 0; }
+    .contact-row { display: flex; align-items: center; gap: 13px; font-size: .88rem; color: var(--warm); }
+    .c-ico { width: 34px; height: 34px; border-radius: 4px; background: rgba(139,94,60,.1); display: flex; align-items: center; justify-content: center; font-size: .95rem; flex-shrink: 0; }
+    .c-link { color: var(--terra); font-weight: 500; }
+    .c-link:hover { text-decoration: underline; }
+
+    .tip-box {
+      padding: 18px 22px; background: rgba(139,94,60,.07);
+      border: 1px solid var(--stone); border-radius: 4px; border-left: 3px solid var(--terra);
+    }
+    .tip-box p { font-size: .86rem; color: var(--warm); line-height: 1.72; margin: 0; }
+    .tip-box strong { color: var(--ink); }
+
+    /* Booking tabs */
+    .tabs { display: flex; gap: 0; margin-bottom: 20px; border: 1.5px solid var(--stone); border-radius: 4px; overflow: hidden; }
+    .tab {
+      flex: 1; padding: 11px 18px; text-align: center;
+      font-size: .76rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase;
+      cursor: pointer; background: var(--white); color: var(--muted);
+      transition: background .18s, color .18s; border: none;
+    }
+    .tab.active { background: var(--terra); color: var(--white); }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    .booking-box {
+      background: var(--white); border: 1px solid var(--stone); border-radius: 8px; overflow: hidden;
+      box-shadow: 0 6px 28px rgba(139,94,60,.08);
+    }
+    .booking-box iframe { width: 100%; border: none; display: block; }
+    .booking-inner { padding: 32px; }
+
+    /* Calendly inline */
+    .calendly-section { text-align: center; padding: 32px 24px; }
+    .calendly-section p { font-size: .9rem; color: var(--warm); margin-bottom: 20px; line-height: 1.6; }
+    .calendly-section p strong { color: var(--ink); }
+
+    /* Contact form */
+    .cform { display: flex; flex-direction: column; gap: 11px; }
+    .cform input, .cform textarea, .cform select {
+      background: var(--sand); border: 1.5px solid var(--stone); border-radius: 4px;
+      padding: 12px 15px; font-family: var(--sans); font-size: .88rem; color: var(--ink);
+      outline: none; transition: border-color .2s; width: 100%;
+    }
+    .cform input:focus, .cform textarea:focus { border-color: var(--terra); }
+    .cform input::placeholder, .cform textarea::placeholder { color: var(--light); }
+    .cform textarea { resize: vertical; min-height: 90px; }
+    .form-note { font-size: .71rem; color: var(--muted); text-align: center; margin-top: 6px; }
+
+    /* ── FOOTER ───────────────────────────────────────── */
+    footer { padding: 44px 0; background: var(--ink); }
+    .footer-in { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 18px; }
+    .footer-brand { font-family: var(--serif); font-size: .98rem; color: var(--sand); }
+    .footer-brand span { color: var(--accent); }
+    .footer-links { display: flex; gap: 22px; }
+    .footer-links a { font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); transition: color .2s; }
+    .footer-links a:hover { color: var(--sand); }
+    .footer-copy { font-size: .71rem; color: var(--warm); }
+
+    /* ── Animations ───────────────────────────────────── */
+    @keyframes fadeUp   { from{opacity:0;transform:translateY(26px)} to{opacity:1;transform:none} }
+    @keyframes fadeLeft { from{opacity:0;transform:translateX(26px)} to{opacity:1;transform:none} }
+
+    /* ── Responsive ───────────────────────────────────── */
+    @media(max-width:1024px){
+      #hero{grid-template-columns:1fr}
+      .hero-right{flex-direction:row;flex-wrap:wrap}
+      .photo-wrap{flex:1 1 260px}
+      .stats-row{flex:1 1 100%}
+      .despre-grid,.prob-layout,.abord-head,.conf-grid,.prog-grid{grid-template-columns:1fr;gap:36px}
+      .pillars{grid-template-columns:1fr 1fr}
+      .profiles{grid-template-columns:1fr 1fr}
+      .steps::before{display:none}
+    }
+    @media(max-width:680px){
+      .nav-links{display:none}
+      .pillars,.profiles{grid-template-columns:1fr}
+      .steps{grid-template-columns:1fr 1fr}
+      .syms,.stat-pair{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────────── -->
+<nav id="nav">
+  <a href="#" class="nav-brand">Edi Vlaston<span>.</span></a>
+  <div class="nav-links">
+    <a href="#despre">Despre</a>
+    <a href="#problema">De ce acum</a>
+    <a href="#abordare">Abordare</a>
+    <a href="#pentru-cine">Cui mă adresez</a>
+    <a href="#programare" class="nav-cta">Programare</a>
+  </div>
+</nav>
+
+<!-- ── HERO ─────────────────────────────────────────── -->
+<section style="background:var(--sand)">
+  <div id="hero">
+
+    <div>
+      <div class="hero-tag">Psihoterapie pentru Bărbați · București</div>
+      <h1>Nu e slăbiciune.<br><em>E curaj.</em></h1>
+      <p class="hero-lead">Mă adresez bărbaților care simt că ceva nu mai funcționează — la job, în relație, cu ei înșiși — și care sunt gata să înțeleagă de ce și să schimbe asta.</p>
+      <div class="hero-actions">
+        <a href="#programare" class="btn btn-primary">
+          Programare gratuită
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#despre" class="btn btn-ghost">Despre mine</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="photo-wrap">
+        <img src="edi-vlaston.webp" alt="Edi Vlaston — psihoterapeut"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;flex-direction:column;gap:14px;background:var(--parch);color:var(--muted)">
+          <div style="width:80px;height:80px;border-radius:50%;background:var(--terra);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.8rem">EV</div>
+          <p style="font-size:.82rem;text-align:center;color:var(--muted)">Eduard Vlaston<br>Psihoterapeut</p>
+        </div>
+        <div class="photo-badge">
+          <div class="badge-dot"></div>
+          <div>
+            <div class="badge-name">Edi Vlaston</div>
+            <div class="badge-title">Psihoterapeut · Piața Victoriei, București</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat"><div class="stat-n">85%</div><div class="stat-l">din suicidele din RO sunt bărbați</div></div>
+        <div class="stat"><div class="stat-n">20+</div><div class="stat-l">ani în corporate înainte de psihologie</div></div>
+        <div class="stat"><div class="stat-n">★4.9</div><div class="stat-l">evaluare medie Hilio.ro</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── DESPRE ────────────────────────────────────────── -->
+<section id="despre">
+  <div class="container">
+    <div class="despre-grid">
+
+      <div class="reveal">
+        <div class="sec-label">Cine sunt</div>
+        <h2>Am trăit ce<br><em>descrii tu.</em></h2>
+        <div class="pull">
+          <p>„Am petrecut 20 de ani în corporații, cu bugete de milioane și poziții de conducere. La un moment dat, stresul nu îmi mai oferea bucurie. Așa am descoperit psihologia."</p>
+        </div>
+        <p>Mă numesc <strong>Eduard Vlaston</strong> — Edi pentru cei care mă cunosc. Sunt psihoterapeut centrat pe persoană, cu formare în <strong>Interviu Motivațional</strong> și <strong>Hipnoză Clinică</strong>. Acreditat în Registrul Unic al Psihologilor (cod 22334) și membru al Asociației Române de Psihoterapie Centrată pe Persoană.</p>
+        <p>Tocmai pentru că am trăit presiunea corporatistă, burnout-ul ascuns și dificultatea de a cere ajutor, înțeleg experiența bărbaților dintr-un unghi aparte.</p>
+      </div>
+
+      <div class="reveal" style="transition-delay:.12s">
+        <div class="sec-label">Formare și acreditări</div>
+        <div class="creds">
+          <div class="cred"><span class="cred-ico">🎓</span>Psihoterapie Centrată pe Persoană — formare acreditată</div>
+          <div class="cred"><span class="cred-ico">🧠</span>Interviu Motivațional — curs acreditat</div>
+          <div class="cred"><span class="cred-ico">💡</span>Hipnoză Clinică — formare specializată</div>
+          <div class="cred"><span class="cred-ico">📋</span>Cod Registru Psihologi: 22334</div>
+          <div class="cred"><span class="cred-ico">🤝</span>Asociația Română de Psihoterapie Centrată pe Persoană</div>
+          <div class="cred"><span class="cred-ico">💼</span>20+ ani management corporatist — background unic</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── PROBLEMA ──────────────────────────────────────── -->
+<section id="problema">
+  <div class="container">
+    <div class="prob-layout">
+
+      <div class="reveal">
+        <div class="sec-label">Realitatea</div>
+        <h2>Bărbații suferă<br><em>altfel.</em></h2>
+        <div class="prob-text">
+          <p>Depresia masculină nu arată ca în manuale. Nu plânge, nu cere ajutor. Se manifestă ca <strong>iritabilitate</strong>, ca <strong>muncă compulsivă</strong>, ca <strong>retragere</strong> sau <strong>exces</strong>.</p>
+          <p>Suntem educați să rezistăm, să „ne descurcăm". Asta funcționează o vreme — până când nu mai funcționează.</p>
+        </div>
+        <div class="stat-pair">
+          <div class="sp"><div class="sp-n">85%</div><div class="sp-l">din suicidele din România — bărbați</div></div>
+          <div class="sp"><div class="sp-n">61%</div><div class="sp-l">nu au cerut niciodată ajutor specializat</div></div>
+        </div>
+      </div>
+
+      <div class="reveal" style="transition-delay:.14s">
+        <p style="font-size:.68rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:14px;">Recunoști vreunul?</p>
+        <div class="syms">
+          <div class="sym">Iritabilitate fără motiv</div>
+          <div class="sym">Burnout profesional</div>
+          <div class="sym">Relație care se destramă</div>
+          <div class="sym">Anxietate mascată</div>
+          <div class="sym">Dificultăți ca tată</div>
+          <div class="sym">Sentimentul de blocare</div>
+          <div class="sym">Insomnie / oboseală</div>
+          <div class="sym">Golul după un succes</div>
+          <div class="sym">Divorț sau separare</div>
+          <div class="sym">Pierdere — scop, om, rol</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── ABORDARE ──────────────────────────────────────── -->
+<section id="abordare">
+  <div class="container">
+    <div class="abord-head reveal">
+      <div>
+        <div class="sec-label">Cum lucrez</div>
+        <h2>Terapie construită<br><em>pentru bărbați.</em></h2>
+      </div>
+      <p class="abord-lead">Nu vin cu un caiet de exerciții din prima ședință. Știu că ești sceptic, că ai puțin timp, că vrei să simți că merită. Hai să vedem ce funcționează pentru tine.</p>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar reveal"><div class="pillar-ico">⚡</div><h3>Eficient și concret</h3><p>Fiecare ședință are un obiectiv clar. Lucrăm la ce te blochează acum, nu la teorii abstracte.</p></div>
+      <div class="pillar reveal" style="transition-delay:.08s"><div class="pillar-ico">🛡️</div><h3>Fără judecată</h3><p>Orice ai simțit sau făcut, nu ești primul. Cabinetul meu e un spațiu în care poți spune lucrurile pe nume.</p></div>
+      <div class="pillar reveal" style="transition-delay:.16s"><div class="pillar-ico">🎯</div><h3>Orientat pe rezultate</h3><p>La finalul procesului vrei să mergi mai departe — mai prezent, mai clar, mai liber. Ăsta e scopul nostru.</p></div>
+      <div class="pillar reveal" style="transition-delay:.04s"><div class="pillar-ico">🔒</div><h3>Confidențial total</h3><p>Nimic din ce discutăm nu ajunge la angajator, familie sau în dosarul medical.</p></div>
+      <div class="pillar reveal" style="transition-delay:.12s"><div class="pillar-ico">💻</div><h3>Online sau față în față</h3><p>Ședințe la cabinet (Piața Victoriei) sau video. Mulți preferă online — e mai discret și flexibil.</p></div>
+      <div class="pillar reveal" style="transition-delay:.20s"><div class="pillar-ico">👤</div><h3>Înțeleg din interior</h3><p>Am trăit 20 de ani în corporate. Înțeleg presiunea, burnout-ul și dificultatea de a cere ajutor.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PENTRU CINE ────────────────────────────────────── -->
+<section id="pentru-cine">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-label">Cui mă adresez</div>
+      <h2>Poate ești<br><em>unul din ei.</em></h2>
+    </div>
+    <div class="profiles">
+      <div class="profile reveal"><div class="prof-age">28–35</div><div class="prof-type">Tânărul ambițios</div><p>Carieră în creștere, dar anxietate constantă. Relații care nu merg. Senzația că nu ești niciodată destul.</p></div>
+      <div class="profile reveal" style="transition-delay:.08s"><div class="prof-age">35–45</div><div class="prof-type">Managerul / Antreprenorul</div><p>Ții echipa și familia pe umeri. Burnout, iritabilitate, distanță față de cei dragi. Nimeni nu te vede pe tine.</p></div>
+      <div class="profile reveal" style="transition-delay:.16s"><div class="prof-age">40–55</div><div class="prof-type">Tatăl sau soțul</div><p>Divorț sau criză în cuplu. Vrei să fii prezent pentru copii dar nu știi cum. Vinovăție și pierdere.</p></div>
+      <div class="profile reveal" style="transition-delay:.24s"><div class="prof-age">50+</div><div class="prof-type">La răscruce</div><p>Copiii au crescut, cariera s-a schimbat. Criza de identitate. Ce urmează? Cine ești tu acum?</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROCES ─────────────────────────────────────────── -->
+<section id="proces">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:520px;margin:0 auto">
+      <div class="sec-label" style="justify-content:center">Cum funcționează</div>
+      <h2>Simplu.<br><em>Fără complicații.</em></h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="step-n">1</div><h3>Contactezi</h3><p>Trimiți un mesaj sau suni. Nu trebuie să explici nimic în detaliu — o frază e suficientă.</p></div>
+      <div class="step reveal" style="transition-delay:.1s"><div class="step-n">2</div><h3>Prima ședință</h3><p>O sesiune de evaluare <strong>gratuită</strong> de 30 de minute. Fără presiune, fără angajament.</p></div>
+      <div class="step reveal" style="transition-delay:.2s"><div class="step-n">3</div><h3>Procesul</h3><p>Ședințe săptămânale de 50 min, online sau la cabinet. Ritmul adaptat la tine.</p></div>
+      <div class="step reveal" style="transition-delay:.3s"><div class="step-n">4</div><h3>Claritate</h3><p>Nu terapie pe viață. Un proces cu început și sfârșit — mai clar, mai liber, mai funcțional.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONFIDENTIAL ───────────────────────────────────── -->
+<section id="confidential">
+  <div class="container">
+    <div class="conf-grid">
+      <div class="conf-text reveal">
+        <div class="sec-label">Confidențialitate</div>
+        <h2>Nimeni nu<br><em>va ști.</em></h2>
+        <p>Înțeleg că pentru mulți bărbați, cel mai mare obstacol nu e banii sau timpul — e frica că va afla cineva. Sau că o să pară slab.</p>
+        <p>Cabinetul meu funcționează cu discreție totală. Fiecare detaliu al colaborării noastre rămâne strict între noi.</p>
+      </div>
+      <div class="conf-list reveal" style="transition-delay:.12s">
+        <div class="conf-item"><span class="conf-ck">✓</span>Nu apar în dosarul medical — nu se raportează la CNAS</div>
+        <div class="conf-item"><span class="conf-ck">✓</span>Confidențialitate legală prin deontologie profesională</div>
+        <div class="conf-item"><span class="conf-ck">✓</span>Opțiunea ședințelor online — de oriunde, discret</div>
+        <div class="conf-item"><span class="conf-ck">✓</span>Nimic nu ajunge la familie, angajator sau colegi</div>
+        <div class="conf-item"><span class="conf-ck">✓</span>Plată card sau cash, la alegere</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROGRAMARE ─────────────────────────────────────── -->
+<section id="programare">
+  <div class="container">
+    <div class="prog-grid">
+
+      <div class="reveal">
+        <div class="sec-label">Fă primul pas</div>
+        <h2>Prima ședință<br><em>e gratuită.</em></h2>
+        <p>30 de minute. Fără angajament. Fără să explici totul de la început. Dacă simți că ar putea funcționa — mergem mai departe.</p>
+
+        <div class="contact-rows">
+          <div class="contact-row">
+            <div class="c-ico">📞</div>
+            <div>Telefon / WhatsApp: <a href="tel:+40744370179" class="c-link">0744 370 179</a></div>
+          </div>
+          <div class="contact-row">
+            <div class="c-ico">✉️</div>
+            <div>Email: <a href="mailto:edivlaston@gmail.com" class="c-link">edivlaston@gmail.com</a></div>
+          </div>
+          <div class="contact-row">
+            <div class="c-ico">📍</div>
+            <div>Cabinet: Piața Victoriei, Sector 1, București</div>
+          </div>
+          <div class="contact-row">
+            <div class="c-ico">🌐</div>
+            <div><a href="https://edivlaston.ro" class="c-link">edivlaston.ro</a></div>
+          </div>
+        </div>
+
+        <div class="tip-box">
+          <p><strong>Nu știi cu ce să începi?</strong><br>E în regulă. Scrie-mi un mesaj scurt sau sună. Nu trebuie să ai totul clar — asta e treaba mea.</p>
+        </div>
+      </div>
+
+      <div class="reveal" style="transition-delay:.12s">
+        <div class="tabs">
+          <button class="tab active" onclick="switchTab('cal')">📅 Programare online</button>
+          <button class="tab" onclick="switchTab('form')">✉️ Trimite mesaj</button>
+        </div>
+
+        <div id="tab-cal" class="tab-panel active">
+          <div class="booking-box">
+            <div class="calendly-section">
+              <p><strong>Alege data care ți se potrivește</strong><br>
+              Rezervă direct în calendarul meu — vei primi confirmare automată.</p>
+
+              <!-- ═══════════════════════════════════════════════════
+                   CALENDLY — înlocuiește USERNAME cu userul tău real
+                   Exemplu: https://calendly.com/eduard-vlaston-eiv3
+              ═══════════════════════════════════════════════════ -->
+              <a href="https://calendly.com/eduard-vlaston-eiv3"
+                 onclick="Calendly.initPopupWidget({url:'https://calendly.com/eduard-vlaston-eiv3'}); return false;"
+                 class="btn btn-primary" style="justify-content:center;width:100%;display:flex">
+                📅 &nbsp;Deschide calendarul meu
+              </a>
+
+              <p style="font-size:.72rem;color:var(--muted);margin-top:16px;margin-bottom:0">
+                După ce confirmezi înlocuiește linkul cu URL-ul exact din contul tău Calendly.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div id="tab-form" class="tab-panel">
+          <div class="booking-box">
+            <div class="booking-inner">
+              <div class="cform" id="contact-form">
+                <input type="text" id="cf-name" placeholder="Prenumele tău *" required>
+                <input type="tel" id="cf-phone" placeholder="Număr de telefon *" required>
+                <input type="email" id="cf-email" placeholder="Email (opțional)">
+                <textarea id="cf-msg" placeholder="Câteva cuvinte despre ce te aduce aici (opțional)..."></textarea>
+                <button type="button" class="btn btn-primary" style="justify-content:center" onclick="submitForm()">
+                  Trimite mesajul
+                </button>
+              </div>
+              <div id="form-success" style="display:none;text-align:center;padding:20px">
+                <div style="font-size:2rem;margin-bottom:12px">✓</div>
+                <p style="font-family:var(--serif);font-size:1.2rem;color:var(--ink)">Mesaj trimis!</p>
+                <p style="font-size:.86rem;color:var(--muted);margin-top:8px">Te contactez în maxim 24h.</p>
+              </div>
+              <p class="form-note">Te contactez în maxim 24h. Datele tale rămân confidențiale.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-in">
+      <div class="footer-brand">Edi Vlaston<span>.</span></div>
+      <div class="footer-links">
+        <a href="https://edivlaston.ro" target="_blank">edivlaston.ro</a>
+        <a href="mailto:edivlaston@gmail.com">Contact</a>
+        <a href="#programare">Programare</a>
+      </div>
+      <span class="footer-copy">© 2025 Cabinet Individual de Psihologie · Cod 22334</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Calendly script -->
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+<script>
+  // Scroll reveal
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);} });
+  }, {threshold:.1});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Nav compact
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.style.padding = window.scrollY > 60
+      ? '13px clamp(20px,5vw,56px)'
+      : '20px clamp(20px,5vw,56px)';
+  });
+
+  // Tabs
+  function switchTab(t) {
+    document.querySelectorAll('.tab').forEach((tb,i) => tb.classList.toggle('active', i===0?t==='cal':t==='form'));
+    document.getElementById('tab-cal').classList.toggle('active', t==='cal');
+    document.getElementById('tab-form').classList.toggle('active', t==='form');
+  }
+
+  // Form submit (simplu — fără backend; conectează la Formspree sau Netlify Forms)
+  function submitForm() {
+    const name = document.getElementById('cf-name').value.trim();
+    const phone = document.getElementById('cf-phone').value.trim();
+    if(!name || !phone) { alert('Te rog completează numele și numărul de telefon.'); return; }
+    document.getElementById('contact-form').style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+    // Pentru a trimite email real — adaugă Formspree sau EmailJS (instrucțiuni în ghidul de publicare)
+  }
+</script>
+
+</body>
+</html>
