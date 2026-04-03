@@ -570,12 +570,50 @@
     @keyframes fadeLeft { from{opacity:0;transform:translateX(26px)} to{opacity:1;transform:none} }
 
     /* ── Responsive ───────────────────────────────────── */
+    /* ── PENTRU FEMEI ─────────────────────────────────── */
+    #pentru-femei { padding: var(--gap) 0; background: var(--parch); border-top: 1px solid var(--stone); border-bottom: 1px solid var(--stone); }
+    .femei-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .femei-cards { display: flex; flex-direction: column; gap: 14px; }
+    .femei-card {
+      background: var(--white); border: 1px solid var(--stone); border-radius: 6px;
+      padding: 22px 24px; display: flex; gap: 18px; align-items: flex-start;
+      transition: border-color .2s, transform .2s, box-shadow .2s;
+    }
+    .femei-card:hover { border-color: var(--bark); transform: translateY(-3px); box-shadow: 0 10px 28px rgba(139,94,60,.09); }
+    .femei-card-ico {
+      width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
+      background: rgba(139,94,60,.1); border: 1.5px solid var(--stone);
+      display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+    }
+    .femei-card h3 { font-family: var(--serif); font-size: 1.08rem; font-weight: 500; color: var(--ink); margin-bottom: 6px; }
+    .femei-card p { font-size: .84rem; color: var(--muted); line-height: 1.72; }
+    .femei-text p { font-size: .97rem; color: var(--warm); line-height: 1.88; font-weight: 300; margin-bottom: 16px; }
+    .femei-text p strong { color: var(--ink); font-weight: 500; }
+    .femei-quote {
+      padding: 26px 30px; margin-top: 28px;
+      border-left: 3px solid var(--accent);
+      background: rgba(196,120,74,.06); border-radius: 0 4px 4px 0;
+    }
+    .femei-quote p {
+      font-family: var(--serif); font-size: clamp(1rem,1.4vw,1.2rem);
+      font-style: italic; color: var(--ink); line-height: 1.6; margin: 0;
+    }
+    .hero-note {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 18px; padding: 10px 16px;
+      background: rgba(139,94,60,.07); border: 1px solid var(--stone);
+      border-radius: 30px; font-size: .78rem; color: var(--muted);
+      opacity: 0; animation: fadeUp .6s .56s forwards;
+    }
+    .hero-note a { color: var(--terra); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
+    .hero-note a:hover { color: var(--accent); }
+
     @media(max-width:1024px){
       #hero{grid-template-columns:1fr}
       .hero-right{flex-direction:row;flex-wrap:wrap}
       .photo-wrap{flex:1 1 260px}
       .stats-row{flex:1 1 100%}
-      .despre-grid,.prob-layout,.abord-head,.conf-grid,.prog-grid{grid-template-columns:1fr;gap:36px}
+      .despre-grid,.prob-layout,.abord-head,.conf-grid,.prog-grid,.femei-grid{grid-template-columns:1fr;gap:36px}
       .pillars{grid-template-columns:1fr 1fr}
       .profiles{grid-template-columns:1fr 1fr}
       .steps::before{display:none}
@@ -603,6 +641,7 @@
     <a href="#problema">De ce acum</a>
     <a href="#abordare">Abordare</a>
     <a href="#pentru-cine">Cui mă adresez</a>
+    <a href="#pentru-femei">Pentru femei</a>
     <a href="#blog">Blog</a>
     <div class="nav-social">
       <a href="https://www.facebook.com/edi.vlaston.psihoterapeut" target="_blank" rel="noopener" title="Facebook">
@@ -620,9 +659,9 @@
 <section style="background:var(--sand)">
   <div id="hero">
     <div>
-      <div class="hero-tag">Psihoterapie pentru Bărbați · București</div>
+      <div class="hero-tag">Psihoterapie · București</div>
       <h1>Nu e slăbiciune.<br><em>E curaj.</em></h1>
-      <p class="hero-lead">Mă adresez bărbaților care simt că ceva nu mai funcționează — la job, în relație, cu ei înșiși — și care sunt gata să înțeleagă de ce și să schimbe asta.</p>
+      <p class="hero-lead">Mă adresez bărbaților care simt că ceva nu mai funcționează — la job, în relație, cu ei înșiși — și care sunt gata să înțeleagă de ce și să schimbe asta.<br><br>Mă adresez și femeilor care simt că nu înțeleg ce se întâmplă în mintea și în sufletul bărbatului — și care sunt dornice să își îmbunătățească relațiile cu bărbații din viața lor.</p>
       <div class="hero-actions">
         <a href="#programare" class="btn btn-primary">
           Programare gratuită
@@ -754,6 +793,65 @@
       <div class="profile reveal" style="transition-delay:.08s"><div class="prof-age">35–45</div><div class="prof-type">Managerul / Antreprenorul</div><p>Ții echipa și familia pe umeri. Burnout, iritabilitate, distanță față de cei dragi. Nimeni nu te vede pe tine.</p></div>
       <div class="profile reveal" style="transition-delay:.16s"><div class="prof-age">40–55</div><div class="prof-type">Tatăl sau soțul</div><p>Divorț sau criză în cuplu. Vrei să fii prezent pentru copii dar nu știi cum. Vinovăție și pierdere.</p></div>
       <div class="profile reveal" style="transition-delay:.24s"><div class="prof-age">50+</div><div class="prof-type">La răscruce</div><p>Copiii au crescut, cariera s-a schimbat. Criza de identitate. Ce urmează? Cine ești tu acum?</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PENTRU FEMEI ───────────────────────────────────── -->
+<section id="pentru-femei">
+  <div class="container">
+    <div class="femei-grid">
+
+      <div class="reveal">
+        <div class="sec-label">Pentru femei</div>
+        <h2>Când iubești<br><em>un bărbat dificil.</em></h2>
+        <div class="femei-text">
+          <p>Uneori cel care are nevoie de ajutor nu vine singur. Vine prin tine — prin îngrijorarea ta, prin răbdarea ta sau prin epuizarea ta.</p>
+          <p>Dacă partenerul tău s-a închis în el, dacă fiul tău nu mai vorbește, dacă simți că există un zid între voi pe care nu știi cum să-l treci — <strong>nu ești singură în asta</strong>.</p>
+          <p>Lucrez și cu femeile care vor să înțeleagă mai bine bărbatul din viața lor: cum gândește, de ce nu cere ajutor, ce se ascunde în spatele tăcerii sau al furiei.</p>
+        </div>
+        <div class="femei-quote">
+          <p>„Cel mai util lucru pe care îl poți face pentru el nu e să-l schimbi. E să înțelegi ce îl ține pe loc."</p>
+        </div>
+        <div style="margin-top:28px">
+          <a href="#programare" class="btn btn-primary">
+            Hai să vorbim
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="femei-cards reveal" style="transition-delay:.12s">
+        <div class="femei-card">
+          <div class="femei-card-ico">💑</div>
+          <div>
+            <h3>Partenera sau soția</h3>
+            <p>Simți că vorbești cu un perete. El se retrage, tu te epuizezi. Te ajut să înțelegi dinamica relației și cum poți comunica fără să escaladezi sau să te pierzi pe tine.</p>
+          </div>
+        </div>
+        <div class="femei-card">
+          <div class="femei-card-ico">👩‍👦</div>
+          <div>
+            <h3>Mama sau sora</h3>
+            <p>Fiul tău e bine pe exterior, dar ceva nu e în regulă. Nu vorbește, nu cere ajutor. Te ajut să înțelegi ce se întâmplă și cum să rămâi aproape fără să-l îndepărtezi.</p>
+          </div>
+        </div>
+        <div class="femei-card">
+          <div class="femei-card-ico">🤝</div>
+          <div>
+            <h3>Colega sau prietena</h3>
+            <p>Uneori observi tu primul că ceva nu e bine — la un coleg, un prieten sau un apropiat. Îți ofer perspectivă și îți explic cum poți fi de ajutor fără să preiei responsabilitatea lui.</p>
+          </div>
+        </div>
+        <div class="femei-card">
+          <div class="femei-card-ico">🧭</div>
+          <div>
+            <h3>Sesiune de orientare</h3>
+            <p>Nu e nevoie să vii cu o problemă clară. O ședință de 50 de minute e suficientă ca să înțelegi mai bine situația și să știi ce pași următori ai la dispoziție.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -963,7 +1061,6 @@
           <span class="pin-notice" id="pin-error"></span>
         </div>
         <button class="admin-btn admin-btn-save" onclick="checkPin()">Intră</button>
-        <p class="pin-notice">PIN implicit: 2233 (îl poți schimba din cod)</p>
       </div>
     </div>
 
@@ -1020,7 +1117,7 @@
 // BLOG DATA — stocat în localStorage
 // ══════════════════════════════════════════════════
 const STORAGE_KEY = 'edivlaston_blog_articles';
-const ADMIN_PIN   = '2233'; // ← schimbă PIN-ul aici dacă vrei
+const ADMIN_PIN   = '240970';
 
 let articles = [];
 let editingId = null;
