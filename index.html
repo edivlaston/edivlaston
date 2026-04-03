@@ -12,8 +12,6 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <!-- Calendly widget -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 
   <style>
@@ -51,7 +49,6 @@
       line-height: 1.7;
     }
 
-    /* subtle paper texture via noise */
     body::before {
       content: '';
       position: fixed; inset: 0; z-index: 0; pointer-events: none;
@@ -65,7 +62,6 @@
 
     .container { max-width: var(--col); margin: 0 auto; padding: 0 clamp(20px,5vw,56px); position: relative; z-index: 1; }
 
-    /* ── Reveal animation ─────────────────────────────── */
     .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
     .reveal.in { opacity: 1; transform: none; }
 
@@ -99,7 +95,7 @@
       color: var(--ink); letter-spacing: .02em;
     }
     .nav-brand span { color: var(--terra); }
-    .nav-links { display: flex; gap: 36px; align-items: center; }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
     .nav-links a {
       font-size: .75rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase;
       color: var(--muted); transition: color .2s;
@@ -111,6 +107,19 @@
       font-weight: 500 !important;
     }
     .nav-cta:hover { background: var(--accent) !important; }
+
+    /* Social icons in nav */
+    .nav-social { display: flex; gap: 10px; align-items: center; margin-left: 8px; }
+    .nav-social a {
+      width: 32px; height: 32px; border-radius: 4px;
+      background: rgba(139,94,60,.08); border: 1px solid var(--stone);
+      display: flex; align-items: center; justify-content: center;
+      transition: background .2s, border-color .2s, transform .15s;
+      text-transform: none; letter-spacing: 0; padding: 0 !important;
+      color: var(--muted) !important;
+    }
+    .nav-social a:hover { background: var(--terra); border-color: var(--terra); color: var(--white) !important; transform: translateY(-2px); }
+    .nav-social svg { width: 15px; height: 15px; fill: currentColor; }
 
     /* ── HERO ─────────────────────────────────────────── */
     #hero {
@@ -151,7 +160,6 @@
       opacity: 0; animation: fadeUp .6s .46s forwards;
     }
 
-    /* Hero right */
     .hero-right {
       display: flex; flex-direction: column; gap: 20px;
       opacity: 0; animation: fadeLeft .7s .42s forwards;
@@ -205,9 +213,7 @@
 
     /* ── DESPRE ───────────────────────────────────────── */
     #despre { padding: var(--gap) 0; background: var(--parch); border-top: 1px solid var(--stone); border-bottom: 1px solid var(--stone); }
-
     .despre-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 80px; align-items: start; }
-
     .despre-text p { font-size: .98rem; color: var(--warm); line-height: 1.88; margin-bottom: 16px; font-weight: 300; }
     .despre-text p strong { color: var(--ink); font-weight: 500; }
 
@@ -232,9 +238,7 @@
 
     /* ── PROBLEMA ─────────────────────────────────────── */
     #problema { padding: var(--gap) 0; background: var(--sand); }
-
     .prob-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
-
     .prob-text p { font-size: .97rem; color: var(--warm); line-height: 1.88; margin-bottom: 18px; font-weight: 300; }
     .prob-text p strong { color: var(--ink); font-weight: 500; }
 
@@ -257,7 +261,6 @@
 
     /* ── ABORDARE ─────────────────────────────────────── */
     #abordare { padding: var(--gap) 0; background: var(--parch); border-top: 1px solid var(--stone); border-bottom: 1px solid var(--stone); }
-
     .abord-head { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 56px; align-items: start; }
     .abord-lead { font-size: .97rem; color: var(--warm); line-height: 1.88; font-weight: 300; }
 
@@ -280,7 +283,6 @@
 
     /* ── PENTRU CINE ──────────────────────────────────── */
     #pentru-cine { padding: var(--gap) 0; background: var(--sand); }
-
     .profiles { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-top: 50px; }
     .profile {
       background: var(--white); border: 1px solid var(--stone); border-radius: 4px;
@@ -293,7 +295,6 @@
 
     /* ── PROCES ───────────────────────────────────────── */
     #proces { padding: var(--gap) 0; background: var(--parch); border-top: 1px solid var(--stone); border-bottom: 1px solid var(--stone); }
-
     .steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; margin-top: 60px; position: relative; }
     .steps::before {
       content: ''; position: absolute; top: 24px; left: 12.5%; right: 12.5%; height: 1px;
@@ -311,7 +312,6 @@
 
     /* ── CONFIDENTIAL ─────────────────────────────────── */
     #confidential { padding: 80px 0; background: var(--sand); }
-
     .conf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
     .conf-text p { font-size: .97rem; color: var(--warm); line-height: 1.88; margin-bottom: 12px; font-weight: 300; }
     .conf-list { display: flex; flex-direction: column; gap: 10px; }
@@ -330,52 +330,31 @@
 
     /* ── PROGRAMARE ───────────────────────────────────── */
     #programare { padding: var(--gap) 0; background: var(--parch); border-top: 1px solid var(--stone); }
-
     .prog-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: start; }
-
-    .prog-text p { font-size: .97rem; color: var(--warm); line-height: 1.88; margin-bottom: 18px; font-weight: 300; }
-
     .contact-rows { display: flex; flex-direction: column; gap: 10px; margin: 24px 0; }
     .contact-row { display: flex; align-items: center; gap: 13px; font-size: .88rem; color: var(--warm); }
     .c-ico { width: 34px; height: 34px; border-radius: 4px; background: rgba(139,94,60,.1); display: flex; align-items: center; justify-content: center; font-size: .95rem; flex-shrink: 0; }
     .c-link { color: var(--terra); font-weight: 500; }
     .c-link:hover { text-decoration: underline; }
-
-    .tip-box {
-      padding: 18px 22px; background: rgba(139,94,60,.07);
-      border: 1px solid var(--stone); border-radius: 4px; border-left: 3px solid var(--terra);
-    }
+    .tip-box { padding: 18px 22px; background: rgba(139,94,60,.07); border: 1px solid var(--stone); border-radius: 4px; border-left: 3px solid var(--terra); }
     .tip-box p { font-size: .86rem; color: var(--warm); line-height: 1.72; margin: 0; }
     .tip-box strong { color: var(--ink); }
 
-    /* Booking tabs */
     .tabs { display: flex; gap: 0; margin-bottom: 20px; border: 1.5px solid var(--stone); border-radius: 4px; overflow: hidden; }
-    .tab {
-      flex: 1; padding: 11px 18px; text-align: center;
-      font-size: .76rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase;
-      cursor: pointer; background: var(--white); color: var(--muted);
-      transition: background .18s, color .18s; border: none;
-    }
+    .tab { flex: 1; padding: 11px 18px; text-align: center; font-size: .76rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; background: var(--white); color: var(--muted); transition: background .18s, color .18s; border: none; }
     .tab.active { background: var(--terra); color: var(--white); }
-
     .tab-panel { display: none; }
     .tab-panel.active { display: block; }
 
-    .booking-box {
-      background: var(--white); border: 1px solid var(--stone); border-radius: 8px; overflow: hidden;
-      box-shadow: 0 6px 28px rgba(139,94,60,.08);
-    }
+    .booking-box { background: var(--white); border: 1px solid var(--stone); border-radius: 8px; overflow: hidden; box-shadow: 0 6px 28px rgba(139,94,60,.08); }
     .booking-box iframe { width: 100%; border: none; display: block; }
     .booking-inner { padding: 32px; }
-
-    /* Calendly inline */
     .calendly-section { text-align: center; padding: 32px 24px; }
     .calendly-section p { font-size: .9rem; color: var(--warm); margin-bottom: 20px; line-height: 1.6; }
     .calendly-section p strong { color: var(--ink); }
 
-    /* Contact form */
     .cform { display: flex; flex-direction: column; gap: 11px; }
-    .cform input, .cform textarea, .cform select {
+    .cform input, .cform textarea {
       background: var(--sand); border: 1.5px solid var(--stone); border-radius: 4px;
       padding: 12px 15px; font-family: var(--sans); font-size: .88rem; color: var(--ink);
       outline: none; transition: border-color .2s; width: 100%;
@@ -385,14 +364,205 @@
     .cform textarea { resize: vertical; min-height: 90px; }
     .form-note { font-size: .71rem; color: var(--muted); text-align: center; margin-top: 6px; }
 
+    /* ══════════════════════════════════════════════════
+       BLOG SECTION
+    ══════════════════════════════════════════════════ */
+    #blog { padding: var(--gap) 0; background: var(--sand); }
+
+    .blog-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 52px; }
+    .blog-header-left { max-width: 480px; }
+
+    .blog-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+
+    .blog-card {
+      background: var(--white); border: 1px solid var(--stone); border-radius: 6px;
+      overflow: hidden; transition: border-color .2s, transform .2s, box-shadow .2s;
+      cursor: pointer; display: flex; flex-direction: column;
+    }
+    .blog-card:hover { border-color: var(--bark); transform: translateY(-4px); box-shadow: 0 12px 36px rgba(139,94,60,.1); }
+
+    .blog-card-img {
+      height: 180px; background: var(--parch);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.4rem; border-bottom: 1px solid var(--stone);
+      position: relative; overflow: hidden;
+    }
+    .blog-card-img-bg {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, var(--parch), var(--stone));
+    }
+    .blog-card-img span { position: relative; z-index: 1; }
+
+    .blog-card-body { padding: 22px 22px 18px; flex: 1; display: flex; flex-direction: column; }
+    .blog-card-tag {
+      font-size: .62rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--terra); margin-bottom: 10px;
+    }
+    .blog-card h3 {
+      font-family: var(--serif); font-size: 1.18rem; font-weight: 500;
+      color: var(--ink); line-height: 1.35; margin-bottom: 10px;
+    }
+    .blog-card p { font-size: .83rem; color: var(--muted); line-height: 1.7; flex: 1; }
+    .blog-card-footer {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--stone);
+      font-size: .72rem; color: var(--light);
+    }
+    .blog-read-more {
+      font-size: .72rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase;
+      color: var(--terra); display: flex; align-items: center; gap: 4px;
+    }
+
+    /* Blog article modal */
+    .blog-modal-overlay {
+      position: fixed; inset: 0; z-index: 500;
+      background: rgba(34,24,8,.6); backdrop-filter: blur(4px);
+      display: flex; align-items: flex-start; justify-content: center;
+      padding: 60px 20px 40px; overflow-y: auto;
+      opacity: 0; pointer-events: none; transition: opacity .3s;
+    }
+    .blog-modal-overlay.open { opacity: 1; pointer-events: all; }
+    .blog-modal {
+      background: var(--sand); border-radius: 8px; max-width: 760px; width: 100%;
+      border: 1px solid var(--stone); box-shadow: 0 24px 80px rgba(34,24,8,.22);
+      transform: translateY(20px); transition: transform .3s;
+      overflow: hidden;
+    }
+    .blog-modal-overlay.open .blog-modal { transform: translateY(0); }
+    .blog-modal-header {
+      padding: 36px 44px 28px;
+      border-bottom: 1px solid var(--stone);
+      background: var(--parch);
+    }
+    .blog-modal-tag { font-size: .62rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--terra); margin-bottom: 12px; }
+    .blog-modal-header h2 { font-family: var(--serif); font-size: clamp(1.6rem,3vw,2.4rem); font-weight: 400; color: var(--ink); line-height: 1.2; margin-bottom: 10px; }
+    .blog-modal-meta { font-size: .74rem; color: var(--muted); }
+    .blog-modal-body { padding: 36px 44px; font-size: .97rem; color: var(--warm); line-height: 1.95; }
+    .blog-modal-body p { margin-bottom: 20px; }
+    .blog-modal-body p:last-child { margin-bottom: 0; }
+    .blog-modal-close {
+      position: absolute; top: 18px; right: 18px;
+      width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid var(--stone);
+      background: var(--white); cursor: pointer; display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; color: var(--muted); transition: background .2s, color .2s;
+    }
+    .blog-modal-close:hover { background: var(--terra); color: var(--white); border-color: var(--terra); }
+
+    /* ══════════════════════════════════════════════════
+       BLOG ADMIN PANEL
+    ══════════════════════════════════════════════════ */
+    .admin-trigger {
+      position: fixed; bottom: 28px; right: 28px; z-index: 300;
+      width: 48px; height: 48px; border-radius: 50%; background: var(--deep);
+      border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 24px rgba(34,24,8,.3); transition: transform .2s, box-shadow .2s;
+      color: var(--sand); font-size: 1.1rem;
+    }
+    .admin-trigger:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(34,24,8,.4); }
+    .admin-trigger-label {
+      position: absolute; right: 56px; white-space: nowrap;
+      background: var(--deep); color: var(--sand); border-radius: 4px;
+      font-size: .7rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase;
+      padding: 6px 12px; opacity: 0; pointer-events: none; transition: opacity .2s;
+    }
+    .admin-trigger:hover .admin-trigger-label { opacity: 1; }
+
+    .admin-panel-overlay {
+      position: fixed; inset: 0; z-index: 400;
+      background: rgba(34,24,8,.55); backdrop-filter: blur(4px);
+      display: flex; align-items: flex-start; justify-content: flex-end;
+      opacity: 0; pointer-events: none; transition: opacity .3s;
+    }
+    .admin-panel-overlay.open { opacity: 1; pointer-events: all; }
+
+    .admin-panel {
+      width: 480px; max-width: 100%; height: 100vh;
+      background: var(--ink); color: var(--sand);
+      overflow-y: auto; padding: 36px 32px;
+      transform: translateX(40px); transition: transform .3s;
+    }
+    .admin-panel-overlay.open .admin-panel { transform: translateX(0); }
+
+    .admin-panel h3 {
+      font-family: var(--serif); font-size: 1.6rem; font-weight: 400;
+      color: var(--sand); margin-bottom: 6px;
+    }
+    .admin-panel h3 em { font-style: italic; color: var(--accent); }
+    .admin-sub { font-size: .78rem; color: var(--muted); margin-bottom: 32px; }
+
+    .admin-field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+    .admin-field label { font-size: .7rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+    .admin-field input, .admin-field textarea, .admin-field select {
+      background: rgba(255,253,248,.07); border: 1.5px solid rgba(255,253,248,.12);
+      border-radius: 4px; padding: 11px 14px; font-family: var(--sans);
+      font-size: .88rem; color: var(--sand); outline: none; transition: border-color .2s; width: 100%;
+    }
+    .admin-field input:focus, .admin-field textarea:focus { border-color: var(--accent); }
+    .admin-field input::placeholder, .admin-field textarea::placeholder { color: rgba(255,253,248,.25); }
+    .admin-field textarea { resize: vertical; min-height: 160px; }
+    .admin-field select option { background: var(--deep); }
+
+    .admin-actions { display: flex; gap: 10px; margin-top: 8px; }
+    .admin-btn {
+      flex: 1; padding: 12px 18px; border-radius: 4px; border: none; cursor: pointer;
+      font-family: var(--sans); font-size: .78rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase;
+      transition: background .2s, transform .15s;
+    }
+    .admin-btn:hover { transform: translateY(-1px); }
+    .admin-btn-save { background: var(--terra); color: var(--white); }
+    .admin-btn-save:hover { background: var(--accent); }
+    .admin-btn-cancel { background: rgba(255,253,248,.1); color: var(--sand); }
+    .admin-btn-cancel:hover { background: rgba(255,253,248,.16); }
+
+    .admin-divider { height: 1px; background: rgba(255,253,248,.1); margin: 28px 0; }
+
+    .admin-list-title { font-size: .68rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+    .admin-article-item {
+      background: rgba(255,253,248,.05); border: 1px solid rgba(255,253,248,.08);
+      border-radius: 4px; padding: 14px 16px; margin-bottom: 10px;
+      display: flex; justify-content: space-between; align-items: flex-start; gap: 12px;
+    }
+    .admin-article-item-title { font-family: var(--serif); font-size: .95rem; color: var(--sand); line-height: 1.35; margin-bottom: 4px; }
+    .admin-article-item-meta { font-size: .68rem; color: var(--muted); }
+    .admin-item-actions { display: flex; gap: 6px; flex-shrink: 0; }
+    .admin-item-btn {
+      width: 28px; height: 28px; border-radius: 3px; border: 1px solid rgba(255,253,248,.12);
+      background: transparent; cursor: pointer; color: var(--muted); font-size: .75rem;
+      display: flex; align-items: center; justify-content: center; transition: background .2s, color .2s;
+    }
+    .admin-item-btn:hover { background: rgba(255,253,248,.1); color: var(--sand); }
+    .admin-item-btn.del:hover { background: rgba(180,60,60,.3); color: #f9a5a5; border-color: rgba(180,60,60,.4); }
+
+    .admin-close {
+      position: absolute; top: 20px; right: 20px;
+      background: rgba(255,253,248,.08); border: 1px solid rgba(255,253,248,.12);
+      border-radius: 50%; width: 34px; height: 34px; cursor: pointer;
+      color: var(--muted); font-size: .9rem; display: flex; align-items: center; justify-content: center;
+      transition: background .2s; z-index: 1;
+    }
+    .admin-close:hover { background: rgba(255,253,248,.16); color: var(--sand); }
+
+    .admin-lock { display: flex; flex-direction: column; gap: 16px; }
+    .admin-lock p { font-size: .88rem; color: var(--muted); line-height: 1.6; }
+    .pin-notice { font-size: .72rem; color: rgba(255,253,248,.35); margin-top: 4px; }
+
     /* ── FOOTER ───────────────────────────────────────── */
     footer { padding: 44px 0; background: var(--ink); }
     .footer-in { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 18px; }
     .footer-brand { font-family: var(--serif); font-size: .98rem; color: var(--sand); }
     .footer-brand span { color: var(--accent); }
-    .footer-links { display: flex; gap: 22px; }
+    .footer-links { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
     .footer-links a { font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); transition: color .2s; }
     .footer-links a:hover { color: var(--sand); }
+    .footer-social { display: flex; gap: 10px; }
+    .footer-social a {
+      width: 34px; height: 34px; border-radius: 4px;
+      background: rgba(255,253,248,.06); border: 1px solid rgba(255,253,248,.1);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted); transition: background .2s, color .2s, border-color .2s;
+    }
+    .footer-social a:hover { background: var(--terra); border-color: var(--terra); color: var(--white); }
+    .footer-social svg { width: 15px; height: 15px; fill: currentColor; }
     .footer-copy { font-size: .71rem; color: var(--warm); }
 
     /* ── Animations ───────────────────────────────────── */
@@ -409,12 +579,17 @@
       .pillars{grid-template-columns:1fr 1fr}
       .profiles{grid-template-columns:1fr 1fr}
       .steps::before{display:none}
+      .blog-grid{grid-template-columns:1fr 1fr}
+      .blog-header{flex-direction:column;align-items:flex-start;gap:20px}
     }
     @media(max-width:680px){
       .nav-links{display:none}
       .pillars,.profiles{grid-template-columns:1fr}
       .steps{grid-template-columns:1fr 1fr}
       .syms,.stat-pair{grid-template-columns:1fr}
+      .blog-grid{grid-template-columns:1fr}
+      .blog-modal-header,.blog-modal-body{padding:24px 22px}
+      .admin-panel{width:100%}
     }
   </style>
 </head>
@@ -428,6 +603,15 @@
     <a href="#problema">De ce acum</a>
     <a href="#abordare">Abordare</a>
     <a href="#pentru-cine">Cui mă adresez</a>
+    <a href="#blog">Blog</a>
+    <div class="nav-social">
+      <a href="https://www.facebook.com/edi.vlaston.psihoterapeut" target="_blank" rel="noopener" title="Facebook">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/edivlaston.terapeut" target="_blank" rel="noopener" title="Instagram">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+    </div>
     <a href="#programare" class="nav-cta">Programare</a>
   </div>
 </nav>
@@ -435,7 +619,6 @@
 <!-- ── HERO ─────────────────────────────────────────── -->
 <section style="background:var(--sand)">
   <div id="hero">
-
     <div>
       <div class="hero-tag">Psihoterapie pentru Bărbați · București</div>
       <h1>Nu e slăbiciune.<br><em>E curaj.</em></h1>
@@ -472,7 +655,6 @@
         <div class="stat"><div class="stat-n">★4.9</div><div class="stat-l">evaluare medie Hilio.ro</div></div>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -480,7 +662,6 @@
 <section id="despre">
   <div class="container">
     <div class="despre-grid">
-
       <div class="reveal">
         <div class="sec-label">Cine sunt</div>
         <h2>Am trăit ce<br><em>descrii tu.</em></h2>
@@ -490,7 +671,6 @@
         <p>Mă numesc <strong>Eduard Vlaston</strong> — Edi pentru cei care mă cunosc. Sunt psihoterapeut cu formare in <strong>Psihoterapie Centrata pe Persoană</strong>, cu specializari în <strong>Interviu Motivațional</strong> și <strong>Hipnoză Clinică</strong>. Deasemenea sunt psiholog clinician Acreditat în Registrul Unic al Psihologilor (cod 22334) și membru al Asociației Române de Psihoterapie Centrată pe Persoană.</p>
         <p>Tocmai pentru că am trăit presiunea corporatistă, burnout-ul ascuns și dificultatea de a cere ajutor, înțeleg experiența bărbaților dintr-un unghi aparte.</p>
       </div>
-
       <div class="reveal" style="transition-delay:.12s">
         <div class="sec-label">Formare și acreditări</div>
         <div class="creds">
@@ -502,7 +682,6 @@
           <div class="cred"><span class="cred-ico">💼</span>20+ ani management corporatist</div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -511,7 +690,6 @@
 <section id="problema">
   <div class="container">
     <div class="prob-layout">
-
       <div class="reveal">
         <div class="sec-label">Realitatea</div>
         <h2>Bărbații suferă<br><em>altfel.</em></h2>
@@ -524,7 +702,6 @@
           <div class="sp"><div class="sp-n">61%</div><div class="sp-l">nu au cerut niciodată ajutor specializat</div></div>
         </div>
       </div>
-
       <div class="reveal" style="transition-delay:.14s">
         <p style="font-size:.68rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:14px;">Recunoști vreunul?</p>
         <div class="syms">
@@ -540,7 +717,6 @@
           <div class="sym">Pierdere — scop, om, rol</div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -555,7 +731,6 @@
       </div>
       <p class="abord-lead">Nu vin cu un caiet de exerciții din prima ședință. Știu că ești sceptic, că ai puțin timp, că vrei să simți că merită. Hai să vedem ce funcționează pentru tine.</p>
     </div>
-
     <div class="pillars">
       <div class="pillar reveal"><div class="pillar-ico">⚡</div><h3>Eficient și concret</h3><p>Fiecare ședință are un obiectiv clar. Lucrăm la ce te blochează acum, nu la teorii abstracte.</p></div>
       <div class="pillar reveal" style="transition-delay:.08s"><div class="pillar-ico">🛡️</div><h3>Fără judecată</h3><p>Orice ai simțit sau făcut, nu ești primul. Cabinetul meu e un spațiu în care poți spune lucrurile pe nume.</p></div>
@@ -620,16 +795,39 @@
   </div>
 </section>
 
+<!-- ══════════════════════════════════════════════════
+     BLOG SECTION
+══════════════════════════════════════════════════ -->
+<section id="blog">
+  <div class="container">
+    <div class="blog-header">
+      <div class="blog-header-left reveal">
+        <div class="sec-label">Reflecții & Resurse</div>
+        <h2>Articole și povești<br><em>terapeutice.</em></h2>
+        <p style="font-size:.96rem;color:var(--muted);font-weight:300;line-height:1.75;margin-top:8px">Scriu despre ce observ în cabinet, despre psihologia masculină și despre lucrurile de care nu vorbim.</p>
+      </div>
+    </div>
+
+    <div class="blog-grid" id="blog-grid">
+      <!-- Articolele se generează din JavaScript -->
+    </div>
+
+    <div id="blog-empty" style="display:none;text-align:center;padding:60px 0">
+      <div style="font-size:2rem;margin-bottom:16px">✍️</div>
+      <p style="font-family:var(--serif);font-size:1.3rem;color:var(--ink);margin-bottom:8px">Primul articol va fi al tău.</p>
+      <p style="font-size:.86rem;color:var(--muted)">Apasă butonul ✎ din colțul dreapta-jos pentru a adăuga un articol.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ── PROGRAMARE ─────────────────────────────────────── -->
 <section id="programare">
   <div class="container">
     <div class="prog-grid">
-
       <div class="reveal">
         <div class="sec-label">Fă primul pas</div>
         <h2>Prima ședință<br><em>e gratuită.</em></h2>
         <p>30 de minute. Fără angajament. Fără să explici totul de la început. Dacă simți că ar putea funcționa — mergem mai departe.</p>
-
         <div class="contact-rows">
           <div class="contact-row">
             <div class="c-ico">📞</div>
@@ -637,7 +835,7 @@
           </div>
           <div class="contact-row">
             <div class="c-ico">✉️</div>
-            <div>Email: <a href="mailto:edivlaston@gmail.com" class="c-link">edivlaston@gmail.com</a></div>
+            <div>Email: <a href="mailto:office@edivlaston.ro" class="c-link">office@edivlaston.ro</a></div>
           </div>
           <div class="contact-row">
             <div class="c-ico">📍</div>
@@ -648,7 +846,6 @@
             <div><a href="https://edivlaston.ro" class="c-link">edivlaston.ro</a></div>
           </div>
         </div>
-
         <div class="tip-box">
           <p><strong>Nu știi cu ce să începi?</strong><br>E în regulă. Scrie-mi un mesaj scurt sau sună. Nu trebuie să ai totul clar — asta e treaba mea.</p>
         </div>
@@ -665,19 +862,13 @@
             <div class="calendly-section">
               <p><strong>Alege data care ți se potrivește</strong><br>
               Rezervă direct în calendarul meu — vei primi confirmare automată.</p>
-
-              <!-- ═══════════════════════════════════════════════════
-                   CALENDLY — înlocuiește USERNAME cu userul tău real
-                   Exemplu: https://calendly.com/eduard-vlaston-eiv3
-              ═══════════════════════════════════════════════════ -->
               <a href="https://calendly.com/eduard-vlaston-eiv3"
                  onclick="Calendly.initPopupWidget({url:'https://calendly.com/eduard-vlaston-eiv3'}); return false;"
                  class="btn btn-primary" style="justify-content:center;width:100%;display:flex">
                 📅 &nbsp;Deschide calendarul meu
               </a>
-
               <p style="font-size:.72rem;color:var(--muted);margin-top:16px;margin-bottom:0">
-                După ce confirmezi înlocuiește linkul cu URL-ul exact din contul tău Calendly.
+                Vei primi o confirmare automată pe email.
               </p>
             </div>
           </div>
@@ -704,7 +895,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
@@ -717,49 +907,371 @@
       <div class="footer-brand">Edi Vlaston<span>.</span></div>
       <div class="footer-links">
         <a href="https://edivlaston.ro" target="_blank">edivlaston.ro</a>
-        <a href="mailto:edivlaston@gmail.com">Contact</a>
+        <a href="mailto:office@edivlaston.ro">Contact</a>
         <a href="#programare">Programare</a>
+        <a href="#blog">Blog</a>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/edi.vlaston.psihoterapeut" target="_blank" rel="noopener" title="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/edivlaston.terapeut" target="_blank" rel="noopener" title="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+        </div>
       </div>
       <span class="footer-copy">© 2025 Cabinet Individual de Psihologie · Cod 22334</span>
     </div>
   </div>
 </footer>
 
+<!-- ══════════════════════════════════════════════════
+     BLOG ARTICLE MODAL
+══════════════════════════════════════════════════ -->
+<div class="blog-modal-overlay" id="blog-modal-overlay" onclick="closeBlogModal(event)">
+  <div class="blog-modal" id="blog-modal">
+    <button class="blog-modal-close" onclick="closeBlogModal(null,true)">✕</button>
+    <div class="blog-modal-header">
+      <div class="blog-modal-tag" id="modal-tag"></div>
+      <h2 id="modal-title"></h2>
+      <div class="blog-modal-meta" id="modal-meta"></div>
+    </div>
+    <div class="blog-modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     ADMIN PANEL
+══════════════════════════════════════════════════ -->
+<button class="admin-trigger" id="admin-trigger" onclick="openAdmin()" title="Admin Blog">
+  <span class="admin-trigger-label">Admin Blog</span>
+  ✎
+</button>
+
+<div class="admin-panel-overlay" id="admin-overlay" onclick="closeAdminOutside(event)">
+  <div class="admin-panel" id="admin-panel" style="position:relative">
+    <button class="admin-close" onclick="closeAdmin()">✕</button>
+
+    <!-- Lock screen -->
+    <div id="admin-lock-screen">
+      <h3>Admin<br><em>Blog</em></h3>
+      <p class="admin-sub">Zona de administrare articole</p>
+      <div class="admin-lock">
+        <p>Introdu PIN-ul pentru a accesa panoul de administrare.</p>
+        <div class="admin-field">
+          <label>PIN</label>
+          <input type="password" id="admin-pin-input" placeholder="••••" maxlength="6" onkeydown="if(event.key==='Enter')checkPin()">
+          <span class="pin-notice" id="pin-error"></span>
+        </div>
+        <button class="admin-btn admin-btn-save" onclick="checkPin()">Intră</button>
+        <p class="pin-notice">PIN implicit: 2233 (îl poți schimba din cod)</p>
+      </div>
+    </div>
+
+    <!-- Admin content -->
+    <div id="admin-content" style="display:none">
+      <h3>Admin<br><em>Blog</em></h3>
+      <p class="admin-sub" id="admin-mode-label">Articol nou</p>
+
+      <div class="admin-field">
+        <label>Titlu articol *</label>
+        <input type="text" id="a-title" placeholder="Ex: De ce bărbații nu cer ajutor">
+      </div>
+      <div class="admin-field">
+        <label>Categorie</label>
+        <select id="a-cat">
+          <option value="Psihologie masculină">Psihologie masculină</option>
+          <option value="Povești terapeutice">Povești terapeutice</option>
+          <option value="Burnout & Stres">Burnout & Stres</option>
+          <option value="Relații & Familie">Relații & Familie</option>
+          <option value="Reflecții">Reflecții</option>
+          <option value="Resurse">Resurse</option>
+        </select>
+      </div>
+      <div class="admin-field">
+        <label>Rezumat scurt (apare pe card)</label>
+        <input type="text" id="a-excerpt" placeholder="1-2 propoziții introductive...">
+      </div>
+      <div class="admin-field">
+        <label>Conținut complet</label>
+        <textarea id="a-content" placeholder="Scrie articolul sau povestea terapeutică aici. Lasă un rând gol între paragrafe."></textarea>
+      </div>
+      <div class="admin-field">
+        <label>Emoji / Iconiță (opțional)</label>
+        <input type="text" id="a-emoji" placeholder="🧠" maxlength="4">
+      </div>
+
+      <div class="admin-actions">
+        <button class="admin-btn admin-btn-save" onclick="saveArticle()">💾 Salvează</button>
+        <button class="admin-btn admin-btn-cancel" onclick="resetAdminForm()">Anulează</button>
+      </div>
+
+      <div class="admin-divider"></div>
+      <p class="admin-list-title">Articole publicate (<span id="art-count">0</span>)</p>
+      <div id="admin-articles-list"></div>
+    </div>
+  </div>
+</div>
+
 <!-- Calendly script -->
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
 <script>
-  // Scroll reveal
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);} });
-  }, {threshold:.1});
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+// ══════════════════════════════════════════════════
+// BLOG DATA — stocat în localStorage
+// ══════════════════════════════════════════════════
+const STORAGE_KEY = 'edivlaston_blog_articles';
+const ADMIN_PIN   = '2233'; // ← schimbă PIN-ul aici dacă vrei
 
-  // Nav compact
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav.style.padding = window.scrollY > 60
-      ? '13px clamp(20px,5vw,56px)'
-      : '20px clamp(20px,5vw,56px)';
-  });
+let articles = [];
+let editingId = null;
 
-  // Tabs
-  function switchTab(t) {
-    document.querySelectorAll('.tab').forEach((tb,i) => tb.classList.toggle('active', i===0?t==='cal':t==='form'));
-    document.getElementById('tab-cal').classList.toggle('active', t==='cal');
-    document.getElementById('tab-form').classList.toggle('active', t==='form');
+function loadArticles() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    articles = raw ? JSON.parse(raw) : [];
+  } catch(e) { articles = []; }
+}
+
+function saveArticles() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(articles));
+}
+
+function generateId() {
+  return Date.now().toString(36) + Math.random().toString(36).slice(2,6);
+}
+
+function formatDate(iso) {
+  const d = new Date(iso);
+  return d.toLocaleDateString('ro-RO', { day:'numeric', month:'long', year:'numeric' });
+}
+
+// ── Render blog cards ──
+function renderBlog() {
+  const grid  = document.getElementById('blog-grid');
+  const empty = document.getElementById('blog-empty');
+
+  if (articles.length === 0) {
+    grid.innerHTML  = '';
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+
+  grid.innerHTML = articles.map(a => `
+    <div class="blog-card reveal" onclick="openArticle('${a.id}')">
+      <div class="blog-card-img">
+        <div class="blog-card-img-bg"></div>
+        <span>${a.emoji || '📝'}</span>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-tag">${escHtml(a.category)}</div>
+        <h3>${escHtml(a.title)}</h3>
+        <p>${escHtml(a.excerpt || a.content.slice(0,120) + '…')}</p>
+        <div class="blog-card-footer">
+          <span>${formatDate(a.date)}</span>
+          <span class="blog-read-more">Citește →</span>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  // re-observe new cards
+  document.querySelectorAll('#blog-grid .reveal').forEach(el => io.observe(el));
+}
+
+function escHtml(s) {
+  return String(s)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;');
+}
+
+// ── Article modal ──
+function openArticle(id) {
+  const a = articles.find(x => x.id === id);
+  if (!a) return;
+
+  document.getElementById('modal-tag').textContent   = a.category;
+  document.getElementById('modal-title').textContent = a.title;
+  document.getElementById('modal-meta').textContent  = formatDate(a.date);
+
+  // Render paragraphs
+  const body = a.content.split(/\n\n+/).map(p =>
+    `<p>${escHtml(p.trim())}</p>`
+  ).join('');
+  document.getElementById('modal-body').innerHTML = body;
+
+  document.getElementById('blog-modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeBlogModal(e, force) {
+  if (!force && e && e.target !== document.getElementById('blog-modal-overlay')) return;
+  document.getElementById('blog-modal-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ── Admin panel ──
+let adminUnlocked = false;
+
+function openAdmin() {
+  document.getElementById('admin-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  if (!adminUnlocked) {
+    document.getElementById('admin-lock-screen').style.display = '';
+    document.getElementById('admin-content').style.display = 'none';
+    setTimeout(() => document.getElementById('admin-pin-input').focus(), 300);
+  }
+}
+
+function closeAdmin() {
+  document.getElementById('admin-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeAdminOutside(e) {
+  if (e.target === document.getElementById('admin-overlay')) closeAdmin();
+}
+
+function checkPin() {
+  const val = document.getElementById('admin-pin-input').value;
+  if (val === ADMIN_PIN) {
+    adminUnlocked = true;
+    document.getElementById('admin-lock-screen').style.display = 'none';
+    document.getElementById('admin-content').style.display = '';
+    renderAdminList();
+  } else {
+    document.getElementById('pin-error').textContent = 'PIN greșit. Încearcă din nou.';
+    document.getElementById('admin-pin-input').value = '';
+    document.getElementById('admin-pin-input').focus();
+  }
+}
+
+function resetAdminForm() {
+  editingId = null;
+  document.getElementById('a-title').value   = '';
+  document.getElementById('a-cat').value     = 'Psihologie masculină';
+  document.getElementById('a-excerpt').value = '';
+  document.getElementById('a-content').value = '';
+  document.getElementById('a-emoji').value   = '';
+  document.getElementById('admin-mode-label').textContent = 'Articol nou';
+}
+
+function saveArticle() {
+  const title   = document.getElementById('a-title').value.trim();
+  const content = document.getElementById('a-content').value.trim();
+  if (!title || !content) {
+    alert('Titlul și conținutul sunt obligatorii.');
+    return;
   }
 
-  // Form submit (simplu — fără backend; conectează la Formspree sau Netlify Forms)
-  function submitForm() {
-    const name = document.getElementById('cf-name').value.trim();
-    const phone = document.getElementById('cf-phone').value.trim();
-    if(!name || !phone) { alert('Te rog completează numele și numărul de telefon.'); return; }
-    document.getElementById('contact-form').style.display = 'none';
-    document.getElementById('form-success').style.display = 'block';
-    // Pentru a trimite email real — adaugă Formspree sau EmailJS (instrucțiuni în ghidul de publicare)
+  if (editingId) {
+    const idx = articles.findIndex(a => a.id === editingId);
+    if (idx !== -1) {
+      articles[idx] = {
+        ...articles[idx],
+        title,
+        category: document.getElementById('a-cat').value,
+        excerpt:  document.getElementById('a-excerpt').value.trim(),
+        content,
+        emoji:    document.getElementById('a-emoji').value.trim() || '📝',
+      };
+    }
+  } else {
+    articles.unshift({
+      id:       generateId(),
+      date:     new Date().toISOString(),
+      title,
+      category: document.getElementById('a-cat').value,
+      excerpt:  document.getElementById('a-excerpt').value.trim(),
+      content,
+      emoji:    document.getElementById('a-emoji').value.trim() || '📝',
+    });
   }
+
+  saveArticles();
+  renderBlog();
+  renderAdminList();
+  resetAdminForm();
+}
+
+function editArticle(id) {
+  const a = articles.find(x => x.id === id);
+  if (!a) return;
+  editingId = id;
+  document.getElementById('a-title').value   = a.title;
+  document.getElementById('a-cat').value     = a.category;
+  document.getElementById('a-excerpt').value = a.excerpt || '';
+  document.getElementById('a-content').value = a.content;
+  document.getElementById('a-emoji').value   = a.emoji || '';
+  document.getElementById('admin-mode-label').textContent = 'Editează articol';
+  document.getElementById('admin-panel').scrollTop = 0;
+}
+
+function deleteArticle(id) {
+  if (!confirm('Ștergi acest articol? Acțiunea nu poate fi anulată.')) return;
+  articles = articles.filter(a => a.id !== id);
+  saveArticles();
+  renderBlog();
+  renderAdminList();
+  if (editingId === id) resetAdminForm();
+}
+
+function renderAdminList() {
+  document.getElementById('art-count').textContent = articles.length;
+  const el = document.getElementById('admin-articles-list');
+  if (articles.length === 0) {
+    el.innerHTML = '<p style="font-size:.8rem;color:var(--muted);text-align:center;padding:20px 0">Niciun articol publicat încă.</p>';
+    return;
+  }
+  el.innerHTML = articles.map(a => `
+    <div class="admin-article-item">
+      <div>
+        <div class="admin-article-item-title">${escHtml(a.title)}</div>
+        <div class="admin-article-item-meta">${escHtml(a.category)} · ${formatDate(a.date)}</div>
+      </div>
+      <div class="admin-item-actions">
+        <button class="admin-item-btn" onclick="editArticle('${a.id}')" title="Editează">✎</button>
+        <button class="admin-item-btn del" onclick="deleteArticle('${a.id}')" title="Șterge">✕</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ══════════════════════════════════════════════════
+// SCROLL REVEAL
+// ══════════════════════════════════════════════════
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);} });
+}, {threshold:.1});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// Nav compact
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.style.padding = window.scrollY > 60
+    ? '13px clamp(20px,5vw,56px)'
+    : '20px clamp(20px,5vw,56px)';
+});
+
+// Tabs
+function switchTab(t) {
+  document.querySelectorAll('.tab').forEach((tb,i) => tb.classList.toggle('active', i===0?t==='cal':t==='form'));
+  document.getElementById('tab-cal').classList.toggle('active', t==='cal');
+  document.getElementById('tab-form').classList.toggle('active', t==='form');
+}
+
+// Form submit
+function submitForm() {
+  const name  = document.getElementById('cf-name').value.trim();
+  const phone = document.getElementById('cf-phone').value.trim();
+  if(!name || !phone) { alert('Te rog completează numele și numărul de telefon.'); return; }
+  document.getElementById('contact-form').style.display = 'none';
+  document.getElementById('form-success').style.display = 'block';
+}
+
+// Init
+loadArticles();
+renderBlog();
 </script>
-
 </body>
 </html>
