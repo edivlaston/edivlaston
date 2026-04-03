@@ -451,21 +451,6 @@
     /* ══════════════════════════════════════════════════
        BLOG ADMIN PANEL
     ══════════════════════════════════════════════════ */
-    .admin-trigger {
-      position: fixed; bottom: 28px; right: 28px; z-index: 300;
-      width: 48px; height: 48px; border-radius: 50%; background: var(--deep);
-      border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 6px 24px rgba(34,24,8,.3); transition: transform .2s, box-shadow .2s;
-      color: var(--sand); font-size: 1.1rem;
-    }
-    .admin-trigger:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(34,24,8,.4); }
-    .admin-trigger-label {
-      position: absolute; right: 56px; white-space: nowrap;
-      background: var(--deep); color: var(--sand); border-radius: 4px;
-      font-size: .7rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase;
-      padding: 6px 12px; opacity: 0; pointer-events: none; transition: opacity .2s;
-    }
-    .admin-trigger:hover .admin-trigger-label { opacity: 1; }
 
     .admin-panel-overlay {
       position: fixed; inset: 0; z-index: 400;
@@ -1040,11 +1025,6 @@
 <!-- ══════════════════════════════════════════════════
      ADMIN PANEL
 ══════════════════════════════════════════════════ -->
-<button class="admin-trigger" id="admin-trigger" onclick="openAdmin()" title="Admin Blog">
-  <span class="admin-trigger-label">Admin Blog</span>
-  ✎
-</button>
-
 <div class="admin-panel-overlay" id="admin-overlay" onclick="closeAdminOutside(event)">
   <div class="admin-panel" id="admin-panel" style="position:relative">
     <button class="admin-close" onclick="closeAdmin()">✕</button>
@@ -1369,6 +1349,16 @@ function submitForm() {
 // Init
 loadArticles();
 renderBlog();
+
+// ── URL secret: edivlaston.ro#admin ──
+function checkAdminHash() {
+  if (window.location.hash === '#admin') {
+    history.replaceState(null, '', window.location.pathname); // curăță hash-ul din URL
+    openAdmin();
+  }
+}
+window.addEventListener('hashchange', checkAdminHash);
+checkAdminHash();
 </script>
 </body>
 </html>
