@@ -602,11 +602,121 @@
     .hero-note a { color: var(--terra); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
     .hero-note a:hover { color: var(--accent); }
 
+    .editor-toolbar {
+      display: flex; align-items: center; gap: 4px;
+      background: rgba(255,253,248,.05); border: 1.5px solid rgba(255,253,248,.12);
+      border-bottom: none; border-radius: 4px 4px 0 0; padding: 6px 8px; flex-wrap: wrap;
+    }
+    .editor-btn {
+      background: rgba(255,253,248,.08); border: 1px solid rgba(255,253,248,.12);
+      color: var(--sand); border-radius: 3px; padding: 4px 9px; cursor: pointer;
+      font-family: var(--sans); font-size: .78rem; font-weight: 500;
+      transition: background .15s; min-width: 30px; text-align: center;
+    }
+    .editor-btn:hover { background: rgba(255,253,248,.18); }
+    .editor-sep { width: 1px; height: 18px; background: rgba(255,253,248,.15); margin: 0 2px; }
+    .editor-body {
+      background: rgba(255,253,248,.07); border: 1.5px solid rgba(255,253,248,.12);
+      border-radius: 0 0 4px 4px; padding: 12px 14px; min-height: 200px;
+      font-family: var(--sans); font-size: .88rem; color: var(--sand);
+      outline: none; line-height: 1.75; overflow-y: auto;
+    }
+    .editor-body:focus { border-color: var(--accent); }
+    .editor-body:empty::before {
+      content: attr(data-placeholder); color: rgba(255,253,248,.25); pointer-events: none;
+    }
+    .editor-body ul { padding-left: 20px; }
+    .editor-body li { margin-bottom: 4px; }
+
+    /* ── PREȚURI ──────────────────────────────────────── */
+    #preturi { padding: var(--gap) 0; background: var(--sand); }
+
+    .preturi-intro { text-align: center; max-width: 560px; margin: 0 auto 56px; }
+    .preturi-intro p { font-size: .97rem; color: var(--muted); font-weight: 300; line-height: 1.8; margin-top: 12px; }
+
+    .preturi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; align-items: start; }
+
+    .pret-card {
+      background: var(--white); border: 1.5px solid var(--stone); border-radius: 8px;
+      padding: 36px 28px; display: flex; flex-direction: column;
+      transition: border-color .2s, transform .2s, box-shadow .2s;
+      position: relative; overflow: hidden;
+    }
+    .pret-card:hover { border-color: var(--bark); transform: translateY(-5px); box-shadow: 0 16px 48px rgba(139,94,60,.12); }
+    .pret-card.featured {
+      background: var(--deep); border-color: var(--deep);
+      color: var(--sand);
+    }
+    .pret-card.featured:hover { border-color: var(--terra); }
+    .pret-badge {
+      position: absolute; top: 18px; right: 18px;
+      background: var(--accent); color: var(--white);
+      font-size: .6rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 20px;
+    }
+    .pret-label {
+      font-size: .68rem; font-weight: 500; letter-spacing: .16em; text-transform: uppercase;
+      color: var(--terra); margin-bottom: 14px;
+    }
+    .pret-card.featured .pret-label { color: var(--accentl); }
+    .pret-name {
+      font-family: var(--serif); font-size: 1.5rem; font-weight: 500;
+      color: var(--ink); margin-bottom: 6px; line-height: 1.2;
+    }
+    .pret-card.featured .pret-name { color: var(--sand); }
+    .pret-sedinte {
+      font-size: .8rem; color: var(--muted); margin-bottom: 28px;
+    }
+    .pret-card.featured .pret-sedinte { color: var(--light); }
+    .pret-price {
+      display: flex; align-items: flex-end; gap: 6px; margin-bottom: 6px;
+    }
+    .pret-amount {
+      font-family: var(--serif); font-size: 3rem; font-weight: 400;
+      color: var(--terra); line-height: 1;
+    }
+    .pret-card.featured .pret-amount { color: var(--accentl); }
+    .pret-currency { font-size: .88rem; color: var(--muted); margin-bottom: 6px; }
+    .pret-card.featured .pret-currency { color: var(--light); }
+    .pret-per {
+      font-size: .76rem; color: var(--muted); margin-bottom: 28px;
+      padding-bottom: 24px; border-bottom: 1px solid var(--stone);
+    }
+    .pret-card.featured .pret-per { color: var(--light); border-color: rgba(255,253,248,.12); }
+    .pret-saving {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: .72rem; font-weight: 500; color: #5a9e6f;
+      background: rgba(90,158,111,.1); border: 1px solid rgba(90,158,111,.2);
+      border-radius: 20px; padding: 4px 10px; margin-bottom: 20px;
+    }
+    .pret-features { display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; flex: 1; }
+    .pret-feature {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: .84rem; color: var(--warm); line-height: 1.5;
+    }
+    .pret-card.featured .pret-feature { color: var(--light); }
+    .pret-check {
+      width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0; margin-top: 1px;
+      background: rgba(139,94,60,.12); border: 1.5px solid var(--bark);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .58rem; color: var(--terra); font-weight: 700;
+    }
+    .pret-card.featured .pret-check {
+      background: rgba(196,120,74,.2); border-color: var(--accentl); color: var(--accentl);
+    }
+
+    .preturi-note {
+      text-align: center; margin-top: 36px;
+      font-size: .82rem; color: var(--muted); line-height: 1.7;
+    }
+    .preturi-note strong { color: var(--ink); }
+
     @media(max-width:1024px){
       #hero{grid-template-columns:1fr}
       .hero-right{flex-direction:row;flex-wrap:wrap}
       .photo-wrap{flex:1 1 260px}
       .stats-row{flex:1 1 100%}
+      .preturi-grid{grid-template-columns:1fr}
       .despre-grid,.prob-layout,.abord-head,.conf-grid,.prog-grid,.femei-grid{grid-template-columns:1fr;gap:36px}
       .pillars{grid-template-columns:1fr 1fr}
       .profiles{grid-template-columns:1fr 1fr}
@@ -636,6 +746,7 @@
     <a href="#abordare">Abordare</a>
     <a href="#pentru-cine">Cui mă adresez</a>
     <a href="#pentru-femei">Pentru femei</a>
+    <a href="#preturi">Prețuri</a>
     <a href="#blog">Blog</a>
     <div class="nav-social">
       <a href="https://www.facebook.com/edi.vlaston.psihoterapeut" target="_blank" rel="noopener" title="Facebook">
@@ -727,8 +838,10 @@
         <div class="sec-label">Realitatea</div>
         <h2>Bărbații suferă<br><em>altfel.</em></h2>
         <div class="prob-text">
+          <p>Una dintre primele zone în care apare semnalul de alarmă e <strong>relația</strong>. Distanța față de parteneră. Conflictele repetate fără rezolvare. Senzația că nu mai știi cum să fii prezent — nici acasă, nici ca tată. Bărbații nu rup relațiile pentru că nu le pasă. Le rup pentru că nu știu cum să rămână în ele.</p>
           <p>Depresia masculină nu arată ca în manuale. Nu plânge, nu cere ajutor. Se manifestă ca <strong>iritabilitate</strong>, ca <strong>muncă compulsivă</strong>, ca <strong>retragere</strong> sau <strong>exces</strong>.</p>
           <p>Suntem educați să rezistăm, să „ne descurcăm". Asta funcționează o vreme — până când nu mai funcționează.</p>
+          
         </div>
         <div class="stat-pair">
           <div class="sp"><div class="sp-n">85%</div><div class="sp-l">din suicidele din România — bărbați</div></div>
@@ -738,15 +851,15 @@
       <div class="reveal" style="transition-delay:.14s">
         <p style="font-size:.68rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:14px;">Recunoști vreunul?</p>
         <div class="syms">
-          <div class="sym">Iritabilitate fără motiv</div>
-          <div class="sym">Burnout profesional</div>
           <div class="sym">Relație care se destramă</div>
-          <div class="sym">Anxietate mascată</div>
+          <div class="sym">Conflicte repetate în cuplu</div>
+          <div class="sym">Distanță față de parteneră</div>
           <div class="sym">Dificultăți ca tată</div>
-          <div class="sym">Sentimentul de blocare</div>
-          <div class="sym">Insomnie / oboseală</div>
-          <div class="sym">Golul după un succes</div>
           <div class="sym">Divorț sau separare</div>
+          <div class="sym">Burnout profesional</div>
+          <div class="sym">Iritabilitate fără motiv</div>
+          <div class="sym">Anxietate mascată</div>
+          <div class="sym">Sentimentul de blocare</div>
           <div class="sym">Pierdere — scop, om, rol</div>
         </div>
       </div>
@@ -766,10 +879,10 @@
     </div>
     <div class="pillars">
       <div class="pillar reveal"><div class="pillar-ico">⚡</div><h3>Eficient și concret</h3><p>Fiecare ședință are un obiectiv clar. Lucrăm la ce te blochează acum, nu la teorii abstracte.</p></div>
-      <div class="pillar reveal" style="transition-delay:.08s"><div class="pillar-ico">🛡️</div><h3>Fără judecată</h3><p>Orice ai simțit sau făcut, nu ești primul. Cabinetul meu e un spațiu în care poți spune lucrurile pe nume.</p></div>
+      <div class="pillar reveal" style="transition-delay:.08s"><div class="pillar-ico">💑</div><h3>Relații și cuplu</h3><p>Înțeleg de ce bărbații se retrag, tac sau explodează în relații. Lucrăm la comunicare, intimitate și reconectare — fără să te simți judecat.</p></div>
       <div class="pillar reveal" style="transition-delay:.16s"><div class="pillar-ico">🎯</div><h3>Orientat pe rezultate</h3><p>La finalul procesului vrei să mergi mai departe — mai prezent, mai clar, mai liber. Ăsta e scopul nostru.</p></div>
-      <div class="pillar reveal" style="transition-delay:.04s"><div class="pillar-ico">🔒</div><h3>Confidențial total</h3><p>Nimic din ce discutăm nu ajunge la angajator, familie sau în dosarul medical.</p></div>
-      <div class="pillar reveal" style="transition-delay:.12s"><div class="pillar-ico">💻</div><h3>Online sau față în față</h3><p>Ședințe la cabinet (Piața Victoriei) sau video. Mulți preferă online — e mai discret și flexibil.</p></div>
+      <div class="pillar reveal" style="transition-delay:.04s"><div class="pillar-ico">🛡️</div><h3>Fără judecată</h3><p>Orice ai simțit sau făcut, nu ești primul. Cabinetul meu e un spațiu în care poți spune lucrurile pe nume.</p></div>
+      <div class="pillar reveal" style="transition-delay:.12s"><div class="pillar-ico">🔒</div><h3>Confidențial total</h3><p>Nimic din ce discutăm nu ajunge la angajator, familie sau în dosarul medical.</p></div>
       <div class="pillar reveal" style="transition-delay:.20s"><div class="pillar-ico">👤</div><h3>Înțeleg din interior</h3><p>Am trăit 20 de ani în corporate. Înțeleg presiunea, burnout-ul și dificultatea de a cere ajutor.</p></div>
     </div>
   </div>
@@ -783,10 +896,10 @@
       <h2>Poate ești<br><em>unul din ei.</em></h2>
     </div>
     <div class="profiles">
-      <div class="profile reveal"><div class="prof-age">28–35</div><div class="prof-type">Tânărul ambițios</div><p>Carieră în creștere, dar anxietate constantă. Relații care nu merg. Senzația că nu ești niciodată destul.</p></div>
-      <div class="profile reveal" style="transition-delay:.08s"><div class="prof-age">35–45</div><div class="prof-type">Managerul / Antreprenorul</div><p>Ții echipa și familia pe umeri. Burnout, iritabilitate, distanță față de cei dragi. Nimeni nu te vede pe tine.</p></div>
-      <div class="profile reveal" style="transition-delay:.16s"><div class="prof-age">40–55</div><div class="prof-type">Tatăl sau soțul</div><p>Divorț sau criză în cuplu. Vrei să fii prezent pentru copii dar nu știi cum. Vinovăție și pierdere.</p></div>
-      <div class="profile reveal" style="transition-delay:.24s"><div class="prof-age">50+</div><div class="prof-type">La răscruce</div><p>Copiii au crescut, cariera s-a schimbat. Criza de identitate. Ce urmează? Cine ești tu acum?</p></div>
+      <div class="profile reveal"><div class="prof-age">28–35</div><div class="prof-type">Tânărul ambițios</div><p>Carieră în creștere, dar relațiile nu merg. Nu știi cum să fii prezent emoțional. Senzația că nu ești niciodată destul — nici la job, nici acasă.</p></div>
+      <div class="profile reveal" style="transition-delay:.08s"><div class="prof-age">35–45</div><div class="prof-type">Managerul / Antreprenorul</div><p>Conduci echipe, dar acasă ești absent. Partenera simte distanța, tu nu știi cum să o reduci. Burnout și iritabilitate care otrăvesc relația.</p></div>
+      <div class="profile reveal" style="transition-delay:.16s"><div class="prof-age">40–55</div><div class="prof-type">Tatăl sau soțul</div><p>Divorț, separare sau criză profundă de cuplu. Vrei să fii prezent pentru copii dar nu știi cum. Vina și pierderea te blochează.</p></div>
+      <div class="profile reveal" style="transition-delay:.24s"><div class="prof-age">50+</div><div class="prof-type">La răscruce</div><p>Relația s-a răcit sau s-a rupt. Criza de identitate după ce copiii au crescut. Ce mai ești tu, dincolo de roluri? Cine ești acum?</p></div>
     </div>
   </div>
 </section>
@@ -884,6 +997,90 @@
         <div class="conf-item"><span class="conf-ck">✓</span>Plată card sau cash, la alegere</div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     PREȚURI
+══════════════════════════════════════════════════ -->
+<section id="preturi">
+  <div class="container">
+
+    <div class="preturi-intro reveal">
+      <div class="sec-label" style="justify-content:center">Investiție</div>
+      <h2>Transparent.<br><em>Fără surprize.</em></h2>
+      <p>Prima ședință de evaluare este gratuită. De acolo, alegi ritmul care ți se potrivește.</p>
+    </div>
+
+    <div class="preturi-grid">
+
+      <!-- Card 1: Ședință unică -->
+      <div class="pret-card reveal">
+        <div class="pret-label">Flexibil</div>
+        <div class="pret-name">Ședință unică</div>
+        <div class="pret-sedinte">50 de minute · o singură sesiune</div>
+        <div class="pret-price">
+          <span class="pret-amount">280</span>
+          <span class="pret-currency">lei</span>
+        </div>
+        <div class="pret-per">per ședință</div>
+        <div class="pret-features">
+          <div class="pret-feature"><span class="pret-check">✓</span>Fără angajament pe termen lung</div>
+          <div class="pret-feature"><span class="pret-check">✓</span>Online sau la cabinet</div>
+          <div class="pret-feature"><span class="pret-check">✓</span>Plată înainte de ședință</div>
+          <div class="pret-feature"><span class="pret-check">✓</span>Ideal pentru primul contact</div>
+        </div>
+        <a href="#programare" class="btn btn-ghost" style="justify-content:center;width:100%">Programează</a>
+      </div>
+
+      <!-- Card 2: Focus 5 — featured -->
+      <div class="pret-card featured reveal" style="transition-delay:.1s">
+        <div class="pret-badge">Recomandat</div>
+        <div class="pret-label">Abonament</div>
+        <div class="pret-name">Focus 5</div>
+        <div class="pret-sedinte">5 ședințe · 50 min fiecare</div>
+        <div class="pret-price">
+          <span class="pret-amount">1250</span>
+          <span class="pret-currency">lei</span>
+        </div>
+        <div class="pret-per">250 lei / ședință</div>
+        <div class="pret-saving">✦ Economisești 150 lei față de ședințe separate</div>
+        <div class="pret-features">
+          <div class="pret-feature"><span class="pret-check">✓</span>Proces coerent pe 5 săptămâni</div>
+          <div class="pret-feature"><span class="pret-check">✓</span>Online sau la cabinet</div>
+          <div class="pret-feature"><span class="pret-check">✓</span>Plată integrală sau în 2 tranșe</div>
+          <div class="pret-feature"><span class="pret-check">✓</span>Ideal pentru o problemă specifică</div>
+        </div>
+        <a href="#programare" class="btn btn-primary" style="justify-content:center;width:100%">Programează</a>
+      </div>
+
+      <!-- Card 3: Echilibru 10 -->
+      <div class="pret-card reveal" style="transition-delay:.2s">
+        <div class="pret-label">Abonament</div>
+        <div class="pret-name">Echilibru 10</div>
+        <div class="pret-sedinte">10 ședințe · 50 min fiecare</div>
+        <div class="pret-price">
+          <span class="pret-amount">2240</span>
+          <span class="pret-currency">lei</span>
+        </div>
+        <div class="pret-per">224 lei / ședință</div>
+        <div class="pret-saving">✦ Economisești 560 lei față de ședințe separate</div>
+        <div class="pret-features">
+          <div class="pret-feature"><span class="pret-check">✓</span>Proces profund pe 10 săptămâni</div>
+          <div class="pret-feature"><span class="pret-check">✓</span>Online sau la cabinet</div>
+          <div class="pret-feature"><span class="pret-check">✓</span>Plată integrală sau în 3 tranșe</div>
+          <div class="pret-feature"><span class="pret-check">✓</span>Ideal pentru schimbare de durată</div>
+        </div>
+        <a href="#programare" class="btn btn-ghost" style="justify-content:center;width:100%">Programează</a>
+      </div>
+
+    </div>
+
+    <div class="preturi-note reveal">
+      <strong>Prima ședință de evaluare — gratuită, 30 de minute, fără angajament.</strong><br>
+      Plata se face prin transfer bancar, card sau cash la cabinet. Facturare la cerere.
+    </div>
+
   </div>
 </section>
 
@@ -1001,6 +1198,7 @@
         <a href="https://edivlaston.ro" target="_blank">edivlaston.ro</a>
         <a href="mailto:office@edivlaston.ro">Contact</a>
         <a href="#programare">Programare</a>
+        <a href="#preturi">Prețuri</a>
         <a href="#blog">Blog</a>
         <div class="footer-social">
           <a href="https://www.facebook.com/edi.vlaston.psihoterapeut" target="_blank" rel="noopener" title="Facebook">
@@ -1079,7 +1277,18 @@
       </div>
       <div class="admin-field">
         <label>Conținut complet</label>
-        <textarea id="a-content" placeholder="Scrie articolul sau povestea terapeutică aici. Lasă un rând gol între paragrafe."></textarea>
+        <div class="editor-toolbar">
+          <button type="button" class="editor-btn" onclick="editorCmd('bold')" title="Bold"><b>B</b></button>
+          <button type="button" class="editor-btn" onclick="editorCmd('italic')" title="Italic"><i>I</i></button>
+          <div class="editor-sep"></div>
+          <button type="button" class="editor-btn" onclick="editorSize('1.3rem')" title="Titlu">T↑</button>
+          <button type="button" class="editor-btn" onclick="editorSize('1rem')" title="Normal">T</button>
+          <button type="button" class="editor-btn" onclick="editorSize('0.82rem')" title="Mic">T↓</button>
+          <div class="editor-sep"></div>
+          <button type="button" class="editor-btn" onclick="editorCmd('insertUnorderedList')" title="Listă">≡</button>
+        </div>
+        <div id="a-content" class="editor-body" contenteditable="true" spellcheck="true"
+          data-placeholder="Scrie articolul sau povestea terapeutică aici..."></div>
       </div>
       <div class="admin-field">
         <label>Emoji / Iconiță (opțional)</label>
@@ -1094,6 +1303,17 @@
       <div class="admin-divider"></div>
       <p class="admin-list-title">Articole publicate (<span id="art-count">0</span>)</p>
       <div id="admin-articles-list"></div>
+
+      <div class="admin-divider"></div>
+      <p class="admin-list-title">Backup articole</p>
+      <p style="font-size:.76rem;color:var(--muted);margin-bottom:14px;line-height:1.6">Exportă articolele înainte de orice update al site-ului. Importă-le după ce încarci noul fișier.</p>
+      <div class="admin-actions">
+        <button class="admin-btn admin-btn-save" onclick="exportArticles()" style="background:var(--warm)">⬇ Exportă JSON</button>
+        <label class="admin-btn admin-btn-cancel" style="cursor:pointer;text-align:center">
+          ⬆ Importă JSON
+          <input type="file" accept=".json" onchange="importArticles(event)" style="display:none">
+        </label>
+      </div>
     </div>
   </div>
 </div>
@@ -1103,7 +1323,8 @@
 
 <script>
 // ══════════════════════════════════════════════════
-// BLOG DATA — stocat în localStorage
+// BLOG DATA — citit din articole.json (Netlify)
+// Fallback: localStorage dacă fișierul nu există
 // ══════════════════════════════════════════════════
 const STORAGE_KEY = 'edivlaston_blog_articles';
 const ADMIN_PIN   = '240970';
@@ -1111,7 +1332,16 @@ const ADMIN_PIN   = '240970';
 let articles = [];
 let editingId = null;
 
-function loadArticles() {
+async function loadArticles() {
+  try {
+    const res = await fetch('articole.json?v=' + Date.now());
+    if (res.ok) {
+      articles = await res.json();
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(articles));
+      return;
+    }
+  } catch(e) {}
+  // Fallback localStorage
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     articles = raw ? JSON.parse(raw) : [];
@@ -1131,13 +1361,42 @@ function formatDate(iso) {
   return d.toLocaleDateString('ro-RO', { day:'numeric', month:'long', year:'numeric' });
 }
 
+// ── Rich text editor ──
+function editorCmd(cmd) {
+  document.getElementById('a-content').focus();
+  document.execCommand(cmd, false, null);
+}
+
+function editorSize(size) {
+  const editor = document.getElementById('a-content');
+  editor.focus();
+  const sel = window.getSelection();
+  if (!sel || sel.rangeCount === 0 || sel.isCollapsed) return;
+  const range = sel.getRangeAt(0);
+  const span = document.createElement('span');
+  span.style.fontSize = size;
+  try { range.surroundContents(span); } catch(e) {
+    const frag = range.extractContents();
+    span.appendChild(frag);
+    range.insertNode(span);
+  }
+}
+
+function getEditorContent() {
+  return document.getElementById('a-content').innerHTML.trim();
+}
+
+function setEditorContent(html) {
+  document.getElementById('a-content').innerHTML = html || '';
+}
+
 // ── Render blog cards ──
 function renderBlog() {
   const grid  = document.getElementById('blog-grid');
   const empty = document.getElementById('blog-empty');
 
   if (articles.length === 0) {
-    grid.innerHTML  = '';
+    grid.innerHTML = '';
     empty.style.display = 'block';
     return;
   }
@@ -1152,7 +1411,7 @@ function renderBlog() {
       <div class="blog-card-body">
         <div class="blog-card-tag">${escHtml(a.category)}</div>
         <h3>${escHtml(a.title)}</h3>
-        <p>${escHtml(a.excerpt || a.content.slice(0,120) + '…')}</p>
+        <p>${escHtml(a.excerpt || stripHtml(a.content).slice(0,120) + '…')}</p>
         <div class="blog-card-footer">
           <span>${formatDate(a.date)}</span>
           <span class="blog-read-more">Citește →</span>
@@ -1161,7 +1420,6 @@ function renderBlog() {
     </div>
   `).join('');
 
-  // re-observe new cards
   document.querySelectorAll('#blog-grid .reveal').forEach(el => io.observe(el));
 }
 
@@ -1169,6 +1427,12 @@ function escHtml(s) {
   return String(s)
     .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
     .replace(/"/g,'&quot;');
+}
+
+function stripHtml(html) {
+  const tmp = document.createElement('div');
+  tmp.innerHTML = html || '';
+  return tmp.textContent || '';
 }
 
 // ── Article modal ──
@@ -1179,12 +1443,7 @@ function openArticle(id) {
   document.getElementById('modal-tag').textContent   = a.category;
   document.getElementById('modal-title').textContent = a.title;
   document.getElementById('modal-meta').textContent  = formatDate(a.date);
-
-  // Render paragraphs
-  const body = a.content.split(/\n\n+/).map(p =>
-    `<p>${escHtml(p.trim())}</p>`
-  ).join('');
-  document.getElementById('modal-body').innerHTML = body;
+  document.getElementById('modal-body').innerHTML    = a.content;
 
   document.getElementById('blog-modal-overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -1237,15 +1496,15 @@ function resetAdminForm() {
   document.getElementById('a-title').value   = '';
   document.getElementById('a-cat').value     = 'Psihologie masculină';
   document.getElementById('a-excerpt').value = '';
-  document.getElementById('a-content').value = '';
+  setEditorContent('');
   document.getElementById('a-emoji').value   = '';
   document.getElementById('admin-mode-label').textContent = 'Articol nou';
 }
 
 function saveArticle() {
   const title   = document.getElementById('a-title').value.trim();
-  const content = document.getElementById('a-content').value.trim();
-  if (!title || !content) {
+  const content = getEditorContent();
+  if (!title || !content || content === '') {
     alert('Titlul și conținutul sunt obligatorii.');
     return;
   }
@@ -1278,6 +1537,9 @@ function saveArticle() {
   renderBlog();
   renderAdminList();
   resetAdminForm();
+
+  // Descarcă automat articole.json după salvare
+  downloadJson();
 }
 
 function editArticle(id) {
@@ -1287,7 +1549,7 @@ function editArticle(id) {
   document.getElementById('a-title').value   = a.title;
   document.getElementById('a-cat').value     = a.category;
   document.getElementById('a-excerpt').value = a.excerpt || '';
-  document.getElementById('a-content').value = a.content;
+  setEditorContent(a.content);
   document.getElementById('a-emoji').value   = a.emoji || '';
   document.getElementById('admin-mode-label').textContent = 'Editează articol';
   document.getElementById('admin-panel').scrollTop = 0;
@@ -1300,6 +1562,7 @@ function deleteArticle(id) {
   renderBlog();
   renderAdminList();
   if (editingId === id) resetAdminForm();
+  downloadJson();
 }
 
 function renderAdminList() {
@@ -1321,6 +1584,44 @@ function renderAdminList() {
       </div>
     </div>
   `).join('');
+}
+
+// ── Export / Import JSON ──
+function downloadJson() {
+  const blob = new Blob([JSON.stringify(articles, null, 2)], {type:'application/json'});
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href = url;
+  a.download = 'articole.json';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function exportArticles() {
+  if (articles.length === 0) { alert('Nu există articole de exportat.'); return; }
+  downloadJson();
+}
+
+function importArticles(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(ev) {
+    try {
+      const data = JSON.parse(ev.target.result);
+      if (!Array.isArray(data)) throw new Error();
+      if (!confirm(`Importă ${data.length} articole? Articolele existente vor fi înlocuite.`)) return;
+      articles = data;
+      saveArticles();
+      renderBlog();
+      renderAdminList();
+      alert('✓ Import reușit — ' + data.length + ' articole încărcate.');
+    } catch(err) {
+      alert('Fișier invalid. Asigură-te că este un JSON exportat din acest panou.');
+    }
+  };
+  reader.readAsText(file);
+  e.target.value = '';
 }
 
 // ══════════════════════════════════════════════════
@@ -1356,13 +1657,12 @@ function submitForm() {
 }
 
 // Init
-loadArticles();
-renderBlog();
+loadArticles().then(() => renderBlog());
 
 // ── URL secret: edivlaston.ro#admin ──
 function checkAdminHash() {
   if (window.location.hash === '#admin') {
-    history.replaceState(null, '', window.location.pathname); // curăță hash-ul din URL
+    history.replaceState(null, '', window.location.pathname);
     openAdmin();
   }
 }
