@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blog Edi Vlaston — articole despre bărbați și relații, psihologie masculină, ce nu funcționează și de ce. Psihoterapeut București.">
+  <title>Blog · Edi Vlaston Psihoterapeut București</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .blog-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 56px; }
+    .blog-card { background: var(--white); border: 1px solid var(--stone); border-radius: 6px; padding: 28px 24px; transition: border-color .2s, transform .2s, box-shadow .2s; cursor: pointer; }
+    .blog-card:hover { border-color: var(--bark); transform: translateY(-4px); box-shadow: 0 12px 36px rgba(139,94,60,.1); }
+    .blog-cat { font-size: .66rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--terra); margin-bottom: 12px; }
+    .blog-card h3 { font-family: var(--serif); font-size: 1.15rem; font-weight: 500; color: var(--ink); margin-bottom: 10px; line-height: 1.35; }
+    .blog-card p { font-size: .84rem; color: var(--muted); line-height: 1.72; margin-bottom: 16px; }
+    .blog-date { font-size: .72rem; color: var(--light); }
+    .blog-empty { text-align: center; padding: 80px 0; }
+    .blog-empty-ico { font-size: 2.5rem; margin-bottom: 16px; }
+    .blog-empty h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--ink); margin-bottom: 10px; }
+    .blog-empty p { font-size: .88rem; color: var(--muted); max-width: 400px; margin: 0 auto; }
+    .coming-topics { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; margin-top: 48px; }
+    .topic-card { background: var(--white); border: 1px solid var(--stone); border-radius: 6px; padding: 20px 20px; }
+    .topic-card .topic-num { font-family: var(--serif); font-size: 1.4rem; color: var(--stone); font-weight: 400; margin-bottom: 8px; }
+    .topic-card h4 { font-family: var(--serif); font-size: 1rem; font-weight: 500; color: var(--ink); margin-bottom: 6px; line-height: 1.4; }
+    .topic-card p { font-size: .8rem; color: var(--muted); line-height: 1.6; margin: 0; }
+    @media(max-width:1024px){ .blog-grid{grid-template-columns:1fr 1fr} .coming-topics{grid-template-columns:1fr} }
+    @media(max-width:680px){ .blog-grid{grid-template-columns:1fr} }
+  </style>
+</head>
+<body>
+<nav id="nav">
+  <a href="/" class="nav-brand">Edi Vlaston<span>.</span></a>
+  <div class="nav-links">
+    <a href="/barbati.html">Pentru bărbați</a>
+    <a href="/femei.html">Pentru femei</a>
+    <a href="/pentru-terapeuti.html">Terapeuți</a>
+    <a href="/despre.html">Despre</a>
+    <a href="/blog.html" class="active">Blog</a>
+    <a href="tel:+40744370179" class="nav-phone">📞 0744 370 179</a>
+    <a href="/contact.html" class="nav-cta">Programare gratuită</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div>
+      <div class="page-hero-tag">Reflecții & Resurse</div>
+      <h1>Articole despre bărbați<br><em>și relații.</em></h1>
+      <p class="page-hero-lead" style="max-width:520px">Scriu despre ce observ în cabinet — despre ce nu funcționează și de ce, despre lucrurile de care nu vorbim.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding:var(--gap) 0;background:var(--sand)">
+  <div class="container">
+
+    <!-- Articolele vor apărea aici când sunt publicate -->
+    <div id="blog-articles" style="display:none">
+      <div class="blog-grid" id="blog-grid"></div>
+    </div>
+
+    <!-- Stare inițială — blog în construcție -->
+    <div id="blog-coming">
+      <div class="blog-empty reveal">
+        <div class="blog-empty-ico">✍️</div>
+        <h3>Primele articole apar în curând.</h3>
+        <p>Între timp, iată subiectele pe care le pregătesc — dacă vreunul te privește, poți programa o primă ședință gratuită.</p>
+      </div>
+
+      <div class="coming-topics reveal" style="transition-delay:.1s">
+        <div class="topic-card"><div class="topic-num">01</div><h4>De ce faci tot bine și tot greșești în relație</h4><p>Schema moștenită vs. ce funcționează azi în cuplu.</p></div>
+        <div class="topic-card"><div class="topic-num">02</div><h4>Cum să recunoști ce simți cu adevărat</h4><p>Nu doar „bine" sau „rău" — nuanțele care fac diferența.</p></div>
+        <div class="topic-card"><div class="topic-num">03</div><h4>De ce partenera spune că nu ești prezent</h4><p>Ce înseamnă „prezență emoțională" — concret, nu abstract.</p></div>
+        <div class="topic-card"><div class="topic-num">04</div><h4>Bărbatul și conflictul: reacție vs. alegere</h4><p>De ce explodezi sau te retragi — și cum schimbi asta.</p></div>
+        <div class="topic-card"><div class="topic-num">05</div><h4>Ce înveți dintr-un divorț înainte de relația următoare</h4><p>Tipare care se repetă — și cum le oprești.</p></div>
+        <div class="topic-card"><div class="topic-num">06</div><h4>De ce bărbații singuri rămân singuri</h4><p>Comportamente care îndepărtează — fără să știi că le faci.</p></div>
+      </div>
+
+      <div class="reveal" style="text-align:center;margin-top:56px;transition-delay:.2s">
+        <p style="font-size:.88rem;color:var(--muted);margin-bottom:20px">Dacă vreun subiect te privește direct — nu aștepta articolul.</p>
+        <a href="/contact.html" class="btn btn-primary">Prima ședință — gratuită <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-in">
+      <div class="footer-brand">Edi Vlaston<span>.</span></div>
+      <div class="footer-links"><a href="/barbati.html">Pentru bărbați</a><a href="/femei.html">Pentru femei</a><a href="/pentru-terapeuti.html">Terapeuți</a><a href="/despre.html">Despre</a><a href="/blog.html">Blog</a><a href="/contact.html">Contact</a></div>
+      <span class="footer-copy">© 2026 Cabinet Individual de Psihologie · Cod 22334</span>
+    </div>
+  </div>
+</footer>
+<script>
+const io = new IntersectionObserver(e => { e.forEach(el => { if(el.isIntersecting){el.target.classList.add('in');io.unobserve(el.target);} }); },{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+window.addEventListener('scroll', () => { document.getElementById('nav').style.padding = window.scrollY > 60 ? '12px clamp(20px,5vw,56px)' : '18px clamp(20px,5vw,56px)'; });
+</script>
+</body>
+</html>

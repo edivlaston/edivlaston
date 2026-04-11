@@ -3,134 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Edi Vlaston — Psihoterapie pentru bărbați în București. Cabinet la Piața Victoriei. Prima ședință gratuită. Am lucrat 20 ani corporate apoi am facut formare în psihoterapie centrată pe persoană.">
-  <meta name="keywords" content="psihoterapeut barbati bucuresti, terapie barbati, burnout manageri, psiholog piata victoriei, Eduard Vlaston">
-  <meta property="og:title" content="Edi Vlaston — Psihoterapie pentru Bărbați, București">
-  <meta property="og:description" content="Prima ședință gratuită. Cabinet Piața Victoriei. 20 ani corporate + psihoterapie.">
-  <meta property="og:image" content="edi-vlaston.webp">
-  <title>Edi Vlaston — Psihoterapie pentru Bărbați · București</title>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17654719970"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-17654719970');
-  </script>
-
+  <meta name="description" content="Edi Vlaston — Psihoterapeut specializat în bărbați cu probleme relaționale, București. Ești bun la aproape orice. Relațiile sunt excepția. Prima ședință gratuită.">
+  <meta property="og:title" content="Edi Vlaston — Psihoterapeut, București">
+  <meta property="og:description" content="Ești bun la aproape orice. Relațiile sunt excepția. Nu e defect de caracter — e un set de abilități pe care nu le-ai învățat.">
+  <title>Edi Vlaston — Psihoterapeut · București</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="style.css">
   <style>
-    /* ── Reset & Base ─────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-size: 16px; }
-
-    :root {
-      --sand:    #F7F1E8;
-      --parch:   #EFE6D5;
-      --stone:   #E2D8C8;
-      --bark:    #C4AB8A;
-      --clay:    #A07850;
-      --terra:   #8B5E3C;
-      --deep:    #3D2B18;
-      --ink:     #221808;
-      --warm:    #6B4C30;
-      --muted:   #8A7060;
-      --light:   #B09880;
-      --accent:  #C4784A;
-      --accentl: #D4916A;
-      --white:   #FFFDF8;
-
-      --serif: 'Cormorant Garamond', Georgia, serif;
-      --sans:  'Jost', system-ui, sans-serif;
-      --gap:   clamp(72px, 11vw, 130px);
-      --col:   min(1120px, 92vw);
-    }
-
-    body {
-      font-family: var(--sans);
-      background: var(--sand);
-      color: var(--ink);
-      overflow-x: hidden;
-      line-height: 1.7;
-    }
-
-    body::before {
-      content: '';
-      position: fixed; inset: 0; z-index: 0; pointer-events: none;
-      opacity: .028;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-      background-size: 200px;
-    }
-
-    img { display: block; max-width: 100%; }
-    a { color: inherit; text-decoration: none; }
-
-    .container { max-width: var(--col); margin: 0 auto; padding: 0 clamp(20px,5vw,56px); position: relative; z-index: 1; }
-
-    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
-    .reveal.in { opacity: 1; transform: none; }
-
-    /* ── Buttons ──────────────────────────────────────── */
-    .btn {
-      display: inline-flex; align-items: center; gap: 10px;
-      font-family: var(--sans); font-size: .82rem; font-weight: 500;
-      letter-spacing: .1em; text-transform: uppercase;
-      padding: 15px 32px; border-radius: 2px;
-      cursor: pointer; border: none; transition: transform .15s, box-shadow .2s, background .2s;
-      text-decoration: none;
-    }
-    .btn:hover { transform: translateY(-2px); }
-    .btn-primary { background: var(--terra); color: var(--white); box-shadow: 0 4px 20px rgba(139,94,60,.22); }
-    .btn-primary:hover { background: var(--accent); box-shadow: 0 8px 28px rgba(139,94,60,.32); }
-    .btn-ghost { background: transparent; color: var(--terra); border: 1.5px solid var(--bark); }
-    .btn-ghost:hover { border-color: var(--terra); }
-
-    /* ── NAV ──────────────────────────────────────────── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 20px clamp(20px,5vw,56px);
-      background: rgba(247,241,232,.92);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--stone);
-      transition: padding .3s;
-    }
-    .nav-brand {
-      font-family: var(--serif); font-size: 1.15rem; font-weight: 500;
-      color: var(--ink); letter-spacing: .02em;
-    }
-    .nav-brand span { color: var(--terra); }
-    .nav-links { display: flex; gap: 28px; align-items: center; }
-    .nav-links a {
-      font-size: .75rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase;
-      color: var(--muted); transition: color .2s;
-    }
-    .nav-links a:hover { color: var(--terra); }
-    .nav-cta {
-      background: var(--terra) !important; color: var(--white) !important;
-      padding: 10px 24px !important; border-radius: 2px !important;
-      font-weight: 500 !important;
-    }
-    .nav-cta:hover { background: var(--accent) !important; }
-
-    /* Social icons in nav */
-    .nav-social { display: flex; gap: 10px; align-items: center; margin-left: 8px; }
-    .nav-social a {
-      width: 32px; height: 32px; border-radius: 4px;
-      background: rgba(139,94,60,.08); border: 1px solid var(--stone);
-      display: flex; align-items: center; justify-content: center;
-      transition: background .2s, border-color .2s, transform .15s;
-      text-transform: none; letter-spacing: 0; padding: 0 !important;
-      color: var(--muted) !important;
-    }
-    .nav-social a:hover { background: var(--terra); border-color: var(--terra); color: var(--white) !important; transform: translateY(-2px); }
-    .nav-social svg { width: 15px; height: 15px; fill: currentColor; }
-
-    /* ── HERO ─────────────────────────────────────────── */
+    /* ── HOME HERO ────────────────────────────────────── */
     #hero {
       min-height: 100svh;
       display: grid; grid-template-columns: 1fr 1fr;
@@ -138,625 +19,52 @@
       padding: 130px clamp(20px,5vw,56px) var(--gap);
       max-width: var(--col); margin: 0 auto;
     }
-
-    .hero-tag {
-      display: inline-flex; align-items: center; gap: 10px;
-      font-size: .7rem; font-weight: 500; letter-spacing: .18em; text-transform: uppercase;
-      color: var(--terra); margin-bottom: 26px;
-      opacity: 0; animation: fadeUp .6s .1s forwards;
-    }
+    .hero-tag { display: inline-flex; align-items: center; gap: 10px; font-size: .7rem; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; color: var(--terra); margin-bottom: 26px; opacity: 0; animation: fadeUp .6s .1s forwards; }
     .hero-tag::before { content: ''; display: block; width: 24px; height: 1px; background: var(--terra); }
-
-    h1 {
-      font-family: var(--serif);
-      font-size: clamp(3rem, 5.5vw, 5.4rem);
-      font-weight: 400; line-height: 1.06;
-      color: var(--ink);
-      margin-bottom: 26px;
-      opacity: 0; animation: fadeUp .6s .22s forwards;
-    }
+    h1 { font-family: var(--serif); font-size: clamp(3rem, 5.5vw, 5.4rem); font-weight: 400; line-height: 1.06; color: var(--ink); margin-bottom: 26px; opacity: 0; animation: fadeUp .6s .22s forwards; }
     h1 em { font-style: italic; color: var(--terra); display: block; }
+    .hero-lead { font-size: clamp(.97rem,1.3vw,1.08rem); font-weight: 300; color: var(--warm); line-height: 1.82; max-width: 460px; margin-bottom: 40px; opacity: 0; animation: fadeUp .6s .34s forwards; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; opacity: 0; animation: fadeUp .6s .46s forwards; }
+    .hero-note { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; padding: 10px 16px; background: rgba(139,94,60,.07); border: 1px solid var(--stone); border-radius: 30px; font-size: .78rem; color: var(--muted); opacity: 0; animation: fadeUp .6s .56s forwards; }
+    .hero-right { display: flex; flex-direction: column; gap: 20px; opacity: 0; animation: fadeLeft .7s .42s forwards; }
 
-    .hero-lead {
-      font-size: clamp(.97rem,1.3vw,1.08rem); font-weight: 300;
-      color: var(--warm); line-height: 1.82; max-width: 460px;
-      margin-bottom: 40px;
-      opacity: 0; animation: fadeUp .6s .34s forwards;
-    }
+    /* ── HOME INTRO CARDS ─────────────────────────────── */
+    #intro { padding: var(--gap) 0; background: var(--parch); border-top: 1px solid var(--stone); }
+    .intro-label { text-align: center; margin-bottom: 56px; }
+    .intro-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+    .intro-card { background: var(--white); border: 1px solid var(--stone); border-radius: 6px; padding: 36px 28px; text-align: center; transition: border-color .2s, transform .2s, box-shadow .2s; text-decoration: none; display: block; }
+    .intro-card:hover { border-color: var(--bark); transform: translateY(-5px); box-shadow: 0 12px 40px rgba(139,94,60,.1); }
+    .intro-card-ico { font-size: 2rem; margin-bottom: 18px; }
+    .intro-card h3 { font-family: var(--serif); font-size: 1.3rem; font-weight: 500; color: var(--ink); margin-bottom: 10px; }
+    .intro-card p { font-size: .86rem; color: var(--muted); line-height: 1.72; margin-bottom: 20px; }
+    .intro-card-link { font-size: .75rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--terra); }
 
-    .hero-actions {
-      display: flex; gap: 14px; flex-wrap: wrap;
-      opacity: 0; animation: fadeUp .6s .46s forwards;
-    }
+    /* ── HOME CTA BAND ────────────────────────────────── */
+    #cta-band { padding: 100px 0; background: var(--ink); text-align: center; }
+    #cta-band h2 { color: var(--white); margin-bottom: 16px; }
+    #cta-band h2 em { color: var(--accent); }
+    #cta-band p { font-size: .97rem; color: rgba(255,253,248,.65); font-weight: 300; max-width: 480px; margin: 0 auto 36px; line-height: 1.8; }
 
-    .hero-right {
-      display: flex; flex-direction: column; gap: 20px;
-      opacity: 0; animation: fadeLeft .7s .42s forwards;
-    }
-
-    .photo-wrap {
-      position: relative; border-radius: 8px; overflow: hidden;
-      aspect-ratio: 3/4; background: var(--parch);
-      border: 1px solid var(--stone);
-      box-shadow: 8px 12px 40px rgba(61,43,24,.12);
-    }
-    .photo-wrap img {
-      width: 100%; height: 100%; object-fit: cover; object-position: top center;
-      transition: transform .6s ease;
-    }
-    .photo-wrap:hover img { transform: scale(1.02); }
-
-    .photo-badge {
-      position: absolute; bottom: 16px; left: 16px; right: 16px;
-      background: rgba(247,241,232,.94); backdrop-filter: blur(10px);
-      border: 1px solid var(--stone); border-radius: 4px;
-      padding: 14px 18px; display: flex; align-items: center; gap: 13px;
-    }
-    .badge-dot { width: 9px; height: 9px; border-radius: 50%; background: #5a9e6f; flex-shrink: 0; box-shadow: 0 0 0 3px rgba(90,158,111,.2); }
-    .badge-name { font-family: var(--serif); font-size: .98rem; font-weight: 500; color: var(--ink); }
-    .badge-title { font-size: .7rem; color: var(--muted); margin-top: 2px; letter-spacing: .04em; }
-
-    .stats-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
-    .stat {
-      background: var(--white); border: 1px solid var(--stone); border-radius: 4px;
-      padding: 16px 14px; text-align: center;
-    }
-    .stat-n { font-family: var(--serif); font-size: 1.9rem; font-weight: 400; color: var(--terra); line-height: 1; }
-    .stat-l { font-size: .68rem; color: var(--muted); line-height: 1.5; margin-top: 5px; }
-
-    /* ── SECTION COMMON ───────────────────────────────── */
-    section { position: relative; z-index: 1; }
-    .sec-label {
-      display: inline-flex; align-items: center; gap: 10px;
-      font-size: .68rem; font-weight: 500; letter-spacing: .18em; text-transform: uppercase;
-      color: var(--terra); margin-bottom: 16px;
-    }
-    .sec-label::before { content: ''; display: block; width: 22px; height: 1px; background: var(--terra); }
-
-    h2 {
-      font-family: var(--serif);
-      font-size: clamp(2.1rem,3.8vw,3.3rem); font-weight: 400;
-      line-height: 1.14; color: var(--ink); margin-bottom: 18px;
-    }
-    h2 em { font-style: italic; color: var(--terra); }
-
-    /* ── DESPRE ───────────────────────────────────────── */
-    #despre { padding: var(--gap) 0; background: var(--parch); border-top: 1px solid var(--stone); border-bottom: 1px solid var(--stone); }
-    .despre-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 80px; align-items: start; }
-    .despre-text p { font-size: .98rem; color: var(--warm); line-height: 1.88; margin-bottom: 16px; font-weight: 300; }
-    .despre-text p strong { color: var(--ink); font-weight: 500; }
-
-    .pull {
-      padding: 28px 32px; margin: 28px 0;
-      border-left: 3px solid var(--terra);
-      background: rgba(139,94,60,.06); border-radius: 0 4px 4px 0;
-    }
-    .pull p {
-      font-family: var(--serif); font-size: clamp(1.1rem,1.5vw,1.3rem);
-      font-style: italic; color: var(--ink); line-height: 1.55; margin: 0 !important;
-    }
-
-    .creds { display: flex; flex-direction: column; gap: 10px; }
-    .cred {
-      display: flex; align-items: flex-start; gap: 12px;
-      padding: 13px 16px; background: var(--white);
-      border: 1px solid var(--stone); border-radius: 4px;
-      font-size: .86rem; color: var(--warm);
-    }
-    .cred-ico { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
-
-    /* ── PROBLEMA ─────────────────────────────────────── */
-    #problema { padding: var(--gap) 0; background: var(--sand); }
-    .prob-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
-    .prob-text p { font-size: .97rem; color: var(--warm); line-height: 1.88; margin-bottom: 18px; font-weight: 300; }
-    .prob-text p strong { color: var(--ink); font-weight: 500; }
-
-    .syms { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
-    .sym {
-      display: flex; align-items: center; gap: 10px;
-      padding: 12px 14px; background: var(--white);
-      border: 1px solid var(--stone); border-radius: 4px;
-      font-size: .84rem; color: var(--warm);
-    }
-    .sym::before { content: ''; flex-shrink: 0; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
-
-    .stat-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 28px; }
-    .sp {
-      background: var(--terra); border-radius: 4px;
-      padding: 22px 18px; text-align: center; color: var(--white);
-    }
-    .sp-n { font-family: var(--serif); font-size: 2.4rem; line-height: 1; margin-bottom: 6px; }
-    .sp-l { font-size: .76rem; line-height: 1.5; opacity: .88; }
-
-    /* ── ABORDARE ─────────────────────────────────────── */
-    #abordare { padding: var(--gap) 0; background: var(--parch); border-top: 1px solid var(--stone); border-bottom: 1px solid var(--stone); }
-    .abord-head { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 56px; align-items: start; }
-    .abord-lead { font-size: .97rem; color: var(--warm); line-height: 1.88; font-weight: 300; }
-
-    .pillars { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
-    .pillar {
-      background: var(--white); border: 1px solid var(--stone); border-radius: 4px;
-      padding: 30px 24px; transition: border-color .2s, transform .2s, box-shadow .2s;
-      position: relative; overflow: hidden;
-    }
-    .pillar::after {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, var(--terra), var(--accent));
-      opacity: 0; transition: opacity .2s;
-    }
-    .pillar:hover { border-color: var(--bark); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(139,94,60,.1); }
-    .pillar:hover::after { opacity: 1; }
-    .pillar-ico { font-size: 1.3rem; margin-bottom: 16px; }
-    .pillar h3 { font-family: var(--serif); font-size: 1.12rem; font-weight: 500; color: var(--ink); margin-bottom: 10px; }
-    .pillar p { font-size: .84rem; color: var(--muted); line-height: 1.72; }
-
-    /* ── PENTRU CINE ──────────────────────────────────── */
-    #pentru-cine { padding: var(--gap) 0; background: var(--sand); }
-    .profiles { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-top: 50px; }
-    .profile {
-      background: var(--white); border: 1px solid var(--stone); border-radius: 4px;
-      padding: 26px 20px; transition: border-color .2s, transform .2s;
-    }
-    .profile:hover { border-color: var(--bark); transform: translateY(-3px); }
-    .prof-age { font-family: var(--serif); font-size: 1.9rem; font-weight: 400; color: var(--terra); margin-bottom: 4px; }
-    .prof-type { font-size: .66rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
-    .profile p { font-size: .84rem; color: var(--warm); line-height: 1.68; }
-
-    /* ── PROCES ───────────────────────────────────────── */
-    #proces { padding: var(--gap) 0; background: var(--parch); border-top: 1px solid var(--stone); border-bottom: 1px solid var(--stone); }
-    .steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; margin-top: 60px; position: relative; }
-    .steps::before {
-      content: ''; position: absolute; top: 24px; left: 12.5%; right: 12.5%; height: 1px;
-      background: linear-gradient(90deg, transparent, var(--bark) 20%, var(--bark) 80%, transparent); opacity: .4;
-    }
-    .step { padding: 0 18px; text-align: center; }
-    .step-n {
-      width: 48px; height: 48px; border-radius: 50%; background: var(--terra); color: var(--white);
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 22px; font-family: var(--serif); font-size: 1.3rem; font-weight: 400;
-      position: relative; z-index: 1;
-    }
-    .step h3 { font-family: var(--serif); font-size: 1.08rem; font-weight: 500; color: var(--ink); margin-bottom: 8px; }
-    .step p { font-size: .83rem; color: var(--muted); line-height: 1.68; }
-
-    /* ── CONFIDENTIAL ─────────────────────────────────── */
-    #confidential { padding: 80px 0; background: var(--sand); }
-    .conf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-    .conf-text p { font-size: .97rem; color: var(--warm); line-height: 1.88; margin-bottom: 12px; font-weight: 300; }
-    .conf-list { display: flex; flex-direction: column; gap: 10px; }
-    .conf-item {
-      display: flex; align-items: center; gap: 14px;
-      padding: 13px 16px; background: var(--white);
-      border: 1px solid var(--stone); border-radius: 4px;
-      font-size: .87rem; color: var(--warm);
-    }
-    .conf-ck {
-      width: 24px; height: 24px; border-radius: 50%; flex-shrink: 0;
-      background: rgba(139,94,60,.1); border: 1.5px solid var(--terra);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--terra); font-size: .65rem; font-weight: 700;
-    }
-
-    /* ── PROGRAMARE ───────────────────────────────────── */
-    #programare { padding: var(--gap) 0; background: var(--parch); border-top: 1px solid var(--stone); }
-    .prog-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: start; }
-    .contact-rows { display: flex; flex-direction: column; gap: 10px; margin: 24px 0; }
-    .contact-row { display: flex; align-items: center; gap: 13px; font-size: .88rem; color: var(--warm); }
-    .c-ico { width: 34px; height: 34px; border-radius: 4px; background: rgba(139,94,60,.1); display: flex; align-items: center; justify-content: center; font-size: .95rem; flex-shrink: 0; }
-    .c-link { color: var(--terra); font-weight: 500; }
-    .c-link:hover { text-decoration: underline; }
-    .tip-box { padding: 18px 22px; background: rgba(139,94,60,.07); border: 1px solid var(--stone); border-radius: 4px; border-left: 3px solid var(--terra); }
-    .tip-box p { font-size: .86rem; color: var(--warm); line-height: 1.72; margin: 0; }
-    .tip-box strong { color: var(--ink); }
-
-    .tabs { display: flex; gap: 0; margin-bottom: 20px; border: 1.5px solid var(--stone); border-radius: 4px; overflow: hidden; }
-    .tab { flex: 1; padding: 11px 18px; text-align: center; font-size: .76rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; background: var(--white); color: var(--muted); transition: background .18s, color .18s; border: none; }
-    .tab.active { background: var(--terra); color: var(--white); }
-    .tab-panel { display: none; }
-    .tab-panel.active { display: block; }
-
-    .booking-box { background: var(--white); border: 1px solid var(--stone); border-radius: 8px; overflow: hidden; box-shadow: 0 6px 28px rgba(139,94,60,.08); }
-    .booking-box iframe { width: 100%; border: none; display: block; }
-    .booking-inner { padding: 32px; }
-    .calendly-section { text-align: center; padding: 32px 24px; }
-    .calendly-section p { font-size: .9rem; color: var(--warm); margin-bottom: 20px; line-height: 1.6; }
-    .calendly-section p strong { color: var(--ink); }
-
-    .cform { display: flex; flex-direction: column; gap: 11px; }
-    .cform input, .cform textarea {
-      background: var(--sand); border: 1.5px solid var(--stone); border-radius: 4px;
-      padding: 12px 15px; font-family: var(--sans); font-size: .88rem; color: var(--ink);
-      outline: none; transition: border-color .2s; width: 100%;
-    }
-    .cform input:focus, .cform textarea:focus { border-color: var(--terra); }
-    .cform input::placeholder, .cform textarea::placeholder { color: var(--light); }
-    .cform textarea { resize: vertical; min-height: 90px; }
-    .form-note { font-size: .71rem; color: var(--muted); text-align: center; margin-top: 6px; }
-
-    /* ══════════════════════════════════════════════════
-       BLOG SECTION
-    ══════════════════════════════════════════════════ */
-    #blog { padding: var(--gap) 0; background: var(--sand); }
-
-    .blog-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 52px; }
-    .blog-header-left { max-width: 480px; }
-
-    .blog-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
-
-    .blog-card {
-      background: var(--white); border: 1px solid var(--stone); border-radius: 6px;
-      overflow: hidden; transition: border-color .2s, transform .2s, box-shadow .2s;
-      cursor: pointer; display: flex; flex-direction: column;
-    }
-    .blog-card:hover { border-color: var(--bark); transform: translateY(-4px); box-shadow: 0 12px 36px rgba(139,94,60,.1); }
-
-    .blog-card-img {
-      height: 180px; background: var(--parch);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 2.4rem; border-bottom: 1px solid var(--stone);
-      position: relative; overflow: hidden;
-    }
-    .blog-card-img-bg {
-      position: absolute; inset: 0;
-      background: linear-gradient(135deg, var(--parch), var(--stone));
-    }
-    .blog-card-img span { position: relative; z-index: 1; }
-
-    .blog-card-body { padding: 22px 22px 18px; flex: 1; display: flex; flex-direction: column; }
-    .blog-card-tag {
-      font-size: .62rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
-      color: var(--terra); margin-bottom: 10px;
-    }
-    .blog-card h3 {
-      font-family: var(--serif); font-size: 1.18rem; font-weight: 500;
-      color: var(--ink); line-height: 1.35; margin-bottom: 10px;
-    }
-    .blog-card p { font-size: .83rem; color: var(--muted); line-height: 1.7; flex: 1; }
-    .blog-card-footer {
-      display: flex; justify-content: space-between; align-items: center;
-      margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--stone);
-      font-size: .72rem; color: var(--light);
-    }
-    .blog-read-more {
-      font-size: .72rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase;
-      color: var(--terra); display: flex; align-items: center; gap: 4px;
-    }
-
-    /* Blog article modal */
-    .blog-modal-overlay {
-      position: fixed; inset: 0; z-index: 500;
-      background: rgba(34,24,8,.6); backdrop-filter: blur(4px);
-      display: flex; align-items: flex-start; justify-content: center;
-      padding: 60px 20px 40px; overflow-y: auto;
-      opacity: 0; pointer-events: none; transition: opacity .3s;
-    }
-    .blog-modal-overlay.open { opacity: 1; pointer-events: all; }
-    .blog-modal {
-      background: var(--sand); border-radius: 8px; max-width: 760px; width: 100%;
-      border: 1px solid var(--stone); box-shadow: 0 24px 80px rgba(34,24,8,.22);
-      transform: translateY(20px); transition: transform .3s;
-      overflow: hidden;
-    }
-    .blog-modal-overlay.open .blog-modal { transform: translateY(0); }
-    .blog-modal-header {
-      padding: 36px 44px 28px;
-      border-bottom: 1px solid var(--stone);
-      background: var(--parch);
-    }
-    .blog-modal-tag { font-size: .62rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--terra); margin-bottom: 12px; }
-    .blog-modal-header h2 { font-family: var(--serif); font-size: clamp(1.6rem,3vw,2.4rem); font-weight: 400; color: var(--ink); line-height: 1.2; margin-bottom: 10px; }
-    .blog-modal-meta { font-size: .74rem; color: var(--muted); }
-    .blog-modal-body { padding: 36px 44px; font-size: .97rem; color: var(--warm); line-height: 1.95; }
-    .blog-modal-body p { margin-bottom: 20px; }
-    .blog-modal-body p:last-child { margin-bottom: 0; }
-    .blog-modal-close {
-      position: absolute; top: 18px; right: 18px;
-      width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid var(--stone);
-      background: var(--white); cursor: pointer; display: flex; align-items: center; justify-content: center;
-      font-size: 1rem; color: var(--muted); transition: background .2s, color .2s;
-    }
-    .blog-modal-close:hover { background: var(--terra); color: var(--white); border-color: var(--terra); }
-
-    /* ══════════════════════════════════════════════════
-       BLOG ADMIN PANEL
-    ══════════════════════════════════════════════════ */
-
-    .admin-panel-overlay {
-      position: fixed; inset: 0; z-index: 400;
-      background: rgba(34,24,8,.55); backdrop-filter: blur(4px);
-      display: flex; align-items: flex-start; justify-content: flex-end;
-      opacity: 0; pointer-events: none; transition: opacity .3s;
-    }
-    .admin-panel-overlay.open { opacity: 1; pointer-events: all; }
-
-    .admin-panel {
-      width: 480px; max-width: 100%; height: 100vh;
-      background: var(--ink); color: var(--sand);
-      overflow-y: auto; padding: 36px 32px;
-      transform: translateX(40px); transition: transform .3s;
-    }
-    .admin-panel-overlay.open .admin-panel { transform: translateX(0); }
-
-    .admin-panel h3 {
-      font-family: var(--serif); font-size: 1.6rem; font-weight: 400;
-      color: var(--sand); margin-bottom: 6px;
-    }
-    .admin-panel h3 em { font-style: italic; color: var(--accent); }
-    .admin-sub { font-size: .78rem; color: var(--muted); margin-bottom: 32px; }
-
-    .admin-field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
-    .admin-field label { font-size: .7rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
-    .admin-field input, .admin-field textarea, .admin-field select {
-      background: rgba(255,253,248,.07); border: 1.5px solid rgba(255,253,248,.12);
-      border-radius: 4px; padding: 11px 14px; font-family: var(--sans);
-      font-size: .88rem; color: var(--sand); outline: none; transition: border-color .2s; width: 100%;
-    }
-    .admin-field input:focus, .admin-field textarea:focus { border-color: var(--accent); }
-    .admin-field input::placeholder, .admin-field textarea::placeholder { color: rgba(255,253,248,.25); }
-    .admin-field textarea { resize: vertical; min-height: 160px; }
-    .admin-field select option { background: var(--deep); }
-
-    .admin-actions { display: flex; gap: 10px; margin-top: 8px; }
-    .admin-btn {
-      flex: 1; padding: 12px 18px; border-radius: 4px; border: none; cursor: pointer;
-      font-family: var(--sans); font-size: .78rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase;
-      transition: background .2s, transform .15s;
-    }
-    .admin-btn:hover { transform: translateY(-1px); }
-    .admin-btn-save { background: var(--terra); color: var(--white); }
-    .admin-btn-save:hover { background: var(--accent); }
-    .admin-btn-cancel { background: rgba(255,253,248,.1); color: var(--sand); }
-    .admin-btn-cancel:hover { background: rgba(255,253,248,.16); }
-
-    .admin-divider { height: 1px; background: rgba(255,253,248,.1); margin: 28px 0; }
-
-    .admin-list-title { font-size: .68rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
-    .admin-article-item {
-      background: rgba(255,253,248,.05); border: 1px solid rgba(255,253,248,.08);
-      border-radius: 4px; padding: 14px 16px; margin-bottom: 10px;
-      display: flex; justify-content: space-between; align-items: flex-start; gap: 12px;
-    }
-    .admin-article-item-title { font-family: var(--serif); font-size: .95rem; color: var(--sand); line-height: 1.35; margin-bottom: 4px; }
-    .admin-article-item-meta { font-size: .68rem; color: var(--muted); }
-    .admin-item-actions { display: flex; gap: 6px; flex-shrink: 0; }
-    .admin-item-btn {
-      width: 28px; height: 28px; border-radius: 3px; border: 1px solid rgba(255,253,248,.12);
-      background: transparent; cursor: pointer; color: var(--muted); font-size: .75rem;
-      display: flex; align-items: center; justify-content: center; transition: background .2s, color .2s;
-    }
-    .admin-item-btn:hover { background: rgba(255,253,248,.1); color: var(--sand); }
-    .admin-item-btn.del:hover { background: rgba(180,60,60,.3); color: #f9a5a5; border-color: rgba(180,60,60,.4); }
-
-    .admin-close {
-      position: absolute; top: 20px; right: 20px;
-      background: rgba(255,253,248,.08); border: 1px solid rgba(255,253,248,.12);
-      border-radius: 50%; width: 34px; height: 34px; cursor: pointer;
-      color: var(--muted); font-size: .9rem; display: flex; align-items: center; justify-content: center;
-      transition: background .2s; z-index: 1;
-    }
-    .admin-close:hover { background: rgba(255,253,248,.16); color: var(--sand); }
-
-    .admin-lock { display: flex; flex-direction: column; gap: 16px; }
-    .admin-lock p { font-size: .88rem; color: var(--muted); line-height: 1.6; }
-    .pin-notice { font-size: .72rem; color: rgba(255,253,248,.35); margin-top: 4px; }
-
-    /* ── FOOTER ───────────────────────────────────────── */
-    footer { padding: 44px 0; background: var(--ink); }
-    .footer-in { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 18px; }
-    .footer-brand { font-family: var(--serif); font-size: .98rem; color: var(--sand); }
-    .footer-brand span { color: var(--accent); }
-    .footer-links { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
-    .footer-links a { font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); transition: color .2s; }
-    .footer-links a:hover { color: var(--sand); }
-    .footer-social { display: flex; gap: 10px; }
-    .footer-social a {
-      width: 34px; height: 34px; border-radius: 4px;
-      background: rgba(255,253,248,.06); border: 1px solid rgba(255,253,248,.1);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--muted); transition: background .2s, color .2s, border-color .2s;
-    }
-    .footer-social a:hover { background: var(--terra); border-color: var(--terra); color: var(--white); }
-    .footer-social svg { width: 15px; height: 15px; fill: currentColor; }
-    .footer-copy { font-size: .71rem; color: var(--warm); }
-
-    /* ── Animations ───────────────────────────────────── */
-    @keyframes fadeUp   { from{opacity:0;transform:translateY(26px)} to{opacity:1;transform:none} }
-    @keyframes fadeLeft { from{opacity:0;transform:translateX(26px)} to{opacity:1;transform:none} }
-
-    /* ── Responsive ───────────────────────────────────── */
-    /* ── PENTRU FEMEI ─────────────────────────────────── */
-    #pentru-femei { padding: var(--gap) 0; background: var(--parch); border-top: 1px solid var(--stone); border-bottom: 1px solid var(--stone); }
-    .femei-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-    .femei-cards { display: flex; flex-direction: column; gap: 14px; }
-    .femei-card {
-      background: var(--white); border: 1px solid var(--stone); border-radius: 6px;
-      padding: 22px 24px; display: flex; gap: 18px; align-items: flex-start;
-      transition: border-color .2s, transform .2s, box-shadow .2s;
-    }
-    .femei-card:hover { border-color: var(--bark); transform: translateY(-3px); box-shadow: 0 10px 28px rgba(139,94,60,.09); }
-    .femei-card-ico {
-      width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
-      background: rgba(139,94,60,.1); border: 1.5px solid var(--stone);
-      display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
-    }
-    .femei-card h3 { font-family: var(--serif); font-size: 1.08rem; font-weight: 500; color: var(--ink); margin-bottom: 6px; }
-    .femei-card p { font-size: .84rem; color: var(--muted); line-height: 1.72; }
-    .femei-text p { font-size: .97rem; color: var(--warm); line-height: 1.88; font-weight: 300; margin-bottom: 16px; }
-    .femei-text p strong { color: var(--ink); font-weight: 500; }
-    .femei-quote {
-      padding: 26px 30px; margin-top: 28px;
-      border-left: 3px solid var(--accent);
-      background: rgba(196,120,74,.06); border-radius: 0 4px 4px 0;
-    }
-    .femei-quote p {
-      font-family: var(--serif); font-size: clamp(1rem,1.4vw,1.2rem);
-      font-style: italic; color: var(--ink); line-height: 1.6; margin: 0;
-    }
-    .hero-note {
-      display: inline-flex; align-items: center; gap: 8px;
-      margin-top: 18px; padding: 10px 16px;
-      background: rgba(139,94,60,.07); border: 1px solid var(--stone);
-      border-radius: 30px; font-size: .78rem; color: var(--muted);
-      opacity: 0; animation: fadeUp .6s .56s forwards;
-    }
-    .hero-note a { color: var(--terra); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
-    .hero-note a:hover { color: var(--accent); }
-
-    .editor-toolbar {
-      display: flex; align-items: center; gap: 4px;
-      background: rgba(255,253,248,.05); border: 1.5px solid rgba(255,253,248,.12);
-      border-bottom: none; border-radius: 4px 4px 0 0; padding: 6px 8px; flex-wrap: wrap;
-    }
-    .editor-btn {
-      background: rgba(255,253,248,.08); border: 1px solid rgba(255,253,248,.12);
-      color: var(--sand); border-radius: 3px; padding: 4px 9px; cursor: pointer;
-      font-family: var(--sans); font-size: .78rem; font-weight: 500;
-      transition: background .15s; min-width: 30px; text-align: center;
-    }
-    .editor-btn:hover { background: rgba(255,253,248,.18); }
-    .editor-sep { width: 1px; height: 18px; background: rgba(255,253,248,.15); margin: 0 2px; }
-    .editor-body {
-      background: rgba(255,253,248,.07); border: 1.5px solid rgba(255,253,248,.12);
-      border-radius: 0 0 4px 4px; padding: 12px 14px; min-height: 200px;
-      font-family: var(--sans); font-size: .88rem; color: var(--sand);
-      outline: none; line-height: 1.75; overflow-y: auto;
-    }
-    .editor-body:focus { border-color: var(--accent); }
-    .editor-body:empty::before {
-      content: attr(data-placeholder); color: rgba(255,253,248,.25); pointer-events: none;
-    }
-    .editor-body ul { padding-left: 20px; }
-    .editor-body li { margin-bottom: 4px; }
-
-    /* ── PREȚURI ──────────────────────────────────────── */
-    #preturi { padding: var(--gap) 0; background: var(--sand); }
-
-    .preturi-intro { text-align: center; max-width: 560px; margin: 0 auto 56px; }
-    .preturi-intro p { font-size: .97rem; color: var(--muted); font-weight: 300; line-height: 1.8; margin-top: 12px; }
-
-    .preturi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; align-items: start; }
-
-    .pret-card {
-      background: var(--white); border: 1.5px solid var(--stone); border-radius: 8px;
-      padding: 36px 28px; display: flex; flex-direction: column;
-      transition: border-color .2s, transform .2s, box-shadow .2s;
-      position: relative; overflow: hidden;
-    }
-    .pret-card:hover { border-color: var(--bark); transform: translateY(-5px); box-shadow: 0 16px 48px rgba(139,94,60,.12); }
-    .pret-card.featured {
-      background: var(--deep); border-color: var(--deep);
-      color: var(--sand);
-    }
-    .pret-card.featured:hover { border-color: var(--terra); }
-    .pret-badge {
-      position: absolute; top: 18px; right: 18px;
-      background: var(--accent); color: var(--white);
-      font-size: .6rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase;
-      padding: 4px 10px; border-radius: 20px;
-    }
-    .pret-label {
-      font-size: .68rem; font-weight: 500; letter-spacing: .16em; text-transform: uppercase;
-      color: var(--terra); margin-bottom: 14px;
-    }
-    .pret-card.featured .pret-label { color: var(--accentl); }
-    .pret-name {
-      font-family: var(--serif); font-size: 1.5rem; font-weight: 500;
-      color: var(--ink); margin-bottom: 6px; line-height: 1.2;
-    }
-    .pret-card.featured .pret-name { color: var(--sand); }
-    .pret-sedinte {
-      font-size: .8rem; color: var(--muted); margin-bottom: 28px;
-    }
-    .pret-card.featured .pret-sedinte { color: var(--light); }
-    .pret-price {
-      display: flex; align-items: flex-end; gap: 6px; margin-bottom: 6px;
-    }
-    .pret-amount {
-      font-family: var(--serif); font-size: 3rem; font-weight: 400;
-      color: var(--terra); line-height: 1;
-    }
-    .pret-card.featured .pret-amount { color: var(--accentl); }
-    .pret-currency { font-size: .88rem; color: var(--muted); margin-bottom: 6px; }
-    .pret-card.featured .pret-currency { color: var(--light); }
-    .pret-per {
-      font-size: .76rem; color: var(--muted); margin-bottom: 28px;
-      padding-bottom: 24px; border-bottom: 1px solid var(--stone);
-    }
-    .pret-card.featured .pret-per { color: var(--light); border-color: rgba(255,253,248,.12); }
-    .pret-saving {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: .72rem; font-weight: 500; color: #5a9e6f;
-      background: rgba(90,158,111,.1); border: 1px solid rgba(90,158,111,.2);
-      border-radius: 20px; padding: 4px 10px; margin-bottom: 20px;
-    }
-    .pret-features { display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; flex: 1; }
-    .pret-feature {
-      display: flex; align-items: flex-start; gap: 10px;
-      font-size: .84rem; color: var(--warm); line-height: 1.5;
-    }
-    .pret-card.featured .pret-feature { color: var(--light); }
-    .pret-check {
-      width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0; margin-top: 1px;
-      background: rgba(139,94,60,.12); border: 1.5px solid var(--bark);
-      display: flex; align-items: center; justify-content: center;
-      font-size: .58rem; color: var(--terra); font-weight: 700;
-    }
-    .pret-card.featured .pret-check {
-      background: rgba(196,120,74,.2); border-color: var(--accentl); color: var(--accentl);
-    }
-
-    .preturi-note {
-      text-align: center; margin-top: 36px;
-      font-size: .82rem; color: var(--muted); line-height: 1.7;
-    }
-    .preturi-note strong { color: var(--ink); }
-
-    @media(max-width:1024px){
-      #hero{grid-template-columns:1fr}
-      .hero-right{flex-direction:row;flex-wrap:wrap}
-      .photo-wrap{flex:1 1 260px}
-      .stats-row{flex:1 1 100%}
-      .preturi-grid{grid-template-columns:1fr}
-      .despre-grid,.prob-layout,.abord-head,.conf-grid,.prog-grid,.femei-grid{grid-template-columns:1fr;gap:36px}
-      .pillars{grid-template-columns:1fr 1fr}
-      .profiles{grid-template-columns:1fr 1fr}
-      .steps::before{display:none}
-      .blog-grid{grid-template-columns:1fr 1fr}
-      .blog-header{flex-direction:column;align-items:flex-start;gap:20px}
-    }
-    @media(max-width:680px){
-      .nav-links{display:none}
-      .pillars,.profiles{grid-template-columns:1fr}
-      .steps{grid-template-columns:1fr 1fr}
-      .syms,.stat-pair{grid-template-columns:1fr}
-      .blog-grid{grid-template-columns:1fr}
-      .blog-modal-header,.blog-modal-body{padding:24px 22px}
-      .admin-panel{width:100%}
-    }
+    @media(max-width:1024px){ #hero{grid-template-columns:1fr} .hero-right{flex-direction:row;flex-wrap:wrap} .intro-cards{grid-template-columns:1fr} }
+    @media(max-width:680px){ .nav-links{display:none} }
   </style>
 </head>
 <body>
 
-<!-- ── NAV ──────────────────────────────────────────── -->
 <nav id="nav">
-  <a href="#" class="nav-brand">Edi Vlaston<span>.</span></a>
+  <a href="/" class="nav-brand">Edi Vlaston<span>.</span></a>
   <div class="nav-links">
-    <a href="#despre">Despre</a>
-    <a href="#problema">De ce acum</a>
-    <a href="#abordare">Abordare</a>
-    <a href="#pentru-cine">Cui mă adresez</a>
-    <a href="#pentru-femei">Pentru femei</a>
-    <a href="#preturi">Prețuri</a>
-    <a href="#blog">Blog</a>
+    <a href="/barbati.html">Pentru bărbați</a>
+    <a href="/femei.html">Pentru femei</a>
+    <a href="/pentru-terapeuti.html">Terapeuți</a>
+    <a href="/despre.html">Despre</a>
+    <a href="/blog.html">Blog</a>
+    <a href="tel:+40744370179" class="nav-phone">📞 0744 370 179</a>
     <div class="nav-social">
-      <a href="https://www.facebook.com/edi.vlaston.psihoterapeut" target="_blank" rel="noopener" title="Facebook">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-      </a>
-      <a href="https://www.instagram.com/edivlaston.terapeut" target="_blank" rel="noopener" title="Instagram">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-      </a>
+      <a href="https://www.facebook.com/edi.vlaston.psihoterapeut" target="_blank" rel="noopener" title="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="https://www.instagram.com/edivlaston.terapeut" target="_blank" rel="noopener" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
     </div>
-    <a href="#programare" class="nav-cta">Programare</a>
+    <a href="/contact.html" class="nav-cta">Programare gratuită</a>
   </div>
 </nav>
 
@@ -765,15 +73,16 @@
   <div id="hero">
     <div>
       <div class="hero-tag">Psihoterapie · București</div>
-      <h1>Nu e slăbiciune.<br><em>E curaj.</em></h1>
-      <p class="hero-lead">Mă adresez bărbaților care simt că ceva nu mai funcționează — la job, în relație, cu ei înșiși — și care sunt gata să înțeleagă de ce și să schimbe asta.<br><br>Mă adresez și femeilor care simt că nu înțeleg ce se întâmplă în mintea și în sufletul bărbatului — și care sunt dornice să își îmbunătățească relațiile cu bărbații din viața lor.</p>
+      <h1>Ești bun la<br>aproape orice.<br><em>Relațiile sunt excepția.</em></h1>
+      <p class="hero-lead">Nu e un defect de caracter — e un set de abilități pe care nu le-ai învățat. Știi să rezolvi probleme complexe. Dar în relații parcă regulile nu se aplică și nu înțelegi de ce.<br><br>Aici lucrăm la asta.</p>
       <div class="hero-actions">
-        <a href="#programare" class="btn btn-primary">
-          Programare gratuită
+        <a href="/contact.html" class="btn btn-primary">
+          Prima ședință — gratuită
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <a href="#despre" class="btn btn-ghost">Despre mine</a>
+        <a href="/barbati.html" class="btn btn-ghost">Cum funcționează</a>
       </div>
+      <div class="hero-note">📞 <a href="tel:+40744370179" style="color:var(--terra);font-weight:500">0744 370 179</a> &nbsp;·&nbsp; Piața Victoriei, Sector 1</div>
     </div>
 
     <div class="hero-right">
@@ -782,7 +91,6 @@
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;flex-direction:column;gap:14px;background:var(--parch);color:var(--muted)">
           <div style="width:80px;height:80px;border-radius:50%;background:var(--terra);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.8rem">EV</div>
-          <p style="font-size:.82rem;text-align:center;color:var(--muted)">Eduard Vlaston<br>Psihoterapeut</p>
         </div>
         <div class="photo-badge">
           <div class="badge-dot"></div>
@@ -792,881 +100,84 @@
           </div>
         </div>
       </div>
-
       <div class="stats-row">
-        <div class="stat"><div class="stat-n">85%</div><div class="stat-l">din suicidele din RO sunt bărbați</div></div>
-        <div class="stat"><div class="stat-n">20+</div><div class="stat-l">ani în corporate înainte de psihologie</div></div>
-        <div class="stat"><div class="stat-n">★4.9</div><div class="stat-l">evaluare medie Hilio.ro</div></div>
+        <div class="stat"><div class="stat-n">7/zi</div><div class="stat-l">căsnicii destrămate în București zilnic</div></div>
+        <div class="stat"><div class="stat-n">20+</div><div class="stat-l">ani corporate înainte de psihologie</div></div>
+        <div class="stat"><div class="stat-n">★4.9</div><div class="stat-l">evaluare Hilio.ro</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── DESPRE ────────────────────────────────────────── -->
-<section id="despre">
+<!-- ── INTRO CARDS ────────────────────────────────────── -->
+<section id="intro">
   <div class="container">
-    <div class="despre-grid">
-      <div class="reveal">
-        <div class="sec-label">Cine sunt</div>
-        <h2>Am trăit ce<br><em>descrii tu.</em></h2>
-        <div class="pull">
-          <p>„Am petrecut 20 de ani în corporații, cu bugete de milioane și poziții de conducere. La un moment dat, stresul era prezent peste tot in viata mea. Așa am descoperit psihologia."</p>
-        </div>
-        <p>Mă numesc <strong>Eduard Vlaston</strong> — Edi pentru cei care mă cunosc. Sunt psihoterapeut cu formare in <strong>Psihoterapie Centrata pe Persoană</strong>, cu specializari în <strong>Interviu Motivațional</strong> și <strong>Hipnoză Clinică</strong>. Deasemenea sunt psiholog clinician Acreditat în Registrul Unic al Psihologilor (cod 22334) și membru al Asociației Române de Psihoterapie Centrată pe Persoană.</p>
-        <p>Tocmai pentru că am trăit presiunea corporatistă, burnout-ul ascuns și dificultatea de a cere ajutor, înțeleg experiența bărbaților dintr-un unghi aparte.</p>
-      </div>
-      <div class="reveal" style="transition-delay:.12s">
-        <div class="sec-label">Formare și acreditări</div>
-        <div class="creds">
-          <div class="cred"><span class="cred-ico">🎓</span>Psihoterapie Centrată pe Persoană — formare acreditată</div>
-          <div class="cred"><span class="cred-ico">🧠</span>Interviu Motivațional — curs acreditat</div>
-          <div class="cred"><span class="cred-ico">💡</span>Hipnoză Clinică — curs acreditat</div>
-          <div class="cred"><span class="cred-ico">📋</span>Cod Registru Psihologi: 22334</div>
-          <div class="cred"><span class="cred-ico">🤝</span>Asociația Română de Psihoterapie Centrată pe Persoană</div>
-          <div class="cred"><span class="cred-ico">💼</span>20+ ani management corporatist</div>
-        </div>
-      </div>
+    <div class="intro-label reveal">
+      <div class="sec-label" style="justify-content:center">Unde mă găsești</div>
+      <h2 style="text-align:center">Alege ce<br><em>te privește pe tine.</em></h2>
+    </div>
+    <div class="intro-cards">
+      <a href="/barbati.html" class="intro-card reveal">
+        <div class="intro-card-ico">👤</div>
+        <h3>Ești bărbat</h3>
+        <p>Nu reușești în relații și nu înțelegi de ce. Sau relația ta e la capăt. Lucrăm individual — tu, procesul tău.</p>
+        <span class="intro-card-link">Află mai mult →</span>
+      </a>
+      <a href="/femei.html" class="intro-card reveal" style="transition-delay:.1s">
+        <div class="intro-card-ico">💑</div>
+        <h3>Ești femeie</h3>
+        <p>Partenerul tău e distant, închis sau nu știe să comunice. Sau vrei să înțelegi mai bine bărbatul din viața ta.</p>
+        <span class="intro-card-link">Află mai mult →</span>
+      </a>
+      <a href="/pentru-terapeuti.html" class="intro-card reveal" style="transition-delay:.2s">
+        <div class="intro-card-ico">🤝</div>
+        <h3>Ești terapeut</h3>
+        <p>Ai clienți bărbați care blochează terapia de cuplu. Lucrez individual cu ei — suntem complementari, nu concurenți.</p>
+        <span class="intro-card-link">Colaborăm →</span>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ── PROBLEMA ──────────────────────────────────────── -->
-<section id="problema">
-  <div class="container">
-    <div class="prob-layout">
-      <div class="reveal">
-        <div class="sec-label">Realitatea</div>
-        <h2>Bărbații suferă<br><em>altfel.</em></h2>
-        <div class="prob-text">
-          <p>Una dintre primele zone în care apare semnalul de alarmă e <strong>relația</strong>. Distanța față de parteneră. Conflictele repetate fără rezolvare. Senzația că nu mai știi cum să fii prezent — nici acasă, nici ca tată. Bărbații nu rup relațiile pentru că nu le pasă. Le rup pentru că nu știu cum să rămână în ele.</p>
-          <p>Depresia masculină nu arată ca în manuale. Nu plânge, nu cere ajutor. Se manifestă ca <strong>iritabilitate</strong>, ca <strong>muncă compulsivă</strong>, ca <strong>retragere</strong> sau <strong>exces</strong>.</p>
-          <p>Suntem educați să rezistăm, să „ne descurcăm". Asta funcționează o vreme — până când nu mai funcționează.</p>
-        </div>
-        <div class="stat-pair">
-          <div class="sp"><div class="sp-n">85%</div><div class="sp-l">din suicidele din România — bărbați</div></div>
-          <div class="sp"><div class="sp-n">61%</div><div class="sp-l">nu au cerut niciodată ajutor specializat</div></div>
-        </div>
-      </div>
-      <div class="reveal" style="transition-delay:.14s">
-        <p style="font-size:.68rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:14px;">Recunoști vreunul?</p>
-        <div class="syms">
-          <div class="sym">Relație care se destramă</div>
-          <div class="sym">Conflicte repetate în cuplu</div>
-          <div class="sym">Distanță față de parteneră</div>
-          <div class="sym">Dificultăți ca tată</div>
-          <div class="sym">Divorț sau separare</div>
-          <div class="sym">Burnout profesional</div>
-          <div class="sym">Iritabilitate fără motiv</div>
-          <div class="sym">Anxietate mascată</div>
-          <div class="sym">Sentimentul de blocare</div>
-          <div class="sym">Pierdere — scop, om, rol</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── ABORDARE ──────────────────────────────────────── -->
-<section id="abordare">
-  <div class="container">
-    <div class="abord-head reveal">
-      <div>
-        <div class="sec-label">Cum lucrez</div>
-        <h2>Terapie construită<br><em>pentru bărbați.</em></h2>
-      </div>
-      <p class="abord-lead">Nu vin cu un caiet de exerciții din prima ședință. Știu că ești sceptic, că ai puțin timp, că vrei să simți că merită. Hai să vedem ce funcționează pentru tine.</p>
-    </div>
-    <div class="pillars">
-      <div class="pillar reveal"><div class="pillar-ico">⚡</div><h3>Eficient și concret</h3><p>Fiecare ședință are un obiectiv clar. Lucrăm la ce te blochează acum, nu la teorii abstracte.</p></div>
-      <div class="pillar reveal" style="transition-delay:.08s"><div class="pillar-ico">💑</div><h3>Relații și cuplu</h3><p>Înțeleg de ce bărbații se retrag, tac sau explodează în relații. Lucrăm la comunicare, intimitate și reconectare — fără să te simți judecat.</p></div>
-      <div class="pillar reveal" style="transition-delay:.16s"><div class="pillar-ico">🎯</div><h3>Orientat pe rezultate</h3><p>La finalul procesului vrei să mergi mai departe — mai prezent, mai clar, mai liber. Ăsta e scopul nostru.</p></div>
-      <div class="pillar reveal" style="transition-delay:.04s"><div class="pillar-ico">🛡️</div><h3>Fără judecată</h3><p>Orice ai simțit sau făcut, nu ești primul. Cabinetul meu e un spațiu în care poți spune lucrurile pe nume.</p></div>
-      <div class="pillar reveal" style="transition-delay:.12s"><div class="pillar-ico">🔒</div><h3>Confidențial total</h3><p>Nimic din ce discutăm nu ajunge la angajator, familie sau în dosarul medical.</p></div>
-      <div class="pillar reveal" style="transition-delay:.20s"><div class="pillar-ico">👤</div><h3>Înțeleg din interior</h3><p>Am trăit 20 de ani în corporate. Înțeleg presiunea, burnout-ul și dificultatea de a cere ajutor.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ── PENTRU CINE ────────────────────────────────────── -->
-<section id="pentru-cine">
+<!-- ── CTA BAND ───────────────────────────────────────── -->
+<section id="cta-band">
   <div class="container">
     <div class="reveal">
-      <div class="sec-label">Cui mă adresez</div>
-      <h2>Poate ești<br><em>unul din ei.</em></h2>
-    </div>
-    <div class="profiles">
-      <div class="profile reveal"><div class="prof-age">28–35</div><div class="prof-type">Tânărul ambițios</div><p>Carieră în creștere, dar relațiile nu merg. Nu știi cum să fii prezent emoțional. Senzația că nu ești niciodată destul — nici la job, nici acasă.</p></div>
-      <div class="profile reveal" style="transition-delay:.08s"><div class="prof-age">35–45</div><div class="prof-type">Managerul / Antreprenorul</div><p>Conduci echipe, dar acasă ești absent. Partenera simte distanța, tu nu știi cum să o reduci. Burnout și iritabilitate care otrăvesc relația.</p></div>
-      <div class="profile reveal" style="transition-delay:.16s"><div class="prof-age">40–55</div><div class="prof-type">Tatăl sau soțul</div><p>Divorț, separare sau criză profundă de cuplu. Vrei să fii prezent pentru copii dar nu știi cum. Vina și pierderea te blochează.</p></div>
-      <div class="profile reveal" style="transition-delay:.24s"><div class="prof-age">50+</div><div class="prof-type">La răscruce</div><p>Relația s-a răcit sau s-a rupt. Criza de identitate după ce copiii au crescut. Ce mai ești tu, dincolo de roluri? Cine ești acum?</p></div>
+      <h2>Prima ședință<br><em>e gratuită.</em></h2>
+      <p>30 de minute. Fără angajament. Dacă simți că are sens — mergem mai departe.</p>
+      <a href="/contact.html" class="btn btn-primary">
+        Programează acum
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ── PENTRU FEMEI ───────────────────────────────────── -->
-<section id="pentru-femei">
-  <div class="container">
-    <div class="femei-grid">
-
-      <div class="reveal">
-        <div class="sec-label">Pentru femei</div>
-        <h2>Când iubești<br><em>un bărbat dificil.</em></h2>
-        <div class="femei-text">
-          <p>Uneori cel care are nevoie de ajutor nu vine singur. Vine prin tine — prin îngrijorarea ta, prin răbdarea ta sau prin epuizarea ta.</p>
-          <p>Dacă partenerul tău s-a închis în el, dacă fiul tău nu mai vorbește, dacă simți că există un zid între voi pe care nu știi cum să-l treci — <strong>nu ești singură în asta</strong>.</p>
-          <p>Lucrez și cu femeile care vor să înțeleagă mai bine bărbatul din viața lor: cum gândește, de ce nu cere ajutor, ce se ascunde în spatele tăcerii sau al furiei.</p>
-        </div>
-        <div class="femei-quote">
-          <p>„Cel mai util lucru pe care îl poți face pentru el nu e să-l schimbi. E să înțelegi ce îl ține pe loc."</p>
-        </div>
-        <div style="margin-top:28px">
-          <a href="#programare" class="btn btn-primary">
-            Hai să vorbim
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="femei-cards reveal" style="transition-delay:.12s">
-        <div class="femei-card">
-          <div class="femei-card-ico">💑</div>
-          <div>
-            <h3>Partenera sau soția</h3>
-            <p>Simți că vorbești cu un perete. El se retrage, tu te epuizezi. Te ajut să înțelegi dinamica relației și cum poți comunica fără să escaladezi sau să te pierzi pe tine.</p>
-          </div>
-        </div>
-        <div class="femei-card">
-          <div class="femei-card-ico">👩‍👦</div>
-          <div>
-            <h3>Mama sau sora</h3>
-            <p>Fiul tău e bine pe exterior, dar ceva nu e în regulă. Nu vorbește, nu cere ajutor. Te ajut să înțelegi ce se întâmplă și cum să rămâi aproape fără să-l îndepărtezi.</p>
-          </div>
-        </div>
-        <div class="femei-card">
-          <div class="femei-card-ico">🤝</div>
-          <div>
-            <h3>Colega sau prietena</h3>
-            <p>Uneori observi tu primul că ceva nu e bine — la un coleg, un prieten sau un apropiat. Îți ofer perspectivă și îți explic cum poți fi de ajutor fără să preiei responsabilitatea lui.</p>
-          </div>
-        </div>
-        <div class="femei-card">
-          <div class="femei-card-ico">🧭</div>
-          <div>
-            <h3>Sesiune de orientare</h3>
-            <p>Nu e nevoie să vii cu o problemă clară. O ședință de 50 de minute e suficientă ca să înțelegi mai bine situația și să știi ce pași următori ai la dispoziție.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ── PROCES ─────────────────────────────────────────── -->
-<section id="proces">
-  <div class="container">
-    <div class="reveal" style="text-align:center;max-width:520px;margin:0 auto">
-      <div class="sec-label" style="justify-content:center">Cum funcționează</div>
-      <h2>Simplu.<br><em>Fără complicații.</em></h2>
-    </div>
-    <div class="steps">
-      <div class="step reveal"><div class="step-n">1</div><h3>Contactezi</h3><p>Trimiți un mesaj sau suni. Nu trebuie să explici nimic în detaliu — o frază e suficientă.</p></div>
-      <div class="step reveal" style="transition-delay:.1s"><div class="step-n">2</div><h3>Prima ședință</h3><p>O sesiune de evaluare <strong>gratuită</strong> de 30 de minute. Fără presiune, fără angajament.</p></div>
-      <div class="step reveal" style="transition-delay:.2s"><div class="step-n">3</div><h3>Procesul</h3><p>Ședințe săptămânale de 50 min, online sau la cabinet. Ritmul adaptat la tine.</p></div>
-      <div class="step reveal" style="transition-delay:.3s"><div class="step-n">4</div><h3>Claritate</h3><p>Nu terapie pe viață. Un proces cu început și sfârșit — mai clar, mai liber, mai funcțional.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ── CONFIDENTIAL ───────────────────────────────────── -->
-<section id="confidential">
-  <div class="container">
-    <div class="conf-grid">
-      <div class="conf-text reveal">
-        <div class="sec-label">Confidențialitate</div>
-        <h2>Nimeni nu<br><em>va ști.</em></h2>
-        <p>Înțeleg că pentru mulți bărbați, cel mai mare obstacol nu e banii sau timpul — e frica că va afla cineva. Sau că o să pară slab.</p>
-        <p>Cabinetul meu funcționează cu discreție totală. Fiecare detaliu al colaborării noastre rămâne strict între noi.</p>
-      </div>
-      <div class="conf-list reveal" style="transition-delay:.12s">
-        <div class="conf-item"><span class="conf-ck">✓</span>Nu apar în dosarul medical — nu se raportează la CNAS</div>
-        <div class="conf-item"><span class="conf-ck">✓</span>Confidențialitate legală prin deontologie profesională</div>
-        <div class="conf-item"><span class="conf-ck">✓</span>Opțiunea ședințelor online — de oriunde, discret</div>
-        <div class="conf-item"><span class="conf-ck">✓</span>Nimic nu ajunge la familie, angajator sau colegi</div>
-        <div class="conf-item"><span class="conf-ck">✓</span>Plată card sau cash, la alegere</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════════
-     PREȚURI
-══════════════════════════════════════════════════ -->
-<section id="preturi">
-  <div class="container">
-
-    <div class="preturi-intro reveal">
-      <div class="sec-label" style="justify-content:center">Investiție</div>
-      <h2>Transparent.<br><em>Fără surprize.</em></h2>
-      <p>Prima ședință de evaluare este gratuită. De acolo, alegi ritmul care ți se potrivește.</p>
-    </div>
-
-    <div class="preturi-grid">
-
-      <!-- Card 1: Ședință unică -->
-      <div class="pret-card reveal">
-        <div class="pret-label">Flexibil</div>
-        <div class="pret-name">Ședință unică</div>
-        <div class="pret-sedinte">50 de minute · o singură sesiune</div>
-        <div class="pret-price">
-          <span class="pret-amount">280</span>
-          <span class="pret-currency">lei</span>
-        </div>
-        <div class="pret-per">per ședință</div>
-        <div class="pret-features">
-          <div class="pret-feature"><span class="pret-check">✓</span>Fără angajament pe termen lung</div>
-          <div class="pret-feature"><span class="pret-check">✓</span>Online sau la cabinet</div>
-          <div class="pret-feature"><span class="pret-check">✓</span>Plată înainte de ședință</div>
-          <div class="pret-feature"><span class="pret-check">✓</span>Ideal pentru primul contact</div>
-        </div>
-        <a href="#programare" class="btn btn-ghost" style="justify-content:center;width:100%">Programează</a>
-      </div>
-
-      <!-- Card 2: Focus 5 — featured -->
-      <div class="pret-card featured reveal" style="transition-delay:.1s">
-        <div class="pret-badge">Recomandat</div>
-        <div class="pret-label">Abonament</div>
-        <div class="pret-name">Focus 5</div>
-        <div class="pret-sedinte">5 ședințe · 50 min fiecare</div>
-        <div class="pret-price">
-          <span class="pret-amount">1250</span>
-          <span class="pret-currency">lei</span>
-        </div>
-        <div class="pret-per">250 lei / ședință</div>
-        <div class="pret-saving">✦ Economisești 150 lei față de ședințe separate</div>
-        <div class="pret-features">
-          <div class="pret-feature"><span class="pret-check">✓</span>Proces coerent pe 5 săptămâni</div>
-          <div class="pret-feature"><span class="pret-check">✓</span>Online sau la cabinet</div>
-          <div class="pret-feature"><span class="pret-check">✓</span>Plată integrală sau în 2 tranșe</div>
-          <div class="pret-feature"><span class="pret-check">✓</span>Ideal pentru o problemă specifică</div>
-        </div>
-        <a href="#programare" class="btn btn-primary" style="justify-content:center;width:100%">Programează</a>
-      </div>
-
-      <!-- Card 3: Echilibru 10 -->
-      <div class="pret-card reveal" style="transition-delay:.2s">
-        <div class="pret-label">Abonament</div>
-        <div class="pret-name">Echilibru 10</div>
-        <div class="pret-sedinte">10 ședințe · 50 min fiecare</div>
-        <div class="pret-price">
-          <span class="pret-amount">2240</span>
-          <span class="pret-currency">lei</span>
-        </div>
-        <div class="pret-per">224 lei / ședință</div>
-        <div class="pret-saving">✦ Economisești 560 lei față de ședințe separate</div>
-        <div class="pret-features">
-          <div class="pret-feature"><span class="pret-check">✓</span>Proces profund pe 10 săptămâni</div>
-          <div class="pret-feature"><span class="pret-check">✓</span>Online sau la cabinet</div>
-          <div class="pret-feature"><span class="pret-check">✓</span>Plată integrală sau în 3 tranșe</div>
-          <div class="pret-feature"><span class="pret-check">✓</span>Ideal pentru schimbare de durată</div>
-        </div>
-        <a href="#programare" class="btn btn-ghost" style="justify-content:center;width:100%">Programează</a>
-      </div>
-
-    </div>
-
-    <div class="preturi-note reveal">
-      <strong>Prima ședință de evaluare — gratuită, 30 de minute, fără angajament.</strong><br>
-      Plata se face prin transfer bancar, card sau cash la cabinet. Facturare la cerere.
-    </div>
-
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════════
-     BLOG SECTION
-══════════════════════════════════════════════════ -->
-<section id="blog">
-  <div class="container">
-    <div class="blog-header">
-      <div class="blog-header-left reveal">
-        <div class="sec-label">Reflecții & Resurse</div>
-        <h2>Articole și povești<br><em>terapeutice.</em></h2>
-        <p style="font-size:.96rem;color:var(--muted);font-weight:300;line-height:1.75;margin-top:8px">Scriu despre ce observ în cabinet, despre psihologia masculină și despre lucrurile de care nu vorbim.</p>
-      </div>
-    </div>
-
-    <div class="blog-grid" id="blog-grid">
-      <!-- Articolele se generează din JavaScript -->
-    </div>
-
-    <div id="blog-empty" style="display:none;text-align:center;padding:60px 0">
-      <div style="font-size:2rem;margin-bottom:16px">✍️</div>
-      <p style="font-family:var(--serif);font-size:1.3rem;color:var(--ink);margin-bottom:8px">Primul articol va fi al tău.</p>
-      <p style="font-size:.86rem;color:var(--muted)">Primul articol apare aici în curând.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ── PROGRAMARE ─────────────────────────────────────── -->
-<section id="programare">
-  <div class="container">
-    <div class="prog-grid">
-      <div class="reveal">
-        <div class="sec-label">Fă primul pas</div>
-        <h2>Prima ședință<br><em>e gratuită.</em></h2>
-        <p>30 de minute. Fără angajament. Fără să explici totul de la început. Dacă simți că ar putea funcționa — mergem mai departe.</p>
-        <div class="contact-rows">
-          <div class="contact-row">
-            <div class="c-ico">📞</div>
-            <div>Telefon / WhatsApp: <a href="tel:+40744370179" class="c-link">0744 370 179</a></div>
-          </div>
-          <div class="contact-row">
-            <div class="c-ico">✉️</div>
-            <div>Email: <a href="mailto:psihoterapeut@edivlaston.ro" class="c-link">psihoterapeut@edivlaston.ro</a></div>
-          </div>
-          <div class="contact-row">
-            <div class="c-ico">📍</div>
-            <div>Cabinet: Piața Victoriei, Sector 1, București</div>
-          </div>
-          <div class="contact-row">
-            <div class="c-ico">🌐</div>
-            <div><a href="https://edivlaston.ro" class="c-link">edivlaston.ro</a></div>
-          </div>
-        </div>
-        <div class="tip-box">
-          <p><strong>Nu știi cu ce să începi?</strong><br>E în regulă. Scrie-mi un mesaj scurt sau sună. Nu trebuie să ai totul clar — asta e treaba mea.</p>
-        </div>
-      </div>
-
-      <div class="reveal" style="transition-delay:.12s">
-        <div class="tabs">
-          <button class="tab active" onclick="switchTab('cal')">📅 Programare online</button>
-          <button class="tab" onclick="switchTab('form')">✉️ Trimite mesaj</button>
-        </div>
-
-        <div id="tab-cal" class="tab-panel active">
-          <div class="booking-box">
-            <div class="calendly-section">
-              <p><strong>Alege data care ți se potrivește</strong><br>
-              Rezervă direct în calendarul meu — vei primi confirmare automată.</p>
-              <a href="https://calendly.com/eduard-vlaston-eiv3"
-                 onclick="Calendly.initPopupWidget({url:'https://calendly.com/eduard-vlaston-eiv3'}); return false;"
-                 class="btn btn-primary" style="justify-content:center;width:100%;display:flex">
-                📅 &nbsp;Deschide calendarul meu
-              </a>
-              <p style="font-size:.72rem;color:var(--muted);margin-top:16px;margin-bottom:0">
-                Vei primi o confirmare automată pe email.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div id="tab-form" class="tab-panel">
-          <div class="booking-box">
-            <div class="booking-inner">
-              <div class="cform" id="contact-form">
-                <input type="text" id="cf-name" placeholder="Prenumele tău *" required>
-                <input type="tel" id="cf-phone" placeholder="Număr de telefon *" required>
-                <input type="email" id="cf-email" placeholder="Email (opțional)">
-                <textarea id="cf-msg" placeholder="Câteva cuvinte despre ce te aduce aici (opțional)..."></textarea>
-                <button type="button" class="btn btn-primary" style="justify-content:center" onclick="submitForm()">
-                  Trimite mesajul
-                </button>
-              </div>
-              <div id="form-success" style="display:none;text-align:center;padding:20px">
-                <div style="font-size:2rem;margin-bottom:12px">✓</div>
-                <p style="font-family:var(--serif);font-size:1.2rem;color:var(--ink)">Mesaj trimis!</p>
-                <p style="font-size:.86rem;color:var(--muted);margin-top:8px">Te contactez în maxim 24h.</p>
-              </div>
-              <p class="form-note">Te contactez în maxim 24h. Datele tale rămân confidențiale.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── FOOTER ─────────────────────────────────────────── -->
 <footer>
   <div class="container">
     <div class="footer-in">
       <div class="footer-brand">Edi Vlaston<span>.</span></div>
       <div class="footer-links">
-        <a href="https://edivlaston.ro" target="_blank">edivlaston.ro</a>
-        <a href="mailto:psihoterapeut@edivlaston.ro">Contact</a>
-        <a href="#programare">Programare</a>
-        <a href="#preturi">Prețuri</a>
-        <a href="#blog">Blog</a>
+        <a href="/barbati.html">Pentru bărbați</a>
+        <a href="/femei.html">Pentru femei</a>
+        <a href="/pentru-terapeuti.html">Terapeuți</a>
+        <a href="/despre.html">Despre</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/contact.html">Contact</a>
         <div class="footer-social">
-          <a href="https://www.facebook.com/edi.vlaston.psihoterapeut" target="_blank" rel="noopener" title="Facebook">
-            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-          </a>
-          <a href="https://www.instagram.com/edivlaston.terapeut" target="_blank" rel="noopener" title="Instagram">
-            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-          </a>
+          <a href="https://www.facebook.com/edi.vlaston.psihoterapeut" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="https://www.instagram.com/edivlaston.terapeut" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
         </div>
       </div>
-      <span class="footer-copy">© 2025 Cabinet Individual de Psihologie · Cod 22334</span>
+      <span class="footer-copy">© 2026 Cabinet Individual de Psihologie · Cod 22334</span>
     </div>
   </div>
 </footer>
 
-<!-- ══════════════════════════════════════════════════
-     BLOG ARTICLE MODAL
-══════════════════════════════════════════════════ -->
-<div class="blog-modal-overlay" id="blog-modal-overlay" onclick="closeBlogModal(event)">
-  <div class="blog-modal" id="blog-modal">
-    <button class="blog-modal-close" onclick="closeBlogModal(null,true)">✕</button>
-    <div class="blog-modal-header">
-      <div class="blog-modal-tag" id="modal-tag"></div>
-      <h2 id="modal-title"></h2>
-      <div class="blog-modal-meta" id="modal-meta"></div>
-    </div>
-    <div class="blog-modal-body" id="modal-body"></div>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════════════
-     ADMIN PANEL
-══════════════════════════════════════════════════ -->
-<div class="admin-panel-overlay" id="admin-overlay" onclick="closeAdminOutside(event)">
-  <div class="admin-panel" id="admin-panel" style="position:relative">
-    <button class="admin-close" onclick="closeAdmin()">✕</button>
-
-    <!-- Lock screen -->
-    <div id="admin-lock-screen">
-      <h3>Admin<br><em>Blog</em></h3>
-      <p class="admin-sub">Zona de administrare articole</p>
-      <div class="admin-lock">
-        <p>Introdu PIN-ul pentru a accesa panoul de administrare.</p>
-        <div class="admin-field">
-          <label>PIN</label>
-          <input type="password" id="admin-pin-input" placeholder="••••" maxlength="6" onkeydown="if(event.key==='Enter')checkPin()">
-          <span class="pin-notice" id="pin-error"></span>
-        </div>
-        <button class="admin-btn admin-btn-save" onclick="checkPin()">Intră</button>
-      </div>
-    </div>
-
-    <!-- Admin content -->
-    <div id="admin-content" style="display:none">
-      <h3>Admin<br><em>Blog</em></h3>
-      <p class="admin-sub" id="admin-mode-label">Articol nou</p>
-
-      <div class="admin-field">
-        <label>Titlu articol *</label>
-        <input type="text" id="a-title" placeholder="Ex: De ce bărbații nu cer ajutor">
-      </div>
-      <div class="admin-field">
-        <label>Categorie</label>
-        <select id="a-cat">
-          <option value="Psihologie masculină">Psihologie masculină</option>
-          <option value="Povești terapeutice">Povești terapeutice</option>
-          <option value="Burnout & Stres">Burnout & Stres</option>
-          <option value="Relații & Familie">Relații & Familie</option>
-          <option value="Reflecții">Reflecții</option>
-          <option value="Resurse">Resurse</option>
-        </select>
-      </div>
-      <div class="admin-field">
-        <label>Rezumat scurt (apare pe card)</label>
-        <input type="text" id="a-excerpt" placeholder="1-2 propoziții introductive...">
-      </div>
-      <div class="admin-field">
-        <label>Conținut complet</label>
-        <div class="editor-toolbar">
-          <button type="button" class="editor-btn" onclick="editorCmd('bold')" title="Bold"><b>B</b></button>
-          <button type="button" class="editor-btn" onclick="editorCmd('italic')" title="Italic"><i>I</i></button>
-          <div class="editor-sep"></div>
-          <button type="button" class="editor-btn" onclick="editorSize('1.3rem')" title="Titlu">T↑</button>
-          <button type="button" class="editor-btn" onclick="editorSize('1rem')" title="Normal">T</button>
-          <button type="button" class="editor-btn" onclick="editorSize('0.82rem')" title="Mic">T↓</button>
-          <div class="editor-sep"></div>
-          <button type="button" class="editor-btn" onclick="editorCmd('insertUnorderedList')" title="Listă">≡</button>
-        </div>
-        <div id="a-content" class="editor-body" contenteditable="true" spellcheck="true"
-          data-placeholder="Scrie articolul sau povestea terapeutică aici..."></div>
-      </div>
-      <div class="admin-field">
-        <label>Emoji / Iconiță (opțional)</label>
-        <input type="text" id="a-emoji" placeholder="🧠" maxlength="4">
-      </div>
-
-      <div class="admin-actions">
-        <button class="admin-btn admin-btn-save" onclick="saveArticle()">💾 Salvează</button>
-        <button class="admin-btn admin-btn-cancel" onclick="resetAdminForm()">Anulează</button>
-      </div>
-
-      <div class="admin-divider"></div>
-      <p class="admin-list-title">Articole publicate (<span id="art-count">0</span>)</p>
-      <div id="admin-articles-list"></div>
-
-      <div class="admin-divider"></div>
-      <p class="admin-list-title">Backup articole</p>
-      <p style="font-size:.76rem;color:var(--muted);margin-bottom:14px;line-height:1.6">Exportă articolele înainte de orice update al site-ului. Importă-le după ce încarci noul fișier.</p>
-      <div class="admin-actions">
-        <button class="admin-btn admin-btn-save" onclick="exportArticles()" style="background:var(--warm)">⬇ Exportă JSON</button>
-        <label class="admin-btn admin-btn-cancel" style="cursor:pointer;text-align:center">
-          ⬆ Importă JSON
-          <input type="file" accept=".json" onchange="importArticles(event)" style="display:none">
-        </label>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Calendly script -->
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-
 <script>
-// ══════════════════════════════════════════════════
-// BLOG DATA — citit din articole.json (Netlify)
-// Fallback: localStorage dacă fișierul nu există
-// ══════════════════════════════════════════════════
-const STORAGE_KEY = 'edivlaston_blog_articles';
-const ADMIN_PIN   = '240970';
-
-let articles = [];
-let editingId = null;
-
-async function loadArticles() {
-  try {
-    const res = await fetch('articole.json?v=' + Date.now());
-    if (res.ok) {
-      articles = await res.json();
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(articles));
-      return;
-    }
-  } catch(e) {}
-  // Fallback localStorage
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    articles = raw ? JSON.parse(raw) : [];
-  } catch(e) { articles = []; }
-}
-
-function saveArticles() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(articles));
-}
-
-function generateId() {
-  return Date.now().toString(36) + Math.random().toString(36).slice(2,6);
-}
-
-function formatDate(iso) {
-  const d = new Date(iso);
-  return d.toLocaleDateString('ro-RO', { day:'numeric', month:'long', year:'numeric' });
-}
-
-// ── Rich text editor ──
-function editorCmd(cmd) {
-  document.getElementById('a-content').focus();
-  document.execCommand(cmd, false, null);
-}
-
-function editorSize(size) {
-  const editor = document.getElementById('a-content');
-  editor.focus();
-  const sel = window.getSelection();
-  if (!sel || sel.rangeCount === 0 || sel.isCollapsed) return;
-  const range = sel.getRangeAt(0);
-  const span = document.createElement('span');
-  span.style.fontSize = size;
-  try { range.surroundContents(span); } catch(e) {
-    const frag = range.extractContents();
-    span.appendChild(frag);
-    range.insertNode(span);
-  }
-}
-
-function getEditorContent() {
-  return document.getElementById('a-content').innerHTML.trim();
-}
-
-function setEditorContent(html) {
-  document.getElementById('a-content').innerHTML = html || '';
-}
-
-// ── Render blog cards ──
-function renderBlog() {
-  const grid  = document.getElementById('blog-grid');
-  const empty = document.getElementById('blog-empty');
-
-  if (articles.length === 0) {
-    grid.innerHTML = '';
-    empty.style.display = 'block';
-    return;
-  }
-  empty.style.display = 'none';
-
-  grid.innerHTML = articles.map(a => `
-    <div class="blog-card reveal" onclick="openArticle('${a.id}')">
-      <div class="blog-card-img">
-        <div class="blog-card-img-bg"></div>
-        <span>${a.emoji || '📝'}</span>
-      </div>
-      <div class="blog-card-body">
-        <div class="blog-card-tag">${escHtml(a.category)}</div>
-        <h3>${escHtml(a.title)}</h3>
-        <p>${escHtml(a.excerpt || stripHtml(a.content).slice(0,120) + '…')}</p>
-        <div class="blog-card-footer">
-          <span>${formatDate(a.date)}</span>
-          <span class="blog-read-more">Citește →</span>
-        </div>
-      </div>
-    </div>
-  `).join('');
-
-  document.querySelectorAll('#blog-grid .reveal').forEach(el => io.observe(el));
-}
-
-function escHtml(s) {
-  return String(s)
-    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
-    .replace(/"/g,'&quot;');
-}
-
-function stripHtml(html) {
-  const tmp = document.createElement('div');
-  tmp.innerHTML = html || '';
-  return tmp.textContent || '';
-}
-
-// ── Article modal ──
-function openArticle(id) {
-  const a = articles.find(x => x.id === id);
-  if (!a) return;
-
-  document.getElementById('modal-tag').textContent   = a.category;
-  document.getElementById('modal-title').textContent = a.title;
-  document.getElementById('modal-meta').textContent  = formatDate(a.date);
-  document.getElementById('modal-body').innerHTML    = a.content;
-
-  document.getElementById('blog-modal-overlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeBlogModal(e, force) {
-  if (!force && e && e.target !== document.getElementById('blog-modal-overlay')) return;
-  document.getElementById('blog-modal-overlay').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-// ── Admin panel ──
-let adminUnlocked = false;
-
-function openAdmin() {
-  document.getElementById('admin-overlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
-  if (!adminUnlocked) {
-    document.getElementById('admin-lock-screen').style.display = '';
-    document.getElementById('admin-content').style.display = 'none';
-    setTimeout(() => document.getElementById('admin-pin-input').focus(), 300);
-  }
-}
-
-function closeAdmin() {
-  document.getElementById('admin-overlay').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-function closeAdminOutside(e) {
-  if (e.target === document.getElementById('admin-overlay')) closeAdmin();
-}
-
-function checkPin() {
-  const val = document.getElementById('admin-pin-input').value;
-  if (val === ADMIN_PIN) {
-    adminUnlocked = true;
-    document.getElementById('admin-lock-screen').style.display = 'none';
-    document.getElementById('admin-content').style.display = '';
-    renderAdminList();
-  } else {
-    document.getElementById('pin-error').textContent = 'PIN greșit. Încearcă din nou.';
-    document.getElementById('admin-pin-input').value = '';
-    document.getElementById('admin-pin-input').focus();
-  }
-}
-
-function resetAdminForm() {
-  editingId = null;
-  document.getElementById('a-title').value   = '';
-  document.getElementById('a-cat').value     = 'Psihologie masculină';
-  document.getElementById('a-excerpt').value = '';
-  setEditorContent('');
-  document.getElementById('a-emoji').value   = '';
-  document.getElementById('admin-mode-label').textContent = 'Articol nou';
-}
-
-function saveArticle() {
-  const title   = document.getElementById('a-title').value.trim();
-  const content = getEditorContent();
-  if (!title || !content || content === '') {
-    alert('Titlul și conținutul sunt obligatorii.');
-    return;
-  }
-
-  if (editingId) {
-    const idx = articles.findIndex(a => a.id === editingId);
-    if (idx !== -1) {
-      articles[idx] = {
-        ...articles[idx],
-        title,
-        category: document.getElementById('a-cat').value,
-        excerpt:  document.getElementById('a-excerpt').value.trim(),
-        content,
-        emoji:    document.getElementById('a-emoji').value.trim() || '📝',
-      };
-    }
-  } else {
-    articles.unshift({
-      id:       generateId(),
-      date:     new Date().toISOString(),
-      title,
-      category: document.getElementById('a-cat').value,
-      excerpt:  document.getElementById('a-excerpt').value.trim(),
-      content,
-      emoji:    document.getElementById('a-emoji').value.trim() || '📝',
-    });
-  }
-
-  saveArticles();
-  renderBlog();
-  renderAdminList();
-  resetAdminForm();
-
-  // Descarcă automat articole.json după salvare
-  downloadJson();
-}
-
-function editArticle(id) {
-  const a = articles.find(x => x.id === id);
-  if (!a) return;
-  editingId = id;
-  document.getElementById('a-title').value   = a.title;
-  document.getElementById('a-cat').value     = a.category;
-  document.getElementById('a-excerpt').value = a.excerpt || '';
-  setEditorContent(a.content);
-  document.getElementById('a-emoji').value   = a.emoji || '';
-  document.getElementById('admin-mode-label').textContent = 'Editează articol';
-  document.getElementById('admin-panel').scrollTop = 0;
-}
-
-function deleteArticle(id) {
-  if (!confirm('Ștergi acest articol? Acțiunea nu poate fi anulată.')) return;
-  articles = articles.filter(a => a.id !== id);
-  saveArticles();
-  renderBlog();
-  renderAdminList();
-  if (editingId === id) resetAdminForm();
-  downloadJson();
-}
-
-function renderAdminList() {
-  document.getElementById('art-count').textContent = articles.length;
-  const el = document.getElementById('admin-articles-list');
-  if (articles.length === 0) {
-    el.innerHTML = '<p style="font-size:.8rem;color:var(--muted);text-align:center;padding:20px 0">Niciun articol publicat încă.</p>';
-    return;
-  }
-  el.innerHTML = articles.map(a => `
-    <div class="admin-article-item">
-      <div>
-        <div class="admin-article-item-title">${escHtml(a.title)}</div>
-        <div class="admin-article-item-meta">${escHtml(a.category)} · ${formatDate(a.date)}</div>
-      </div>
-      <div class="admin-item-actions">
-        <button class="admin-item-btn" onclick="editArticle('${a.id}')" title="Editează">✎</button>
-        <button class="admin-item-btn del" onclick="deleteArticle('${a.id}')" title="Șterge">✕</button>
-      </div>
-    </div>
-  `).join('');
-}
-
-// ── Export / Import JSON ──
-function downloadJson() {
-  const blob = new Blob([JSON.stringify(articles, null, 2)], {type:'application/json'});
-  const url  = URL.createObjectURL(blob);
-  const a    = document.createElement('a');
-  a.href = url;
-  a.download = 'articole.json';
-  a.click();
-  URL.revokeObjectURL(url);
-}
-
-function exportArticles() {
-  if (articles.length === 0) { alert('Nu există articole de exportat.'); return; }
-  downloadJson();
-}
-
-function importArticles(e) {
-  const file = e.target.files[0];
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = function(ev) {
-    try {
-      const data = JSON.parse(ev.target.result);
-      if (!Array.isArray(data)) throw new Error();
-      if (!confirm(`Importă ${data.length} articole? Articolele existente vor fi înlocuite.`)) return;
-      articles = data;
-      saveArticles();
-      renderBlog();
-      renderAdminList();
-      alert('✓ Import reușit — ' + data.length + ' articole încărcate.');
-    } catch(err) {
-      alert('Fișier invalid. Asigură-te că este un JSON exportat din acest panou.');
-    }
-  };
-  reader.readAsText(file);
-  e.target.value = '';
-}
-
-// ══════════════════════════════════════════════════
-// SCROLL REVEAL
-// ══════════════════════════════════════════════════
-const io = new IntersectionObserver(entries => {
-  entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);} });
-}, {threshold:.1});
+const io = new IntersectionObserver(e => { e.forEach(el => { if(el.isIntersecting){el.target.classList.add('in');io.unobserve(el.target);} }); },{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-// Nav compact
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.style.padding = window.scrollY > 60
-    ? '13px clamp(20px,5vw,56px)'
-    : '20px clamp(20px,5vw,56px)';
-});
-
-// Tabs
-function switchTab(t) {
-  document.querySelectorAll('.tab').forEach((tb,i) => tb.classList.toggle('active', i===0?t==='cal':t==='form'));
-  document.getElementById('tab-cal').classList.toggle('active', t==='cal');
-  document.getElementById('tab-form').classList.toggle('active', t==='form');
-}
-
-// Form submit
-function submitForm() {
-  const name  = document.getElementById('cf-name').value.trim();
-  const phone = document.getElementById('cf-phone').value.trim();
-  if(!name || !phone) { alert('Te rog completează numele și numărul de telefon.'); return; }
-  document.getElementById('contact-form').style.display = 'none';
-  document.getElementById('form-success').style.display = 'block';
-}
-
-// Init
-loadArticles().then(() => renderBlog());
-
-// ── URL secret: edivlaston.ro#admin ──
-function checkAdminHash() {
-  if (window.location.hash === '#admin') {
-    history.replaceState(null, '', window.location.pathname);
-    openAdmin();
-  }
-}
-window.addEventListener('hashchange', checkAdminHash);
-checkAdminHash();
+window.addEventListener('scroll', () => { document.getElementById('nav').style.padding = window.scrollY > 60 ? '12px clamp(20px,5vw,56px)' : '18px clamp(20px,5vw,56px)'; });
 </script>
 </body>
 </html>
