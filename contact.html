@@ -93,17 +93,16 @@
 
         <div id="tab-form" class="tab-panel">
           <div class="booking-box">
-            <div class="cform" id="contact-form">
-              <input type="text" id="cf-name" placeholder="Prenumele tău *" required>
-              <input type="tel" id="cf-phone" placeholder="Număr de telefon *" required>
-              <input type="email" id="cf-email" placeholder="Email (opțional)">
-              <textarea id="cf-msg" placeholder="Câteva cuvinte despre ce te aduce aici (opțional)..."></textarea>
-              <button type="button" class="btn btn-primary" style="justify-content:center" onclick="submitForm()">Trimite mesajul</button>
-            </div>
-            <div id="form-success" style="display:none;text-align:center;padding:20px">
-              <div style="font-size:2rem;margin-bottom:12px">✓</div>
-              <p style="font-family:var(--serif);font-size:1.2rem;color:var(--ink)">Mesaj trimis!</p>
-              <p style="font-size:.86rem;color:var(--muted);margin-top:8px">Te contactez în maxim 24h.</p>
+            <div id="contact-form">
+              <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/multumesc.html" class="cform">
+                <input type="hidden" name="form-name" value="contact">
+                <p style="display:none"><input name="bot-field"></p>
+                <input type="text" name="name" placeholder="Prenumele tău *" required>
+                <input type="tel" name="phone" placeholder="Număr de telefon *" required>
+                <input type="email" name="email" placeholder="Email (opțional)">
+                <textarea name="message" placeholder="Câteva cuvinte despre ce te aduce aici (opțional)..."></textarea>
+                <button type="submit" class="btn btn-primary" style="justify-content:center">Trimite mesajul</button>
+              </form>
             </div>
             <p class="form-note">Te contactez în maxim 24h. Datele tale rămân confidențiale.</p>
           </div>

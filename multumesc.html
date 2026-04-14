@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mesaj trimis · Edi Vlaston</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Tag (Analytics + Ads) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17654719970"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2W226C545N');
+    gtag('config', 'AW-17654719970');
+  </script>
+  <meta name="google-site-verification" content="z14BQ7ieyIuxJ1hAWddXO5ljOwfq92d7fcFSMoB_gn0">
+  <style>
+    .thank-you {
+      min-height: 100svh; display: flex; align-items: center; justify-content: center;
+      padding: 40px 20px; text-align: center;
+    }
+    .thank-you-box { max-width: 480px; }
+    .thank-you-ico { font-size: 3rem; margin-bottom: 24px; }
+    .thank-you-box h1 { font-family: var(--serif); font-size: clamp(2rem,4vw,3rem); font-weight: 400; color: var(--ink); margin-bottom: 16px; }
+    .thank-you-box h1 em { font-style: italic; color: var(--terra); }
+    .thank-you-box p { font-size: .97rem; color: var(--warm); line-height: 1.88; font-weight: 300; margin-bottom: 32px; }
+  </style>
+</head>
+<body>
+<nav id="nav">
+  <a href="/" class="nav-brand">Edi Vlaston<span>.</span></a>
+  <div class="nav-links">
+    <a href="/barbati.html">Pentru bărbați</a>
+    <a href="/femei.html">Pentru femei</a>
+    <a href="/pentru-terapeuti.html">Terapeuți</a>
+    <a href="/despre.html">Despre</a>
+    <a href="/blog.html">Blog</a>
+    <a href="tel:+40744370179" class="nav-phone">📞 0744 370 179</a>
+    <a href="/contact.html" class="nav-cta">Programare gratuită</a>
+  </div>
+</nav>
+
+<section class="thank-you" style="background:var(--sand)">
+  <div class="thank-you-box reveal">
+    <div class="thank-you-ico">✓</div>
+    <h1>Mesaj trimis.<br><em>Mulțumesc.</em></h1>
+    <p>Te contactez în maxim 24 de ore. Dacă ai nevoie urgent, mă poți suna direct la <a href="tel:+40744370179" style="color:var(--terra);font-weight:500">0744 370 179</a>.</p>
+    <a href="/" class="btn btn-primary">Înapoi acasă</a>
+  </div>
+</section>
+
+<script>
+const io = new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('in');io.unobserve(el.target);}});},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+window.addEventListener('scroll',()=>{document.getElementById('nav').style.padding=window.scrollY>60?'12px clamp(20px,5vw,56px)':'18px clamp(20px,5vw,56px)';});
+</script>
+</body>
+</html>
