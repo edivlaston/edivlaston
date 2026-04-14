@@ -3,30 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Blog Edi Vlaston — articole despre bărbați și relații, psihologie masculină, ce nu funcționează și de ce. Psihoterapeut București.">
+  <meta name="description" content="Blog Edi Vlaston — articole despre bărbați și relații, psihologie masculină. Psihoterapeut București.">
   <title>Blog · Edi Vlaston Psihoterapeut București</title>
+  <!-- Google Tag (Analytics + Ads) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17654719970"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2W226C545N');
+    gtag('config', 'AW-17654719970');
+  </script>
+  <!-- Google Search Console -->
+  <meta name="google-site-verification" content="z14BQ7ieyIuxJ1hAWddXO5ljOwfq92d7fcFSMoB_gn0">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2W226C545N');
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    .blog-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 56px; }
-    .blog-card { background: var(--white); border: 1px solid var(--stone); border-radius: 6px; padding: 28px 24px; transition: border-color .2s, transform .2s, box-shadow .2s; cursor: pointer; }
-    .blog-card:hover { border-color: var(--bark); transform: translateY(-4px); box-shadow: 0 12px 36px rgba(139,94,60,.1); }
-    .blog-cat { font-size: .66rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--terra); margin-bottom: 12px; }
-    .blog-card h3 { font-family: var(--serif); font-size: 1.15rem; font-weight: 500; color: var(--ink); margin-bottom: 10px; line-height: 1.35; }
-    .blog-card p { font-size: .84rem; color: var(--muted); line-height: 1.72; margin-bottom: 16px; }
-    .blog-date { font-size: .72rem; color: var(--light); }
-    .blog-empty { text-align: center; padding: 80px 0; }
-    .blog-empty-ico { font-size: 2.5rem; margin-bottom: 16px; }
-    .blog-empty h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--ink); margin-bottom: 10px; }
-    .blog-empty p { font-size: .88rem; color: var(--muted); max-width: 400px; margin: 0 auto; }
-    .coming-topics { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; margin-top: 48px; }
-    .topic-card { background: var(--white); border: 1px solid var(--stone); border-radius: 6px; padding: 20px 20px; }
-    .topic-card .topic-num { font-family: var(--serif); font-size: 1.4rem; color: var(--stone); font-weight: 400; margin-bottom: 8px; }
-    .topic-card h4 { font-family: var(--serif); font-size: 1rem; font-weight: 500; color: var(--ink); margin-bottom: 6px; line-height: 1.4; }
-    .topic-card p { font-size: .8rem; color: var(--muted); line-height: 1.6; margin: 0; }
-    @media(max-width:1024px){ .blog-grid{grid-template-columns:1fr 1fr} .coming-topics{grid-template-columns:1fr} }
-    @media(max-width:680px){ .blog-grid{grid-template-columns:1fr} }
+    .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:56px}
+    .blog-card{background:var(--white);border:1px solid var(--stone);border-radius:8px;overflow:hidden;cursor:pointer;transition:border-color .2s,transform .2s,box-shadow .2s;display:flex;flex-direction:column}
+    .blog-card:hover{border-color:var(--bark);transform:translateY(-5px);box-shadow:0 14px 40px rgba(139,94,60,.11)}
+    .blog-card-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--parch);display:block}
+    .blog-card-img-placeholder{width:100%;aspect-ratio:16/9;background:var(--parch);display:flex;align-items:center;justify-content:center;font-size:2.5rem}
+    .blog-card-body{padding:24px 22px;flex:1;display:flex;flex-direction:column}
+    .blog-cat{font-size:.64rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:10px}
+    .blog-card h3{font-family:var(--serif);font-size:1.15rem;font-weight:500;color:var(--ink);margin-bottom:10px;line-height:1.35}
+    .blog-card p{font-size:.84rem;color:var(--muted);line-height:1.72;flex:1}
+    .blog-card-footer{display:flex;justify-content:space-between;align-items:center;margin-top:18px;padding-top:14px;border-top:1px solid var(--stone)}
+    .blog-date{font-size:.72rem;color:var(--light)}
+    .blog-read{font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--terra)}
+    .coming-topics{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:48px}
+    .topic-card{background:var(--white);border:1px solid var(--stone);border-radius:6px;padding:22px 20px}
+    .topic-num{font-family:var(--serif);font-size:1.4rem;color:var(--stone);font-weight:400;margin-bottom:8px}
+    .topic-card h4{font-family:var(--serif);font-size:1rem;font-weight:500;color:var(--ink);margin-bottom:6px;line-height:1.4}
+    .topic-card p{font-size:.8rem;color:var(--muted);line-height:1.6;margin:0}
+    .modal-overlay{position:fixed;inset:0;z-index:500;background:rgba(34,24,8,.6);backdrop-filter:blur(4px);display:flex;align-items:flex-start;justify-content:center;padding:40px 20px;overflow-y:auto;opacity:0;pointer-events:none;transition:opacity .3s}
+    .modal-overlay.open{opacity:1;pointer-events:all}
+    .modal{background:var(--white);border-radius:8px;max-width:720px;width:100%;overflow:hidden;transform:translateY(20px);transition:transform .3s;box-shadow:0 24px 80px rgba(34,24,8,.25)}
+    .modal-overlay.open .modal{transform:translateY(0)}
+    .modal-img{width:100%;aspect-ratio:16/7;object-fit:cover;display:block}
+    .modal-img-placeholder{width:100%;aspect-ratio:16/7;background:var(--parch);display:flex;align-items:center;justify-content:center;font-size:3rem}
+    .modal-body{padding:40px 44px 48px}
+    .modal-meta{display:flex;gap:16px;align-items:center;margin-bottom:20px}
+    .modal-cat{font-size:.64rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--terra)}
+    .modal-date{font-size:.72rem;color:var(--light)}
+    .modal h2{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:400;line-height:1.2;color:var(--ink);margin-bottom:28px}
+    .modal-content{font-size:.95rem;color:var(--warm);line-height:1.9;font-weight:300}
+    .modal-content p{margin-bottom:18px}
+    .modal-content h3{font-family:var(--serif);font-size:1.3rem;font-weight:500;color:var(--ink);margin:28px 0 12px}
+    .modal-content strong{color:var(--ink);font-weight:500}
+    .modal-cta{margin-top:36px;padding-top:28px;border-top:1px solid var(--stone);display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .modal-cta p{font-size:.88rem;color:var(--muted)}
+    .modal-close{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;background:rgba(247,241,232,.9);border:1px solid var(--stone);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.9rem;color:var(--muted);transition:background .2s;z-index:10}
+    .modal-close:hover{background:var(--white);color:var(--ink)}
+    .modal-wrap{position:relative}
+    @media(max-width:1024px){.blog-grid{grid-template-columns:1fr 1fr}.coming-topics{grid-template-columns:1fr 1fr}}
+    @media(max-width:680px){.blog-grid{grid-template-columns:1fr}.coming-topics{grid-template-columns:1fr}.modal-body{padding:24px 22px 32px}}
   </style>
 </head>
 <body>
@@ -55,20 +93,15 @@
 
 <section style="padding:var(--gap) 0;background:var(--sand)">
   <div class="container">
-
-    <!-- Articolele vor apărea aici când sunt publicate -->
-    <div id="blog-articles" style="display:none">
+    <div id="articles-section" style="display:none">
       <div class="blog-grid" id="blog-grid"></div>
     </div>
-
-    <!-- Stare inițială — blog în construcție -->
-    <div id="blog-coming">
-      <div class="blog-empty reveal">
-        <div class="blog-empty-ico">✍️</div>
-        <h3>Primele articole apar în curând.</h3>
-        <p>Între timp, iată subiectele pe care le pregătesc — dacă vreunul te privește, poți programa o primă ședință gratuită.</p>
+    <div id="coming-section">
+      <div class="reveal" style="text-align:center;max-width:500px;margin:0 auto 48px">
+        <div style="font-size:2rem;margin-bottom:16px">✍️</div>
+        <h2 style="font-size:clamp(1.4rem,2.5vw,2rem);margin-bottom:10px">Primele articole apar în curând.</h2>
+        <p style="font-size:.9rem;color:var(--muted)">Între timp, iată subiectele în pregătire.</p>
       </div>
-
       <div class="coming-topics reveal" style="transition-delay:.1s">
         <div class="topic-card"><div class="topic-num">01</div><h4>De ce faci tot bine și tot greșești în relație</h4><p>Schema moștenită vs. ce funcționează azi în cuplu.</p></div>
         <div class="topic-card"><div class="topic-num">02</div><h4>Cum să recunoști ce simți cu adevărat</h4><p>Nu doar „bine" sau „rău" — nuanțele care fac diferența.</p></div>
@@ -77,29 +110,95 @@
         <div class="topic-card"><div class="topic-num">05</div><h4>Ce înveți dintr-un divorț înainte de relația următoare</h4><p>Tipare care se repetă — și cum le oprești.</p></div>
         <div class="topic-card"><div class="topic-num">06</div><h4>De ce bărbații singuri rămân singuri</h4><p>Comportamente care îndepărtează — fără să știi că le faci.</p></div>
       </div>
-
-      <div class="reveal" style="text-align:center;margin-top:56px;transition-delay:.2s">
-        <p style="font-size:.88rem;color:var(--muted);margin-bottom:20px">Dacă vreun subiect te privește direct — nu aștepta articolul.</p>
-        <a href="/contact.html" class="btn btn-primary">Prima ședință — gratuită <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      </div>
     </div>
-
+    <div class="reveal" style="text-align:center;margin-top:56px;transition-delay:.2s">
+      <p style="font-size:.88rem;color:var(--muted);margin-bottom:20px">Dacă vreun subiect te privește direct — nu aștepta articolul.</p>
+      <a href="/contact.html" class="btn btn-primary">Prima ședință — gratuită <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
   </div>
 </section>
+
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+  <div class="modal-wrap">
+    <button class="modal-close" onclick="closeModalBtn()">✕</button>
+    <div class="modal" id="modal">
+      <div id="modal-img-wrap"></div>
+      <div class="modal-body">
+        <div class="modal-meta">
+          <span class="modal-cat" id="modal-cat"></span>
+          <span class="modal-date" id="modal-date"></span>
+        </div>
+        <h2 id="modal-title"></h2>
+        <div class="modal-content" id="modal-content"></div>
+        <div class="modal-cta">
+          <p>Dacă articolul te-a atins — poți programa o primă ședință gratuită.</p>
+          <a href="/contact.html" class="btn btn-primary" style="white-space:nowrap">Programează gratuit →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <footer>
   <div class="container">
     <div class="footer-in">
       <div class="footer-brand">Edi Vlaston<span>.</span></div>
-      <div class="footer-links"><a href="/barbati.html">Pentru bărbați</a><a href="/femei.html">Pentru femei</a><a href="/pentru-terapeuti.html">Terapeuți</a><a href="/despre.html">Despre</a><a href="/blog.html">Blog</a><a href="/contact.html">Contact</a></div>
+      <div class="footer-links"><a href="/barbati.html">Pentru bărbați</a><a href="/femei.html">Pentru femei</a><a href="/pentru-terapeuti.html">Terapeuți</a><a href="/despre.html">Despre</a><a href="/blog.html">Blog</a><a href="/contact.html">Contact</a>
+        <a href="mailto:edivlaston@gmail.com">edivlaston@gmail.com</a></div>
       <span class="footer-copy">© 2026 Cabinet Individual de Psihologie · Cod 22334</span>
     </div>
   </div>
 </footer>
+
 <script>
-const io = new IntersectionObserver(e => { e.forEach(el => { if(el.isIntersecting){el.target.classList.add('in');io.unobserve(el.target);} }); },{threshold:.1});
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-window.addEventListener('scroll', () => { document.getElementById('nav').style.padding = window.scrollY > 60 ? '12px clamp(20px,5vw,56px)' : '18px clamp(20px,5vw,56px)'; });
+const io = new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('in');io.unobserve(el.target);}});},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+window.addEventListener('scroll',()=>{document.getElementById('nav').style.padding=window.scrollY>60?'12px clamp(20px,5vw,56px)':'18px clamp(20px,5vw,56px)';});
+
+function formatData(str){const d=new Date(str);return d.toLocaleDateString('ro-RO',{day:'numeric',month:'long',year:'numeric'});}
+
+let articlesData=[];
+
+function renderCards(articles){
+  if(!articles||articles.length===0)return;
+  document.getElementById('coming-section').style.display='none';
+  document.getElementById('articles-section').style.display='block';
+  const grid=document.getElementById('blog-grid');
+  grid.innerHTML=articles.map((a,i)=>`
+    <div class="blog-card reveal" style="transition-delay:${i*.08}s" onclick="openModal(${i})">
+      ${a.imagine?`<img class="blog-card-img" src="${a.imagine}" alt="${a.titlu}" onerror="this.outerHTML='<div class=blog-card-img-placeholder>📖</div>'">`:`<div class="blog-card-img-placeholder">📖</div>`}
+      <div class="blog-card-body">
+        <div class="blog-cat">${a.categorie}</div>
+        <h3>${a.titlu}</h3>
+        <p>${a.rezumat}</p>
+        <div class="blog-card-footer">
+          <span class="blog-date">${formatData(a.data)}</span>
+          <span class="blog-read">Citește →</span>
+        </div>
+      </div>
+    </div>`).join('');
+  document.querySelectorAll('.blog-card.reveal').forEach(el=>io.observe(el));
+}
+
+function openModal(i){
+  const a=articlesData[i];if(!a)return;
+  document.getElementById('modal-cat').textContent=a.categorie;
+  document.getElementById('modal-date').textContent=formatData(a.data);
+  document.getElementById('modal-title').textContent=a.titlu;
+  document.getElementById('modal-content').innerHTML=a.continut;
+  document.getElementById('modal-img-wrap').innerHTML=a.imagine?`<img class="modal-img" src="${a.imagine}" alt="${a.titlu}" onerror="this.outerHTML='<div class=modal-img-placeholder>📖</div>'">`:`<div class="modal-img-placeholder">📖</div>`;
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function closeModal(e){if(e.target===document.getElementById('modal-overlay'))closeModalBtn();}
+function closeModalBtn(){document.getElementById('modal-overlay').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModalBtn();});
+
+fetch('articole.json')
+  .then(r=>r.json())
+  .then(data=>{articlesData=data;renderCards(data);})
+  .catch(()=>{console.log('Niciun articol publicat încă.');});
 </script>
 </body>
 </html>
