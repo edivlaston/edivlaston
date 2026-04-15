@@ -275,11 +275,51 @@ footer { padding: 44px 0; background: var(--ink); }
   .testimoniale-grid { grid-template-columns: 1fr 1fr; }
   .prog-grid { grid-template-columns: 1fr; gap: 36px; }
 }
+/* ── HAMBURGER ────────────────────────────────────── */
+.hamburger {
+  display: none; flex-direction: column; gap: 5px; cursor: pointer;
+  background: none; border: none; padding: 6px; z-index: 300;
+}
+.hamburger span {
+  display: block; width: 24px; height: 2px;
+  background: var(--ink); border-radius: 2px;
+  transition: transform .3s, opacity .3s;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-menu {
+  display: none; position: fixed; inset: 0; z-index: 199;
+  background: rgba(247,241,232,.98); backdrop-filter: blur(10px);
+  flex-direction: column; align-items: center; justify-content: center;
+  gap: 32px; padding: 80px 40px 40px;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-size: 1.4rem; font-family: var(--serif); font-weight: 400;
+  color: var(--ink); text-decoration: none; letter-spacing: .02em;
+  transition: color .2s;
+}
+.mobile-menu a:hover { color: var(--terra); }
+.mobile-menu .mobile-cta {
+  margin-top: 16px; background: var(--terra); color: var(--white) !important;
+  padding: 16px 36px; border-radius: 2px; font-family: var(--sans) !important;
+  font-size: .82rem !important; letter-spacing: .1em; text-transform: uppercase;
+}
+.mobile-menu .mobile-phone {
+  font-size: .9rem !important; font-family: var(--sans) !important;
+  color: var(--terra) !important; letter-spacing: .04em;
+}
+
 @media(max-width:680px){
   .nav-links { display: none; }
+  .hamburger { display: flex; }
   .profiles { grid-template-columns: 1fr; }
   .pillars { grid-template-columns: 1fr; }
   .steps { grid-template-columns: 1fr 1fr; }
   .syms, .stat-pair { grid-template-columns: 1fr; }
   .testimoniale-grid { grid-template-columns: 1fr; }
+  .page-hero h1 { font-size: clamp(2.2rem, 8vw, 3.5rem); }
+  .prog-grid { grid-template-columns: 1fr; gap: 32px; }
 }
