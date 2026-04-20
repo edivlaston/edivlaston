@@ -8,7 +8,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <!-- Google Tag (Analytics + Ads) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17654719970"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17654719970">
+function toggleMenu() {
+  const menu = document.getElementById('mobile-menu');
+  const btn = document.getElementById('hamburger');
+  if (!menu || !btn) return;
+  btn.classList.toggle('open');
+  menu.classList.toggle('open');
+  document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+}
+function closeMenu() {
+  const menu = document.getElementById('mobile-menu');
+  const btn = document.getElementById('hamburger');
+  if (!menu || !btn) return;
+  btn.classList.remove('open');
+  menu.classList.remove('open');
+  document.body.style.overflow = '';
+}
+</script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -39,7 +56,7 @@
     <a href="/despre.html">Despre</a>
     <a href="/blog.html">Blog</a>
     <a href="tel:+40744370179" class="nav-phone">📞 0744 370 179</a>
-    <a href="/contact.html" class="nav-cta">Programare gratuită</a>
+    <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="Calendly.initPopupWidget({url:'https://calendly.com/eduard-vlaston-eiv3'}); return false;" class="nav-cta">Evaluare 30 min — gratuită</a>
   </div>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Meniu">
     <span></span><span></span><span></span>
@@ -54,7 +71,13 @@
   <a href="/despre.html" onclick="closeMenu()">Despre</a>
   <a href="/blog.html" onclick="closeMenu()">Blog</a>
   <a href="tel:+40744370179" class="mobile-phone" onclick="closeMenu()">📞 0744 370 179</a>
-  <a href="/contact.html" class="mobile-cta" onclick="closeMenu()">Programare gratuită</a>
+  <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="Calendly.initPopupWidget({url:'https://calendly.com/eduard-vlaston-eiv3'}); return false;;closeMenu()" class="mobile-cta">Evaluare 30 min — gratuită</a>
+
+  <div style="border-top:1px solid rgba(139,94,60,.15);padding-top:24px;margin-top:8px;display:flex;flex-direction:column;gap:14px;align-items:center">
+    <a href="tel:+40744370179" onclick="closeMenu()" style="font-family:var(--sans);font-size:1rem;color:var(--terra);font-weight:500">📞 0744 370 179</a>
+    <a href="https://wa.me/40744370179" target="_blank" onclick="closeMenu()" style="font-family:var(--sans);font-size:1rem;color:var(--terra);font-weight:500">💬 WhatsApp</a>
+    <a href="mailto:edivlaston@gmail.com" onclick="closeMenu()" style="font-family:var(--sans);font-size:.9rem;color:var(--muted)">edivlaston@gmail.com</a>
+  </div>
 </div>
 
 <section class="thank-you" style="background:var(--sand)">
