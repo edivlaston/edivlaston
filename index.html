@@ -8,24 +8,7 @@
   <meta property="og:description" content="Ești bun la aproape orice. Relațiile sunt excepția. Nu e defect de caracter — e un set de abilități pe care nu le-ai învățat.">
   <title>Edi Vlaston — Psihoterapeut · București</title>
   <!-- Google Tag (Analytics + Ads) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17654719970">
-function toggleMenu() {
-  const menu = document.getElementById('mobile-menu');
-  const btn = document.getElementById('hamburger');
-  if (!menu || !btn) return;
-  btn.classList.toggle('open');
-  menu.classList.toggle('open');
-  document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
-}
-function closeMenu() {
-  const menu = document.getElementById('mobile-menu');
-  const btn = document.getElementById('hamburger');
-  if (!menu || !btn) return;
-  btn.classList.remove('open');
-  menu.classList.remove('open');
-  document.body.style.overflow = '';
-}
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17654719970"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -82,6 +65,24 @@ function closeMenu() {
     @media(max-width:1024px){ #hero{grid-template-columns:1fr} .hero-right{flex-direction:row;flex-wrap:wrap} .intro-cards{grid-template-columns:1fr} }
     @media(max-width:680px){ .nav-links{display:none} .hamburger{display:flex} }
   </style>
+<script>
+function toggleMenu() {
+  const menu = document.getElementById('mobile-menu');
+  const btn = document.getElementById('hamburger');
+  if (!menu || !btn) return;
+  btn.classList.toggle('open');
+  menu.classList.toggle('open');
+  document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+}
+function closeMenu() {
+  const menu = document.getElementById('mobile-menu');
+  const btn = document.getElementById('hamburger');
+  if (!menu || !btn) return;
+  btn.classList.remove('open');
+  menu.classList.remove('open');
+  document.body.style.overflow = '';
+}
+</script>
 </head>
 <body>
 
@@ -129,7 +130,34 @@ function closeMenu() {
   <div id="hero">
     <div>
       <div class="hero-tag">Psihoterapie · București</div>
-      <h1>Ești bun la<br>aproape orice.<br><em>Relațiile sunt excepția.</em></h1>
+      <h1 id="hero-headline-home">
+  <span id="carousel-home">Ești bun la aproape orice.<br><em>Relațiile sunt excepția.</em></span>
+</h1>
+<script>
+(function(){
+  var lines = [
+    ["Ești bun la aproape orice.", "Relațiile sunt excepția."],
+    ["Nu reușești în relații.", "Nu înțelegi de ce."],
+    ["Faci tot ce trebuie.", "Și tot greșești."],
+    ["Aceeași poveste.", "Relație după relație."],
+    ["Partenera spune că nu ești prezent.", "Tu nu înțelegi ce vrea."]
+  ];
+  var i = 0;
+  var el = document.getElementById('carousel-home');
+  if (!el) return;
+  el.style.transition = 'opacity .5s, transform .5s';
+  setInterval(function(){
+    i = (i + 1) % lines.length;
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(12px)';
+    setTimeout(function(){
+      el.innerHTML = lines[i][0] + '<br><em>' + lines[i][1] + '</em>';
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    }, 500);
+  }, 4000);
+})();
+</script>
       <p class="hero-lead">Nu e un defect de caracter — e un set de abilități pe care nu le-ai învățat. Știi să rezolvi probleme complexe. Dar în relații parcă regulile nu se aplică și nu înțelegi de ce.<br><br>Aici lucrăm la asta.</p>
       <div class="hero-actions">
         <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="Calendly.initPopupWidget({url:'https://calendly.com/eduard-vlaston-eiv3'}); return false;" class="btn btn-primary">

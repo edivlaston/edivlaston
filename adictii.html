@@ -40,6 +40,24 @@
     @media(max-width:1024px){ .two-col{grid-template-columns:1fr;gap:40px} .adictie-grid{grid-template-columns:1fr 1fr} }
     @media(max-width:680px){ .adictie-grid{grid-template-columns:1fr} .quote-box{padding:28px 24px} @media(max-width:680px){ .nav-links{display:none} .hamburger{display:flex} } }
   </style>
+<script>
+function toggleMenu() {
+  const menu = document.getElementById('mobile-menu');
+  const btn = document.getElementById('hamburger');
+  if (!menu || !btn) return;
+  btn.classList.toggle('open');
+  menu.classList.toggle('open');
+  document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+}
+function closeMenu() {
+  const menu = document.getElementById('mobile-menu');
+  const btn = document.getElementById('hamburger');
+  if (!menu || !btn) return;
+  btn.classList.remove('open');
+  menu.classList.remove('open');
+  document.body.style.overflow = '';
+}
+</script>
 </head>
 <body>
 
