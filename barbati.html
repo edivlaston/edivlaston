@@ -64,6 +64,7 @@ function closeMenu() {
   <div class="nav-links">
     <a href="/barbati.html" class="active">Pentru bărbați</a>
     <a href="/femei.html">Pentru femei</a>
+    <a href="/adictii.html">Addicții</a>
     <a href="/pentru-terapeuti.html">Terapeuți</a>
     <a href="/despre.html">Despre</a>
     <a href="/blog.html">Blog</a>
@@ -83,6 +84,7 @@ function closeMenu() {
 <div class="mobile-menu" id="mobile-menu">
   <a href="/barbati.html" onclick="closeMenu()">Pentru bărbați</a>
   <a href="/femei.html" onclick="closeMenu()">Pentru femei</a>
+  <a href="/adictii.html" onclick="closeMenu()">Addicții</a>
   <a href="/pentru-terapeuti.html" onclick="closeMenu()">Terapeuți</a>
   <a href="/despre.html" onclick="closeMenu()">Despre</a>
   <a href="/blog.html" onclick="closeMenu()">Blog</a>
@@ -102,7 +104,33 @@ function closeMenu() {
     <div class="page-hero-grid">
       <div>
         <div class="page-hero-tag">Terapie individuală · Bărbați · București</div>
-        <h1>Nu reușești în relații.<br><em>Nu înțelegi de ce.</em></h1>
+        <h1 id="hero-headline">
+  <span id="carousel-text">Nu reușești în relații.<br><em>Nu înțelegi de ce.</em></span>
+</h1>
+<script>
+(function(){
+  var lines = [
+    ["Nu reușești în relații.", "Nu înțelegi de ce."],
+    ["Faci tot ce trebuie.", "Și tot greșești."],
+    ["Partenera spune că ești absent.", "Tu nu înțelegi ce vrea."],
+    ["Același tipar.", "De fiecare dată."],
+    ["Știi să rezolvi orice.", "Relațiile sunt excepția."]
+  ];
+  var i = 0;
+  var el = document.getElementById('carousel-text');
+  el.style.transition = 'opacity .4s, transform .4s';
+  setInterval(function(){
+    i = (i + 1) % lines.length;
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(10px)';
+    setTimeout(function(){
+      el.innerHTML = lines[i][0] + '<br><em>' + lines[i][1] + '</em>';
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    }, 400);
+  }, 3500);
+})();
+</script>
         <p class="page-hero-lead">Nu e un defect de caracter — e un set de abilități pe care nu le-ai învățat. Faci tot ce știi că e corect. Problema e că ce știi e incomplet.</p>
         <div style="display:flex;gap:14px;flex-wrap:wrap">
           <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="Calendly.initPopupWidget({url:'https://calendly.com/eduard-vlaston-eiv3'}); return false;" class="btn btn-primary">Evaluare 30 min — gratuită <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -198,8 +226,10 @@ function closeMenu() {
       </div>
       <div>
         <p style="font-size:1.05rem;color:rgba(255,253,248,.8);line-height:1.9;font-weight:300;font-family:var(--serif);font-style:italic">
-          „Am trăit burnout-ul. Am fost în pragul unui divorț. Terapia m-a salvat de fiecare dată.
-          Dacă te ridici în picioare, apare și umbra ta. În terapie conștientizezi umbra — și cum să faci pace cu ea."
+          „Am trăit burnout-ul. Am fost în pragul unui divorț. Terapia m-a salvat de fiecare dată."
+        </p>
+        <p style="font-size:.95rem;color:rgba(255,253,248,.65);line-height:1.85;font-weight:300;margin-top:16px">
+          Prima mea facultate a fost matematica. Când m-am lovit de zidul depresiei, am realizat că mintea umană este cea mai fascinantă ecuație pe care nimeni nu a reușit să o rezolve complet. De aceea am ales psihologia — facultate, master în psihologie clinică, și 4 ani de formare în Psihoterapie Centrată pe Persoană."
         </p>
         <div style="margin-top:28px;display:flex;flex-direction:column;gap:12px">
           <div style="display:flex;align-items:center;gap:12px;font-size:.88rem;color:rgba(255,253,248,.65)">
