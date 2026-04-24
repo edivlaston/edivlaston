@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Edi Vlaston — psihoterapeut pentru femei care vor să înțeleagă bărbatul din viața lor. Partenerul tău nu refuză să se schimbe. Nu știe cum. București.">
+  <meta name="description" content="Edi Vlaston — psihoterapeut pentru femei în București. Un spațiu în care emoțiile tale sunt validate, nu corectate. Ședințe individuale, cabinet Piața Victoriei sau online.">
   <title>Pentru Femei · Edi Vlaston Psihoterapeut București</title>
   <!-- Google Tag (Analytics + Ads) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17654719970"></script>
@@ -16,12 +16,6 @@
   </script>
   <!-- Google Search Console -->
   <meta name="google-site-verification" content="z14BQ7ieyIuxJ1hAWddXO5ljOwfq92d7fcFSMoB_gn0">
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-2W226C545N');
-  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -30,6 +24,31 @@
     .text-col p strong { color:var(--ink); font-weight:500; }
     .two-col { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; }
     @media(max-width:1024px){ .two-col{grid-template-columns:1fr;gap:40px} }
+
+    /* Hero carousel */
+    .hero-carousel {
+      position: relative;
+      min-height: 2.4em;
+      margin-bottom: 24px;
+    }
+    .hero-carousel .carousel-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      margin: 0;
+      opacity: 0;
+      transition: opacity .9s ease-in-out;
+      pointer-events: none;
+    }
+    .hero-carousel .carousel-slide.active {
+      opacity: 1;
+      position: relative;
+      pointer-events: auto;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-carousel .carousel-slide { transition: none; }
+    }
   </style>
 <script>
 function toggleMenu() {
@@ -90,13 +109,13 @@ function closeMenu() {
     <div class="page-hero-grid">
       <div>
         <div class="page-hero-tag">Pentru femei · București</div>
-        <h1>Când iubești<br><em>un bărbat dificil.</em></h1>
-        <p class="page-hero-lead">Uneori cel care are nevoie de ajutor nu vine singur. Vine prin tine — prin îngrijorarea ta, prin răbdarea ta sau prin epuizarea ta.</p>
+        <h1>Un spațiu în care<br><em>ești auzită.</em></h1>
+        <p class="page-hero-lead">Pentru femeile care au obosit să-și explice emoțiile. Care au auzit prea des că reacționează prea mult, că exagerează, că nu e cazul. Aici nu e nevoie să te justifici.</p>
         <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="Calendly.initPopupWidget({url:'https://calendly.com/eduard-vlaston-eiv3'}); return false;" class="btn btn-primary">Evaluare 30 min — gratuită <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
       <div>
         <div class="pull" style="margin:0">
-          <p>„Partenerul tău nu refuză să se schimbe. Nu știe cum. Și nimeni nu i-a arătat."</p>
+          <p>„Ce simți are sens. Nu trebuie explicat, nu trebuie apărat, nu trebuie făcut mai mic."</p>
         </div>
       </div>
     </div>
@@ -107,16 +126,63 @@ function closeMenu() {
   <div class="container">
     <div class="two-col">
       <div class="reveal text-col">
-        <div class="sec-label">De ce e diferit</div>
-        <h2>Bărbații suferă<br><em>altfel.</em></h2>
-        <p>Dacă partenerul tău s-a închis în el, dacă simți că există un zid între voi pe care nu știi cum să-l treci — <strong>nu ești singură în asta</strong>.</p>
-        <p>Bărbații nu rup relațiile pentru că nu le pasă. Se retrag, tac sau explodează pentru că nu știu cum să rămână în ele. Nu au vocabularul emoțional, nu au antrenamentul.</p>
-        <p>Lucrez și cu femeile care vor să înțeleagă bărbatul din viața lor: cum gândește, de ce nu cere ajutor, ce se ascunde în spatele tăcerii sau al furiei.</p>
+        <div class="sec-label">De ce aici</div>
+        <div class="hero-carousel" aria-live="polite">
+          <h2 class="carousel-slide active">Un bărbat<br><em>care ascultă.</em></h2>
+          <h2 class="carousel-slide">Un bărbat<br><em>care te crede.</em></h2>
+          <h2 class="carousel-slide">Un bărbat care nu<br><em>încearcă să rezolve.</em></h2>
+          <h2 class="carousel-slide">Un bărbat care nu<br><em>raționalizează totul.</em></h2>
+        </div>
+        <p>Multe femei au crescut sau trăiesc într-un mediu în care emoțiile lor sunt considerate <strong>„prea mult"</strong>. Tatăl le spunea să nu mai plângă. Partenerul le spune că exagerează. Frații, șefii, colegii — aceeași temă: ce simți e o problemă de rezolvat, nu o informație de ascultat.</p>
+        <p>În timp, multe ajung să creadă că <strong>ceva e greșit la ele</strong>. Că sunt prea sensibile, prea intense, prea reactive.</p>
+        <p>Nu e nimic greșit. E o lungă experiență de invalidare.</p>
+        <p>Lucrez cu femei care au nevoie de un spațiu terapeutic în care emoțiile lor sunt primite așa cum sunt — <strong>fără să fie corectate, minimizate sau traduse în altceva</strong>. Sunt bărbat și terapeut, iar pentru unele dintre cliente asta contează: experiența de a fi ascultată și crezută de un bărbat, fără ca acel bărbat să încerce să rezolve, să explice sau să contrazică.</p>
       </div>
-      <div class="cards-grid reveal" style="transition-delay:.12s">
-        <div class="card-item"><div class="card-ico">💑</div><div><h3>Partenera sau soția</h3><p>Simți că vorbești cu un perete. El se retrage, tu te epuizezi. Te ajut să înțelegi dinamica relației și cum poți comunica fără să escaladezi.</p></div></div>
-        <div class="card-item"><div class="card-ico">👩‍👦</div><div><h3>Mama sau sora</h3><p>Fiul tău e bine pe exterior, dar ceva nu e în regulă. Nu vorbește, nu cere ajutor. Te ajut să rămâi aproape fără să îl îndepărtezi.</p></div></div>
-        <div class="card-item"><div class="card-ico">🧭</div><div><h3>Sesiune de orientare</h3><p>Nu e nevoie să vii cu o problemă clară. O ședință de 50 de minute e suficientă ca să înțelegi mai bine situația și ce pași ai la dispoziție.</p></div></div>
+      <div class="reveal" style="transition-delay:.12s">
+        <div class="pull" style="margin:0">
+          <p>„Căldură, validare, spațiu — nu pentru că ai nevoie să fii salvată. Pentru că meriți să fii auzită."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:var(--gap) 0;background:var(--white)">
+  <div class="container">
+    <div class="reveal" style="max-width:720px;margin:0 auto 56px;text-align:center">
+      <div class="sec-label" style="justify-content:center">Cu ce vin femeile</div>
+      <h2 style="margin-bottom:20px">Nu toate vin cu<br><em>aceeași problemă.</em></h2>
+      <p style="font-size:.97rem;color:var(--warm);line-height:1.88;font-weight:300">Unele vin cu o temă clară. Altele vin cu o durere pe care n-o pot încă numi. În ambele cazuri, începem de unde ești.</p>
+    </div>
+    <div class="cards-grid reveal" style="transition-delay:.12s">
+      <div class="card-item"><div class="card-ico">💭</div><div><h3>Relația cu partenerul</h3><p>Te simți singură în relație. Ai încercat să comunici, dar ajungeți în aceleași ziduri. Vrei să înțelegi ce se întâmplă și ce opțiuni ai — indiferent de decizia finală.</p></div></div>
+      <div class="card-item"><div class="card-ico">🌿</div><div><h3>Doliu, pierdere, tranziție</h3><p>O persoană importantă a plecat — prin deces, separare sau distanțare. Uneori ceea ce pare doliu deschide alte teme: singurătate, schimbări în dinamica familiei, întrebări vechi care revin.</p></div></div>
+      <div class="card-item"><div class="card-ico">🔥</div><div><h3>Epuizare și suprasolicitare</h3><p>Ții totul în spate — familia, cariera, emoțiile celorlalți. Dar nu mai poți. Nu e slăbiciune. E semnalul că trebuie redefinit ce îți aparține și ce nu.</p></div></div>
+      <div class="card-item"><div class="card-ico">🪞</div><div><h3>Încredere și valoare de sine</h3><p>Știi rațional că meriți mai mult, dar emoțional nu simți asta. Lucrăm cu tiparele care te-au învățat să te faci mică — ca să le poți alege sau lăsa în urmă conștient.</p></div></div>
+      <div class="card-item"><div class="card-ico">👨‍👧</div><div><h3>Relația cu tatăl / istoria de familie</h3><p>Dinamici vechi care continuă să-ți influențeze relațiile prezente. Nu ca să dăm vina pe trecut — ca să înțelegi cum funcționezi azi și ce poți schimba.</p></div></div>
+      <div class="card-item"><div class="card-ico">🧭</div><div><h3>Nu știu încă ce mă aduce aici</h3><p>Simți că ceva nu e în regulă, dar nu poți numi exact. E suficient să vii. La evaluare, explorăm împreună — nu trebuie să ai un diagnostic ca să începi.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:var(--gap) 0;background:var(--sand)">
+  <div class="container">
+    <div class="two-col">
+      <div class="reveal text-col">
+        <div class="sec-label">Cum lucrez</div>
+        <h2>Cald, fără<br><em>să fiu paternal.</em></h2>
+        <p>Nu dau lecții. Nu spun cum ar trebui să simți. Nu traduc ce ai spus în ce crezi eu că vrei să spui.</p>
+        <p>Pun întrebări. Ascult ce urmează după ce crezi că ai terminat de spus. Îți ofer oglindă, nu verdict. Când e util, adaug context sau observ un tipar — dar decizia rămâne a ta.</p>
+        <p>Am format formal în psihoterapie centrată pe persoană, interviu motivațional și hipnoză clinică. Dar ce contează în cabinet nu sunt diplomele — e felul în care te simți când ieși de la ședință. <strong>Dacă te simți înțeleasă, procesul funcționează.</strong> Dacă nu, o spunem și ajustăm.</p>
+      </div>
+      <div class="reveal text-col" style="transition-delay:.12s">
+        <div class="sec-label">Cadrul practic</div>
+        <h2>Ce înseamnă<br><em>concret.</em></h2>
+        <p><strong>Durata unei ședințe:</strong> 50 de minute.</p>
+        <p><strong>Frecvență:</strong> de obicei săptămânală la început, apoi la 2 săptămâni pe măsură ce lucrurile se așează. Tu decizi ritmul.</p>
+        <p><strong>Locație:</strong> cabinet în Piața Victoriei, Sector 1. Sau online, prin video — la fel de eficient pentru cele mai multe teme.</p>
+        <p><strong>Confidențialitate:</strong> totală. Nu comunic cu partenerul, familia sau orice alt terapeut fără acordul tău explicit.</p>
+        <p><strong>Prima ședință:</strong> evaluare de 30 de minute, gratuită. Vedem dacă ne potrivim — fără presiune să continui.</p>
       </div>
     </div>
   </div>
@@ -124,9 +190,9 @@ function closeMenu() {
 
 <section style="padding:var(--gap) 0;background:var(--ink);text-align:center">
   <div class="container">
-    <div class="reveal" style="max-width:560px;margin:0 auto">
-      <h2 style="color:var(--white)">Cel mai util lucru pe care<br><em style="color:var(--accent)">îl poți face pentru el</em></h2>
-      <p style="font-size:.97rem;color:rgba(255,253,248,.65);font-weight:300;line-height:1.8;margin:20px 0 36px">nu e să îl schimbi. E să înțelegi ce îl ține pe loc. Uneori asta e tot ce e nevoie ca lucrurile să înceapă să se miște.</p>
+    <div class="reveal" style="max-width:620px;margin:0 auto">
+      <h2 style="color:var(--white)">Nu ai nevoie să ajungi<br><em style="color:var(--accent)">la capătul puterilor</em></h2>
+      <p style="font-size:.97rem;color:rgba(255,253,248,.65);font-weight:300;line-height:1.8;margin:20px 0 36px">ca să meriți un spațiu în care să respiri. Vino când simți că ar fi util — nu trebuie să justifici de ce.</p>
       <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="Calendly.initPopupWidget({url:'https://calendly.com/eduard-vlaston-eiv3'}); return false;" class="btn btn-primary">Evaluare 30 min — gratuită <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </div>
@@ -136,7 +202,7 @@ function closeMenu() {
   <div class="container">
     <div class="footer-in">
       <div class="footer-brand">Edi Vlaston<span>.</span></div>
-        <a href="mailto:edivlaston@gmail.com">edivlaston@gmail.com</a></div>
+      <a href="mailto:edivlaston@gmail.com">edivlaston@gmail.com</a>
       <span class="footer-copy">© 2026 Cabinet Individual de Psihologie · Cod 22334</span>
     </div>
   </div>
@@ -145,6 +211,20 @@ function closeMenu() {
 const io = new IntersectionObserver(e => { e.forEach(el => { if(el.isIntersecting){el.target.classList.add('in');io.unobserve(el.target);} }); },{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 window.addEventListener('scroll', () => { document.getElementById('nav').style.padding = window.scrollY > 60 ? '12px clamp(20px,5vw,56px)' : '18px clamp(20px,5vw,56px)'; });
+
+// Hero carousel rotation
+(function(){
+  const slides = document.querySelectorAll('.hero-carousel .carousel-slide');
+  if (slides.length < 2) return;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) return;
+  let current = 0;
+  setInterval(() => {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }, 3200);
+})();
 </script>
 </body>
 </html>
