@@ -1,0 +1,16 @@
+# Force HTTPS and canonical hostname (without www)
+# Netlify handles HTTPS automatically; this file handles URL canonicalization
+
+# Redirect .html versions to clean URLs (301 permanent for SEO)
+/barbati.html              /barbati              301!
+/femei.html                /femei                301!
+/adictii.html              /adictii              301!
+/despre.html               /despre               301!
+/contact.html              /contact              301!
+/blog.html                 /blog                 301!
+/pentru-terapeuti.html     /pentru-terapeuti     301!
+/multumesc.html            /multumesc            301!
+/index.html                /                     301!
+
+# Clean URL serving (Netlify will serve .html when no extension is requested)
+# This is the default Netlify behavior, but explicit for clarity
