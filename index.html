@@ -84,7 +84,25 @@ function closeMenu() {
   document.body.style.overflow = '';
 }
 </script>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1609722646982737');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1609722646982737&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 </head>
+
 <body>
 
 <nav id="nav">
@@ -255,5 +273,20 @@ const io = new IntersectionObserver(e => { e.forEach(el => { if(el.isIntersectin
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 window.addEventListener('scroll', () => { document.getElementById('nav').style.padding = window.scrollY > 60 ? '12px clamp(20px,5vw,56px)' : '18px clamp(20px,5vw,56px)'; });
 </script>
+<!-- Meta Pixel — Lead event tracking -->
+<script>
+document.addEventListener('click', function(e) {
+  var target = e.target.closest('a');
+  if (target && target.href && target.href.indexOf('calendly.com') !== -1) {
+    if (typeof fbq === 'function') {
+      fbq('track', 'Lead', {content_name: 'Calendly_Click_30min_evaluation'});
+    }
+    if (typeof gtag === 'function') {
+      gtag('event', 'conversion', {'send_to': 'AW-17654719970/calendly_click'});
+    }
+  }
+});
+</script>
 </body>
+
 </html>
