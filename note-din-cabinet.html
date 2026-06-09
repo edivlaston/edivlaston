@@ -273,7 +273,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModalBtn();});
 
 fetch('note-din-cabinet.json')
   .then(r=>r.json())
-  .then(data=>{episoade=data.sort((a,b)=>a.episod-b.episod);renderArcs(episoade);})
+  .then(data=>{episoade=data.filter(e=>e.publicat!==false).sort((a,b)=>a.episod-b.episod);renderArcs(episoade);})
   .catch(()=>{document.getElementById('arcs').innerHTML='<p style="text-align:center;color:var(--muted)">Episoadele se încarcă în curând.</p>';});
 </script>
 <!-- Meta Pixel — Lead event tracking -->
