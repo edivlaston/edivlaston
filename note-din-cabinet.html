@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://edivlaston.ro/note-din-cabinet">
+  <meta name="description" content="Note din Cabinet — povești din cabinetul unui psihoterapeut. Episoade despre bărbați, femei și ce se întâmplă cu adevărat într-o relație. Edi Vlaston, București.">
+  <meta property="og:title" content="Note din Cabinet — Edi Vlaston">
+  <meta property="og:description" content="Povești din cabinet. Ce se întâmplă în cameră, ce gândește terapeutul, unde se blochează omul. Personaje ficționale, dinamică reală.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://edivlaston.ro/note-din-cabinet">
+  <meta property="og:image" content="https://edivlaston.ro/edi-vlaston.webp">
+  <title>Note din Cabinet · Edi Vlaston Psihoterapeut București</title>
+  <!-- Google Tag (Analytics + Ads) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17654719970"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2W226C545N');
+    gtag('config', 'AW-17654719970');
+  </script>
+  <meta name="google-site-verification" content="z14BQ7ieyIuxJ1hAWddXO5ljOwfq92d7fcFSMoB_gn0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── SERIAL INTRO ───────────────────────────────── */
+    .ndc-intro{max-width:680px;margin:0 auto 8px}
+    .ndc-intro p{font-size:.95rem;color:var(--warm);line-height:1.85;font-weight:300;margin-bottom:16px}
+    .ndc-disclaimer-top{font-size:.82rem;color:var(--muted);line-height:1.7;font-style:italic;border-left:2px solid var(--stone);padding-left:18px;margin-top:24px}
+
+    /* ── ARC GROUPS ─────────────────────────────────── */
+    .arc{margin-top:56px}
+    .arc-head{display:flex;align-items:baseline;gap:14px;margin-bottom:24px;padding-bottom:12px;border-bottom:1px solid var(--stone)}
+    .arc-name{font-family:var(--serif);font-size:1.5rem;font-weight:500;color:var(--ink)}
+    .arc-sub{font-size:.8rem;color:var(--muted);letter-spacing:.04em}
+
+    /* ── EPISODE LIST ───────────────────────────────── */
+    .ep-list{display:flex;flex-direction:column;gap:14px}
+    .ep-card{background:var(--white);border:1px solid var(--stone);border-radius:8px;padding:24px 26px;cursor:pointer;transition:border-color .2s,transform .2s,box-shadow .2s;display:flex;align-items:center;gap:22px}
+    .ep-card:hover{border-color:var(--bark);transform:translateY(-3px);box-shadow:0 12px 34px rgba(139,94,60,.1)}
+    .ep-num{font-family:var(--serif);font-size:2rem;font-weight:400;color:var(--terra);flex-shrink:0;width:54px;text-align:center;line-height:1}
+    .ep-num small{display:block;font-family:var(--sans);font-size:.56rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--light);margin-top:4px}
+    .ep-body{flex:1;min-width:0}
+    .ep-card h3{font-family:var(--serif);font-size:1.18rem;font-weight:500;color:var(--ink);margin-bottom:6px;line-height:1.35}
+    .ep-card-sub{font-size:.78rem;color:var(--muted);margin-bottom:0}
+    .ep-go{font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--terra);flex-shrink:0;white-space:nowrap}
+
+    /* ── MODAL (reused from blog) ───────────────────── */
+    .modal-overlay{position:fixed;inset:0;z-index:500;background:rgba(34,24,8,.6);backdrop-filter:blur(4px);display:flex;align-items:flex-start;justify-content:center;padding:40px 20px;overflow-y:auto;opacity:0;pointer-events:none;transition:opacity .3s}
+    .modal-overlay.open{opacity:1;pointer-events:all}
+    .modal{background:var(--white);border-radius:8px;max-width:720px;width:100%;overflow:hidden;transform:translateY(20px);transition:transform .3s;box-shadow:0 24px 80px rgba(34,24,8,.25)}
+    .modal-overlay.open .modal{transform:translateY(0)}
+    .modal-body{padding:48px 52px 48px}
+    .modal-meta{display:flex;gap:16px;align-items:center;margin-bottom:14px}
+    .modal-cat{font-size:.64rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--terra)}
+    .modal-date{font-size:.72rem;color:var(--light)}
+    .modal h2{font-family:var(--serif);font-size:clamp(1.5rem,2.6vw,2.1rem);font-weight:400;line-height:1.25;color:var(--ink);margin-bottom:10px}
+    .modal-episub{font-size:.85rem;color:var(--muted);margin-bottom:30px;letter-spacing:.03em}
+    .modal-content{font-size:1rem;color:var(--ink);line-height:1.95;font-weight:300}
+    .modal-content p{margin-bottom:16px}
+    .modal-content .ep-inner{color:var(--warm);font-style:italic;padding-left:18px;border-left:2px solid var(--sand);margin:16px 0}
+    .modal-content .ep-disclaimer{font-size:.8rem;color:var(--muted);font-style:italic;line-height:1.7;margin-top:8px}
+    .modal-content em{font-style:italic;color:var(--warm)}
+    .modal-content .ep-sep{border:none;border-top:1px solid var(--stone);width:60px;margin:26px auto;opacity:.7}
+    .modal-cta{margin-top:38px;padding-top:28px;border-top:1px solid var(--stone);display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .modal-cta p{font-size:.88rem;color:var(--muted);max-width:340px}
+    .modal-nav{display:flex;justify-content:space-between;gap:12px;margin-top:18px;padding-top:18px;border-top:1px solid var(--stone)}
+    .modal-nav button{background:none;border:1px solid var(--stone);border-radius:30px;padding:9px 18px;font-family:var(--sans);font-size:.78rem;color:var(--terra);cursor:pointer;transition:border-color .2s,background .2s}
+    .modal-nav button:hover:not(:disabled){border-color:var(--bark);background:rgba(139,94,60,.05)}
+    .modal-nav button:disabled{opacity:.35;cursor:default}
+    .modal-close{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;background:rgba(247,241,232,.9);border:1px solid var(--stone);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.9rem;color:var(--muted);transition:background .2s;z-index:10}
+    .modal-close:hover{background:var(--white);color:var(--ink)}
+    .modal-wrap{position:relative}
+    @media(max-width:680px){.ep-card{padding:18px 18px;gap:14px}.ep-num{font-size:1.6rem;width:40px}.ep-go{display:none}.modal-body{padding:28px 24px 32px}}
+  </style>
+<script>
+function toggleMenu(){const m=document.getElementById('mobile-menu'),b=document.getElementById('hamburger');if(!m||!b)return;b.classList.toggle('open');m.classList.toggle('open');document.body.style.overflow=m.classList.contains('open')?'hidden':'';}
+function closeMenu(){const m=document.getElementById('mobile-menu'),b=document.getElementById('hamburger');if(!m||!b)return;b.classList.remove('open');m.classList.remove('open');document.body.style.overflow='';}
+</script>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1609722646982737');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1609722646982737&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+</head>
+
+<body>
+<nav id="nav">
+  <a href="/" class="nav-brand">Edi Vlaston<span>.</span></a>
+  <div class="nav-links">
+    <a href="/barbati">Pentru bărbați</a>
+    <a href="/femei">Pentru femei</a>
+    <a href="/despre">Despre</a>
+    <a href="/blog">Blog</a>
+    <a href="/note-din-cabinet" class="active">Note din Cabinet</a>
+    <a href="/contact">Contact</a>
+    <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="Calendly.initPopupWidget({url:'https://calendly.com/eduard-vlaston-eiv3'}); return false;" class="nav-cta">Prima întâlnire — 30 min, gratuită</a>
+  </div>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Meniu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="/barbati" onclick="closeMenu()">Pentru bărbați</a>
+  <a href="/femei" onclick="closeMenu()">Pentru femei</a>
+  <a href="/despre" onclick="closeMenu()">Despre</a>
+  <a href="/blog" onclick="closeMenu()">Blog</a>
+  <a href="/note-din-cabinet" onclick="closeMenu()">Note din Cabinet</a>
+  <a href="/contact" onclick="closeMenu()">Contact</a>
+  <a href="tel:+40744370179" class="mobile-phone" onclick="closeMenu()">📞 0744 370 179</a>
+  <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="Calendly.initPopupWidget({url:'https://calendly.com/eduard-vlaston-eiv3'}); closeMenu(); return false;" class="mobile-cta">Prima întâlnire — 30 min, gratuită</a>
+  <div style="border-top:1px solid rgba(139,94,60,.15);padding-top:24px;margin-top:8px;display:flex;flex-direction:column;gap:14px;align-items:center">
+    <a href="tel:+40744370179" onclick="closeMenu()" style="font-family:var(--sans);font-size:1rem;color:var(--terra);font-weight:500">📞 0744 370 179</a>
+    <a href="https://wa.me/40744370179" target="_blank" onclick="closeMenu()" style="font-family:var(--sans);font-size:1rem;color:var(--terra);font-weight:500">💬 WhatsApp</a>
+    <a href="mailto:edivlaston@gmail.com" onclick="closeMenu()" style="font-family:var(--sans);font-size:.9rem;color:var(--muted)">edivlaston@gmail.com</a>
+  </div>
+</div>
+
+<section class="page-hero">
+  <div class="container">
+    <div>
+      <div class="page-hero-tag">Serial</div>
+      <h1>Note din<br><em>Cabinet.</em></h1>
+      <p class="page-hero-lead" style="max-width:560px">Ce se întâmplă în cameră. Ce gândește terapeutul. Unde se blochează omul — și unde, uneori, se deblochează.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding:var(--gap) 0;background:var(--sand)">
+  <div class="container">
+    <div class="ndc-intro reveal">
+      <p>Fiecare episod e o ședință. Sau o bucată de ședință. Citești ce se spune și ce nu se spune, ce întreabă omul și ce întreabă tăcerea dintre noi.</p>
+      <p class="ndc-disclaimer-top">Personajele acestei serii sunt ficționale. Sunt compozite construite din ce văd în cabinet de ani buni — un gest aici, o reacție acolo, un tipar care se repetă. Confidențialitatea clienților reali rămâne intactă.</p>
+    </div>
+
+    <div id="arcs"></div>
+
+    <div class="reveal" style="text-align:center;margin-top:64px;transition-delay:.2s">
+      <p style="font-size:.88rem;color:var(--muted);margin-bottom:20px;max-width:480px;margin-left:auto;margin-right:auto">Dacă te-ai recunoscut într-un episod — sau ai recunoscut pe cineva — prima întâlnire e gratuită.</p>
+      <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="Calendly.initPopupWidget({url:'https://calendly.com/eduard-vlaston-eiv3'}); return false;" class="btn btn-primary">Prima întâlnire — 30 min, gratuită <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+  <div class="modal-wrap">
+    <button class="modal-close" onclick="closeModalBtn()">✕</button>
+    <div class="modal" id="modal">
+      <div class="modal-body">
+        <div class="modal-meta">
+          <span class="modal-cat" id="modal-cat"></span>
+          <span class="modal-date" id="modal-date"></span>
+        </div>
+        <h2 id="modal-title"></h2>
+        <div class="modal-episub" id="modal-episub"></div>
+        <div class="modal-content" id="modal-content"></div>
+        <div class="modal-cta">
+          <p>Dacă episodul te-a atins — poți programa o primă întâlnire gratuită.</p>
+          <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="Calendly.initPopupWidget({url:'https://calendly.com/eduard-vlaston-eiv3'}); return false;" class="btn btn-primary" style="white-space:nowrap">Prima întâlnire →</a>
+        </div>
+        <div class="modal-nav">
+          <button id="prev-ep" onclick="navEp(-1)">← Episodul anterior</button>
+          <button id="next-ep" onclick="navEp(1)">Episodul următor →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-in">
+      <div class="footer-brand">Edi Vlaston<span>.</span></div>
+      <div class="footer-links">
+        <a href="/barbati">Pentru bărbați</a>
+        <a href="/femei">Pentru femei</a>
+        <a href="/despre">Despre</a>
+        <a href="/blog">Blog</a>
+        <a href="/contact">Contact</a>
+        <a href="/confidentialitate">Confidențialitate</a>
+        <a href="mailto:edivlaston@gmail.com">edivlaston@gmail.com</a>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/edi.vlaston.psihoterapeut" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="https://www.instagram.com/edivlaston.terapeut" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        </div>
+      </div>
+      <span class="footer-copy">© 2026 Cabinet Individual de Psihologie · Cod 22334</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const io=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('in');io.unobserve(el.target);}});},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+window.addEventListener('scroll',()=>{document.getElementById('nav').style.padding=window.scrollY>60?'12px clamp(20px,5vw,56px)':'18px clamp(20px,5vw,56px)';});
+
+function formatData(s){const d=new Date(s);return d.toLocaleDateString('ro-RO',{day:'numeric',month:'long',year:'numeric'});}
+
+let episoade=[];
+let currentEp=0;
+
+function renderArcs(eps){
+  // grupez pe personaj, pastrand ordinea episoadelor
+  const arcs=[];
+  let cur=null;
+  eps.forEach(e=>{
+    if(!cur||cur.personaj!==e.personaj){cur={personaj:e.personaj,eps:[]};arcs.push(cur);}
+    cur.eps.push(e);
+  });
+  const wrap=document.getElementById('arcs');
+  wrap.innerHTML=arcs.map(arc=>`
+    <div class="arc reveal">
+      <div class="arc-head">
+        <span class="arc-name">${arc.personaj}</span>
+        <span class="arc-sub">${arc.eps.length} ${arc.eps.length===1?'episod':'episoade'}</span>
+      </div>
+      <div class="ep-list">
+        ${arc.eps.map(e=>`
+          <div class="ep-card" onclick="openModal(${e.episod})">
+            <div class="ep-num">${e.episod}<small>Ep</small></div>
+            <div class="ep-body">
+              <h3>${e.titlu}</h3>
+              <p class="ep-card-sub">${e.subtitlu}</p>
+            </div>
+            <span class="ep-go">Citește →</span>
+          </div>`).join('')}
+      </div>
+    </div>`).join('');
+  document.querySelectorAll('.arc.reveal').forEach(el=>io.observe(el));
+}
+
+function openModal(epNum){
+  const e=episoade.find(x=>x.episod===epNum);
+  if(!e)return;
+  currentEp=epNum;
+  document.getElementById('modal-cat').textContent='Note din Cabinet · '+e.personaj;
+  document.getElementById('modal-date').textContent=formatData(e.data);
+  document.getElementById('modal-title').textContent=e.titlu;
+  document.getElementById('modal-episub').textContent=e.subtitlu;
+  document.getElementById('modal-content').innerHTML=e.continut;
+  const idx=episoade.findIndex(x=>x.episod===epNum);
+  document.getElementById('prev-ep').disabled=(idx<=0);
+  document.getElementById('next-ep').disabled=(idx>=episoade.length-1);
+  document.getElementById('modal-overlay').classList.add('open');
+  document.querySelector('.modal-overlay').scrollTop=0;
+  document.body.style.overflow='hidden';
+}
+
+function navEp(dir){
+  const idx=episoade.findIndex(x=>x.episod===currentEp);
+  const next=episoade[idx+dir];
+  if(next)openModal(next.episod);
+}
+
+function closeModal(e){if(e.target===document.getElementById('modal-overlay'))closeModalBtn();}
+function closeModalBtn(){document.getElementById('modal-overlay').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModalBtn();});
+
+fetch('note-din-cabinet.json')
+  .then(r=>r.json())
+  .then(data=>{episoade=data.sort((a,b)=>a.episod-b.episod);renderArcs(episoade);})
+  .catch(()=>{document.getElementById('arcs').innerHTML='<p style="text-align:center;color:var(--muted)">Episoadele se încarcă în curând.</p>';});
+</script>
+<!-- Meta Pixel — Lead event tracking -->
+<script>
+document.addEventListener('click', function(e) {
+  var target = e.target.closest('a');
+  if (target && target.href && target.href.indexOf('calendly.com') !== -1) {
+    if (typeof fbq === 'function') { fbq('track', 'Lead', {content_name: 'Calendly_Click_30min_evaluation'}); }
+    if (typeof gtag === 'function') { gtag('event', 'conversion', {'send_to': 'AW-17654719970/calendly_click'}); }
+  }
+});
+</script>
+</body>
+</html>
