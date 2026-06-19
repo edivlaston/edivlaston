@@ -14,3 +14,7 @@
 
 # Clean URL serving (Netlify will serve .html when no extension is requested)
 # This is the default Netlify behavior, but explicit for clarity
+
+# Note din Cabinet — deep-link pe episod: /note-din-cabinet/6 serveste pagina (200, fara redirect)
+# JS-ul citeste numarul din URL si deschide episodul automat. Functioneaza pentru orice episod nou.
+/note-din-cabinet/*   /note-din-cabinet.html   200

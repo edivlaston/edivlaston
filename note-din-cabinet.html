@@ -38,7 +38,7 @@
 
     /* ── EPISODE LIST ───────────────────────────────── */
     .ep-list{display:flex;flex-direction:column;gap:14px}
-    .ep-card{background:var(--white);border:1px solid var(--stone);border-radius:8px;padding:24px 26px;cursor:pointer;transition:border-color .2s,transform .2s,box-shadow .2s;display:flex;align-items:center;gap:22px}
+    .ep-card{background:var(--white);border:1px solid var(--stone);border-radius:8px;padding:24px 26px;cursor:pointer;transition:border-color .2s,transform .2s,box-shadow .2s;display:flex;align-items:center;gap:22px;text-decoration:none;color:inherit}
     .ep-card:hover{border-color:var(--bark);transform:translateY(-3px);box-shadow:0 12px 34px rgba(139,94,60,.1)}
     .ep-num{font-family:var(--serif);font-size:2rem;font-weight:400;color:var(--terra);flex-shrink:0;width:54px;text-align:center;line-height:1}
     .ep-num small{display:block;font-family:var(--sans);font-size:.56rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--light);margin-top:4px}
@@ -231,20 +231,20 @@ function renderArcs(eps){
       </div>
       <div class="ep-list">
         ${arc.eps.map(e=>`
-          <div class="ep-card" onclick="openModal(${e.episod})">
+          <a href="/note-din-cabinet/${e.episod}" class="ep-card" onclick="openModal(${e.episod});return false;">
             <div class="ep-num">${e.episod}<small>Ep</small></div>
             <div class="ep-body">
               <h3>${e.titlu}</h3>
               <p class="ep-card-sub">${e.subtitlu}</p>
             </div>
             <span class="ep-go">Citește →</span>
-          </div>`).join('')}
+          </a>`).join('')}
       </div>
     </div>`).join('');
   document.querySelectorAll('.arc.reveal').forEach(el=>io.observe(el));
 }
 
-function openModal(epNum){
+function openModal(epNum,updateUrl){
   const e=episoade.find(x=>x.episod===epNum);
   if(!e)return;
   currentEp=epNum;
@@ -259,6 +259,12 @@ function openModal(epNum){
   document.getElementById('modal-overlay').classList.add('open');
   document.querySelector('.modal-overlay').scrollTop=0;
   document.body.style.overflow='hidden';
+  // actualizez titlul paginii pentru episodul deschis (SEO + tab)
+  document.title=e.titlu+' · Note din Cabinet · Edi Vlaston';
+  // sincronizez URL-ul: /note-din-cabinet/6 — fara reincarcare
+  if(updateUrl!==false){
+    history.pushState({ep:epNum},'','/note-din-cabinet/'+epNum);
+  }
 }
 
 function navEp(dir){
@@ -268,12 +274,39 @@ function navEp(dir){
 }
 
 function closeModal(e){if(e.target===document.getElementById('modal-overlay'))closeModalBtn();}
-function closeModalBtn(){document.getElementById('modal-overlay').classList.remove('open');document.body.style.overflow='';}
+function closeModalBtn(){
+  document.getElementById('modal-overlay').classList.remove('open');
+  document.body.style.overflow='';
+  document.title='Note din Cabinet · Edi Vlaston Psihoterapeut București';
+  // revin la URL-ul listei, fara sa stric istoricul de navigare al browserului
+  if(location.pathname!=='/note-din-cabinet'&&location.pathname!=='/note-din-cabinet/'){
+    history.pushState({},'','/note-din-cabinet');
+  }
+}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModalBtn();});
 
-fetch('note-din-cabinet.json')
+// extrag numarul episodului din URL: /note-din-cabinet/6  ->  6
+function epFromUrl(){
+  const m=location.pathname.match(/note-din-cabinet\/(\d+)/);
+  return m?parseInt(m[1],10):null;
+}
+
+// butoanele back/forward din browser deschid/inchid episodul corect
+window.addEventListener('popstate',()=>{
+  const ep=epFromUrl();
+  if(ep&&episoade.find(x=>x.episod===ep)){openModal(ep,false);}
+  else{closeModalBtn();}
+});
+
+fetch('/note-din-cabinet.json')
   .then(r=>r.json())
-  .then(data=>{episoade=data.filter(e=>e.publicat!==false).sort((a,b)=>a.episod-b.episod);renderArcs(episoade);})
+  .then(data=>{
+    episoade=data.filter(e=>e.publicat!==false).sort((a,b)=>a.episod-b.episod);
+    renderArcs(episoade);
+    // daca s-a intrat direct pe /note-din-cabinet/N, deschid episodul automat
+    const ep=epFromUrl();
+    if(ep&&episoade.find(x=>x.episod===ep)){openModal(ep,false);}
+  })
   .catch(()=>{document.getElementById('arcs').innerHTML='<p style="text-align:center;color:var(--muted)">Episoadele se încarcă în curând.</p>';});
 </script>
 <!-- Meta Pixel — Lead event tracking -->
