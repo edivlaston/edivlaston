@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://edivlaston.ro/intrebari-frecvente">
+  <meta name="description" content="Întrebări frecvente despre psihoterapie pentru bărbați în București. Cum funcționează, cât costă, cât durează, dacă e confidențial — răspunsuri directe de la Edi Vlaston, psihoterapeut.">
+  <meta property="og:title" content="Întrebări Frecvente · Psihoterapie pentru Bărbați · Edi Vlaston">
+  <meta property="og:description" content="Răspunsuri directe la cele mai comune întrebări despre terapie individuală pentru bărbați în București.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://edivlaston.ro/intrebari-frecvente">
+  <title>Întrebări Frecvente despre Psihoterapie pentru Bărbați · Edi Vlaston București</title>
+
+  <!-- Google Tag (Analytics + Ads) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17654719970"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2W226C545N');
+    gtag('config', 'AW-17654719970');
+  </script>
+  <meta name="google-site-verification" content="z14BQ7ieyIuxJ1hAWddXO5ljOwfq92d7fcFSMoB_gn0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .faq-page-hero {
+      padding: 130px clamp(20px,5vw,56px) 80px;
+      max-width: var(--col);
+      margin: 0 auto;
+      background: var(--sand);
+    }
+    .faq-intro { max-width: 640px; }
+    .faq-page-lead { font-size: 1rem; color: var(--warm); line-height: 1.88; font-weight: 300; margin-top: 20px; max-width: 560px; }
+
+    .faq-section { padding: var(--gap) 0; }
+    .faq-section:nth-child(even) { background: var(--parch); border-top: 1px solid var(--stone); border-bottom: 1px solid var(--stone); }
+    .faq-section:nth-child(odd) { background: var(--sand); }
+
+    .faq-section-inner { max-width: var(--col); margin: 0 auto; padding: 0 clamp(20px,5vw,56px); display: grid; grid-template-columns: 280px 1fr; gap: 80px; align-items: start; }
+    .faq-section-label h2 { font-family: var(--serif); font-size: clamp(1.6rem,2.5vw,2.2rem); font-weight: 400; color: var(--ink); line-height: 1.2; margin-top: 12px; }
+    .faq-section-label h2 em { font-style: italic; color: var(--terra); display: block; }
+
+    .faq-group { display: flex; flex-direction: column; gap: 0; }
+    .faq-item { border-bottom: 1px solid var(--stone); }
+    .faq-item:first-child { border-top: 1px solid var(--stone); }
+    .faq-q {
+      width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+      padding: 22px 0; display: flex; justify-content: space-between; align-items: center;
+      font-family: var(--sans); font-size: .97rem; font-weight: 500; color: var(--ink); line-height: 1.5;
+      gap: 16px;
+    }
+    .faq-q:hover { color: var(--terra); }
+    .faq-icon { font-size: 1.4rem; color: var(--terra); flex-shrink: 0; transition: transform .25s; font-weight: 300; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-a {
+      max-height: 0; overflow: hidden; transition: max-height .35s ease;
+      font-size: .95rem; color: var(--warm); line-height: 1.85; font-weight: 300;
+    }
+    .faq-a-inner { padding-bottom: 22px; }
+    .faq-item.open .faq-a { max-height: 600px; }
+    .faq-a strong { color: var(--ink); font-weight: 500; }
+
+    .faq-cta-band { background: var(--ink); padding: 80px clamp(20px,5vw,56px); text-align: center; }
+    .faq-cta-band h2 { color: var(--white); font-family: var(--serif); font-size: clamp(1.8rem,3vw,2.8rem); font-weight: 400; margin-bottom: 16px; }
+    .faq-cta-band h2 em { color: var(--accent); font-style: italic; }
+    .faq-cta-band p { color: rgba(255,253,248,.65); font-size: .97rem; font-weight: 300; max-width: 460px; margin: 0 auto 32px; line-height: 1.8; }
+
+    .author-box { background: var(--white); border: 1px solid var(--stone); border-radius: 6px; padding: 28px; margin-top: 40px; }
+    .author-box p { font-size: .88rem; color: var(--muted); line-height: 1.75; margin: 0; }
+    .author-box strong { color: var(--ink); font-size: .92rem; display: block; margin-bottom: 6px; }
+
+    @media(max-width: 860px) {
+      .faq-section-inner { grid-template-columns: 1fr; gap: 32px; }
+    }
+    @media(max-width: 680px) { .nav-links { display: none; } .hamburger { display: flex; } }
+  </style>
+
+  <!-- FAQ Schema markup — AEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Ce este psihoterapia pentru bărbați?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Psihoterapia pentru bărbați este un proces individual de lucru cu un psihoterapeut specializat, axat pe problemele specifice cu care se confruntă bărbații: dificultăți relaționale, comunicare deficitară cu partenera, retragere emoțională, burnout profesional sau incapacitatea de a construi relații stabile. Nu este terapie de cuplu — bărbatul lucrează individual, la propriul proces."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Cât costă o ședință de psihoterapie în București?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O ședință individuală de 50 de minute la cabinetul Edi Vlaston costă 280 lei. Există și pachete: Focus 5 (5 ședințe, 1250 lei) și Echilibru 10 (10 ședințe, 2240 lei). Plata se face prin transfer bancar, card sau cash. Facturare disponibilă la cerere."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Câte ședințe de terapie sunt necesare?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Un proces tipic durează 8–16 ședințe. Unii clienți observă schimbări după 4–5 ședințe. Nu există terapie pe viață — procesul are un scop clar și se încheie când obiectivul e atins. Ritmul e adaptat fiecărui client: săptămânal sau bilunar."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Va afla cineva că merg la terapie?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nu. Cabinetul Edi Vlaston nu se decontează la CNAS, deci nu apare în dosarul medical. Plata cash sau card. Ședințele online pot fi din orice locație discretă. Confidențialitatea este garantată legal prin codul deontologic al Colegiului Psihologilor din România."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Pot veni la terapie singur, fără parteneră?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Da — și acesta este exact formatul în care lucrează Edi Vlaston. Nu este terapie de cuplu, ci terapie individuală pentru bărbat. Partenera nu trebuie să știe, să fie de acord sau să participe. Mulți clienți vin singuri, din proprie inițiativă sau la sugestia partener."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ce se întâmplă la prima ședință de psihoterapie?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Prima ședință durează 50 de minute și nu are un scenariu fix. Terapeutul ascultă ce te-a adus acolo, fără judecată. Nu e un interviu de diagnostic și nu trebuie să vii cu un plan pregătit. O frază e suficientă ca punct de plecare. La final, amândoi evaluați dacă are sens să continuați."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ce este terapia centrată pe persoană?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Terapia centrată pe persoană (sau rogersiană, după Carl Rogers) este o abordare în care terapeutul nu dă sfaturi și nu judecă, ci creează un spațiu sigur în care clientul explorează ce se întâmplă cu el. Premisa: omul are în el resursele necesare schimbării — terapeutul ajută la accesarea lor. E diferită de CBT (terapie cognitiv-comportamentală) și de coaching."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Online sau față în față — care e mai eficient?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ambele variante sunt la fel de eficiente din punct de vedere terapeutic. Ședințele online sunt mai convenabile pentru un program încărcat și pot fi făcute din orice locație cu internet stabil. Cabinetul este la Piața Victoriei, Sector 1, București. Poți alterna între cele două formate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Partenera m-a trimis la terapie. Are sens dacă nu vin din proprie inițiativă?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Da. Mulți bărbați vin inițial pentru altcineva și rămân pentru ei înșiși. Motivația externă este un punct de start valid. Dacă după prima ședință simți că procesul îți aduce ceva — continui. Dacă nu — nu exiistă nicio obligație."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ce înseamnă că nu reușești în relații?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Că ai mai multe relații care se termină similar fără să înțelegi de ce. Că partenera spune că ești distant sau că nu comunici, deși tu simți că faci tot ce trebuie. Că relația ta actuală are conflicte repetate fără rezolvare. Nu este un defect de caracter — este un set de abilități relaționale pe care nu le-ai dobândit, pentru că nimeni nu le-a predat."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Cât de repede pot obține o programare?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Programările se fac prin Calendly — poți vedea sloturile disponibile în timp real și alege direct. De obicei există locuri disponibile în decurs de câteva zile. Cabinetul este disponibil atât pentru ședințe online cât și față în față la Piața Victoriei, Sector 1, București."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Care e diferența dintre psihoterapie și coaching?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Coaching-ul lucrează cu obiective viitoare și strategii de performanță. Psihoterapia lucrează cu ce se întâmplă în interior: tipare emoționale, reacții automate, dinamici relaționale. Dacă știi ce vrei dar nu reușești să ajungi acolo din motive care țin de tine — acela e teritoriul terapiei, nu al coaching-ului."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Person + ProfessionalService Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Cabinet Edi Vlaston — Psihoterapeut",
+    "url": "https://edivlaston.ro",
+    "telephone": "+40744370179",
+    "email": "edivlaston@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Piața Victoriei",
+      "addressLocality": "București",
+      "addressRegion": "Sector 1",
+      "addressCountry": "RO"
+    },
+    "priceRange": "280 lei / ședință",
+    "employee": {
+      "@type": "Person",
+      "name": "Edi Vlaston",
+      "jobTitle": "Psihoterapeut",
+      "hasCredential": "Colegiul Psihologilor din România, cod 22334"
+    }
+  }
+  </script>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const btn = document.getElementById('hamburger');
+      if (!menu || !btn) return;
+      btn.classList.toggle('open');
+      menu.classList.toggle('open');
+      document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+    }
+    function closeMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const btn = document.getElementById('hamburger');
+      if (!menu || !btn) return;
+      btn.classList.remove('open');
+      menu.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  </script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1609722646982737');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1609722646982737&ev=PageView&noscript=1"
+  /></noscript>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="/" class="nav-brand">Edi Vlaston<span>.</span></a>
+  <div class="nav-links">
+    <a href="/barbati">Pentru Ei</a>
+    <a href="/femei">Pentru Ele</a>
+    <a href="/despre">Despre</a>
+    <a href="/blog">Blog</a>
+    <a href="/note-din-cabinet">Note din Cabinet</a>
+    <a href="/contact">Contact</a>
+    <div class="nav-social">
+      <a href="https://www.facebook.com/edi.vlaston.psihoterapeut" target="_blank" rel="noopener" title="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="https://www.instagram.com/edivlaston.terapeut" target="_blank" rel="noopener" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+    </div>
+    <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="Calendly.initPopupWidget({url:'https://calendly.com/eduard-vlaston-eiv3'}); return false;" class="nav-cta">Rezervă o primă ședință</a>
+  </div>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Meniu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="/barbati" onclick="closeMenu()">Pentru Ei</a>
+  <a href="/femei" onclick="closeMenu()">Pentru Ele</a>
+  <a href="/despre" onclick="closeMenu()">Despre</a>
+  <a href="/blog" onclick="closeMenu()">Blog</a>
+  <a href="/note-din-cabinet" onclick="closeMenu()">Note din Cabinet</a>
+  <a href="/contact" onclick="closeMenu()">Contact</a>
+  <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="Calendly.initPopupWidget({url:'https://calendly.com/eduard-vlaston-eiv3'}); closeMenu(); return false;" class="mobile-cta">Rezervă o primă ședință</a>
+  <div style="border-top:1px solid rgba(139,94,60,.15);padding-top:24px;margin-top:8px;display:flex;flex-direction:column;gap:14px;align-items:center">
+    <a href="tel:+40744370179" onclick="closeMenu()" style="font-family:var(--sans);font-size:1rem;color:var(--terra);font-weight:500">📞 0744 370 179</a>
+    <a href="https://wa.me/40744370179" target="_blank" onclick="closeMenu()" style="font-family:var(--sans);font-size:1rem;color:var(--terra);font-weight:500">💬 WhatsApp</a>
+    <a href="mailto:edivlaston@gmail.com" onclick="closeMenu()" style="font-family:var(--sans);font-size:.9rem;color:var(--muted)">edivlaston@gmail.com</a>
+  </div>
+</div>
+
+<!-- ── HERO ─────────────────────────────────────────────── -->
+<section style="background:var(--sand);padding-top:1px">
+  <div class="faq-page-hero">
+    <div class="faq-intro">
+      <div class="sec-label">Psihoterapie pentru bărbați · București</div>
+      <h1 style="font-family:var(--serif);font-size:clamp(2.4rem,4.5vw,4rem);font-weight:400;line-height:1.1;color:var(--ink);margin-top:16px">
+        Întrebări frecvente<br><em style="font-style:italic;color:var(--terra)">despre terapie.</em>
+      </h1>
+      <p class="faq-page-lead">Dacă te gândești să vii la terapie pentru prima dată — sau dacă ai întrebări specifice despre cum funcționează cabinetul — răspunsurile directe sunt mai jos. Fără limbaj clinic, fără eufemisme.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 1: ÎNAINTE SĂ ÎNCEPI ──────────────────────── -->
+<section class="faq-section">
+  <div class="faq-section-inner">
+    <div class="faq-section-label reveal">
+      <div class="sec-label">01</div>
+      <h2>Înainte<br><em>să începi.</em></h2>
+      <p style="font-size:.9rem;color:var(--muted);line-height:1.75;font-weight:300;margin-top:16px">Ce e terapia, cui se adresează și dacă e pentru tine.</p>
+    </div>
+    <div class="faq-group reveal" style="transition-delay:.1s">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Ce este psihoterapia pentru bărbați?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Psihoterapia pentru bărbați este un proces individual de lucru cu un psihoterapeut specializat, axat pe problemele cu care se confruntă specific bărbații: dificultăți relaționale, comunicare deficitară cu partenera, retragere emoțională, burnout profesional sau incapacitatea de a construi relații stabile. <strong>Nu este terapie de cuplu</strong> — bărbatul lucrează individual, la propriul proces. Partenera nu trebuie să participe sau să știe.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Nu cred că am nevoie de terapie. Cum știu dacă e pentru mine?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Nu e vorba de nevoie în sens medical. E un set de abilități relaționale pe care nu le-ai dobândit — pentru că nimeni nu le-a predat. Dacă ai relații care se termină similar fără să înțelegi de ce, dacă partenera spune că ești distant sau că nu comunici deși tu simți că faci tot ce trebuie, dacă conflictele se repetă fără rezolvare — <strong>acela e teritoriul în care lucrăm</strong>. Prima ședință nu te obligă la nimic.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Care e diferența dintre psihoterapie și coaching?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Coaching-ul lucrează cu obiective viitoare și strategii de performanță. Psihoterapia lucrează cu ce se întâmplă în interior: tipare emoționale, reacții automate, dinamici relaționale moștenite. Dacă știi ce vrei dar nu reușești să ajungi acolo din motive care țin de tine — acela e teritoriul terapiei. Dacă ai nevoie de un plan de acțiune pentru obiective clare — acela e teritoriul coaching-ului.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Ce este terapia centrată pe persoană (rogersiană)?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Terapia centrată pe persoană, dezvoltată de Carl Rogers, este o abordare în care terapeutul nu dă sfaturi și nu judecă, ci creează un spațiu sigur în care clientul explorează ce se întâmplă cu el. Premisa fundamentală: omul are în el resursele necesare schimbării — terapeutul ajută la accesarea lor. E diferită de CBT (terapia cognitiv-comportamentală) care lucrează mai directiv, cu tehnici și exerciții structurate.
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 2: CUM FUNCȚIONEAZĂ ───────────────────────── -->
+<section class="faq-section">
+  <div class="faq-section-inner">
+    <div class="faq-section-label reveal">
+      <div class="sec-label">02</div>
+      <h2>Cum<br><em>funcționează.</em></h2>
+      <p style="font-size:.9rem;color:var(--muted);line-height:1.75;font-weight:300;margin-top:16px">Prima ședință, ritmul, durata procesului.</p>
+    </div>
+    <div class="faq-group reveal" style="transition-delay:.1s">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Ce se întâmplă la prima ședință de psihoterapie?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Prima ședință durează 50 de minute și nu are un scenariu fix. Terapeutul ascultă ce te-a adus acolo — fără judecată, fără formular de completat. Nu e un interviu de diagnostic și nu trebuie să vii cu un plan pregătit. <strong>O frază e suficientă ca punct de plecare</strong>. La final, amândoi evaluați dacă are sens să continuați.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Câte ședințe de terapie sunt necesare?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Un proces tipic durează <strong>8–16 ședințe</strong>. Unii clienți observă schimbări după 4–5 ședințe. Nu există terapie pe viață — procesul are un scop clar și se încheie când obiectivul e atins. Ritmul e adaptat fiecărui client: săptămânal sau bilunar.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Online sau față în față — care e mai eficient?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Ambele variante sunt la fel de eficiente din punct de vedere terapeutic. Ședințele online sunt mai convenabile pentru un program încărcat și pot fi făcute din orice locație cu o conexiune stabilă la internet. Cabinetul este la <strong>Piața Victoriei, Sector 1, București</strong>. Poți alterna între cele două formate fără restricții.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Pot veni singur, fără parteneră?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Da — și acesta este exact formatul în care lucrez. <strong>Nu este terapie de cuplu</strong>, ci terapie individuală pentru tine. Partenera nu trebuie să știe, să fie de acord sau să participe. Procesul e al tău.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Partenera m-a trimis. Are sens dacă nu vin din proprie inițiativă?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Da. Mulți bărbați vin inițial pentru altcineva și rămân pentru ei înșiși. Motivația externă este un punct de start valid. Dacă după prima ședință simți că procesul îți aduce ceva — continui. Dacă nu — nu există nicio obligație.
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 3: CONFIDENȚIALITATE ──────────────────────── -->
+<section class="faq-section">
+  <div class="faq-section-inner">
+    <div class="faq-section-label reveal">
+      <div class="sec-label">03</div>
+      <h2>Confidențialitate<br><em>și discreție.</em></h2>
+      <p style="font-size:.9rem;color:var(--muted);line-height:1.75;font-weight:300;margin-top:16px">Ce știe și ce nu știe nimeni altcineva.</p>
+    </div>
+    <div class="faq-group reveal" style="transition-delay:.1s">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Va afla cineva că merg la terapie?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Nu. Cabinetul nu se decontează la CNAS, deci <strong>nu apare în dosarul medical</strong>. Plata cash sau card. Ședințele online pot fi din orice locație discretă. Confidențialitatea este garantată legal prin codul deontologic al Colegiului Psihologilor din România — cod 22334.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Angajatorul meu poate afla că merg la psiholog?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Nu. Nu există nicio legătură între cabinet și angajator. Informațiile despre ședințe nu ajung nicăieri în afara cabinetului. Facturarea, dacă o soliciți, este emisă pe numele tău personal.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Ce se întâmplă cu ce spun în ședință?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Rămâne în cabinet. Psihoterapeutul are obligație legală și deontologică de confidențialitate. Excepțiile sunt extrem de rare și prevăzute explicit de lege: situații de risc iminent pentru viața cuiva. Altfel, nimic din ce spui nu iese din ședință.
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 4: PREȚURI ──────────────────────────────────── -->
+<section class="faq-section">
+  <div class="faq-section-inner">
+    <div class="faq-section-label reveal">
+      <div class="sec-label">04</div>
+      <h2>Prețuri<br><em>și programare.</em></h2>
+      <p style="font-size:.9rem;color:var(--muted);line-height:1.75;font-weight:300;margin-top:16px">Cât costă, cum plătești, cum rezervi.</p>
+    </div>
+    <div class="faq-group reveal" style="transition-delay:.1s">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Cât costă o ședință de psihoterapie la Edi Vlaston?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          O ședință individuală de 50 de minute costă <strong>280 lei</strong>. Există și pachete cu prețuri reduse: Focus 5 (5 ședințe, 1.250 lei — 250 lei/ședință) și Echilibru 10 (10 ședințe, 2.240 lei — 224 lei/ședință). Plata prin transfer bancar, card sau cash. Facturare disponibilă la cerere.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Cât de repede pot obține o programare?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Programările se fac prin Calendly — poți vedea sloturile disponibile în timp real și alege direct, fără să trimiți email și să aștepți confirmare. De obicei există locuri disponibile în decurs de câteva zile.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Se decontează terapia la asigurarea de sănătate?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Nu. Cabinetul lucrează exclusiv privat, fără decontare CNAS. Aceasta este și garanția confidențialității — ședința nu apare în niciun dosar medical.
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── AUTHOR BOX ──────────────────────────────────────────── -->
+<section style="background:var(--parch);border-top:1px solid var(--stone);padding:60px 0">
+  <div style="max-width:var(--col);margin:0 auto;padding:0 clamp(20px,5vw,56px)">
+    <div class="author-box reveal">
+      <strong>Edi Vlaston — Psihoterapeut, București</strong>
+      <p>Răspunsurile de mai sus sunt scrise de Edi Vlaston, psihoterapeut acreditat CPA (cod 22334), specializat în psihoterapie centrată pe persoană (Carl Rogers), Interviu Motivațional și hipnoză clinică. Cabinet la Piața Victoriei, Sector 1, București. Înainte de psihoterapie — 20 de ani în management corporatist. <a href="/despre" style="color:var(--terra)">Citește mai multe despre Edi →</a></p>
+      <p style="margin-top:12px">Ai o întrebare care nu e aici? Scrie la <a href="mailto:edivlaston@gmail.com" style="color:var(--terra)">edivlaston@gmail.com</a> — răspund în 24h.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BAND ────────────────────────────────────────────── -->
+<div class="faq-cta-band">
+  <h2>Rezervă<br><em>o primă ședință.</em></h2>
+  <p>50 de minute. Fără angajament. Dacă simți că are sens — mergem mai departe. 280 lei / ședință.</p>
+  <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="Calendly.initPopupWidget({url:'https://calendly.com/eduard-vlaston-eiv3'}); return false;" class="btn btn-primary">
+    Rezervă o primă ședință
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-in">
+      <div class="footer-brand">Edi Vlaston<span>.</span></div>
+      <div class="footer-links">
+        <a href="/barbati">Pentru Ei</a>
+        <a href="/femei">Pentru Ele</a>
+        <a href="/despre">Despre</a>
+        <a href="/blog">Blog</a>
+        <a href="/contact">Contact</a>
+        <a href="/confidentialitate">Confidențialitate</a>
+        <a href="mailto:edivlaston@gmail.com">edivlaston@gmail.com</a>
+      </div>
+      <span class="footer-copy">© 2026 Cabinet Individual de Psihologie · Cod 22334</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script>
+  const io = new IntersectionObserver(e => { e.forEach(el => { if(el.isIntersecting){el.target.classList.add('in');io.unobserve(el.target);} }); },{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  window.addEventListener('scroll', () => { document.getElementById('nav').style.padding = window.scrollY > 60 ? '12px clamp(20px,5vw,56px)' : '18px clamp(20px,5vw,56px)'; });
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+</script>
+
+<script>
+  document.addEventListener('click', function(e) {
+    var target = e.target.closest('a');
+    if (target && target.href && target.href.indexOf('calendly.com') !== -1) {
+      if (typeof fbq === 'function') { fbq('track', 'Lead', {content_name: 'Calendly_Click_FAQ'}); }
+      if (typeof gtag === 'function') { gtag('event', 'conversion', {'send_to': 'AW-17654719970/calendly_click'}); }
+    }
+  });
+</script>
+
+</body>
+</html>
