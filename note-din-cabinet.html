@@ -184,6 +184,59 @@ function closeMenu(){const m=document.getElementById('mobile-menu'),b=document.g
   </div>
 </div>
 
+
+<!-- Formular abonare Note din Cabinet -->
+<section style="padding:60px 0;background:var(--ink)">
+  <div class="container" style="max-width:560px;margin:0 auto;text-align:center">
+    <div class="sec-label" style="color:var(--accent)">Episoade în avans</div>
+    <h2 style="color:var(--white);margin:12px 0 16px">Primește episoadele<br><em>înainte să fie publice.</em></h2>
+    <p style="color:var(--stone);font-size:.97rem;line-height:1.8;margin-bottom:32px">Cititorii din listă primesc fiecare episod nou cu 2-3 zile înainte de publicare. Fără spam, fără reclame — doar Note din Cabinet.</p>
+    <div id="form-abonare">
+      <div style="display:flex;flex-direction:column;gap:12px;max-width:400px;margin:0 auto">
+        <input type="text" id="lead-nume" placeholder="Prenumele tău" style="padding:14px 18px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.08);color:var(--white);font-family:var(--sans);font-size:.97rem;border-radius:4px;outline:none">
+        <input type="email" id="lead-email" placeholder="Adresa de email" style="padding:14px 18px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.08);color:var(--white);font-family:var(--sans);font-size:.97rem;border-radius:4px;outline:none">
+        <button onclick="trimiteDate()" style="padding:14px 24px;background:var(--terra);color:var(--white);border:none;font-family:var(--sans);font-size:.97rem;font-weight:500;border-radius:4px;cursor:pointer;letter-spacing:.04em">Vreau să primesc episoadele</button>
+      </div>
+      <p style="color:var(--muted);font-size:.8rem;margin-top:16px">Datele tale nu sunt partajate cu nimeni. Te poți dezabona oricând.</p>
+    </div>
+    <div id="form-confirmare" style="display:none">
+      <p style="color:var(--white);font-size:1.1rem;line-height:1.7">Bine ai venit în listă.<br>Următorul episod ajunge direct la tine.</p>
+    </div>
+  </div>
+</section>
+<script>
+function trimiteDate() {
+  var nume = document.getElementById('lead-nume').value.trim();
+  var email = document.getElementById('lead-email').value.trim();
+  if (!email) { alert('Te rog completează adresa de email.'); return; }
+  var btn = document.querySelector('#form-abonare button');
+  btn.textContent = 'Se trimite...';
+  btn.disabled = true;
+  fetch('https://script.google.com/macros/s/AKfycbx25PVLvMgUgVACP2ReYX4XX8TP5gq_YbLWCQTvjt98bpR41Q5oORgoEChGgjkePNnKIA/exec', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({nume: nume, email: email, pagina: '/note-din-cabinet'})
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(data){
+    document.getElementById('form-abonare').style.display = 'none';
+    document.getElementById('form-confirmare').style.display = 'block';
+    if (typeof gtag === 'function') {
+      gtag('event', 'abonare_lista', {'event_category': 'lead', 'event_label': 'Note din Cabinet'});
+    }
+    if (typeof fbq === 'function') {
+      fbq('track', 'Lead', {content_name: 'Abonare_Note_Cabinet'});
+    }
+  })
+  .catch(function(){
+    btn.textContent = 'Vreau să primesc episoadele';
+    btn.disabled = false;
+    alert('A apărut o eroare. Te rog încearcă din nou.');
+  });
+}
+</script>
+<!-- End formular abonare -->
+
 <footer>
   <div class="container">
     <div class="footer-in">
