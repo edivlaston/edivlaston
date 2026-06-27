@@ -204,6 +204,33 @@ document.addEventListener('click', function(e) {
   }
 });
 </script>
+
+<!-- Calendly Event Tracking -->
+<script>
+window.addEventListener('message', function(e) {
+  if (e.data.event && e.data.event.indexOf('calendly') === 0) {
+    // Programare finalizata
+    if (e.data.event === 'calendly.event_scheduled') {
+      // GA4 - programare_calendly
+      if (typeof gtag === 'function') {
+        gtag('event', 'programare_calendly', {
+          'event_category': 'conversie',
+          'event_label': 'Calendly Programare Finalizata'
+        });
+        // Google Ads conversion
+        gtag('event', 'conversion', {
+          'send_to': 'AW-17654719970/programare_finalizata'
+        });
+      }
+      // Meta Pixel
+      if (typeof fbq === 'function') {
+        fbq('track', 'Schedule', {content_name: 'Programare_Finalizata'});
+      }
+    }
+  }
+});
+</script>
+<!-- End Calendly Event Tracking -->
 </body>
 
 </html>
