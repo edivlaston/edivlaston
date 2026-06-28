@@ -153,10 +153,59 @@ function closeMenu() {
 
 <section style="padding:var(--gap) 0;background:var(--sand)">
   <div class="container">
-    <div id="articles-section" style="display:none">
-      <div class="blog-grid" id="blog-grid"></div>
+    <div id="articles-section">
+      <div class="blog-grid" id="blog-grid">
+      <a class="blog-card" href="/blog/burnout-la-medici" style="text-decoration:none;color:inherit">
+        <div class="blog-card-img-placeholder">📖</div>
+        <div class="blog-card-body">
+          <div class="blog-cat">Burnout</div>
+          <h3>Burnout la medici: de ce ești ultimul pe lista ta de pacienți</h3>
+          <p>Burnout-ul la medici e mascat de exact competențele care îi fac buni. Detașarea care salvează vieți în gardă devine detașare de tot — acasă, în relație, față de sine. De ce cei care îngrijesc pe toți cer ajutor ultimii.</p>
+          <div class="blog-card-footer">
+            <span class="blog-date">24 iunie 2026</span>
+            <span class="blog-read">Citește →</span>
+          </div>
+        </div>
+      </a>
+      <a class="blog-card" href="/blog/a-fi-tata-dupa-divort" style="text-decoration:none;color:inherit">
+        <div class="blog-card-img-placeholder">📖</div>
+        <div class="blog-card-body">
+          <div class="blog-cat">Divorț</div>
+          <h3>A fi tată după divorț — fără să dispari din viața lor</h3>
+          <p>Divorțul, pentru bărbați, e adesea o dublă pierdere: pierzi relația și pierzi accesul zilnic la copiii tăi. Societatea te pregătește cumva pentru prima. Nu te pregătește deloc pentru a doua.</p>
+          <div class="blog-card-footer">
+            <span class="blog-date">15 aprilie 2026</span>
+            <span class="blog-read">Citește →</span>
+          </div>
+        </div>
+      </a>
+      <a class="blog-card" href="/blog/de-ce-faci-tot-bine-si-tot-gresesti" style="text-decoration:none;color:inherit">
+        <div class="blog-card-img-placeholder">📖</div>
+        <div class="blog-card-body">
+          <div class="blog-cat">Relații</div>
+          <h3>De ce faci tot bine și tot greșești în relație</h3>
+          <p>Schema comportamentală pe care am moștenit-o funcționa într-un context social specific. Azi nu mai funcționează — nu pentru că e greșită moral, ci pentru că e incompletă.</p>
+          <div class="blog-card-footer">
+            <span class="blog-date">10 aprilie 2026</span>
+            <span class="blog-read">Citește →</span>
+          </div>
+        </div>
+      </a>
+      <a class="blog-card" href="/blog/cum-sa-recunosti-ce-simti" style="text-decoration:none;color:inherit">
+        <div class="blog-card-img-placeholder">📖</div>
+        <div class="blog-card-body">
+          <div class="blog-cat">Psihologie masculină</div>
+          <h3>Cum să recunoști ce simți cu adevărat</h3>
+          <p>Bărbații nu sunt mai puțin emoționali decât femeile. Sunt mai puțin antrenați să identifice și să numească ce simt. Există o diferență importantă.</p>
+          <div class="blog-card-footer">
+            <span class="blog-date">28 martie 2026</span>
+            <span class="blog-read">Citește →</span>
+          </div>
+        </div>
+      </a>
+      </div>
     </div>
-    <div id="coming-section">
+    <div id="coming-section" style="display:none">
       <div class="reveal" style="text-align:center;max-width:500px;margin:0 auto 48px">
         <div style="font-size:2rem;margin-bottom:16px">✍️</div>
         <h2 style="font-size:clamp(1.4rem,2.5vw,2rem);margin-bottom:10px">Primele articole apar în curând.</h2>
@@ -225,7 +274,7 @@ function renderCards(articles){
   document.getElementById('articles-section').style.display='block';
   const grid=document.getElementById('blog-grid');
   grid.innerHTML=articles.map((a,i)=>`
-    <div class="blog-card reveal" style="transition-delay:${i*.08}s" onclick="openModal(${i})">
+    <a class="blog-card reveal" href="/blog/${a.id}" style="transition-delay:${i*.08}s;text-decoration:none;color:inherit">
       ${a.imagine?`<img class="blog-card-img" src="${a.imagine}" alt="${a.titlu}" onerror="this.outerHTML='<div class=blog-card-img-placeholder>📖</div>'">`:`<div class="blog-card-img-placeholder">📖</div>`}
       <div class="blog-card-body">
         <div class="blog-cat">${a.categorie}</div>
@@ -236,7 +285,7 @@ function renderCards(articles){
           <span class="blog-read">Citește →</span>
         </div>
       </div>
-    </div>`).join('');
+    </a>`).join('');
   document.querySelectorAll('.blog-card.reveal').forEach(el=>io.observe(el));
 }
 

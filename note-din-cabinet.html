@@ -171,9 +171,23 @@ function closeMenu(){const m=document.getElementById('mobile-menu'),b=document.g
         <h2 id="modal-title"></h2>
         <div class="modal-episub" id="modal-episub"></div>
         <div class="modal-content" id="modal-content"></div>
-        <div class="modal-cta">
-          <p>Dacă episodul te-a atins — poți rezerva o primă ședință.</p>
-          <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="Calendly.initPopupWidget({url:'https://calendly.com/eduard-vlaston-eiv3'}); return false;" class="btn btn-primary" style="white-space:nowrap">Prima întâlnire →</a>
+        <!-- Abonare episoade -->
+        <div style="margin-top:32px;padding:28px;background:var(--sand);border-radius:6px">
+          <p style="font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:8px">Episoade în avans</p>
+          <p style="font-size:.92rem;color:var(--warm);line-height:1.7;margin-bottom:18px">Primește fiecare episod nou cu 2-3 zile înainte de publicare.</p>
+          <div id="form-modal-wrap">
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              <input type="text" id="modal-nume" placeholder="Prenumele tău" style="flex:1;min-width:140px;padding:11px 14px;border:1px solid var(--stone);background:var(--white);color:var(--ink);font-family:var(--sans);font-size:.9rem;border-radius:4px;outline:none">
+              <input type="email" id="modal-email" placeholder="Adresa de email" style="flex:2;min-width:180px;padding:11px 14px;border:1px solid var(--stone);background:var(--white);color:var(--ink);font-family:var(--sans);font-size:.9rem;border-radius:4px;outline:none">
+              <button onclick="trimiteAbonare()" style="padding:11px 20px;background:var(--terra);color:var(--white);border:none;font-family:var(--sans);font-size:.9rem;font-weight:500;border-radius:4px;cursor:pointer;white-space:nowrap">Abonează-mă</button>
+            </div>
+            <p style="font-size:.75rem;color:var(--muted);margin-top:10px">Fără spam. Te dezabonezi oricând.</p>
+          </div>
+          <div id="form-modal-confirmare" style="display:none">
+            <p style="font-size:.92rem;color:var(--ink);line-height:1.7">Bine ai venit în listă. Următorul episod ajunge direct la tine.</p>
+          </div>
+        </div>
+        <div style="display:none">
         </div>
         <div class="modal-nav">
           <button id="prev-ep" onclick="navEp(-1)">← Episodul anterior</button>
@@ -185,57 +199,7 @@ function closeMenu(){const m=document.getElementById('mobile-menu'),b=document.g
 </div>
 
 
-<!-- Formular abonare Note din Cabinet -->
-<section style="padding:60px 0;background:var(--ink)">
-  <div class="container" style="max-width:560px;margin:0 auto;text-align:center">
-    <div class="sec-label" style="color:var(--accent)">Episoade în avans</div>
-    <h2 style="color:var(--white);margin:12px 0 16px">Primește episoadele<br><em>înainte să fie publice.</em></h2>
-    <p style="color:var(--stone);font-size:.97rem;line-height:1.8;margin-bottom:32px">Cititorii din listă primesc fiecare episod nou cu 2-3 zile înainte de publicare. Fără spam, fără reclame — doar Note din Cabinet.</p>
-    <div id="form-abonare">
-      <div style="display:flex;flex-direction:column;gap:12px;max-width:400px;margin:0 auto">
-        <input type="text" id="lead-nume" placeholder="Prenumele tău" style="padding:14px 18px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.08);color:var(--white);font-family:var(--sans);font-size:.97rem;border-radius:4px;outline:none">
-        <input type="email" id="lead-email" placeholder="Adresa de email" style="padding:14px 18px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.08);color:var(--white);font-family:var(--sans);font-size:.97rem;border-radius:4px;outline:none">
-        <button onclick="trimiteDate()" style="padding:14px 24px;background:var(--terra);color:var(--white);border:none;font-family:var(--sans);font-size:.97rem;font-weight:500;border-radius:4px;cursor:pointer;letter-spacing:.04em">Vreau să primesc episoadele</button>
-      </div>
-      <p style="color:var(--muted);font-size:.8rem;margin-top:16px">Datele tale nu sunt partajate cu nimeni. Te poți dezabona oricând.</p>
-    </div>
-    <div id="form-confirmare" style="display:none">
-      <p style="color:var(--white);font-size:1.1rem;line-height:1.7">Bine ai venit în listă.<br>Următorul episod ajunge direct la tine.</p>
-    </div>
-  </div>
-</section>
-<script>
-function trimiteDate() {
-  var nume = document.getElementById('lead-nume').value.trim();
-  var email = document.getElementById('lead-email').value.trim();
-  if (!email) { alert('Te rog completează adresa de email.'); return; }
-  var btn = document.querySelector('#form-abonare button');
-  btn.textContent = 'Se trimite...';
-  btn.disabled = true;
-  fetch('https://script.google.com/macros/s/AKfycbx25PVLvMgUgVACP2ReYX4XX8TP5gq_YbLWCQTvjt98bpR41Q5oORgoEChGgjkePNnKIA/exec', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({nume: nume, email: email, pagina: '/note-din-cabinet'})
-  })
-  .then(function(r){ return r.json(); })
-  .then(function(data){
-    document.getElementById('form-abonare').style.display = 'none';
-    document.getElementById('form-confirmare').style.display = 'block';
-    if (typeof gtag === 'function') {
-      gtag('event', 'abonare_lista', {'event_category': 'lead', 'event_label': 'Note din Cabinet'});
-    }
-    if (typeof fbq === 'function') {
-      fbq('track', 'Lead', {content_name: 'Abonare_Note_Cabinet'});
-    }
-  })
-  .catch(function(){
-    btn.textContent = 'Vreau să primesc episoadele';
-    btn.disabled = false;
-    alert('A apărut o eroare. Te rog încearcă din nou.');
-  });
-}
-</script>
-<!-- End formular abonare -->
+
 
 <footer>
   <div class="container">
@@ -287,7 +251,7 @@ function renderArcs(eps){
       </div>
       <div class="ep-list">
         ${arc.eps.map(e=>`
-          <a href="/note-din-cabinet/${e.episod}" class="ep-card" onclick="openModal(${e.episod});return false;">
+          <a href="/note-din-cabinet/${e.episod}" class="ep-card">
             <div class="ep-num">${e.episod}<small>Ep</small></div>
             <div class="ep-body">
               <h3>${e.titlu}</h3>
@@ -359,9 +323,6 @@ fetch('/note-din-cabinet.json')
   .then(data=>{
     episoade=data.filter(e=>e.publicat!==false).sort((a,b)=>a.episod-b.episod);
     renderArcs(episoade);
-    // daca s-a intrat direct pe /note-din-cabinet/N, deschid episodul automat
-    const ep=epFromUrl();
-    if(ep&&episoade.find(x=>x.episod===ep)){openModal(ep,false);}
   })
   .catch(()=>{document.getElementById('arcs').innerHTML='<p style="text-align:center;color:var(--muted)">Episoadele se încarcă în curând.</p>';});
 </script>
@@ -402,5 +363,33 @@ window.addEventListener('message', function(e) {
 });
 </script>
 <!-- End Calendly Event Tracking -->
+
+<script>
+function trimiteAbonare() {
+  var nume = document.getElementById('modal-nume').value.trim();
+  var email = document.getElementById('modal-email').value.trim();
+  if (!email) { alert('Te rog completează adresa de email.'); return; }
+  var btn = document.querySelector('#form-modal-wrap button');
+  btn.textContent = 'Se trimite...';
+  btn.disabled = true;
+  fetch('https://script.google.com/macros/s/AKfycbx25PVLvMgUgVACP2ReYX4XX8TP5gq_YbLWCQTvjt98bpR41Q5oORgoEChGgjkePNnKIA/exec', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({nume: nume, email: email, pagina: '/note-din-cabinet'})
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(){
+    document.getElementById('form-modal-wrap').style.display = 'none';
+    document.getElementById('form-modal-confirmare').style.display = 'block';
+    if (typeof gtag === 'function') gtag('event', 'abonare_lista', {'event_category': 'lead'});
+    if (typeof fbq === 'function') fbq('track', 'Lead', {content_name: 'Abonare_Note_Cabinet'});
+  })
+  .catch(function(){
+    btn.textContent = 'Abonează-mă';
+    btn.disabled = false;
+    alert('A apărut o eroare. Te rog încearcă din nou.');
+  });
+}
+</script>
 </body>
 </html>
