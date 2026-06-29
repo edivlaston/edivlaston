@@ -117,7 +117,11 @@ PAGE = '''<!DOCTYPE html>
     "datePublished": "{data}",
     "image": "{img}",
     "author": {{"@type": "Person", "name": "Edi Vlaston", "jobTitle": "Psihoterapeut", "url": "{base}/despre"}},
-    "publisher": {{"@type": "Person", "name": "Edi Vlaston"}},
+    "publisher": {{
+      "@type": "Organization",
+      "name": "Edi Vlaston · Cabinet Individual de Psihologie",
+      "logo": {{"@type": "ImageObject", "url": "{img}"}}
+    }},
     "mainEntityOfPage": {{"@type": "WebPage", "@id": "{base}/note-din-cabinet/{ep}"}},
     "isPartOf": {{"@type": "CreativeWorkSeries", "name": "Note din Cabinet"}}
   }}

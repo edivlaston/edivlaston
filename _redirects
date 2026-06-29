@@ -1,6 +1,9 @@
 # Force HTTPS and canonical hostname (without www)
 # Netlify handles HTTPS automatically; this file handles URL canonicalization
 
+# Sitemap — varianta plural gresita redirectata spre cea corecta (elimina 404)
+/sitemaps.xml   /sitemap.xml   301!
+
 # Redirect .html versions to clean URLs (301 permanent for SEO)
 /barbati.html              /barbati              301!
 /femei.html                /femei                301!

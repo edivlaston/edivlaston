@@ -116,8 +116,9 @@ PAGE = '''<!DOCTYPE html>
       "url": "{base}/despre"
     }},
     "publisher": {{
-      "@type": "Person",
-      "name": "Edi Vlaston"
+      "@type": "Organization",
+      "name": "Edi Vlaston · Cabinet Individual de Psihologie",
+      "logo": {{"@type": "ImageObject", "url": "{img}"}}
     }},
     "mainEntityOfPage": {{
       "@type": "WebPage",
