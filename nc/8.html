@@ -86,6 +86,7 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1609722646982737&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="cLOrPLy/GiE5PpQiabvHXg" async></script>
 </head>
 <body>
 <nav id="nav">
@@ -219,10 +220,26 @@ function trimiteAbonare() {
     document.getElementById('form-modal-wrap').style.display = 'none';
     document.getElementById('form-modal-confirmare').style.display = 'block';
     if (typeof gtag === 'function') gtag('event', 'abonare_lista', {'event_category': 'lead'});
-    if (typeof fbq === 'function') fbq('track', 'Lead', {content_name: 'Abonare_Note_Cabinet'});
+    if (typeof fbq === 'function') fbq('trackCustom', 'AbonareNewsletter', {content_name: 'Abonare_Note_Cabinet'});
   })
   .catch(function(){ btn.textContent = 'Abonează-mă'; btn.disabled = false; alert('A apărut o eroare. Te rog încearcă din nou.'); });
 }
+</script>
+<script>
+/* Calendly -> GA4 + Meta: rezervare finalizata */
+window.addEventListener('message', function (e) {
+  if (!e.origin || e.origin.indexOf('calendly.com') === -1) return;
+  if (!e.data || e.data.event !== 'calendly.event_scheduled') return;
+  if (typeof gtag === 'function') {
+    gtag('event', 'programare_calendly', {
+      'event_category': 'conversie',
+      'event_label': 'Calendly Programare Finalizata'
+    });
+  }
+  if (typeof fbq === 'function') {
+    fbq('track', 'Schedule', {content_name: 'Programare_Finalizata'});
+  }
+});
 </script>
 </body>
 </html>

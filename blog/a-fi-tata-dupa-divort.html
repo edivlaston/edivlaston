@@ -99,6 +99,7 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1609722646982737&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="cLOrPLy/GiE5PpQiabvHXg" async></script>
 </head>
 <body>
 <nav id="nav">
@@ -178,5 +179,21 @@ src="https://www.facebook.com/tr?id=1609722646982737&ev=PageView&noscript=1"
     </div>
   </div>
 </footer>
+<script>
+/* Calendly -> GA4 + Meta: rezervare finalizata */
+window.addEventListener('message', function (e) {
+  if (!e.origin || e.origin.indexOf('calendly.com') === -1) return;
+  if (!e.data || e.data.event !== 'calendly.event_scheduled') return;
+  if (typeof gtag === 'function') {
+    gtag('event', 'programare_calendly', {
+      'event_category': 'conversie',
+      'event_label': 'Calendly Programare Finalizata'
+    });
+  }
+  if (typeof fbq === 'function') {
+    fbq('track', 'Schedule', {content_name: 'Programare_Finalizata'});
+  }
+});
+</script>
 </body>
 </html>

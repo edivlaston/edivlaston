@@ -61,11 +61,19 @@ function closeMenu() {
   fbq('init', '1609722646982737');
   fbq('track', 'PageView');
   fbq('track', 'Lead', {content_name: 'Form_Submit_Multumesc'});
+  if (typeof gtag === 'function') {
+    gtag('event', 'formular_contact', {
+      'event_category': 'conversie',
+      'event_label': 'Formular contact trimis'
+    });
+  }
   </script>
   <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=1609722646982737&ev=PageView&noscript=1"
   /></noscript>
   <!-- End Meta Pixel Code -->
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="cLOrPLy/GiE5PpQiabvHXg" async></script>
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 
 <body>
@@ -158,6 +166,7 @@ window.addEventListener('message', function(e) {
 });
 </script>
 <!-- End Calendly Event Tracking -->
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 
 </html>
