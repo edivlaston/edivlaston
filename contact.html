@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://edivlaston.ro/contact">
-  <meta name="description" content="Rezervă o primă ședință cu Edi Vlaston — psihoterapeut București. 280 lei / 50 minute. Online sau la cabinet Piața Victoriei.">
+  <meta name="description" content="Rezervă o primă ședință cu Edi Vlaston — psihoterapeut București. 280 lei / 50 minute. Online sau la cabinet în Primăverii.">
   <title>Programare · Edi Vlaston Psihoterapeut București</title>
   <!-- Google Tag (Analytics + Ads) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17654719970"></script>
@@ -70,6 +70,7 @@ function closeMenu() {
   src="https://www.facebook.com/tr?id=1609722646982737&ev=PageView&noscript=1"
   /></noscript>
   <!-- End Meta Pixel Code -->
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="cLOrPLy/GiE5PpQiabvHXg" async></script>
 </head>
 
 <body>
@@ -119,7 +120,7 @@ function closeMenu() {
         <div class="contact-rows">
           <div class="contact-row"><div class="c-ico">📞</div><div>Telefon / WhatsApp: <a href="tel:+40744370179" class="c-link">0744 370 179</a></div></div>
           <div class="contact-row"><div class="c-ico">✉️</div><div>Email: <a href="mailto:edivlaston@gmail.com" class="c-link">edivlaston@gmail.com</a></div></div>
-          <div class="contact-row"><div class="c-ico">📍</div><div>Cabinet: Piața Victoriei, Sector 1, București</div></div>
+          <div class="contact-row"><div class="c-ico">📍</div><div>Cabinet: Str. Maxim Gorki 22, parter, ap. 2 · Primăverii, Sector 1, București</div></div>
           <div class="contact-row"><div class="c-ico">🌐</div><div>Online — sesiuni video oriunde în România</div></div>
         </div>
         <div class="tip-box">
@@ -231,6 +232,25 @@ window.addEventListener('message', function(e) {
 });
 </script>
 <!-- End Calendly Event Tracking -->
+<script>
+/* Click WhatsApp / telefon -> GA4 + Meta */
+document.addEventListener('click', function (e) {
+  var a = e.target;
+  while (a && a.tagName !== 'A') a = a.parentElement;
+  if (!a || !a.href) return;
+  var h = a.href, canal = null;
+  if (h.indexOf('wa.me') !== -1 || h.indexOf('api.whatsapp.com') !== -1) canal = 'whatsapp';
+  else if (h.indexOf('tel:') === 0) canal = 'telefon';
+  if (!canal) return;
+  if (typeof gtag === 'function') {
+    gtag('event', 'contact_' + canal, {
+      'event_category': 'contact',
+      'event_label': canal === 'whatsapp' ? 'Click WhatsApp' : 'Click telefon'
+    });
+  }
+  if (typeof fbq === 'function') fbq('track', 'Contact', {content_name: canal});
+}, true);
+</script>
 </body>
 
 </html>

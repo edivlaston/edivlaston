@@ -147,7 +147,7 @@
         "name": "Online sau față în față — care e mai eficient?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ambele variante sunt la fel de eficiente din punct de vedere terapeutic. Ședințele online sunt mai convenabile pentru un program încărcat și pot fi făcute din orice locație cu internet stabil. Cabinetul este la Piața Victoriei, Sector 1, București. Poți alterna între cele două formate."
+          "text": "Ambele variante sunt la fel de eficiente din punct de vedere terapeutic. Ședințele online sunt mai convenabile pentru un program încărcat și pot fi făcute din orice locație cu internet stabil. Cabinetul este în Primăverii (Str. Maxim Gorki 22), Sector 1, București. Poți alterna între cele două formate."
         }
       },
       {
@@ -171,7 +171,7 @@
         "name": "Cât de repede pot obține o programare?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Programările se fac prin Calendly — poți vedea sloturile disponibile în timp real și alege direct. De obicei există locuri disponibile în decurs de câteva zile. Cabinetul este disponibil atât pentru ședințe online cât și față în față la Piața Victoriei, Sector 1, București."
+          "text": "Programările se fac prin Calendly — poți vedea sloturile disponibile în timp real și alege direct. De obicei există locuri disponibile în decurs de câteva zile. Cabinetul este disponibil atât pentru ședințe online cât și față în față în Primăverii (Str. Maxim Gorki 22), Sector 1, București."
         }
       },
       {
@@ -229,7 +229,7 @@
     "email": "edivlaston@gmail.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Piața Victoriei",
+      "streetAddress": "Strada Maxim Gorki 22, parter, ap. 2",
       "addressLocality": "București",
       "addressRegion": "Sector 1",
       "addressCountry": "RO"
@@ -279,6 +279,7 @@
   <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1609722646982737&ev=PageView&noscript=1"
   /></noscript>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="cLOrPLy/GiE5PpQiabvHXg" async></script>
 </head>
 <body>
 
@@ -413,7 +414,7 @@
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-a"><div class="faq-a-inner">
-          Ambele variante sunt la fel de eficiente din punct de vedere terapeutic. Ședințele online sunt mai convenabile pentru un program încărcat și pot fi făcute din orice locație cu o conexiune stabilă la internet. Cabinetul este la <strong>Piața Victoriei, Sector 1, București</strong>. Poți alterna între cele două formate fără restricții.
+          Ambele variante sunt la fel de eficiente din punct de vedere terapeutic. Ședințele online sunt mai convenabile pentru un program încărcat și pot fi făcute din orice locație cu o conexiune stabilă la internet. Cabinetul este în <strong>Primăverii — Str. Maxim Gorki 22, Sector 1, București</strong>. Poți alterna între cele două formate fără restricții.
         </div></div>
       </div>
 
@@ -596,7 +597,7 @@
   <div style="max-width:var(--col);margin:0 auto;padding:0 clamp(20px,5vw,56px)">
     <div class="author-box reveal">
       <strong>Edi Vlaston — Psihoterapeut, București</strong>
-      <p>Răspunsurile de mai sus sunt scrise de Edi Vlaston, psihoterapeut acreditat CPA (cod 22334), specializat în psihoterapie centrată pe persoană (Carl Rogers), Interviu Motivațional și hipnoză clinică. Cabinet la Piața Victoriei, Sector 1, București. Înainte de psihoterapie — 20 de ani în management corporatist. <a href="/despre" style="color:var(--terra)">Citește mai multe despre Edi →</a></p>
+      <p>Răspunsurile de mai sus sunt scrise de Edi Vlaston, psihoterapeut acreditat CPA (cod 22334), specializat în psihoterapie centrată pe persoană (Carl Rogers), Interviu Motivațional și hipnoză clinică. Cabinet în Primăverii, Sector 1, București. Înainte de psihoterapie — 20 de ani în management corporatist. <a href="/despre" style="color:var(--terra)">Citește mai multe despre Edi →</a></p>
       <p style="margin-top:12px">Ai o întrebare care nu e aici? Scrie la <a href="mailto:edivlaston@gmail.com" style="color:var(--terra)">edivlaston@gmail.com</a> — răspund în 24h.</p>
     </div>
   </div>
@@ -686,5 +687,24 @@ window.addEventListener('message', function(e) {
 });
 </script>
 <!-- End Calendly Event Tracking -->
+<script>
+/* Click WhatsApp / telefon -> GA4 + Meta */
+document.addEventListener('click', function (e) {
+  var a = e.target;
+  while (a && a.tagName !== 'A') a = a.parentElement;
+  if (!a || !a.href) return;
+  var h = a.href, canal = null;
+  if (h.indexOf('wa.me') !== -1 || h.indexOf('api.whatsapp.com') !== -1) canal = 'whatsapp';
+  else if (h.indexOf('tel:') === 0) canal = 'telefon';
+  if (!canal) return;
+  if (typeof gtag === 'function') {
+    gtag('event', 'contact_' + canal, {
+      'event_category': 'contact',
+      'event_label': canal === 'whatsapp' ? 'Click WhatsApp' : 'Click telefon'
+    });
+  }
+  if (typeof fbq === 'function') fbq('track', 'Contact', {content_name: canal});
+}, true);
+</script>
 </body>
 </html>

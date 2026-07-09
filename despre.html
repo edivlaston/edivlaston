@@ -140,7 +140,7 @@ function closeMenu() {
           </div>
           <div class="photo-badge">
             <div class="badge-dot"></div>
-            <div><div class="badge-name">Edi Vlaston</div><div class="badge-title">Psihoterapeut · Piața Victoriei</div></div>
+            <div><div class="badge-name">Edi Vlaston</div><div class="badge-title">Psihoterapeut · Primăverii</div></div>
           </div>
         </div>
       </div>
@@ -161,7 +161,7 @@ function closeMenu() {
           <div class="cred"><span class="cred-ico">📋</span>Cod Registru Psihologi: 22334</div>
           <div class="cred"><span class="cred-ico">🤝</span>Asociația Română de Psihoterapie Centrată pe Persoană</div>
           <div class="cred"><span class="cred-ico">💼</span>20+ ani management corporatist</div>
-          <div class="cred"><span class="cred-ico">📍</span>Cabinet: Piața Victoriei, Sector 1, București</div>
+          <div class="cred"><span class="cred-ico">📍</span>Cabinet: Str. Maxim Gorki 22, Primăverii, Sector 1, București</div>
         </div>
       </div>
       <div class="reveal text-col" style="transition-delay:.12s">
@@ -263,6 +263,25 @@ window.addEventListener('message', function(e) {
 </script>
 <!-- End Calendly Event Tracking -->
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script>
+/* Click WhatsApp / telefon -> GA4 + Meta */
+document.addEventListener('click', function (e) {
+  var a = e.target;
+  while (a && a.tagName !== 'A') a = a.parentElement;
+  if (!a || !a.href) return;
+  var h = a.href, canal = null;
+  if (h.indexOf('wa.me') !== -1 || h.indexOf('api.whatsapp.com') !== -1) canal = 'whatsapp';
+  else if (h.indexOf('tel:') === 0) canal = 'telefon';
+  if (!canal) return;
+  if (typeof gtag === 'function') {
+    gtag('event', 'contact_' + canal, {
+      'event_category': 'contact',
+      'event_label': canal === 'whatsapp' ? 'Click WhatsApp' : 'Click telefon'
+    });
+  }
+  if (typeof fbq === 'function') fbq('track', 'Contact', {content_name: canal});
+}, true);
+</script>
 </body>
 
 </html>

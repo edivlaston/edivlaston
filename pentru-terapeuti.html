@@ -81,6 +81,7 @@ function closeMenu() {
   src="https://www.facebook.com/tr?id=1609722646982737&ev=PageView&noscript=1"
   /></noscript>
   <!-- End Meta Pixel Code -->
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="cLOrPLy/GiE5PpQiabvHXg" async></script>
 </head>
 
 <body>
@@ -223,11 +224,11 @@ function closeMenu() {
         <div class="badge-coming">Testăm cererea</div>
         <div class="service-tag">Întâlniri de grup · Fizic</div>
         <h3>Sesiuni de Intervizare</h3>
-        <p>Întâlniri periodice de intervizare la cabinetul din Piața Victoriei — pentru terapeuți care lucrează cu bărbați sau cu cupluri și vor să discute cazuri, să primească perspectivă externă și să lucreze colegial pe situații dificile.</p>
+        <p>Întâlniri periodice de intervizare la cabinetul din Primăverii — pentru terapeuți care lucrează cu bărbați sau cu cupluri și vor să discute cazuri, să primească perspectivă externă și să lucreze colegial pe situații dificile.</p>
         <div class="service-details">
           <div class="service-detail">Grup mic — maxim 6–8 participanți</div>
           <div class="service-detail">Format de discuție colegială pe cazuri (anonimizate)</div>
-          <div class="service-detail">Cabinet Piața Victoriei, Sector 1, București</div>
+          <div class="service-detail">Cabinet Str. Maxim Gorki 22, Primăverii, București</div>
           <div class="service-detail">Frecvență și program stabilit împreună cu grupul</div>
           <div class="service-detail">Focus: psihologia masculină și cazuistica relațională</div>
         </div>
@@ -264,7 +265,7 @@ function closeMenu() {
           <div class="cred"><span class="cred-ico">📋</span>Colegiul Psihologilor din România, cod 22334</div>
           <div class="cred"><span class="cred-ico">🤝</span>Asociația Română de Psihoterapie Centrată pe Persoană</div>
           <div class="cred"><span class="cred-ico">💼</span>20+ ani management corporatist</div>
-          <div class="cred"><span class="cred-ico">📍</span>Cabinet: Piața Victoriei, Sector 1, București</div>
+          <div class="cred"><span class="cred-ico">📍</span>Cabinet: Str. Maxim Gorki 22, Primăverii, Sector 1, București</div>
         </div>
         <div style="margin-top:24px">
           <a href="mailto:edivlaston@gmail.com?subject=Colaborare%20profesionala" class="btn btn-ghost" style="width:100%;justify-content:center">edivlaston@gmail.com</a>
@@ -339,6 +340,25 @@ window.addEventListener('message', function(e) {
 });
 </script>
 <!-- End Calendly Event Tracking -->
+<script>
+/* Click WhatsApp / telefon -> GA4 + Meta */
+document.addEventListener('click', function (e) {
+  var a = e.target;
+  while (a && a.tagName !== 'A') a = a.parentElement;
+  if (!a || !a.href) return;
+  var h = a.href, canal = null;
+  if (h.indexOf('wa.me') !== -1 || h.indexOf('api.whatsapp.com') !== -1) canal = 'whatsapp';
+  else if (h.indexOf('tel:') === 0) canal = 'telefon';
+  if (!canal) return;
+  if (typeof gtag === 'function') {
+    gtag('event', 'contact_' + canal, {
+      'event_category': 'contact',
+      'event_label': canal === 'whatsapp' ? 'Click WhatsApp' : 'Click telefon'
+    });
+  }
+  if (typeof fbq === 'function') fbq('track', 'Contact', {content_name: canal});
+}, true);
+</script>
 </body>
 
 </html>

@@ -189,7 +189,7 @@ function closeMenu() {
         </a>
         <a href="#intro" class="btn btn-ghost">Cum lucrez</a>
       </div>
-      <div class="hero-note">📞 <a href="tel:+40744370179" style="color:var(--terra);font-weight:500">0744 370 179</a> &nbsp;·&nbsp; Piața Victoriei, Sector 1</div>
+      <div class="hero-note">📞 <a href="tel:+40744370179" style="color:var(--terra);font-weight:500">0744 370 179</a> &nbsp;·&nbsp; Cabinet în Primăverii</div>
     </div>
 
     <div class="hero-right">
@@ -203,7 +203,7 @@ function closeMenu() {
           <div class="badge-dot"></div>
           <div>
             <div class="badge-name">Edi Vlaston</div>
-            <div class="badge-title">Psihoterapeut · Piața Victoriei, București</div>
+            <div class="badge-title">Psihoterapeut · Primăverii, București</div>
           </div>
         </div>
       </div>
@@ -325,6 +325,25 @@ window.addEventListener('message', function(e) {
 </script>
 <!-- End Calendly Event Tracking -->
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script>
+/* Click WhatsApp / telefon -> GA4 + Meta */
+document.addEventListener('click', function (e) {
+  var a = e.target;
+  while (a && a.tagName !== 'A') a = a.parentElement;
+  if (!a || !a.href) return;
+  var h = a.href, canal = null;
+  if (h.indexOf('wa.me') !== -1 || h.indexOf('api.whatsapp.com') !== -1) canal = 'whatsapp';
+  else if (h.indexOf('tel:') === 0) canal = 'telefon';
+  if (!canal) return;
+  if (typeof gtag === 'function') {
+    gtag('event', 'contact_' + canal, {
+      'event_category': 'contact',
+      'event_label': canal === 'whatsapp' ? 'Click WhatsApp' : 'Click telefon'
+    });
+  }
+  if (typeof fbq === 'function') fbq('track', 'Contact', {content_name: canal});
+}, true);
+</script>
 </body>
 
 </html>

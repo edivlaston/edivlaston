@@ -263,7 +263,7 @@ function closeMenu() {
       <h2 style="color:var(--white)">Primul pas<br><em style="color:var(--accent)">nu e să renunți.</em></h2>
       <p style="color:rgba(255,253,248,.7);font-size:.97rem;margin-bottom:32px">E să vorbim. 280 lei / 50 minute, fără angajament. Vei înțelege dacă putem lucra împreună și ce pași urmează.</p>
       <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="Calendly.initPopupWidget({url:'https://calendly.com/eduard-vlaston-eiv3'}); return false;" class="btn btn-primary">Rezervă o primă ședință <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      <p style="margin-top:20px;font-size:.8rem;color:rgba(255,253,248,.4)">📞 0744 370 179 · edivlaston@gmail.com · Piața Victoriei, Sector 1 sau online</p>
+      <p style="margin-top:20px;font-size:.8rem;color:rgba(255,253,248,.4)">📞 0744 370 179 · edivlaston@gmail.com · Cabinet în Primăverii sau online</p>
     </div>
   </div>
 </section>
@@ -349,6 +349,25 @@ window.addEventListener('message', function(e) {
 </script>
 <!-- End Calendly Event Tracking -->
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script>
+/* Click WhatsApp / telefon -> GA4 + Meta */
+document.addEventListener('click', function (e) {
+  var a = e.target;
+  while (a && a.tagName !== 'A') a = a.parentElement;
+  if (!a || !a.href) return;
+  var h = a.href, canal = null;
+  if (h.indexOf('wa.me') !== -1 || h.indexOf('api.whatsapp.com') !== -1) canal = 'whatsapp';
+  else if (h.indexOf('tel:') === 0) canal = 'telefon';
+  if (!canal) return;
+  if (typeof gtag === 'function') {
+    gtag('event', 'contact_' + canal, {
+      'event_category': 'contact',
+      'event_label': canal === 'whatsapp' ? 'Click WhatsApp' : 'Click telefon'
+    });
+  }
+  if (typeof fbq === 'function') fbq('track', 'Contact', {content_name: canal});
+}, true);
+</script>
 </body>
 
 </html>

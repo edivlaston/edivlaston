@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://edivlaston.ro/femei">
-  <meta name="description" content="Edi Vlaston — psihoterapeut pentru femei în București. Un spațiu în care emoțiile tale sunt validate, nu corectate. Ședințe individuale, cabinet Piața Victoriei sau online.">
+  <meta name="description" content="Edi Vlaston — psihoterapeut pentru femei în București. Un spațiu în care emoțiile tale sunt validate, nu corectate. Ședințe individuale, cabinet în Primăverii sau online.">
   <title>Pentru Ele · Edi Vlaston Psihoterapeut București</title>
   <!-- Google Tag (Analytics + Ads) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17654719970"></script>
@@ -203,7 +203,7 @@ function closeMenu() {
         <h2>Ce înseamnă<br><em>concret.</em></h2>
         <p><strong>Durata unei ședințe:</strong> 50 de minute.</p>
         <p><strong>Frecvență:</strong> de obicei săptămânală la început, apoi la 2 săptămâni pe măsură ce lucrurile se așează. Tu decizi ritmul.</p>
-        <p><strong>Locație:</strong> cabinet în Piața Victoriei, Sector 1. Sau online, prin video — la fel de eficient pentru cele mai multe teme.</p>
+        <p><strong>Locație:</strong> cabinet în Primăverii, Sector 1. Sau online, prin video — la fel de eficient pentru cele mai multe teme.</p>
         <p><strong>Confidențialitate:</strong> totală. Nu comunic cu partenerul, familia sau orice alt terapeut fără acordul tău explicit.</p>
         <p><strong>Prima ședință:</strong> 50 de minute, 280 lei. Vedem dacă ne potrivim — fără presiune să continui.</p>
       </div>
@@ -297,6 +297,25 @@ window.addEventListener('message', function(e) {
 </script>
 <!-- End Calendly Event Tracking -->
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script>
+/* Click WhatsApp / telefon -> GA4 + Meta */
+document.addEventListener('click', function (e) {
+  var a = e.target;
+  while (a && a.tagName !== 'A') a = a.parentElement;
+  if (!a || !a.href) return;
+  var h = a.href, canal = null;
+  if (h.indexOf('wa.me') !== -1 || h.indexOf('api.whatsapp.com') !== -1) canal = 'whatsapp';
+  else if (h.indexOf('tel:') === 0) canal = 'telefon';
+  if (!canal) return;
+  if (typeof gtag === 'function') {
+    gtag('event', 'contact_' + canal, {
+      'event_category': 'contact',
+      'event_label': canal === 'whatsapp' ? 'Click WhatsApp' : 'Click telefon'
+    });
+  }
+  if (typeof fbq === 'function') fbq('track', 'Contact', {content_name: canal});
+}, true);
+</script>
 </body>
 
 </html>

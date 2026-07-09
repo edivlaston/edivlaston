@@ -161,7 +161,7 @@ src="https://www.facebook.com/tr?id=1609722646982737&ev=PageView&noscript=1"
 <h3>Cum lucrăm asta în cabinet</h3>
 <p>Nu-ți dau teme și tehnici de management al timpului. Aia ai încercat deja, și nu de-aia ești obosit.</p>
 <p>Lucrez person-centered. Pe scurt: nu te repar și nu te corectez. Țin un spațiu în care poți să spui ce nu spui nicăieri, până când auzi singur ce duci. Pentru cineva antrenat să dea soluții toată ziua, experiența de a nu fi nevoit să rezolve nimic, măcar 50 de minute, e neașteptat de mare.</p>
-<p>Practic: ședință de 50 de minute, la cabinet în Piața Victoriei sau online — pentru că știu cum arată un program de gărzi. Confidențial.</p>
+<p>Practic: ședință de 50 de minute, la cabinet în Primăverii sau online — pentru că știu cum arată un program de gărzi. Confidențial.</p>
 <h3>Întrebări frecvente</h3>
 <p><strong>„Nu am timp de terapie."</strong><br>De-asta lucrez și online, și seara. O ședință pe săptămână sau la două săptămâni. Nu îți cer să-ți reorganizezi viața — îți cer 50 de minute.</p>
 <p><strong>„Pot face online, între gărzi?"</strong><br>Da. Mulți dintre cei cu care lucrez nu ar putea ajunge fizic. Online funcționează la fel de bine pentru genul ăsta de muncă.</p>
@@ -224,6 +224,25 @@ window.addEventListener('message', function (e) {
     fbq('track', 'Schedule', {content_name: 'Programare_Finalizata'});
   }
 });
+</script>
+<script>
+/* Click WhatsApp / telefon -> GA4 + Meta */
+document.addEventListener('click', function (e) {
+  var a = e.target;
+  while (a && a.tagName !== 'A') a = a.parentElement;
+  if (!a || !a.href) return;
+  var h = a.href, canal = null;
+  if (h.indexOf('wa.me') !== -1 || h.indexOf('api.whatsapp.com') !== -1) canal = 'whatsapp';
+  else if (h.indexOf('tel:') === 0) canal = 'telefon';
+  if (!canal) return;
+  if (typeof gtag === 'function') {
+    gtag('event', 'contact_' + canal, {
+      'event_category': 'contact',
+      'event_label': canal === 'whatsapp' ? 'Click WhatsApp' : 'Click telefon'
+    });
+  }
+  if (typeof fbq === 'function') fbq('track', 'Contact', {content_name: canal});
+}, true);
 </script>
 </body>
 </html>

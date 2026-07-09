@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://edivlaston.ro/barbati">
-  <meta name="description" content="Psihoterapie individuală pentru bărbați, București. Ai înțeles de ce te simți așa și tot nu s-a schimbat nimic? Unele lucruri nu se rezolvă din cap. Terapeut bărbat, Piața Victoriei.">
+  <meta name="description" content="Psihoterapie individuală pentru bărbați, București. Ai înțeles de ce te simți așa și tot nu s-a schimbat nimic? Unele lucruri nu se rezolvă din cap. Terapeut bărbat, cabinet în Primăverii.">
   <meta name="keywords" content="terapeut pentru barbati cu probleme in relatie, de ce nu reusesc in relatii, psihoterapeut barbati relatii bucuresti, terapie individuala barbati, cum sa comunic cu partenera">
   <title>Psihoterapeut pentru Bărbați · Edi Vlaston București</title>
   <!-- Google Tag (Analytics + Ads) -->
@@ -75,6 +75,7 @@ function closeMenu() {
   src="https://www.facebook.com/tr?id=1609722646982737&ev=PageView&noscript=1"
   /></noscript>
   <!-- End Meta Pixel Code -->
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="cLOrPLy/GiE5PpQiabvHXg" async></script>
 </head>
 
 <body>
@@ -404,7 +405,7 @@ function closeMenu() {
         <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Câte ședințe durează?<span class="faq-icon">+</span></button><div class="faq-a">Un proces tipic: 8–16 ședințe. Unii clienți văd schimbări după 4–5 ședințe. Nu există terapie pe viață — există un proces cu un scop clar.</div></div>
         <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Va afla cineva că merg la terapie?<span class="faq-icon">+</span></button><div class="faq-a">Nu. Nu apar în dosarul medical (nu mă decontez la CNAS). Plata cash sau card. Sesiunile online pot fi din orice locație. Confidențialitate legală absolută.</div></div>
         <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Partenera m-a trimis. E valabil dacă nu vin din proprie inițiativă?<span class="faq-icon">+</span></button><div class="faq-a">Da. Mulți clienți vin inițial pentru altcineva și rămân pentru ei înșiși. Motivația externă e un punct de start valid. Dacă după prima ședință simți că are sens — mergem mai departe.</div></div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Online sau față în față?<span class="faq-icon">+</span></button><div class="faq-a">Ambele funcționează la fel de eficient. Online e mai convenabil pentru un program încărcat. Cabinet la Piața Victoriei, Sector 1. Poți alterna.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Online sau față în față?<span class="faq-icon">+</span></button><div class="faq-a">Ambele funcționează la fel de eficient. Online e mai convenabil pentru un program încărcat. Cabinet în Primăverii, Sector 1. Poți alterna.</div></div>
       </div>
     </div>
   </div>
@@ -476,6 +477,25 @@ window.addEventListener('message', function(e) {
 });
 </script>
 <!-- End Calendly Event Tracking -->
+<script>
+/* Click WhatsApp / telefon -> GA4 + Meta */
+document.addEventListener('click', function (e) {
+  var a = e.target;
+  while (a && a.tagName !== 'A') a = a.parentElement;
+  if (!a || !a.href) return;
+  var h = a.href, canal = null;
+  if (h.indexOf('wa.me') !== -1 || h.indexOf('api.whatsapp.com') !== -1) canal = 'whatsapp';
+  else if (h.indexOf('tel:') === 0) canal = 'telefon';
+  if (!canal) return;
+  if (typeof gtag === 'function') {
+    gtag('event', 'contact_' + canal, {
+      'event_category': 'contact',
+      'event_label': canal === 'whatsapp' ? 'Click WhatsApp' : 'Click telefon'
+    });
+  }
+  if (typeof fbq === 'function') fbq('track', 'Contact', {content_name: canal});
+}, true);
+</script>
 </body>
 
 </html>
