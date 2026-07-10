@@ -69,24 +69,6 @@
 function toggleMenu(){var m=document.getElementById('mobile-menu'),b=document.getElementById('hamburger');if(!m||!b)return;b.classList.toggle('open');m.classList.toggle('open');document.body.style.overflow=m.classList.contains('open')?'hidden':'';}
 function closeMenu(){var m=document.getElementById('mobile-menu'),b=document.getElementById('hamburger');if(m)m.classList.remove('open');if(b)b.classList.remove('open');document.body.style.overflow='';}
 </script>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1609722646982737');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1609722646982737&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-<script src="https://analytics.ahrefs.com/analytics.js" data-key="cLOrPLy/GiE5PpQiabvHXg" async></script>
 </head>
 <body>
 <nav id="nav">
@@ -232,51 +214,19 @@ function trimiteAbonare() {
   if (!email) { alert('Te rog completează adresa de email.'); return; }
   var btn = document.querySelector('#form-modal-wrap button');
   btn.textContent = 'Se trimite...'; btn.disabled = true;
-  var body = new URLSearchParams({ nume: nume, email: email, pagina: '/note-din-cabinet/6' });
-  fetch('https://script.google.com/macros/s/AKfycbx25PVLvMgUgVACP2ReYX4XX8TP5gq_YbLWCQTvjt98bpR41Q5oORgoEChGgjkePNnKIA/exec', { method: 'POST', mode: 'no-cors', body: body })
+  fetch('https://script.google.com/macros/s/AKfycbx25PVLvMgUgVACP2ReYX4XX8TP5gq_YbLWCQTvjt98bpR41Q5oORgoEChGgjkePNnKIA/exec', {
+    method: 'POST', headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({nume: nume, email: email, pagina: '/note-din-cabinet/6'})
+  })
+  .then(function(r){ return r.json(); })
   .then(function(){
     document.getElementById('form-modal-wrap').style.display = 'none';
     document.getElementById('form-modal-confirmare').style.display = 'block';
     if (typeof gtag === 'function') gtag('event', 'abonare_lista', {'event_category': 'lead'});
-    if (typeof fbq === 'function') fbq('trackCustom', 'AbonareNewsletter', {content_name: 'Abonare_Note_Cabinet'});
+    if (typeof fbq === 'function') fbq('track', 'Lead', {content_name: 'Abonare_Note_Cabinet'});
   })
   .catch(function(){ btn.textContent = 'Abonează-mă'; btn.disabled = false; alert('A apărut o eroare. Te rog încearcă din nou.'); });
 }
-</script>
-<script>
-/* Calendly -> GA4 + Meta: rezervare finalizata */
-window.addEventListener('message', function (e) {
-  if (!e.origin || e.origin.indexOf('calendly.com') === -1) return;
-  if (!e.data || e.data.event !== 'calendly.event_scheduled') return;
-  if (typeof gtag === 'function') {
-    gtag('event', 'programare_calendly', {
-      'event_category': 'conversie',
-      'event_label': 'Calendly Programare Finalizata'
-    });
-  }
-  if (typeof fbq === 'function') {
-    fbq('track', 'Schedule', {content_name: 'Programare_Finalizata'});
-  }
-});
-</script>
-<script>
-/* Click WhatsApp / telefon -> GA4 + Meta */
-document.addEventListener('click', function (e) {
-  var a = e.target;
-  while (a && a.tagName !== 'A') a = a.parentElement;
-  if (!a || !a.href) return;
-  var h = a.href, canal = null;
-  if (h.indexOf('wa.me') !== -1 || h.indexOf('api.whatsapp.com') !== -1) canal = 'whatsapp';
-  else if (h.indexOf('tel:') === 0) canal = 'telefon';
-  if (!canal) return;
-  if (typeof gtag === 'function') {
-    gtag('event', 'contact_' + canal, {
-      'event_category': 'contact',
-      'event_label': canal === 'whatsapp' ? 'Click WhatsApp' : 'Click telefon'
-    });
-  }
-  if (typeof fbq === 'function') fbq('track', 'Contact', {content_name: canal});
-}, true);
 </script>
 </body>
 </html>
