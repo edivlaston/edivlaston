@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /edv/
 
 Sitemap: https://edivlaston.ro/sitemap.xml

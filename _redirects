@@ -4,6 +4,9 @@
 # Sitemap — varianta plural gresita redirectata spre cea corecta (elimina 404)
 /sitemaps.xml   /sitemap.xml   301!
 
+# URL-uri vechi WordPress (/edv/...) -> homepage, curata soft 404
+/edv/*   /   301!
+
 # Redirect .html versions to clean URLs (301 permanent for SEO)
 /barbati.html              /barbati              301!
 /femei.html                /femei                301!

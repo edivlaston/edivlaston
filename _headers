@@ -1,0 +1,9 @@
+# Cache pentru assets statice (Netlify). HTML ramane pe default (revalidare).
+/*.webp
+  Cache-Control: public, max-age=2592000
+/*.svg
+  Cache-Control: public, max-age=2592000
+/*.css
+  Cache-Control: public, max-age=604800
+/*.js
+  Cache-Control: public, max-age=604800
