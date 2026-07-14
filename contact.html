@@ -66,7 +66,7 @@ function closeMenu() {
   src="https://www.facebook.com/tr?id=1609722646982737&ev=PageView&noscript=1"
   /></noscript>
   <!-- End Meta Pixel Code -->
-<script src="https://analytics.ahrefs.com/analytics.js" data-key="cLOrPLy/GiE5PpQiabvHXg" async></script>
+<script>window.addEventListener('load',function(){var s=document.createElement('script');s.src='https://analytics.ahrefs.com/analytics.js';s.setAttribute('data-key','cLOrPLy/GiE5PpQiabvHXg');s.async=true;document.body.appendChild(s);});</script>
 </head>
 
 <body>
@@ -80,7 +80,7 @@ function closeMenu() {
     <a href="/note-din-cabinet">Note din Cabinet</a>
     <a href="/intrebari-frecvente">Întrebări Frecvente</a>
     <a href="/contact" class="active">Contact</a>
-    <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="Calendly.initPopupWidget({url:'https://calendly.com/eduard-vlaston-eiv3'}); return false;" class="nav-cta active">Rezervă o primă ședință</a>
+    <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="openCal(); return false;" class="nav-cta active">Rezervă o primă ședință</a>
   </div>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Meniu">
     <span></span><span></span><span></span>
@@ -97,7 +97,7 @@ function closeMenu() {
   <a href="/intrebari-frecvente" onclick="closeMenu()">Întrebări Frecvente</a>
   <a href="/contact" class="active" onclick="closeMenu()">Contact</a>
   <a href="tel:+40744370179" class="mobile-phone" onclick="closeMenu()">📞 0744 370 179</a>
-  <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="Calendly.initPopupWidget({url:'https://calendly.com/eduard-vlaston-eiv3'}); closeMenu(); return false;" class="mobile-cta">Rezervă o primă ședință</a>
+  <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="openCal(); closeMenu(); return false;" class="mobile-cta">Rezervă o primă ședință</a>
 
   <div style="border-top:1px solid rgba(139,94,60,.15);padding-top:24px;margin-top:8px;display:flex;flex-direction:column;gap:14px;align-items:center">
     <a href="tel:+40744370179" onclick="closeMenu()" style="font-family:var(--sans);font-size:1rem;color:var(--terra);font-weight:500">📞 0744 370 179</a>
@@ -140,7 +140,7 @@ function closeMenu() {
             <div class="calendly-section">
               <p><strong>Alege data care ți se potrivește</strong><br>Rezervă direct în calendarul meu — vei primi confirmare automată.</p>
               <a href="https://calendly.com/eduard-vlaston-eiv3"
-                 onclick="Calendly.initPopupWidget({url:'https://calendly.com/eduard-vlaston-eiv3'}); return false;"
+                 onclick="openCal(); return false;"
                  class="btn btn-primary" style="justify-content:center;width:100%;display:flex">
                 📅 &nbsp;Deschide calendarul meu
               </a>
@@ -181,7 +181,26 @@ function closeMenu() {
   </div>
 </footer>
 
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script>
+(function(){
+  var U='https://calendly.com/eduard-vlaston-eiv3',loading=false,ready=false,pending=false;
+  function inject(){
+    if(ready||loading)return; loading=true;
+    var s=document.createElement('script');
+    s.src='https://assets.calendly.com/assets/external/widget.js';
+    s.onload=function(){ready=true; if(pending){pending=false; Calendly.initPopupWidget({url:U});}};
+    document.body.appendChild(s);
+  }
+  window.openCal=function(){
+    if(ready&&window.Calendly){Calendly.initPopupWidget({url:U});}
+    else{pending=true; inject();}
+    return false;
+  };
+  ['pointerdown','touchstart','keydown','scroll'].forEach(function(e){
+    window.addEventListener(e,inject,{once:true,passive:true});
+  });
+})();
+</script>
 <script>
 const io = new IntersectionObserver(e => { e.forEach(el => { if(el.isIntersecting){el.target.classList.add('in');io.unobserve(el.target);} }); },{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
