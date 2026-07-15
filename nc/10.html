@@ -7,7 +7,7 @@
   <meta name="description" content="Episodul 10 — Ioana, săptămâna a doua">
   <title>Două femei locuiesc în Ioana. Și nu se mai… · Note din Cabinet</title>
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Sunt doua parti in mine: Și nu se mai suportă una pe cealalta. — Ioana">
+  <meta property="og:title" content="Două femei locuiesc în Ioana. Și nu se mai suportă. — Ioana">
   <meta property="og:description" content="Episodul 10 — Ioana, săptămâna a doua">
   <meta property="og:url" content="https://edivlaston.ro/note-din-cabinet/10">
   <meta property="og:image" content="https://edivlaston.ro/edi-vlaston.webp">
@@ -102,7 +102,7 @@ function closeMenu(){var m=document.getElementById('mobile-menu'),b=document.get
 <article class="nc-wrap">
   <div class="nc-header">
     <div class="nc-cat">Note din Cabinet · Ioana</div>
-    <h1>Sunt doua parti in mine: Și nu se mai suportă una pe cealalta.</h1>
+    <h1>Două femei locuiesc în Ioana. Și nu se mai suportă.</h1>
     <div class="nc-episub">Episodul 10 — Ioana, săptămâna a doua</div>
     <div class="nc-date">10 iulie 2026</div>
   </div>
@@ -196,18 +196,19 @@ function trimiteAbonare() {
   if (!email) { alert('Te rog completează adresa de email.'); return; }
   var btn = document.querySelector('#form-modal-wrap button');
   btn.textContent = 'Se trimite...'; btn.disabled = true;
-  fetch('https://script.google.com/macros/s/AKfycbx25PVLvMgUgVACP2ReYX4XX8TP5gq_YbLWCQTvjt98bpR41Q5oORgoEChGgjkePNnKIA/exec', {
-    method: 'POST', headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({nume: nume, email: email, pagina: '/note-din-cabinet/10'})
-  })
-  .then(function(r){ return r.json(); })
-  .then(function(){
+  var date = { nume: nume, email: email, pagina: '/note-din-cabinet/10' };
+  function _confirmaAbonare() {
     document.getElementById('form-modal-wrap').style.display = 'none';
     document.getElementById('form-modal-confirmare').style.display = 'block';
     if (typeof gtag === 'function') gtag('event', 'abonare_lista', {'event_category': 'lead'});
     if (typeof fbq === 'function') fbq('track', 'Lead', {content_name: 'Abonare_Note_Cabinet'});
-  })
-  .catch(function(){ btn.textContent = 'Abonează-mă'; btn.disabled = false; alert('A apărut o eroare. Te rog încearcă din nou.'); });
+  }
+  fetch('https://script.google.com/macros/s/AKfycbx25PVLvMgUgVACP2ReYX4XX8TP5gq_YbLWCQTvjt98bpR41Q5oORgoEChGgjkePNnKIA/exec?' + new URLSearchParams(date).toString(), {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify(date)
+  }).then(_confirmaAbonare).catch(_confirmaAbonare);
 }
 </script>
 </body>

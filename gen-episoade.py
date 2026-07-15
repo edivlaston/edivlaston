@@ -204,18 +204,19 @@ function trimiteAbonare() {{
   if (!email) {{ alert('Te rog completează adresa de email.'); return; }}
   var btn = document.querySelector('#form-modal-wrap button');
   btn.textContent = 'Se trimite...'; btn.disabled = true;
-  fetch('https://script.google.com/macros/s/AKfycbx25PVLvMgUgVACP2ReYX4XX8TP5gq_YbLWCQTvjt98bpR41Q5oORgoEChGgjkePNnKIA/exec', {{
-    method: 'POST', headers: {{'Content-Type': 'application/json'}},
-    body: JSON.stringify({{nume: nume, email: email, pagina: '/note-din-cabinet/{ep}'}})
-  }})
-  .then(function(r){{ return r.json(); }})
-  .then(function(){{
+  var date = {{ nume: nume, email: email, pagina: '/note-din-cabinet/{ep}' }};
+  function _confirmaAbonare() {{
     document.getElementById('form-modal-wrap').style.display = 'none';
     document.getElementById('form-modal-confirmare').style.display = 'block';
     if (typeof gtag === 'function') gtag('event', 'abonare_lista', {{'event_category': 'lead'}});
     if (typeof fbq === 'function') fbq('track', 'Lead', {{content_name: 'Abonare_Note_Cabinet'}});
-  }})
-  .catch(function(){{ btn.textContent = 'Abonează-mă'; btn.disabled = false; alert('A apărut o eroare. Te rog încearcă din nou.'); }});
+  }}
+  fetch('https://script.google.com/macros/s/AKfycbx25PVLvMgUgVACP2ReYX4XX8TP5gq_YbLWCQTvjt98bpR41Q5oORgoEChGgjkePNnKIA/exec?' + new URLSearchParams(date).toString(), {{
+    method: 'POST',
+    mode: 'no-cors',
+    headers: {{ 'Content-Type': 'text/plain;charset=utf-8' }},
+    body: JSON.stringify(date)
+  }}).then(_confirmaAbonare).catch(_confirmaAbonare);
 }}
 </script>
 </body>
