@@ -82,24 +82,6 @@
 function toggleMenu(){var m=document.getElementById('mobile-menu'),b=document.getElementById('hamburger');if(!m||!b)return;b.classList.toggle('open');m.classList.toggle('open');document.body.style.overflow=m.classList.contains('open')?'hidden':'';}
 function closeMenu(){var m=document.getElementById('mobile-menu'),b=document.getElementById('hamburger');if(m)m.classList.remove('open');if(b)b.classList.remove('open');document.body.style.overflow='';}
 </script>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1609722646982737');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1609722646982737&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-<script src="https://analytics.ahrefs.com/analytics.js" data-key="cLOrPLy/GiE5PpQiabvHXg" async></script>
 </head>
 <body>
 <nav id="nav">
@@ -161,7 +143,7 @@ src="https://www.facebook.com/tr?id=1609722646982737&ev=PageView&noscript=1"
 <h3>Cum lucrăm asta în cabinet</h3>
 <p>Nu-ți dau teme și tehnici de management al timpului. Aia ai încercat deja, și nu de-aia ești obosit.</p>
 <p>Lucrez person-centered. Pe scurt: nu te repar și nu te corectez. Țin un spațiu în care poți să spui ce nu spui nicăieri, până când auzi singur ce duci. Pentru cineva antrenat să dea soluții toată ziua, experiența de a nu fi nevoit să rezolve nimic, măcar 50 de minute, e neașteptat de mare.</p>
-<p>Practic: ședință de 50 de minute, la cabinet în Primăverii sau online — pentru că știu cum arată un program de gărzi. Confidențial.</p>
+<p>Practic: ședință de 50 de minute, la cabinet în Piața Victoriei sau online — pentru că știu cum arată un program de gărzi. Confidențial.</p>
 <h3>Întrebări frecvente</h3>
 <p><strong>„Nu am timp de terapie."</strong><br>De-asta lucrez și online, și seara. O ședință pe săptămână sau la două săptămâni. Nu îți cer să-ți reorganizezi viața — îți cer 50 de minute.</p>
 <p><strong>„Pot face online, între gărzi?"</strong><br>Da. Mulți dintre cei cu care lucrez nu ar putea ajunge fizic. Online funcționează la fel de bine pentru genul ăsta de muncă.</p>
@@ -180,13 +162,13 @@ src="https://www.facebook.com/tr?id=1609722646982737&ev=PageView&noscript=1"
   <div class="art-related">
     <div class="art-related-label">Citește mai departe</div>
     <div class="art-related-grid">
+      <a href="/blog/de-ce-nu-trece-anxietatea" class="art-related-card">
+        <span class="cat">Anxietate</span>
+        <h4>De ce nu trece anxietatea, deși ai înțeles-o</h4>
+      </a>
       <a href="/blog/a-fi-tata-dupa-divort" class="art-related-card">
         <span class="cat">Divorț</span>
         <h4>A fi tată după divorț — fără să dispari din viața lor</h4>
-      </a>
-      <a href="/blog/de-ce-faci-tot-bine-si-tot-gresesti" class="art-related-card">
-        <span class="cat">Relații</span>
-        <h4>De ce faci tot bine și tot greșești în relație</h4>
       </a>
 
     </div>
@@ -209,40 +191,5 @@ src="https://www.facebook.com/tr?id=1609722646982737&ev=PageView&noscript=1"
     </div>
   </div>
 </footer>
-<script>
-/* Calendly -> GA4 + Meta: rezervare finalizata */
-window.addEventListener('message', function (e) {
-  if (!e.origin || e.origin.indexOf('calendly.com') === -1) return;
-  if (!e.data || e.data.event !== 'calendly.event_scheduled') return;
-  if (typeof gtag === 'function') {
-    gtag('event', 'programare_calendly', {
-      'event_category': 'conversie',
-      'event_label': 'Calendly Programare Finalizata'
-    });
-  }
-  if (typeof fbq === 'function') {
-    fbq('track', 'Schedule', {content_name: 'Programare_Finalizata'});
-  }
-});
-</script>
-<script>
-/* Click WhatsApp / telefon -> GA4 + Meta */
-document.addEventListener('click', function (e) {
-  var a = e.target;
-  while (a && a.tagName !== 'A') a = a.parentElement;
-  if (!a || !a.href) return;
-  var h = a.href, canal = null;
-  if (h.indexOf('wa.me') !== -1 || h.indexOf('api.whatsapp.com') !== -1) canal = 'whatsapp';
-  else if (h.indexOf('tel:') === 0) canal = 'telefon';
-  if (!canal) return;
-  if (typeof gtag === 'function') {
-    gtag('event', 'contact_' + canal, {
-      'event_category': 'contact',
-      'event_label': canal === 'whatsapp' ? 'Click WhatsApp' : 'Click telefon'
-    });
-  }
-  if (typeof fbq === 'function') fbq('track', 'Contact', {content_name: canal});
-}, true);
-</script>
 </body>
 </html>
