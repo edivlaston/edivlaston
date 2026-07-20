@@ -48,6 +48,7 @@ NAV = '''<nav id="nav">
   <div class="nav-links">
     <a href="/barbati">Pentru Ei</a>
     <a href="/femei">Pentru Ele</a>
+    <a href="/terapie-cuplu">Terapie de cuplu</a>
     <a href="/despre">Despre</a>
     <a href="/blog">Blog</a>
     <a href="/note-din-cabinet" class="active">Note din Cabinet</a>
@@ -62,6 +63,7 @@ NAV = '''<nav id="nav">
 <div class="mobile-menu" id="mobile-menu">
   <a href="/barbati" onclick="closeMenu()">Pentru Ei</a>
   <a href="/femei" onclick="closeMenu()">Pentru Ele</a>
+  <a href="/terapie-cuplu" onclick="closeMenu()">Terapie de cuplu</a>
   <a href="/despre" onclick="closeMenu()">Despre</a>
   <a href="/blog" onclick="closeMenu()">Blog</a>
   <a href="/note-din-cabinet" onclick="closeMenu()">Note din Cabinet</a>
@@ -266,6 +268,7 @@ pagini = [
     ("/", "monthly", "1.0", "2026-06-27"),
     ("/barbati", "monthly", "0.9", "2026-06-27"),
     ("/femei", "monthly", "0.8", "2026-06-27"),
+    ("/terapie-cuplu", "monthly", "0.9", "2026-07-20"),
     ("/adictii", "monthly", "0.8", "2026-04-28"),
     ("/despre", "monthly", "0.7", "2026-06-27"),
     ("/blog", "weekly", "0.8", TODAY),

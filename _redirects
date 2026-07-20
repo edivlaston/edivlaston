@@ -10,6 +10,7 @@
 # Redirect .html versions to clean URLs (301 permanent for SEO)
 /barbati.html              /barbati              301!
 /femei.html                /femei                301!
+/terapie-cuplu.html        /terapie-cuplu        301!
 /adictii.html              /adictii              301!
 /despre.html               /despre               301!
 /contact.html              /contact              301!
