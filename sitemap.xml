@@ -38,13 +38,13 @@
   </url>
   <url>
     <loc>https://edivlaston.ro/blog</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://edivlaston.ro/note-din-cabinet</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -65,6 +65,12 @@
     <lastmod>2026-04-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://edivlaston.ro/blog/diferenta-de-libido-in-cuplu</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://edivlaston.ro/blog/burnout-la-locul-de-munca</loc>
@@ -201,6 +207,12 @@
   <url>
     <loc>https://edivlaston.ro/note-din-cabinet/17</loc>
     <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://edivlaston.ro/note-din-cabinet/18</loc>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
