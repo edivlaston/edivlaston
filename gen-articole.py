@@ -25,6 +25,49 @@ def text_din_continut(continut, n=155):
     t = re.sub(r"\s+", " ", t).strip()
     return (t[:n].rsplit(" ", 1)[0] + "…") if len(t) > n else t
 
+def extrage_faq(continut):
+    """Cauta sectiunea <h2>Intrebari frecvente</h2> si extrage perechile
+    <h3>intrebare</h3><p>raspuns</p> care urmeaza, pana la urmatorul H2 sau finalul textului.
+    Returneaza o lista de tupluri (intrebare, raspuns) curatate de tag-uri HTML."""
+    m = re.search(r"<h2>\s*[IÎ]ntreb[aă]ri frecvente\s*</h2>(.*?)(?=<h2>|$)", continut, re.S | re.I)
+    if not m:
+        return []
+    sectiune = m.group(1)
+    perechi = re.findall(r"<h3>(.*?)</h3>\s*<p>(.*?)</p>", sectiune, re.S)
+    faq = []
+    for q, a in perechi:
+        q_curat = re.sub(r"<[^>]+>", "", q).strip()
+        a_curat = re.sub(r"<[^>]+>", " ", a)
+        a_curat = re.sub(r"\s+", " ", a_curat).strip()
+        if q_curat and a_curat:
+            faq.append((q_curat, a_curat))
+    return faq
+
+def faq_schema_html(faq):
+    """Construieste blocul <script type=application/ld+json> pentru FAQPage.
+    Returneaza string gol daca nu exista FAQ."""
+    if not faq:
+        return ""
+    entitati = [
+        {
+            "@type": "Question",
+            "name": q,
+            "acceptedAnswer": {"@type": "Answer", "text": a},
+        }
+        for q, a in faq
+    ]
+    schema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": entitati,
+    }
+    return (
+        '  <!-- Schema FAQPage (auto-extras din sectiunea Intrebari frecvente) -->\n'
+        '  <script type="application/ld+json">\n'
+        + json.dumps(schema, ensure_ascii=False, indent=2)
+        + '\n  </script>\n'
+    )
+
 arts = json.load(open("articole.json"))
 
 os.makedirs(OUTDIR, exist_ok=True)
@@ -126,7 +169,7 @@ PAGE = '''<!DOCTYPE html>
     }}
   }}
   </script>
-  <style>
+{faq_schema}  <style>
     .art-wrap{{max-width:720px;margin:0 auto;padding:0 24px}}
     .art-header{{padding:120px 0 0;text-align:center}}
     .art-cat{{font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:16px}}
@@ -228,6 +271,8 @@ for i, a in enumerate(arts):
     if len(full_title) > 60:
         full_title = f"{titlu[:45]}… · Edi Vlaston"
 
+    faq = extrage_faq(continut)
+
     page = PAGE.format(
         base=BASE, id=aid, img=IMG,
         title=html.escape(full_title),
@@ -241,10 +286,12 @@ for i, a in enumerate(arts):
         titlu=html.escape(titlu),
         continut=continut,
         related=related_html,
+        faq_schema=faq_schema_html(faq),
         nav=NAV, footer=FOOTER,
     )
     open(os.path.join(OUTDIR, f"{aid}.html"), "w", encoding="utf-8").write(page)
 
 print(f"OK — {len(arts)} pagini statice in /{OUTDIR}/")
 for a in arts:
-    print(f"  {BASE}/blog/{a['id']}")
+    faq = extrage_faq(a["continut"])
+    print(f"  {BASE}/blog/{a['id']}  (FAQ: {len(faq)} intrebari)")
