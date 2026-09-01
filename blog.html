@@ -100,6 +100,33 @@ function closeMenu() {
   <!-- End Meta Pixel Code -->
 <script>window.addEventListener('load',function(){var s=document.createElement('script');s.src='https://analytics.ahrefs.com/analytics.js';s.setAttribute('data-key','cLOrPLy/GiE5PpQiabvHXg');s.async=true;document.body.appendChild(s);});</script>
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" media="print" onload="this.media='all'">
+
+  <!-- Schema ProfessionalService + Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Cabinet Edi Vlaston — Psihoterapeut",
+    "url": "https://edivlaston.ro",
+    "telephone": "+40744370179",
+    "email": "edivlaston@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Strada Maxim Gorki 22, parter, ap. 2",
+      "addressLocality": "București",
+      "addressRegion": "Sector 1",
+      "addressCountry": "RO"
+    },
+    "priceRange": "280 lei / ședință",
+    "employee": {
+      "@type": "Person",
+      "name": "Edi Vlaston",
+      "jobTitle": "Psihoterapeut",
+      "hasCredential": "Colegiul Psihologilor din România, cod 22334",
+      "url": "https://edivlaston.ro/despre"
+    }
+  }
+  </script>
 </head>
 
 <body>
@@ -218,21 +245,6 @@ function closeMenu() {
       </a>
       </div>
     </div>
-    <div id="coming-section" style="display:none">
-      <div class="reveal" style="text-align:center;max-width:500px;margin:0 auto 48px">
-        <div style="font-size:2rem;margin-bottom:16px">✍️</div>
-        <h2 style="font-size:clamp(1.4rem,2.5vw,2rem);margin-bottom:10px">Primele articole apar în curând.</h2>
-        <p style="font-size:.9rem;color:var(--muted)">Între timp, iată subiectele în pregătire.</p>
-      </div>
-      <div class="coming-topics reveal" style="transition-delay:.1s">
-        <div class="topic-card"><div class="topic-num">01</div><h4>De ce faci tot bine și tot greșești în relație</h4><p>Schema moștenită vs. ce funcționează azi în cuplu.</p></div>
-        <div class="topic-card"><div class="topic-num">02</div><h4>Cum să recunoști ce simți cu adevărat</h4><p>Nu doar „bine" sau „rău" — nuanțele care fac diferența.</p></div>
-        <div class="topic-card"><div class="topic-num">03</div><h4>De ce partenera spune că nu ești prezent</h4><p>Ce înseamnă „prezență emoțională" — concret, nu abstract.</p></div>
-        <div class="topic-card"><div class="topic-num">04</div><h4>Bărbatul și conflictul: reacție vs. alegere</h4><p>De ce explodezi sau te retragi — și cum schimbi asta.</p></div>
-        <div class="topic-card"><div class="topic-num">05</div><h4>Ce înveți dintr-un divorț înainte de relația următoare</h4><p>Tipare care se repetă — și cum le oprești.</p></div>
-        <div class="topic-card"><div class="topic-num">06</div><h4>De ce bărbații singuri rămân singuri</h4><p>Comportamente care îndepărtează — fără să știi că le faci.</p></div>
-      </div>
-    </div>
     <div class="reveal" style="text-align:center;margin-top:56px;transition-delay:.2s">
       <p style="font-size:.88rem;color:var(--muted);margin-bottom:20px">Dacă vreun subiect te privește direct — nu aștepta articolul.</p>
       <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="openCal(); return false;" class="btn btn-primary">Rezervă o primă ședință <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -284,7 +296,6 @@ let articlesData=[];
 
 function renderCards(articles){
   if(!articles||articles.length===0)return;
-  document.getElementById('coming-section').style.display='none';
   document.getElementById('articles-section').style.display='block';
   const grid=document.getElementById('blog-grid');
   grid.innerHTML=articles.map((a,i)=>`
