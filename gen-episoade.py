@@ -266,9 +266,9 @@ for i, e in enumerate(eps):
 arts = json.load(open("articole.json"))
 pagini = [
     ("/", "monthly", "1.0", "2026-06-27"),
-    ("/barbati", "monthly", "0.9", "2026-06-27"),
+    ("/barbati", "monthly", "0.9", TODAY),
     ("/femei", "monthly", "0.8", "2026-06-27"),
-    ("/terapie-cuplu", "monthly", "0.9", "2026-07-20"),
+    ("/terapie-cuplu", "monthly", "0.9", TODAY),
     ("/adictii", "monthly", "0.8", "2026-04-28"),
     ("/despre", "monthly", "0.7", "2026-06-27"),
     ("/blog", "weekly", "0.8", TODAY),
