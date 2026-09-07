@@ -87,7 +87,6 @@ function closeMenu() {
     },
     "priceRange": "280–390 lei",
     "makesOffer": [
-      {"@type": "Offer", "name": "Ședință de cunoaștere — ofertă septembrie", "price": "200", "priceCurrency": "RON", "availabilityEnds": "2026-09-30"},
       {"@type": "Offer", "name": "Ședință individuală (50 min)", "price": "280", "priceCurrency": "RON"},
       {"@type": "Offer", "name": "Ședință de cuplu (80 min)", "price": "390", "priceCurrency": "RON"},
       {"@type": "Offer", "name": "Pachet Focus 5", "price": "1250", "priceCurrency": "RON"},
@@ -115,7 +114,8 @@ function closeMenu() {
     <a href="/blog">Blog</a>
     <a href="/note-din-cabinet">Note din Cabinet</a>
     <a href="/intrebari-frecvente">Întrebări Frecvente</a>
-    <a href="/contact" class="active">Contact</a>
+    <a href="/preturi" class="active">Prețuri</a>
+    <a href="/contact">Contact</a>
     <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="openCal(); return false;" class="nav-cta active">Rezervă o primă ședință</a>
   </div>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Meniu">
@@ -132,7 +132,8 @@ function closeMenu() {
   <a href="/blog" onclick="closeMenu()">Blog</a>
   <a href="/note-din-cabinet" onclick="closeMenu()">Note din Cabinet</a>
   <a href="/intrebari-frecvente" onclick="closeMenu()">Întrebări Frecvente</a>
-  <a href="/contact" class="active" onclick="closeMenu()">Contact</a>
+  <a href="/preturi" class="active" onclick="closeMenu()">Prețuri</a>
+  <a href="/contact" onclick="closeMenu()">Contact</a>
   <a href="tel:+40744370179" class="mobile-phone" onclick="closeMenu()">📞 0744 370 179</a>
   <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="openCal(); closeMenu(); return false;" class="mobile-cta">Rezervă o primă ședință</a>
 
@@ -150,16 +151,6 @@ function closeMenu() {
       <div class="sec-label" style="justify-content:center">Prețuri</div>
       <h1>Transparent.<br><em>Fără surprize.</em></h1>
       <p style="font-size:1.02rem;font-weight:300;color:var(--warm);line-height:1.85;margin-top:24px">Prețurile sunt aici, complet, ca să știi la ce te aștepți înainte să scrii. O primă ședință e de cunoaștere — vii, vedem împreună dacă are sens să continuăm, fără presiunea de a decide ceva.</p>
-    </div>
-
-    <div class="reveal" style="max-width:680px;margin:0 auto 48px">
-      <div style="position:relative;background:var(--ink);border-radius:12px;padding:38px 34px;overflow:hidden">
-        <div style="position:absolute;top:16px;right:18px;background:var(--accent);color:#fff;font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px;border-radius:20px">Ofertă septembrie</div>
-        <p style="font-size:.68rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--accentl,#E0A87E);margin-bottom:14px">Doar în septembrie</p>
-        <h2 style="color:#fff;font-size:clamp(1.5rem,2.4vw,2rem);margin-bottom:14px">Ședință de cunoaștere<br><em style="color:var(--accent)">200 lei</em></h2>
-        <p style="font-size:.95rem;color:rgba(255,253,248,.7);line-height:1.8;font-weight:300;margin-bottom:24px;max-width:440px">Doar în luna septembrie, prima ședință de cunoaștere este 200 lei (în loc de 280). 50 de minute în care vii cu ce simți acum și vedem împreună dacă are sens să continuăm — fără presiunea de a decide ceva.</p>
-        <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="openCal(); return false;" class="btn btn-primary">Rezervă ședința de cunoaștere <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      </div>
     </div>
 
     <div class="reveal" style="max-width:560px;margin:0 auto 14px">
