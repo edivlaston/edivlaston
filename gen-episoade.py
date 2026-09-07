@@ -327,6 +327,7 @@ pagini = [
     ("/blog", "weekly", "0.8", TODAY),
     ("/note-din-cabinet", "weekly", "0.8", TODAY),
     ("/intrebari-frecvente", "monthly", "0.7", "2026-06-27"),
+    ("/preturi", "monthly", "0.8", TODAY),
     ("/contact", "monthly", "0.6", "2026-04-28"),
     ("/pentru-terapeuti", "monthly", "0.6", "2026-04-28"),
 ]
