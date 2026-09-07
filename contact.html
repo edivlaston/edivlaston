@@ -76,7 +76,7 @@ function closeMenu() {
     "name": "Cabinet Edi Vlaston — Psihoterapeut",
     "url": "https://edivlaston.ro",
     "telephone": "+40744370179",
-    "email": "edivlaston@gmail.com",
+    "email": "office@edivlaston.ro",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Strada Maxim Gorki 22, parter, ap. 2",
@@ -131,7 +131,7 @@ function closeMenu() {
   <div style="border-top:1px solid rgba(139,94,60,.15);padding-top:24px;margin-top:8px;display:flex;flex-direction:column;gap:14px;align-items:center">
     <a href="tel:+40744370179" onclick="closeMenu()" style="font-family:var(--sans);font-size:1rem;color:var(--terra);font-weight:500">📞 0744 370 179</a>
     <a href="https://wa.me/40744370179" target="_blank" onclick="closeMenu()" style="font-family:var(--sans);font-size:1rem;color:var(--terra);font-weight:500">💬 WhatsApp</a>
-    <a href="mailto:edivlaston@gmail.com" onclick="closeMenu()" style="font-family:var(--sans);font-size:.9rem;color:var(--muted)">edivlaston@gmail.com</a>
+    <a href="mailto:office@edivlaston.ro" onclick="closeMenu()" style="font-family:var(--sans);font-size:.9rem;color:var(--muted)">office@edivlaston.ro</a>
   </div>
 </div>
 
@@ -145,7 +145,7 @@ function closeMenu() {
         <p>30 de minute. Fără angajament. Fără să explici totul de la început. Dacă simți că ar putea funcționa — mergem mai departe.</p>
         <div class="contact-rows">
           <div class="contact-row"><div class="c-ico">📞</div><div>Telefon / WhatsApp: <a href="tel:+40744370179" class="c-link">0744 370 179</a></div></div>
-          <div class="contact-row"><div class="c-ico">✉️</div><div>Email: <a href="mailto:edivlaston@gmail.com" class="c-link">edivlaston@gmail.com</a></div></div>
+          <div class="contact-row"><div class="c-ico">✉️</div><div>Email: <a href="mailto:office@edivlaston.ro" class="c-link">office@edivlaston.ro</a></div></div>
           <div class="contact-row"><div class="c-ico">📍</div><div>Cabinet: Str. Maxim Gorki 22, parter, ap. 2 · Primăverii, Sector 1, București</div></div>
           <div class="contact-row"><div class="c-ico">🌐</div><div>Online — sesiuni video oriunde în România</div></div>
         </div>
@@ -200,6 +200,19 @@ function closeMenu() {
 </section>
 
 </main>
+<!-- Bara de contact -->
+<div style="text-align:center;padding:30px 20px;border-top:1px solid var(--stone);background:var(--sand)">
+  <p style="font-size:.7rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:14px">Sună sau scrie direct</p>
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 16px;font-size:.92rem">
+    <a href="tel:+40744370179" style="color:var(--terra);font-weight:500;text-decoration:none">0744 370 179</a>
+    <span style="color:var(--stone)" aria-hidden="true">·</span>
+    <a href="https://wa.me/40744370179" target="_blank" rel="noopener" style="color:var(--terra);font-weight:500;text-decoration:none">WhatsApp</a>
+    <span style="color:var(--stone)" aria-hidden="true">·</span>
+    <a href="https://t.me/edivlaston" target="_blank" rel="noopener" style="color:var(--terra);font-weight:500;text-decoration:none">Telegram</a>
+    <span style="color:var(--stone)" aria-hidden="true">·</span>
+    <a href="mailto:office@edivlaston.ro" style="color:var(--terra);font-weight:500;text-decoration:none">office@edivlaston.ro</a>
+  </div>
+</div>
 <footer>
   <div class="container">
     <div class="footer-in">
@@ -284,6 +297,8 @@ document.addEventListener('click', function (e) {
   var h = a.href, canal = null;
   if (h.indexOf('wa.me') !== -1 || h.indexOf('api.whatsapp.com') !== -1) canal = 'whatsapp';
   else if (h.indexOf('tel:') === 0) canal = 'telefon';
+  else if (h.indexOf('t.me/') !== -1) canal = 'telegram';
+  else if (h.indexOf('mailto:') === 0) canal = 'email';
   if (!canal) return;
   if (typeof gtag === 'function') {
     gtag('event', 'contact_' + canal, {

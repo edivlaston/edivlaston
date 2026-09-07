@@ -228,7 +228,7 @@
     "name": "Cabinet Edi Vlaston — Psihoterapeut",
     "url": "https://edivlaston.ro",
     "telephone": "+40744370179",
-    "email": "edivlaston@gmail.com",
+    "email": "office@edivlaston.ro",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Strada Maxim Gorki 22, parter, ap. 2",
@@ -321,7 +321,7 @@
   <div style="border-top:1px solid rgba(139,94,60,.15);padding-top:24px;margin-top:8px;display:flex;flex-direction:column;gap:14px;align-items:center">
     <a href="tel:+40744370179" onclick="closeMenu()" style="font-family:var(--sans);font-size:1rem;color:var(--terra);font-weight:500">📞 0744 370 179</a>
     <a href="https://wa.me/40744370179" target="_blank" onclick="closeMenu()" style="font-family:var(--sans);font-size:1rem;color:var(--terra);font-weight:500">💬 WhatsApp</a>
-    <a href="mailto:edivlaston@gmail.com" onclick="closeMenu()" style="font-family:var(--sans);font-size:.9rem;color:var(--muted)">edivlaston@gmail.com</a>
+    <a href="mailto:office@edivlaston.ro" onclick="closeMenu()" style="font-family:var(--sans);font-size:.9rem;color:var(--muted)">office@edivlaston.ro</a>
   </div>
 </div>
 
@@ -603,7 +603,7 @@
     <div class="author-box reveal">
       <strong>Edi Vlaston — Psihoterapeut, București</strong>
       <p>Răspunsurile de mai sus sunt scrise de Edi Vlaston, psihoterapeut acreditat CPA (cod 22334), specializat în psihoterapie centrată pe persoană (Carl Rogers), Interviu Motivațional și hipnoză clinică. Cabinet în Primăverii, Sector 1, București. Pe lângă formarea în psihoterapie — peste 20 de ani în care a condus și a îndrumat oameni. <a href="/despre" style="color:var(--terra)">Citește mai multe despre Edi →</a></p>
-      <p style="margin-top:12px">Ai o întrebare care nu e aici? Scrie la <a href="mailto:edivlaston@gmail.com" style="color:var(--terra)">edivlaston@gmail.com</a> — răspund în 24h.</p>
+      <p style="margin-top:12px">Ai o întrebare care nu e aici? Scrie la <a href="mailto:office@edivlaston.ro" style="color:var(--terra)">office@edivlaston.ro</a> — răspund în 24h.</p>
     </div>
   </div>
 </section>
@@ -619,9 +619,18 @@
 </div>
 
 
-<!-- Linie contact discreta -->
-<div style="text-align:center;padding:24px 20px;border-top:1px solid var(--stone)">
-  <p style="font-size:.88rem;color:var(--muted)">edivlaston@gmail.com &nbsp;·&nbsp; 0744 370 179</p>
+<!-- Bara de contact -->
+<div style="text-align:center;padding:30px 20px;border-top:1px solid var(--stone);background:var(--sand)">
+  <p style="font-size:.7rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:14px">Sună sau scrie direct</p>
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 16px;font-size:.92rem">
+    <a href="tel:+40744370179" style="color:var(--terra);font-weight:500;text-decoration:none">0744 370 179</a>
+    <span style="color:var(--stone)" aria-hidden="true">·</span>
+    <a href="https://wa.me/40744370179" target="_blank" rel="noopener" style="color:var(--terra);font-weight:500;text-decoration:none">WhatsApp</a>
+    <span style="color:var(--stone)" aria-hidden="true">·</span>
+    <a href="https://t.me/edivlaston" target="_blank" rel="noopener" style="color:var(--terra);font-weight:500;text-decoration:none">Telegram</a>
+    <span style="color:var(--stone)" aria-hidden="true">·</span>
+    <a href="mailto:office@edivlaston.ro" style="color:var(--terra);font-weight:500;text-decoration:none">office@edivlaston.ro</a>
+  </div>
 </div>
 </main>
 <footer>
@@ -637,7 +646,7 @@
         <a href="/intrebari-frecvente">Întrebări Frecvente</a>
         <a href="/contact">Contact</a>
         <a href="/confidentialitate">Confidențialitate</a>
-        <a href="mailto:edivlaston@gmail.com">edivlaston@gmail.com</a>
+        <a href="mailto:office@edivlaston.ro">office@edivlaston.ro</a>
       </div>
       <span class="footer-copy">© 2026 Cabinet Individual de Psihologie · Cod 22334</span>
     </div>
@@ -721,6 +730,8 @@ document.addEventListener('click', function (e) {
   var h = a.href, canal = null;
   if (h.indexOf('wa.me') !== -1 || h.indexOf('api.whatsapp.com') !== -1) canal = 'whatsapp';
   else if (h.indexOf('tel:') === 0) canal = 'telefon';
+  else if (h.indexOf('t.me/') !== -1) canal = 'telegram';
+  else if (h.indexOf('mailto:') === 0) canal = 'email';
   if (!canal) return;
   if (typeof gtag === 'function') {
     gtag('event', 'contact_' + canal, {
