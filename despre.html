@@ -27,6 +27,8 @@
     .text-col p strong { color:var(--ink); font-weight:500; }
     .two-col { display:grid; grid-template-columns:1.1fr 1fr; gap:80px; align-items:start; }
     @media(max-width:1024px){ .two-col{grid-template-columns:1fr;gap:40px} }
+    .conf-cta-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+    @media(max-width:768px){ .conf-cta-grid{grid-template-columns:1fr;gap:20px} }
   </style>
 <script>
 function toggleMenu() {
@@ -203,7 +205,7 @@ function closeMenu() {
 
 <section style="padding:var(--gap) 0;background:var(--sand)">
   <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px" class="reveal">
+    <div class="conf-cta-grid reveal">
       <div style="background:var(--white);border:1px solid var(--stone);border-radius:6px;padding:36px 32px">
         <div class="sec-label">Confidențialitate</div>
         <h2 style="font-size:clamp(1.6rem,2.5vw,2.2rem);margin-bottom:20px">Nimeni nu<br><em>va ști.</em></h2>
@@ -217,9 +219,9 @@ function closeMenu() {
       </div>
       <div style="background:var(--ink);border-radius:6px;padding:36px 32px;display:flex;flex-direction:column;justify-content:space-between">
         <div>
-          <p style="font-size:.68rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:16px">Fă primul pas</p>
+          <p style="font-size:.68rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:16px">O primă discuție</p>
           <h2 style="color:var(--white);font-size:clamp(1.6rem,2.5vw,2.2rem);margin-bottom:16px">Rezervă<br><em style="color:var(--accent)">o primă ședință.</em></h2>
-          <p style="font-size:.9rem;color:rgba(255,253,248,.65);line-height:1.8;margin-bottom:28px;font-weight:300">30 de minute. Fără angajament. Dacă simți că are sens — mergem mai departe.</p>
+          <p style="font-size:.9rem;color:rgba(255,253,248,.65);line-height:1.8;margin-bottom:28px;font-weight:300">Prima ședință e de cunoaștere. Vii cu ce simți acum, îmi spui ce se întâmplă, iar eu îți spun cinstit dacă și cum cred că pot ajuta.</p>
         </div>
         <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="openCal(); return false;" class="btn btn-primary">Programează acum <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
