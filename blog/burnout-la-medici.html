@@ -181,15 +181,68 @@ function closeMenu(){var m=document.getElementById('mobile-menu'),b=document.get
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
+<!-- Bara de contact -->
+<div style="text-align:center;padding:30px 20px;border-top:1px solid var(--stone);background:var(--sand)">
+  <p style="font-size:.7rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:14px">Sună sau scrie direct</p>
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 16px;font-size:.92rem">
+    <a href="tel:+40744370179" style="color:var(--terra);font-weight:500;text-decoration:none">0744 370 179</a>
+    <span style="color:var(--stone)" aria-hidden="true">·</span>
+    <a href="https://wa.me/40744370179" target="_blank" rel="noopener" style="color:var(--terra);font-weight:500;text-decoration:none">WhatsApp</a>
+    <span style="color:var(--stone)" aria-hidden="true">·</span>
+    <a href="https://t.me/edivlaston" target="_blank" rel="noopener" style="color:var(--terra);font-weight:500;text-decoration:none">Telegram</a>
+    <span style="color:var(--stone)" aria-hidden="true">·</span>
+    <a href="mailto:office@edivlaston.ro" style="color:var(--terra);font-weight:500;text-decoration:none">office@edivlaston.ro</a>
+  </div>
+</div>
 <footer>
   <div class="container">
     <div class="footer-in">
       <div class="footer-brand">Edi Vlaston<span>.</span></div>
-        <a href="mailto:edivlaston@gmail.com">edivlaston@gmail.com</a></div>
+        <a href="mailto:office@edivlaston.ro">office@edivlaston.ro</a></div>
       <a href="/confidentialitate" style="display:block;text-align:center;font-size:.78rem;color:var(--muted);margin:8px 0;">Politica de confidențialitate</a>
       <span class="footer-copy">© 2026 Cabinet Individual de Psihologie · Cod 22334</span>
     </div>
   </div>
 </footer>
+<!-- Calendly Event Tracking -->
+<script>
+window.addEventListener('message', function(e) {
+  if (e.data.event && e.data.event.indexOf('calendly') === 0) {
+    if (e.data.event === 'calendly.event_scheduled') {
+      if (typeof gtag === 'function') {
+        gtag('event', 'programare_calendly', {
+          'event_category': 'conversie',
+          'event_label': 'Calendly Programare Finalizata'
+        });
+        gtag('event', 'conversion', {
+          'send_to': 'AW-17654719970/VtMcCPnxyc8cEOLLtuJB'
+        });
+      }
+      if (typeof fbq === 'function') {
+        fbq('track', 'Schedule', {content_name: 'Programare_Finalizata'});
+      }
+    }
+  }
+});
+</script>
+<!-- End Calendly Event Tracking -->
+<script>
+/* Click WhatsApp / telefon / telegram / email -> GA4 + Meta */
+document.addEventListener('click', function (e) {
+  var a = e.target;
+  while (a && a.tagName !== 'A') a = a.parentElement;
+  if (!a || !a.href) return;
+  var h = a.href, canal = null;
+  if (h.indexOf('wa.me') !== -1 || h.indexOf('api.whatsapp.com') !== -1) canal = 'whatsapp';
+  else if (h.indexOf('tel:') === 0) canal = 'telefon';
+  else if (h.indexOf('t.me/') !== -1) canal = 'telegram';
+  else if (h.indexOf('mailto:') === 0) canal = 'email';
+  if (!canal) return;
+  if (typeof gtag === 'function') {
+    gtag('event', 'contact_' + canal, {'event_category': 'contact', 'event_label': canal});
+  }
+  if (typeof fbq === 'function') fbq('track', 'Contact', {content_name: canal});
+}, true);
+</script>
 </body>
 </html>
