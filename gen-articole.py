@@ -81,6 +81,7 @@ NAV = '''<nav id="nav">
   <div class="nav-links">
     <a href="/barbati">Pentru Ei</a>
     <a href="/femei">Pentru Ele</a>
+    <a href="/terapie-cuplu">Terapie de cuplu</a>
     <a href="/despre">Despre</a>
     <a href="/blog" class="active">Blog</a>
     <a href="/note-din-cabinet">Note din Cabinet</a>
@@ -96,6 +97,7 @@ NAV = '''<nav id="nav">
 <div class="mobile-menu" id="mobile-menu">
   <a href="/barbati" onclick="closeMenu()">Pentru Ei</a>
   <a href="/femei" onclick="closeMenu()">Pentru Ele</a>
+  <a href="/terapie-cuplu" onclick="closeMenu()">Terapie de cuplu</a>
   <a href="/despre" onclick="closeMenu()">Despre</a>
   <a href="/blog" onclick="closeMenu()">Blog</a>
   <a href="/note-din-cabinet" onclick="closeMenu()">Note din Cabinet</a>
