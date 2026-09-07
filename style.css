@@ -296,10 +296,11 @@ footer { padding: 44px 0; background: var(--ink); }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 .mobile-menu {
-  display: none; position: fixed; inset: 0; z-index: 199;
+  display: none; position: fixed; top: 0; left: 0; right: 0; z-index: 199;
+  height: 100vh; height: 100dvh; max-height: 100dvh;
   background: rgba(247,241,232,.98); backdrop-filter: blur(10px);
   flex-direction: column; align-items: center; justify-content: flex-start;
-  gap: 26px; padding: 88px 40px 48px;
+  gap: 22px; padding: 84px 40px 56px;
   overflow-y: auto; -webkit-overflow-scrolling: touch;
 }
 .mobile-menu.open { display: flex; }

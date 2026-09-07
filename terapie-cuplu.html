@@ -23,19 +23,6 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="style.css">
   <style>
-    .cuplu-canvas{position:relative;border-radius:10px;overflow:hidden;background:var(--parch);border:1px solid var(--stone);padding:40px 34px;min-height:340px;display:flex;flex-direction:column;justify-content:center}
-    .cuplu-canvas > svg{position:absolute;inset:0;width:100%;height:100%;z-index:0}
-    .cuplu-canvas .pull{position:relative;z-index:1;margin:0}
-    .cuplu-orbA,.cuplu-orbB,.cuplu-field{transform-box:fill-box;transform-origin:center}
-    .cuplu-orbA{animation:cupluDriftA 9s ease-in-out infinite}
-    .cuplu-orbB{animation:cupluDriftB 9s ease-in-out infinite}
-    .cuplu-field{animation:cupluField 7s ease-in-out infinite}
-    @keyframes cupluDriftA{0%,100%{transform:translate(0,0)}50%{transform:translate(13px,-9px)}}
-    @keyframes cupluDriftB{0%,100%{transform:translate(0,0)}50%{transform:translate(-13px,9px)}}
-    @keyframes cupluField{0%,100%{opacity:.16;transform:scale(1)}50%{opacity:.32;transform:scale(1.07)}}
-    @media(prefers-reduced-motion:reduce){.cuplu-orbA,.cuplu-orbB,.cuplu-field{animation:none}}
-  </style>
-  <style>
     #cta-band { padding: 100px 0; background: var(--ink); text-align: center; }
     #cta-band h2 { color: var(--white); margin-bottom: 16px; }
     #cta-band h2 em { color: var(--accent); font-style: italic; }
@@ -239,17 +226,8 @@ function closeMenu() {
         <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="openCal(); return false;" class="btn btn-primary">Rezervă o primă ședință <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
       <div>
-        <div class="cuplu-canvas">
-          <svg viewBox="0 0 400 480" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
-            <ellipse class="cuplu-field" cx="200" cy="240" rx="96" ry="128" fill="#8B5E3C"/>
-            <path d="M150 70 C 120 180, 120 300, 150 410" stroke="#8B5E3C" stroke-width="1.4" fill="none" opacity=".28"/>
-            <path d="M250 70 C 280 180, 280 300, 250 410" stroke="#C4784A" stroke-width="1.4" fill="none" opacity=".28"/>
-            <g class="cuplu-orbA"><circle cx="150" cy="240" r="9" fill="#8B5E3C"/><circle cx="150" cy="240" r="17" fill="none" stroke="#8B5E3C" stroke-width="1" opacity=".35"/></g>
-            <g class="cuplu-orbB"><circle cx="250" cy="240" r="9" fill="#C4784A"/><circle cx="250" cy="240" r="17" fill="none" stroke="#C4784A" stroke-width="1" opacity=".35"/></g>
-          </svg>
-          <div class="pull" style="margin:0">
-            <p>„Vă certați pe aceleași lucruri, cu aceleași cuvinte, de luni de zile. Sau nu vă mai certați deloc — și tăcerea e mai grea."</p>
-          </div>
+        <div class="pull" style="margin:0">
+          <p>„Vă certați pe aceleași lucruri, cu aceleași cuvinte, de luni de zile. Sau nu vă mai certați deloc — și tăcerea e mai grea."</p>
         </div>
       </div>
     </div>
