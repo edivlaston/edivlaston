@@ -408,7 +408,7 @@ window.addEventListener('popstate',()=>{
   else{closeModalBtn();}
 });
 
-fetch('/note-din-cabinet.json')
+fetch('/note-din-cabinet-index.json')
   .then(r=>r.json())
   .then(data=>{
     episoade=data.filter(e=>e.publicat!==false).sort((a,b)=>a.episod-b.episod);

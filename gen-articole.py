@@ -68,7 +68,7 @@ def faq_schema_html(faq):
         + '\n  </script>\n'
     )
 
-arts = json.load(open("articole.json"))
+arts = json.load(open("articole.json", encoding="utf-8"))
 
 os.makedirs(OUTDIR, exist_ok=True)
 # curat paginile vechi
@@ -347,6 +347,18 @@ for i, a in enumerate(arts):
         nav=NAV, footer=FOOTER,
     )
     open(os.path.join(OUTDIR, f"{aid}.html"), "w", encoding="utf-8").write(page)
+
+# ---- index subtire pentru pagina-lista /blog ----
+# doar campurile necesare cardurilor (FARA "continut") => descarcare rapida pe mobil.
+# articole.json ramane sursa de adevar pentru generarea paginilor /blog/{id}.html.
+index = [
+    {"id": a["id"], "titlu": a["titlu"], "categorie": a.get("categorie", ""),
+     "data": a.get("data", TODAY), "rezumat": a.get("rezumat", ""),
+     "imagine": a.get("imagine")}
+    for a in arts
+]
+open("articole-index.json", "w", encoding="utf-8").write(
+    json.dumps(index, ensure_ascii=False, separators=(",", ":")))
 
 print(f"OK — {len(arts)} pagini statice in /{OUTDIR}/")
 for a in arts:

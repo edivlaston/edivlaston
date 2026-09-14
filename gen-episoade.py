@@ -34,7 +34,7 @@ def text_din_continut(continut, n=155):
     t = re.sub(r"\s+", " ", t).strip()
     return (t[:n].rsplit(" ", 1)[0] + "…") if len(t) > n else t
 
-eps = json.load(open("note-din-cabinet.json"))
+eps = json.load(open("note-din-cabinet.json", encoding="utf-8"))
 eps = [e for e in eps if e.get("publicat") is not False]
 eps.sort(key=lambda e: e["episod"])
 
@@ -317,8 +317,19 @@ for i, e in enumerate(eps):
     )
     open(os.path.join(OUTDIR, f"{ep}.html"), "w", encoding="utf-8").write(page)
 
+# ---- index subtire pentru pagina-lista /note-din-cabinet ----
+# doar campurile necesare cardurilor (FARA "continut") => descarcare rapida pe mobil.
+# JSON-ul complet ramane sursa de adevar pentru generarea paginilor /nc/N.html.
+index = [
+    {"episod": e["episod"], "titlu": e["titlu"], "subtitlu": e.get("subtitlu", ""),
+     "personaj": e.get("personaj", ""), "data": e.get("data", TODAY)}
+    for e in eps
+]
+open("note-din-cabinet-index.json", "w", encoding="utf-8").write(
+    json.dumps(index, ensure_ascii=False, separators=(",", ":")))
+
 # ---- sitemap complet (pagini + articole + episoade) ----
-arts = json.load(open("articole.json"))
+arts = json.load(open("articole.json", encoding="utf-8"))
 pagini = [
     ("/", "monthly", "1.0", "2026-06-27"),
     ("/barbati", "monthly", "0.9", TODAY),
