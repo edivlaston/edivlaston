@@ -348,17 +348,47 @@ for i, a in enumerate(arts):
     )
     open(os.path.join(OUTDIR, f"{aid}.html"), "w", encoding="utf-8").write(page)
 
-# ---- index subtire pentru pagina-lista /blog ----
-# doar campurile necesare cardurilor (FARA "continut") => descarcare rapida pe mobil.
-# articole.json ramane sursa de adevar pentru generarea paginilor /blog/{id}.html.
-index = [
-    {"id": a["id"], "titlu": a["titlu"], "categorie": a.get("categorie", ""),
-     "data": a.get("data", TODAY), "rezumat": a.get("rezumat", ""),
-     "imagine": a.get("imagine")}
-    for a in arts
-]
-open("articole-index.json", "w", encoding="utf-8").write(
-    json.dumps(index, ensure_ascii=False, separators=(",", ":")))
+# ---- pre-randare carduri in pagina-lista /blog ----
+# Cardurile articolelor se scriu STATIC in HTML, intre marcajele
+# <!-- CARDURI:START --> ... <!-- CARDURI:END -->. Pagina devine complet statica:
+# crawlabila fara JavaScript, fara fetch, zero intretinere manuala.
+def build_cards_html(arts):
+    carduri = []
+    for i, a in enumerate(arts):
+        aid = a["id"]
+        titlu = html.escape(a["titlu"])
+        imagine = a.get("imagine")
+        if imagine:
+            img = (f'<img class="blog-card-img" src="{html.escape(imagine)}" alt="{titlu}" '
+                   'onerror="this.outerHTML=\'<div class=blog-card-img-placeholder>📖</div>\'">')
+        else:
+            img = '<div class="blog-card-img-placeholder">📖</div>'
+        carduri.append(
+            f'      <a class="blog-card" href="/blog/{aid}" style="text-decoration:none;color:inherit">\n'
+            f'        {img}\n'
+            f'        <div class="blog-card-body">\n'
+            f'          <div class="blog-cat">{html.escape(a.get("categorie",""))}</div>\n'
+            f'          <h3>{titlu}</h3>\n'
+            f'          <p>{html.escape(a.get("rezumat",""))}</p>\n'
+            f'          <div class="blog-card-footer">\n'
+            f'            <span class="blog-date">{data_romaneasca(a.get("data", TODAY))}</span>\n'
+            f'            <span class="blog-read">Citește →</span>\n'
+            f'          </div>\n'
+            f'        </div>\n'
+            f'      </a>')
+    return "\n".join(carduri)
+
+_LISTA = "blog.html"
+_html = open(_LISTA, encoding="utf-8").read()
+_html, _n = re.subn(r'(<!-- CARDURI:START[^>]*-->).*?(<!-- CARDURI:END -->)',
+                    lambda m: m.group(1) + "\n" + build_cards_html(arts) + "\n      " + m.group(2),
+                    _html, count=1, flags=re.S)
+assert _n == 1, f"Marcajele CARDURI nu au fost gasite in {_LISTA}"
+open(_LISTA, "w", encoding="utf-8").write(_html)
+
+# indexul JSON nu mai e necesar (pagina e statica) — il stergem daca a ramas
+if os.path.exists("articole-index.json"):
+    os.remove("articole-index.json")
 
 print(f"OK — {len(arts)} pagini statice in /{OUTDIR}/")
 for a in arts:

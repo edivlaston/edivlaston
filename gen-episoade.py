@@ -317,16 +317,56 @@ for i, e in enumerate(eps):
     )
     open(os.path.join(OUTDIR, f"{ep}.html"), "w", encoding="utf-8").write(page)
 
-# ---- index subtire pentru pagina-lista /note-din-cabinet ----
-# doar campurile necesare cardurilor (FARA "continut") => descarcare rapida pe mobil.
-# JSON-ul complet ramane sursa de adevar pentru generarea paginilor /nc/N.html.
-index = [
-    {"episod": e["episod"], "titlu": e["titlu"], "subtitlu": e.get("subtitlu", ""),
-     "personaj": e.get("personaj", ""), "data": e.get("data", TODAY)}
-    for e in eps
-]
-open("note-din-cabinet-index.json", "w", encoding="utf-8").write(
-    json.dumps(index, ensure_ascii=False, separators=(",", ":")))
+# ---- pre-randare carduri in pagina-lista /note-din-cabinet ----
+# Cardurile episoadelor se scriu STATIC in HTML (grupate pe personaj), intre
+# marcajele <!-- CARDURI:START --> ... <!-- CARDURI:END -->. Astfel pagina e
+# complet statica: crawlabila fara JavaScript, fara fetch, zero intretinere manuala.
+def build_arcs_html(eps):
+    arcs, cur = [], None
+    for e in eps:
+        p = e.get("personaj", "")
+        if cur is None or cur["personaj"] != p:
+            cur = {"personaj": p, "eps": []}
+            arcs.append(cur)
+        cur["eps"].append(e)
+    blocuri = []
+    for arc in arcs:
+        n = len(arc["eps"])
+        cuv = "episod" if n == 1 else "episoade"
+        carduri = []
+        for e in arc["eps"]:
+            carduri.append(
+                f'          <a href="/note-din-cabinet/{e["episod"]}" class="ep-card">\n'
+                f'            <div class="ep-num">{e["episod"]}<small>Ep</small></div>\n'
+                f'            <div class="ep-body">\n'
+                f'              <h3>{html.escape(e["titlu"])}</h3>\n'
+                f'              <p class="ep-card-sub">{html.escape(e.get("subtitlu",""))}</p>\n'
+                f'            </div>\n'
+                f'            <span class="ep-go">Citește →</span>\n'
+                f'          </a>')
+        blocuri.append(
+            '      <div class="arc">\n'
+            '        <div class="arc-head">\n'
+            f'          <span class="arc-name">{html.escape(arc["personaj"])}</span>\n'
+            f'          <span class="arc-sub">{n} {cuv}</span>\n'
+            '        </div>\n'
+            '        <div class="ep-list">\n'
+            + "\n".join(carduri) + "\n"
+            '        </div>\n'
+            '      </div>')
+    return "\n".join(blocuri)
+
+_LISTA = "note-din-cabinet.html"
+_html = open(_LISTA, encoding="utf-8").read()
+_html, _n = re.subn(r'(<!-- CARDURI:START[^>]*-->).*?(<!-- CARDURI:END -->)',
+                    lambda m: m.group(1) + "\n" + build_arcs_html(eps) + "\n      " + m.group(2),
+                    _html, count=1, flags=re.S)
+assert _n == 1, f"Marcajele CARDURI nu au fost gasite in {_LISTA}"
+open(_LISTA, "w", encoding="utf-8").write(_html)
+
+# indexul JSON nu mai e necesar (pagina e statica) — il stergem daca a ramas
+if os.path.exists("note-din-cabinet-index.json"):
+    os.remove("note-din-cabinet-index.json")
 
 # ---- sitemap complet (pagini + articole + episoade) ----
 arts = json.load(open("articole.json", encoding="utf-8"))
