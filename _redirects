@@ -7,6 +7,12 @@
 # URL-uri vechi WordPress (/edv/...) -> homepage, curata soft 404
 /edv/*   /   301!
 
+# Pagini eliminate (orfane, neindexate) -> homepage, fara 404
+/adictii           /   301!
+/adictii.html      /   301!
+/pentru-terapeuti       /   301!
+/pentru-terapeuti.html  /   301!
+
 # Redirect .html versions to clean URLs (301 permanent for SEO)
 /barbati.html              /barbati              301!
 /femei.html                /femei                301!
