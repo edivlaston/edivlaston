@@ -196,6 +196,11 @@ PAGE = '''<!DOCTYPE html>
     .nc-body em{{font-style:italic;color:var(--warm)}}
     .nc-body .ep-sep{{border:none;border-top:1px solid var(--stone);width:60px;margin:26px auto;opacity:.7}}
     .nc-body .ep-disclaimer{{font-size:.92rem;color:var(--muted);font-style:italic;line-height:1.7;margin-top:8px}}
+    .nc-help{{margin:36px 0 4px;padding:22px 24px;background:var(--sand);border-left:3px solid var(--terra);border-radius:8px}}
+    .nc-help .lbl{{font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:10px}}
+    .nc-help p{{font-size:.9rem;color:var(--warm);line-height:1.7;margin-bottom:10px}}
+    .nc-help p:last-child{{margin-bottom:0}}
+    .nc-help a{{color:var(--bark);font-weight:500;text-decoration:none;border-bottom:1px solid var(--stone)}}
     .nc-sub{{margin:40px 0;padding:28px;background:var(--sand);border-radius:8px}}
     .nc-sub .lbl{{font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:8px}}
     .nc-sub p{{font-size:.92rem;color:var(--warm);line-height:1.7;margin-bottom:18px}}
@@ -225,7 +230,7 @@ function closeMenu(){{var m=document.getElementById('mobile-menu'),b=document.ge
   <div class="nc-body">
 {continut}
   </div>
-
+{help_box}
   <div class="nc-sub">
     <div class="lbl">Episoade în avans</div>
     <p>Primește fiecare episod nou cu 2-3 zile înainte de publicare.</p>
@@ -280,6 +285,16 @@ function trimiteAbonare() {{
 </html>
 '''
 
+HELP_BOX = '''
+  <div class="nc-help">
+    <div class="lbl">Dacă treci printr-un moment greu</div>
+    <p>Dacă tu sau cineva apropiat vă simțiți copleșiți sau vă trec prin minte gânduri de a renunța, nu rămâneți singuri cu ele. Nu e un semn de slăbiciune să ceri ajutor — e primul pas.</p>
+    <p><strong>Urgențe, pericol imediat:</strong> sună <a href="tel:112">112</a> (non-stop).<br>
+    <strong>Telefonul Verde Antisuicid:</strong> <a href="tel:0800801200">0800 801 200</a> (apel gratuit).</p>
+    <p>Și, dacă vrei să lucrăm împreună, îți stau alături în cabinet.</p>
+  </div>
+'''
+
 for i, e in enumerate(eps):
     ep = e["episod"]
     titlu = e["titlu"]
@@ -312,6 +327,7 @@ for i, e in enumerate(eps):
         titlu=html.escape(titlu),
         subtitlu=html.escape(subtitlu),
         continut=continut,
+        help_box=(HELP_BOX if e.get("resurse_criza") else ""),
         prev_link=prev_link, next_link=next_link,
         nav=NAV, footer=FOOTER,
     )
