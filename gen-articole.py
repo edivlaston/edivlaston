@@ -324,9 +324,16 @@ for i, a in enumerate(arts):
       </a>
 '''
 
-    full_title = f"{titlu} · Edi Vlaston Psihoterapeut București"
-    if len(full_title) > 60:
-        full_title = f"{titlu[:45]}… · Edi Vlaston"
+    # Title tag: titlu intreg + brand daca incape sub 60 de caractere;
+    # altfel doar titlul (fara trunchiere la mijloc de fraza); iar daca
+    # titlul singur trece de 60, il taiem la ultima limita de cuvant.
+    _brand = " · Edi Vlaston"
+    if len(titlu) + len(_brand) <= 60:
+        full_title = f"{titlu}{_brand}"
+    elif len(titlu) <= 60:
+        full_title = titlu
+    else:
+        full_title = titlu[:57].rsplit(" ", 1)[0] + "…"
 
     faq = extrage_faq(continut)
 
