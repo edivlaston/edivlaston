@@ -11,6 +11,12 @@ FLUX LA UN EPISOD NOU:
   2. rulezi: python3 gen-episoade.py
   3. git add -A && commit && push
 
+EPISOD IN AVANS (doar pentru abonatii newsletterului):
+  pune "vizibil_de_la": "AAAA-LL-ZZ" in episod. Pana la data aia pagina exista la
+  link direct (cu noindex), dar NU apare in lista, in sitemap si nici in butonul
+  "Episodul urmator" al episodului anterior. In ziua respectiva doar rulezi din nou
+  scriptul + commit + push, si episodul devine public.
+
 LINK DE FOLOSIT IN RECLAME: https://edivlaston.ro/note-din-cabinet/6
 (serveste direct pagina statica a episodului, cu tot textul)
 """
@@ -37,6 +43,8 @@ def text_din_continut(continut, n=155):
 eps = json.load(open("note-din-cabinet.json", encoding="utf-8"))
 eps = [e for e in eps if e.get("publicat") is not False]
 eps.sort(key=lambda e: e["episod"])
+# episoadele "in avans" (vizibil_de_la in viitor) exista doar la link direct
+vizibile = [e for e in eps if e.get("vizibil_de_la", "") <= TODAY]
 
 os.makedirs(OUTDIR, exist_ok=True)
 for f in os.listdir(OUTDIR):
@@ -145,7 +153,7 @@ PAGE = '''<!DOCTYPE html>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="{base}/note-din-cabinet/{ep}">
-  <meta name="description" content="{desc}">
+  <meta name="description" content="{desc}">{robots}
   <title>{title}</title>
   <meta property="og:type" content="article">
   <meta property="og:title" content="{ogtitle}">
@@ -298,8 +306,12 @@ HELP_BOX = '''
   </div>
 '''
 
-for i, e in enumerate(eps):
+for e in eps:
     ep = e["episod"]
+    ascuns = e not in vizibile
+    # un episod vizibil navigheaza doar printre cele vizibile; unul ascuns, printre toate
+    nav_eps = eps if ascuns else vizibile
+    i = nav_eps.index(e)
     titlu = e["titlu"]
     personaj = e.get("personaj", "")
     subtitlu = e.get("subtitlu", "")
@@ -311,8 +323,8 @@ for i, e in enumerate(eps):
     if len(full_title) > 60:
         full_title = f"{titlu[:42]}… · Note din Cabinet"
 
-    prev_ep = eps[i-1] if i > 0 else None
-    next_ep = eps[i+1] if i < len(eps)-1 else None
+    prev_ep = nav_eps[i-1] if i > 0 else None
+    next_ep = nav_eps[i+1] if i < len(nav_eps)-1 else None
     prev_link = (f'<a href="/note-din-cabinet/{prev_ep["episod"]}">← Episodul anterior</a>'
                  if prev_ep else '<a class="disabled">← Episodul anterior</a>')
     next_link = (f'<a href="/note-din-cabinet/{next_ep["episod"]}">Episodul următor →</a>'
@@ -333,6 +345,7 @@ for i, e in enumerate(eps):
         help_box=(HELP_BOX if e.get("resurse_criza") else ""),
         prev_link=prev_link, next_link=next_link,
         nav=NAV, footer=FOOTER,
+        robots=('\n  <meta name="robots" content="noindex">' if ascuns else ""),
     )
     open(os.path.join(OUTDIR, f"{ep}.html"), "w", encoding="utf-8").write(page)
 
@@ -378,7 +391,7 @@ def build_arcs_html(eps):
 _LISTA = "note-din-cabinet.html"
 _html = open(_LISTA, encoding="utf-8").read()
 _html, _n = re.subn(r'(<!-- CARDURI:START[^>]*-->).*?(<!-- CARDURI:END -->)',
-                    lambda m: m.group(1) + "\n" + build_arcs_html(eps) + "\n      " + m.group(2),
+                    lambda m: m.group(1) + "\n" + build_arcs_html(vizibile) + "\n      " + m.group(2),
                     _html, count=1, flags=re.S)
 assert _n == 1, f"Marcajele CARDURI nu au fost gasite in {_LISTA}"
 open(_LISTA, "w", encoding="utf-8").write(_html)
@@ -410,10 +423,13 @@ for cale, cf, pr, lm in pagini:
     lines += url(BASE + cale, lm, cf, pr)
 for a in arts:
     lines += url(f"{BASE}/blog/{a['id']}", a.get("data", TODAY), "monthly", "0.7")
-for e in eps:
+for e in vizibile:
     lines += url(f"{BASE}/note-din-cabinet/{e['episod']}", e.get("data", TODAY), "monthly", "0.7")
 lines.append("</urlset>")
 open("sitemap.xml", "w", encoding="utf-8").write("\n".join(lines) + "\n")
 
 print(f"OK — {len(eps)} pagini episoade in /{OUTDIR}/")
-print(f"Sitemap: {len(pagini)} pagini + {len(arts)} articole + {len(eps)} episoade = {len(pagini)+len(arts)+len(eps)} URL-uri")
+for e in eps:
+    if e not in vizibile:
+        print(f"  Ep {e['episod']} IN AVANS: doar link direct, public de la {e['vizibil_de_la']}")
+print(f"Sitemap: {len(pagini)} pagini + {len(arts)} articole + {len(vizibile)} episoade = {len(pagini)+len(arts)+len(vizibile)} URL-uri")
