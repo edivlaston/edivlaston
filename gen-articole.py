@@ -88,7 +88,7 @@ NAV = '''<nav id="nav">
     <a href="/intrebari-frecvente">Întrebări Frecvente</a>
     <a href="/preturi">Prețuri</a>
     <a href="/contact">Contact</a>
-    <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="Calendly.initPopupWidget({url:'https://calendly.com/eduard-vlaston-eiv3'}); return false;" class="nav-cta">Rezervă o primă ședință</a>
+    <button type="button" onclick="openCal()" class="nav-cta" data-cal>Rezervă o primă ședință</button>
   </div>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Meniu">
     <span></span><span></span><span></span>
@@ -105,7 +105,7 @@ NAV = '''<nav id="nav">
   <a href="/preturi" onclick="closeMenu()">Prețuri</a>
   <a href="/contact" onclick="closeMenu()">Contact</a>
   <a href="tel:+40744370179" class="mobile-phone" onclick="closeMenu()">📞 0744 370 179</a>
-  <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="Calendly.initPopupWidget({url:'https://calendly.com/eduard-vlaston-eiv3'}); closeMenu(); return false;" class="mobile-cta">Rezervă o primă ședință</a>
+  <button type="button" onclick="openCal(); closeMenu();" class="mobile-cta" data-cal>Rezervă o primă ședință</button>
 </div>'''
 
 FOOTER = '''<!-- Bara de contact -->
@@ -274,7 +274,7 @@ function closeMenu(){{var m=document.getElementById('mobile-menu'),b=document.ge
   <div class="art-cta">
     <h3>Dacă te-ai recunoscut în ce ai citit</h3>
     <p>Prima ședință e un prilej de a vedea dacă are sens să continuăm. Fără presiune să decizi azi.</p>
-    <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="Calendly.initPopupWidget({{url:'https://calendly.com/eduard-vlaston-eiv3'}}); return false;" class="btn btn-primary">Rezervă o primă ședință</a>
+    <button type="button" onclick="openCal()" class="btn btn-primary" data-cal>Rezervă o primă ședință</button>
   </div>
 
   <div class="art-related">
@@ -289,7 +289,26 @@ function closeMenu(){{var m=document.getElementById('mobile-menu'),b=document.ge
 
 <!-- Calendly -->
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script>
+(function(){{
+  var U='https://calendly.com/eduard-vlaston-eiv3',loading=false,ready=false,pending=false;
+  function inject(){{
+    if(ready||loading)return; loading=true;
+    var s=document.createElement('script');
+    s.src='https://assets.calendly.com/assets/external/widget.js';
+    s.onload=function(){{ready=true; if(pending){{pending=false; Calendly.initPopupWidget({{url:U}});}}}};
+    document.body.appendChild(s);
+  }}
+  window.openCal=function(){{
+    if(ready&&window.Calendly){{Calendly.initPopupWidget({{url:U}});}}
+    else{{pending=true; inject();}}
+    return false;
+  }};
+  ['pointerdown','touchstart','keydown','scroll'].forEach(function(e){{
+    window.addEventListener(e,inject,{{once:true,passive:true}});
+  }});
+}})();
+</script>
 
 {footer}
 </body>

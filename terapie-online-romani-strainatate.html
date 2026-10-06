@@ -138,7 +138,7 @@
         <div class="page-hero-tag">Psihoterapie online · în limba română</div>
         <h1>Psihoterapie în limba<br>română, online,<br><em>oriunde ești.</em></h1>
         <p class="page-hero-lead">Cabinet în București, ședințe online cu români din Olanda, Germania, Marea Britanie și restul Europei. Psihoterapie centrată pe persoană, interviu motivațional, hipnoză clinică. Acreditat CPR, cod 22334.</p>
-        <a href="https://calendly.com/eduard-vlaston-eiv3?utm_source=organic&utm_medium=landing&utm_campaign=diaspora" onclick="openCal(); return false;" class="btn btn-primary">Rezervă o primă ședință <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <button type="button" onclick="openCal()" class="btn btn-primary" data-cal>Rezervă o primă ședință <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </div>
       <div>
         <div class="pull" style="margin:0">
@@ -227,7 +227,7 @@
     <div class="reveal" style="text-align:center;max-width:640px;margin:0 auto">
       <h2 style="color:var(--white)">O primă discuție,<br><em>în limba ta.</em></h2>
       <p style="color:rgba(255,255,255,.82);font-size:1rem;line-height:1.8;margin:20px 0 32px;font-weight:300">Alegi ora direct în calendar. Vezi dacă e locul potrivit, fără să te angajezi la nimic.</p>
-      <a href="https://calendly.com/eduard-vlaston-eiv3?utm_source=organic&utm_medium=landing&utm_campaign=diaspora" onclick="openCal(); return false;" class="btn btn-primary">Deschide Calendly și alege un slot <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <button type="button" onclick="openCal()" class="btn btn-primary" data-cal>Deschide Calendly și alege un slot <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
     </div>
   </div>
 </section>
@@ -250,8 +250,7 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 <!-- Meta Pixel — Lead event tracking -->
 <script>
 document.addEventListener('click', function(e) {
-  var target = e.target.closest('a');
-  if (target && target.href && target.href.indexOf('calendly.com') !== -1) {
+  if (e.target.closest('[data-cal]')) {
     if (typeof fbq === 'function') {
       fbq('track', 'Lead', {content_name: 'Calendly_Click_Diaspora'});
     }
