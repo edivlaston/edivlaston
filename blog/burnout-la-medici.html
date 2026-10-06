@@ -137,7 +137,7 @@ function closeMenu(){var m=document.getElementById('mobile-menu'),b=document.get
     <a href="/intrebari-frecvente">Întrebări Frecvente</a>
     <a href="/preturi">Prețuri</a>
     <a href="/contact">Contact</a>
-    <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="Calendly.initPopupWidget({url:'https://calendly.com/eduard-vlaston-eiv3'}); return false;" class="nav-cta">Rezervă o primă ședință</a>
+    <button type="button" onclick="openCal()" class="nav-cta" data-cal>Rezervă o primă ședință</button>
   </div>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Meniu">
     <span></span><span></span><span></span>
@@ -154,7 +154,7 @@ function closeMenu(){var m=document.getElementById('mobile-menu'),b=document.get
   <a href="/preturi" onclick="closeMenu()">Prețuri</a>
   <a href="/contact" onclick="closeMenu()">Contact</a>
   <a href="tel:+40744370179" class="mobile-phone" onclick="closeMenu()">📞 0744 370 179</a>
-  <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="Calendly.initPopupWidget({url:'https://calendly.com/eduard-vlaston-eiv3'}); closeMenu(); return false;" class="mobile-cta">Rezervă o primă ședință</a>
+  <button type="button" onclick="openCal(); closeMenu();" class="mobile-cta" data-cal>Rezervă o primă ședință</button>
 </div>
 
 <article class="art-wrap">
@@ -188,7 +188,7 @@ function closeMenu(){var m=document.getElementById('mobile-menu'),b=document.get
 <h2>Cum lucrăm asta în cabinet</h2>
 <p>Nu-ți dau teme și tehnici de management al timpului. Aia ai încercat deja, și nu de-aia ești obosit.</p>
 <p>Lucrez person-centered. Pe scurt: nu te repar și nu te corectez. Țin un spațiu în care poți să spui ce nu spui nicăieri, până când auzi singur ce duci. Pentru cineva antrenat să dea soluții toată ziua, experiența de a nu fi nevoit să rezolve nimic, măcar 50 de minute, e neașteptat de mare.</p>
-<p>Practic: ședință de 50 de minute, la cabinet în Primăverii sau online — pentru că știu cum arată un program de gărzi. Confidențial. Vezi <a href="/preturi">prețurile</a> sau <a href="https://calendly.com/eduard-vlaston-eiv3">rezervă o primă ședință</a>.</p>
+<p>Practic: ședință de 50 de minute, la cabinet în Primăverii sau online — pentru că știu cum arată un program de gărzi. Confidențial. Vezi <a href="/preturi">prețurile</a> sau <button type="button" onclick="openCal()" class="link-cal" data-cal>rezervă o primă ședință</button>.</p>
 <h2>Întrebări frecvente</h2>
 <h3>Nu am timp de terapie. Cum aș încadra-o într-un program de gărzi?</h3>
 <p>De-asta lucrez și online, și seara. O ședință pe săptămână sau la două săptămâni, după cum îți permite programul. Nu-ți cer să-ți reorganizezi viața — îți cer 50 de minute, în ritmul pe care-l poți susține.</p>
@@ -205,7 +205,7 @@ function closeMenu(){var m=document.getElementById('mobile-menu'),b=document.get
   <div class="art-cta">
     <h3>Dacă te-ai recunoscut în ce ai citit</h3>
     <p>Prima ședință e un prilej de a vedea dacă are sens să continuăm. Fără presiune să decizi azi.</p>
-    <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="Calendly.initPopupWidget({url:'https://calendly.com/eduard-vlaston-eiv3'}); return false;" class="btn btn-primary">Rezervă o primă ședință</a>
+    <button type="button" onclick="openCal()" class="btn btn-primary" data-cal>Rezervă o primă ședință</button>
   </div>
 
   <div class="art-related">
@@ -228,7 +228,26 @@ function closeMenu(){var m=document.getElementById('mobile-menu'),b=document.get
 
 <!-- Calendly -->
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script>
+(function(){
+  var U='https://calendly.com/eduard-vlaston-eiv3',loading=false,ready=false,pending=false;
+  function inject(){
+    if(ready||loading)return; loading=true;
+    var s=document.createElement('script');
+    s.src='https://assets.calendly.com/assets/external/widget.js';
+    s.onload=function(){ready=true; if(pending){pending=false; Calendly.initPopupWidget({url:U});}};
+    document.body.appendChild(s);
+  }
+  window.openCal=function(){
+    if(ready&&window.Calendly){Calendly.initPopupWidget({url:U});}
+    else{pending=true; inject();}
+    return false;
+  };
+  ['pointerdown','touchstart','keydown','scroll'].forEach(function(e){
+    window.addEventListener(e,inject,{once:true,passive:true});
+  });
+})();
+</script>
 
 <!-- Bara de contact -->
 <div style="text-align:center;padding:30px 20px;border-top:1px solid var(--stone);background:var(--sand)">

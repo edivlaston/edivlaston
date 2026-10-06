@@ -79,8 +79,17 @@ nav {
 .nav-brand { font-family: var(--serif); font-size: 1.15rem; font-weight: 500; color: var(--ink); letter-spacing: .02em; }
 .nav-brand span { color: var(--terra); }
 .nav-links { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
-.nav-links a { font-size: .72rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); transition: color .2s; }
+.nav-links a, .nav-links .nav-cta { font-size: .72rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); transition: color .2s; }
 .nav-links a:hover, .nav-links a.active { color: var(--terra); }
+
+/* Butoane Calendly: <button> in loc de <a>, ca sa nu poata fi deschise pe calendly.com.
+   :where() tine specificitatea la (0,0,1), deci .btn/.nav-cta/.mobile-cta isi pastreaza stilul. */
+button:where(.nav-cta, .mobile-cta, .btn, .link-cal) {
+  font: inherit; color: inherit; letter-spacing: inherit; text-transform: inherit;
+  background: none; border: 0; padding: 0; margin: 0;
+  cursor: pointer; text-align: center; -webkit-appearance: none; appearance: none;
+}
+button.link-cal { display: inline; text-align: inherit; }
 .nav-phone { font-size: .75rem; font-weight: 500; color: var(--terra); display: flex; align-items: center; gap: 5px; }
 .nav-phone:hover { color: var(--accent); }
 .nav-cta { background: var(--terra) !important; color: var(--white) !important; padding: 10px 22px !important; border-radius: 2px !important; font-weight: 500 !important; }
@@ -304,7 +313,7 @@ footer { padding: 44px 0; background: var(--ink); }
   overflow-y: auto; -webkit-overflow-scrolling: touch;
 }
 .mobile-menu.open { display: flex; }
-.mobile-menu a {
+.mobile-menu a, .mobile-menu .mobile-cta {
   font-size: 1.4rem; font-family: var(--serif); font-weight: 400;
   color: var(--ink); text-decoration: none; letter-spacing: .02em;
   transition: color .2s;

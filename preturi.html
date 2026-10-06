@@ -129,7 +129,7 @@ function closeMenu() {
     <a href="/intrebari-frecvente">Întrebări Frecvente</a>
     <a href="/preturi" class="active">Prețuri</a>
     <a href="/contact">Contact</a>
-    <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="openCal(); return false;" class="nav-cta">Rezervă o primă ședință</a>
+    <button type="button" onclick="openCal()" class="nav-cta" data-cal>Rezervă o primă ședință</button>
   </div>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Meniu">
     <span></span><span></span><span></span>
@@ -148,7 +148,7 @@ function closeMenu() {
   <a href="/preturi" class="active" onclick="closeMenu()">Prețuri</a>
   <a href="/contact" onclick="closeMenu()">Contact</a>
   <a href="tel:+40744370179" class="mobile-phone" onclick="closeMenu()">📞 0744 370 179</a>
-  <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="openCal(); closeMenu(); return false;" class="mobile-cta">Rezervă o primă ședință</a>
+  <button type="button" onclick="openCal(); closeMenu();" class="mobile-cta" data-cal>Rezervă o primă ședință</button>
 
   <div style="border-top:1px solid rgba(139,94,60,.15);padding-top:24px;margin-top:8px;display:flex;flex-direction:column;gap:14px;align-items:center">
     <a href="tel:+40744370179" onclick="closeMenu()" style="font-family:var(--sans);font-size:1rem;color:var(--terra);font-weight:500">📞 0744 370 179</a>
@@ -181,7 +181,7 @@ function closeMenu() {
           <div class="pret-feature"><span class="pret-check">✓</span>Online sau la cabinet, în Primăverii</div>
           <div class="pret-feature"><span class="pret-check">✓</span>Plată prin transfer, card sau cash</div>
         </div>
-        <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="openCal(); return false;" class="btn btn-ghost" style="justify-content:center;width:100%">Rezervă o ședință</a>
+        <button type="button" onclick="openCal()" class="btn btn-ghost" style="justify-content:center;width:100%" data-cal>Rezervă o ședință</button>
       </div>
       <div class="pret-card">
         <div class="pret-label">În doi</div>
@@ -194,7 +194,7 @@ function closeMenu() {
           <div class="pret-feature"><span class="pret-check">✓</span>80 de minute, ca să încapă amândoi</div>
           <div class="pret-feature"><span class="pret-check">✓</span>Plată prin transfer, card sau cash</div>
         </div>
-        <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="openCal(); return false;" class="btn btn-ghost" style="justify-content:center;width:100%">Rezervă o ședință</a>
+        <button type="button" onclick="openCal()" class="btn btn-ghost" style="justify-content:center;width:100%" data-cal>Rezervă o ședință</button>
       </div>
     </div>
 
@@ -215,7 +215,7 @@ function closeMenu() {
           <div class="pret-feature"><span class="pret-check">✓</span>Online sau la cabinet</div>
           <div class="pret-feature"><span class="pret-check">✓</span>Plată integrală sau în două tranșe</div>
         </div>
-        <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="openCal(); return false;" class="btn btn-primary" style="justify-content:center;width:100%">Rezervă prima ședință</a>
+        <button type="button" onclick="openCal()" class="btn btn-primary" style="justify-content:center;width:100%" data-cal>Rezervă prima ședință</button>
       </div>
       <div class="pret-card">
         <div class="pret-label">Pachet</div>
@@ -228,7 +228,7 @@ function closeMenu() {
           <div class="pret-feature"><span class="pret-check">✓</span>Online sau la cabinet</div>
           <div class="pret-feature"><span class="pret-check">✓</span>Plată integrală sau în trei tranșe</div>
         </div>
-        <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="openCal(); return false;" class="btn btn-ghost" style="justify-content:center;width:100%">Rezervă prima ședință</a>
+        <button type="button" onclick="openCal()" class="btn btn-ghost" style="justify-content:center;width:100%" data-cal>Rezervă prima ședință</button>
       </div>
     </div>
 
@@ -249,7 +249,7 @@ function closeMenu() {
           <div class="pret-feature"><span class="pret-check">✓</span>Veniți în doi sau vine unul dintre parteneri</div>
           <div class="pret-feature"><span class="pret-check">✓</span>Plată integrală sau în două tranșe</div>
         </div>
-        <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="openCal(); return false;" class="btn btn-primary" style="justify-content:center;width:100%">Rezervă prima ședință</a>
+        <button type="button" onclick="openCal()" class="btn btn-primary" style="justify-content:center;width:100%" data-cal>Rezervă prima ședință</button>
       </div>
       <div class="pret-card">
         <div class="pret-label">Pachet cuplu</div>
@@ -262,15 +262,15 @@ function closeMenu() {
           <div class="pret-feature"><span class="pret-check">✓</span>Veniți în doi sau vine unul dintre parteneri</div>
           <div class="pret-feature"><span class="pret-check">✓</span>Plată integrală sau în tranșe</div>
         </div>
-        <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="openCal(); return false;" class="btn btn-ghost" style="justify-content:center;width:100%">Rezervă prima ședință</a>
+        <button type="button" onclick="openCal()" class="btn btn-ghost" style="justify-content:center;width:100%" data-cal>Rezervă prima ședință</button>
       </div>
     </div>
 
     <div class="reveal" style="max-width:620px;margin:44px auto 0;text-align:center">
       <p style="font-size:.9rem;color:var(--muted);line-height:1.8">Plata se face prin transfer bancar, card sau cash. Facturare disponibilă la cerere.</p>
       <div style="margin-top:28px">
-        <a href="https://calendly.com/eduard-vlaston-eiv3" onclick="openCal(); return false;" class="btn btn-primary">Rezervă o primă ședință
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <button type="button" onclick="openCal()" class="btn btn-primary" data-cal>Rezervă o primă ședință
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </div>
       <p style="font-size:.85rem;color:var(--muted);margin-top:22px">Ai o întrebare despre cum lucrez? Vezi <a href="/intrebari-frecvente" style="color:var(--terra)">întrebările frecvente</a> sau <a href="/despre" style="color:var(--terra)">despre mine</a>.</p>
     </div>
@@ -331,11 +331,8 @@ function submitForm() { /* eliminat pe /preturi — fără formular */ }
 <!-- Meta Pixel — Lead event tracking -->
 <script>
 document.addEventListener('click', function(e) {
-  var target = e.target.closest('a');
-  if (target && target.href && target.href.indexOf('calendly.com') !== -1) {
-    if (typeof fbq === 'function') {
-      fbq('track', 'Lead', {content_name: 'Calendly_Click_30min_evaluation'});
-    }
+  if (e.target.closest('[data-cal]') && typeof fbq === 'function') {
+    fbq('track', 'Lead', {content_name: 'Calendly_Click_30min_evaluation'});
   }
 });
 </script>
