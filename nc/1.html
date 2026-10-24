@@ -181,7 +181,7 @@ function closeMenu(){var m=document.getElementById('mobile-menu'),b=document.get
     s.onload=function(){ready=true; if(pending){pending=false; Calendly.initPopupWidget({url:U});}};
     document.body.appendChild(s);
   }
-  window.openCal=function(){
+  window.openCal=function(){if(typeof gtag==='function'){gtag('event','calendly_deschis',{pagina:location.pathname});}
     if(ready&&window.Calendly){Calendly.initPopupWidget({url:U});}
     else{pending=true; inject();}
     return false;
@@ -219,6 +219,8 @@ function closeMenu(){var m=document.getElementById('mobile-menu'),b=document.get
 <script>
 window.addEventListener('message', function(e) {
   if (e.data.event && e.data.event.indexOf('calendly') === 0) {
+    if (typeof gtag === 'function' && e.data.event === 'calendly.event_type_viewed') { gtag('event', 'calendly_calendar_vazut', {'pagina': location.pathname}); }
+    if (typeof gtag === 'function' && e.data.event === 'calendly.date_and_time_selected') { gtag('event', 'calendly_ora_aleasa', {'pagina': location.pathname}); }
     if (e.data.event === 'calendly.event_scheduled') {
       if (typeof gtag === 'function') {
         gtag('event', 'programare_calendly', {
