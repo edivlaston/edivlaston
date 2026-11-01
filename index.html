@@ -193,33 +193,8 @@ function closeMenu() {
   <div id="hero">
     <div>
       <div class="hero-mini"><img src="edi-vlaston.webp" alt="" width="56" height="56" decoding="async"><div><div class="hero-mini-name">Edi Vlaston</div><div class="hero-mini-title">Psihoterapeut acreditat · cod 22334</div></div></div>
-      <div class="hero-tag">Psihoterapeut în București · Sector 1 · și online</div>
-      <h1 id="hero-headline-home">
-  <span id="carousel-home">Terapia începe cu o relație.<br><em>Autentică.</em></span>
-</h1>
-<script>
-(function(){
-  var lines = [
-    ["Terapia începe cu o relație.", "Autentică."],
-    ["Un om care ascultă.", "Cu adevărat."],
-    ["Un spațiu doar al tău.", "Fără grabă, fără judecată."]
-  ];
-  var i = 0;
-  var el = document.getElementById('carousel-home');
-  if (!el) return;
-  el.style.transition = 'opacity .5s, transform .5s';
-  setInterval(function(){
-    i = (i + 1) % lines.length;
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(12px)';
-    setTimeout(function(){
-      el.innerHTML = lines[i][0] + '<br><em>' + lines[i][1] + '</em>';
-      el.style.opacity = '1';
-      el.style.transform = 'translateY(0)';
-    }, 500);
-  }, 4000);
-})();
-</script>
+      <div class="hero-tag">Cabinet în Primăverii · Sector 1 · și online</div>
+      <h1 id="hero-headline-home">Psihoterapeut în București.<br><em>Terapia începe cu o relație.</em></h1>
       <p class="hero-lead">Terapia nu e o listă de sfaturi. E o relație — cu cineva care e acolo, prezent, doar pentru tine.<br><br>Un spațiu în care poți spune cu voce tare ce n-ai spus nimănui, și în care ești primit cu blândețe. Uneori, exercițiul unei relații autentice e chiar ce te ajută să te miști.</p>
       <div class="hero-actions">
         <button type="button" onclick="openCal()" class="btn btn-primary" data-cal>
@@ -229,6 +204,7 @@ function closeMenu() {
         <a href="https://wa.me/40744370179" target="_blank" rel="noopener" class="btn btn-ghost">Scrie-mi pe WhatsApp</a>
       </div>
       <div class="hero-note" style="color:var(--muted)">50 de minute · la cabinet în Primăverii sau online</div>
+      <p style="margin-top:14px;font-size:.78rem;color:var(--muted);line-height:1.6;max-width:460px;opacity:0;animation:fadeUp .6s .6s forwards">Calendarul de programare se deschide în engleză: alegi ziua și ora, apoi completezi numele, emailul și telefonul.</p>
     </div>
 
     <div class="hero-right">
