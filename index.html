@@ -50,6 +50,7 @@
     .hero-lead { font-size: clamp(.97rem,1.3vw,1.08rem); font-weight: 300; color: var(--warm); line-height: 1.82; max-width: 460px; margin-bottom: 40px; opacity: 0; animation: fadeUp .6s .34s forwards; }
     .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; opacity: 0; animation: fadeUp .6s .46s forwards; }
     .hero-note { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; padding: 10px 16px; background: rgba(139,94,60,.07); border: 1px solid var(--stone); border-radius: 30px; font-size: .78rem; color: var(--muted); opacity: 0; animation: fadeUp .6s .56s forwards; }
+    .hero-mini { display: none; }
     .hero-right { display: flex; flex-direction: column; gap: 20px; opacity: 0; animation: fadeLeft .7s .42s forwards; }
 
     /* ── HOME INTRO CARDS ─────────────────────────────── */
@@ -71,7 +72,12 @@
     #cta-band p { font-size: .97rem; color: rgba(255,253,248,.65); font-weight: 300; max-width: 480px; margin: 0 auto 36px; line-height: 1.8; }
 
     @media(max-width:1024px){ #hero{grid-template-columns:1fr} .hero-right{flex-direction:row;flex-wrap:wrap} .intro-cards{grid-template-columns:1fr} }
-    @media(max-width:680px){ .nav-links{display:none} .hamburger{display:flex} }
+    @media(max-width:680px){ .nav-links{display:none} .hamburger{display:flex}
+      .hero-mini { display:flex; align-items:center; gap:14px; margin-bottom:22px; opacity:0; animation: fadeUp .6s .05s forwards; }
+      .hero-mini img { width:56px; height:56px; border-radius:50%; object-fit:cover; object-position:50% 20%; border:1px solid var(--stone); }
+      .hero-mini-name { font-family:var(--serif); font-size:1.15rem; color:var(--ink); line-height:1.2; }
+      .hero-mini-title { font-size:.75rem; color:var(--muted); }
+      #hero { padding-top: 104px; } }
   </style>
 <script>
 function toggleMenu() {
@@ -186,6 +192,7 @@ function closeMenu() {
 <section style="background:var(--sand)">
   <div id="hero">
     <div>
+      <div class="hero-mini"><img src="edi-vlaston.webp" alt="" width="56" height="56" decoding="async"><div><div class="hero-mini-name">Edi Vlaston</div><div class="hero-mini-title">Psihoterapeut acreditat · cod 22334</div></div></div>
       <div class="hero-tag">Psihoterapeut în București · Sector 1 · și online</div>
       <h1 id="hero-headline-home">
   <span id="carousel-home">Terapia începe cu o relație.<br><em>Autentică.</em></span>
@@ -219,7 +226,7 @@ function closeMenu() {
           Rezervă o primă ședință
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
-        <a href="#intro" class="btn btn-ghost">Cum lucrez</a>
+        <a href="https://wa.me/40744370179" target="_blank" rel="noopener" class="btn btn-ghost">Scrie-mi pe WhatsApp</a>
       </div>
       <div class="hero-note" style="color:var(--muted)">50 de minute · la cabinet în Primăverii sau online</div>
     </div>
@@ -242,8 +249,11 @@ function closeMenu() {
       <div class="cred-row" style="background:var(--white);border:1px solid var(--stone);border-radius:6px;padding:24px 26px;display:flex;flex-direction:column;gap:16px">
         <p style="font-size:.9rem;font-weight:300;color:var(--warm);line-height:1.7;margin:0">Psihoterapeut acreditat — terapie centrată pe persoană și interviu motivațional. Pe lângă formarea în psihoterapie, am în spate peste 20 de ani în care am condus, am îndrumat și am lucrat cu oameni.</p>
         <div style="display:flex;align-items:center;gap:10px;padding-top:14px;border-top:1px solid var(--stone)">
+          <span style="font-family:var(--serif);font-size:1.5rem;color:var(--terra);font-weight:500">★ 5,0</span>
+          <span style="font-size:.8rem;color:var(--muted)">pe Google</span>
+          <span style="color:var(--stone)" aria-hidden="true">·</span>
           <span style="font-family:var(--serif);font-size:1.5rem;color:var(--terra);font-weight:500">★ 4.9</span>
-          <span style="font-size:.8rem;color:var(--muted)">evaluare pe Hilio.ro</span>
+          <span style="font-size:.8rem;color:var(--muted)">pe Hilio.ro</span>
         </div>
       </div>
     </div>
@@ -264,6 +274,26 @@ function closeMenu() {
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── RECENZII GOOGLE ───────────────────────────────── -->
+<section style="padding:var(--gap) 0;background:var(--sand);border-top:1px solid var(--stone)">
+  <div class="container">
+    <div class="reveal" style="max-width:900px;margin:0 auto">
+      <div style="text-align:center"><div class="sec-label" style="justify-content:center">Ce spun oamenii</div></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-top:30px">
+        <figure style="margin:0;background:var(--white);border:1px solid var(--stone);border-radius:6px;padding:30px 28px">
+          <blockquote style="margin:0;font-family:var(--serif);font-style:italic;font-size:1.15rem;line-height:1.6;color:var(--ink)">„La primul contact telefonic cu Edi Vlaston i-am spus că îmi este greu, că am anxietate de Nou și că mi-e «dor de mine». […] Cum spune el: «eu sunt AICI». Îți mulțumesc pentru că ai fost «AICI».”</blockquote>
+          <figcaption style="margin-top:18px;font-size:.8rem;color:var(--muted)">Simona A. · recenzie Google ★★★★★</figcaption>
+        </figure>
+        <figure style="margin:0;background:var(--white);border:1px solid var(--stone);border-radius:6px;padding:30px 28px">
+          <blockquote style="margin:0;font-family:var(--serif);font-style:italic;font-size:1.15rem;line-height:1.6;color:var(--ink)">„Edi este genul de terapeut care, prin răbdare și blândețe, te ajută să «lucrezi» la a înfrunta și rezolva fricile care de multe ori «se țin de tine» și încearcă să te saboteze.”</blockquote>
+          <figcaption style="margin-top:18px;font-size:.8rem;color:var(--muted)">Mariana C. · recenzie Google ★★★★★</figcaption>
+        </figure>
+      </div>
+      <p style="text-align:center;margin-top:26px;font-size:.85rem"><a href="https://maps.google.com/?cid=5454259869718871138" target="_blank" rel="noopener" style="color:var(--terra);text-decoration:underline">Toate recenziile pe Google</a></p>
     </div>
   </div>
 </section>
