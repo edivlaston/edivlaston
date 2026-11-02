@@ -174,6 +174,16 @@ document.addEventListener('click', function (e) {
 }, true);
 </script>'''
 
+# Link spre ghidul gratuit, doar in articolele de anxietate si burnout
+GHID_CATEGORII = {"Anxietate", "Burnout"}
+GHID_BOX = '''
+  <div class="art-ghid">
+    <h3>Un ghid scurt pentru momentele grele</h3>
+    <p>Exerciții de ancorare și respirație pentru anxietate, atacuri de panică și epuizare. Șapte pagini, gratuit.</p>
+    <a href="/ghid-anxietate" class="btn btn-ghost">Descarcă ghidul</a>
+  </div>
+'''
+
 PAGE = '''<!DOCTYPE html>
 <html lang="ro">
 <head>
@@ -241,6 +251,9 @@ PAGE = '''<!DOCTYPE html>
     .art-body strong{{color:var(--ink);font-weight:500}}
     .art-body ul,.art-body ol{{margin:0 0 20px 24px}}
     .art-body li{{margin-bottom:8px}}
+    .art-ghid{{margin:48px 0 0;padding:28px 32px;border-left:3px solid var(--terra);background:rgba(139,94,60,.06);border-radius:0 6px 6px 0}}
+    .art-ghid h3{{font-family:var(--serif);font-size:1.3rem;font-weight:400;color:var(--ink);margin-bottom:8px}}
+    .art-ghid p{{font-size:.95rem;color:var(--warm);line-height:1.7;margin-bottom:18px}}
     .art-cta{{margin:48px 0;padding:36px;background:var(--sand);border-radius:8px;text-align:center}}
     .art-cta h3{{font-family:var(--serif);font-size:1.4rem;font-weight:400;color:var(--ink);margin-bottom:12px}}
     .art-cta p{{font-size:.95rem;color:var(--warm);line-height:1.7;margin-bottom:24px;max-width:480px;margin-left:auto;margin-right:auto}}
@@ -272,7 +285,7 @@ function closeMenu(){{var m=document.getElementById('mobile-menu'),b=document.ge
   <div class="art-body">
 {continut}
   </div>
-
+{ghid}
   <div class="art-cta">
     <h3>Dacă te-ai recunoscut în ce ai citit</h3>
     <p>Prima ședință e un prilej de a vedea dacă are sens să continuăm. Fără presiune să decizi azi.</p>
@@ -371,6 +384,7 @@ for i, a in enumerate(arts):
         titlu=html.escape(titlu),
         continut=continut,
         related=related_html,
+        ghid=GHID_BOX if categorie in GHID_CATEGORII else "",
         faq_schema=faq_schema_html(faq),
         nav=NAV, footer=FOOTER,
     )

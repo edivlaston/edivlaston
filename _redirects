@@ -24,6 +24,8 @@
 /preturi.html              /preturi              301!
 /intrebari-frecvente.html  /intrebari-frecvente  301!
 /index.html                /                     301!
+/ghid-anxietate.html       /ghid-anxietate       301!
+/ghid-anxietate-multumesc.html  /ghid-anxietate-multumesc  301!
 
 # Clean URL serving (Netlify will serve .html when no extension is requested)
 # This is the default Netlify behavior, but explicit for clarity
