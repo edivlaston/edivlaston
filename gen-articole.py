@@ -225,7 +225,8 @@ PAGE = '''<!DOCTYPE html>
       "@type": "Person",
       "name": "Edi Vlaston",
       "jobTitle": "Psihoterapeut",
-      "url": "{base}/despre"
+      "url": "{base}/despre",
+      "sameAs": ["https://www.facebook.com/edi.vlaston.psihoterapeut", "https://www.instagram.com/edivlaston.terapeut", "https://hilio.com/ro/a/psihoterapeut-eduard-vlaston", "https://maps.google.com/?cid=5454259869718871138"]
     }},
     "publisher": {{
       "@type": "Organization",
