@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://edivlaston.ro/cu-cine-vorbesti">
+  <title>Tu cu cine vorbești? | Edi Vlaston</title>
+  <meta name="description" content="În noiembrie, luna sănătății bărbaților, lasă anonim cuvintele pe care nu le poți rosti. Apoi trimite pagina omului cu care vorbești.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Edi Vlaston — Psihoterapeut">
+  <meta property="og:locale" content="ro_RO">
+  <meta property="og:title" content="Tu cu cine vorbești?">
+  <meta property="og:description" content="Lasă aici cuvintele pe care nu le poți rosti. Anonim. Noiembrie, luna sănătății bărbaților.">
+  <meta property="og:url" content="https://edivlaston.ro/cu-cine-vorbesti">
+  <meta property="og:image" content="https://edivlaston.ro/cu-cine-vorbesti-og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Tu cu cine vorbești?">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tu cu cine vorbești?">
+  <meta name="twitter:description" content="Lasă aici cuvintele pe care nu le poți rosti. Anonim. Noiembrie, luna sănătății bărbaților.">
+  <meta name="twitter:image" content="https://edivlaston.ro/cu-cine-vorbesti-og.png">
+  <!-- Google Tag (Analytics + Ads) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17654719970"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2W226C545N');
+    gtag('config', 'AW-17654719970');
+  </script>
+  <!-- Fără Meta Pixel pe această pagină (decizie de campanie: nimic din formular nu pleacă spre Meta). -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .ccv-col { max-width: 680px; margin: 0 auto; }
+    .ccv-hero { padding: 140px 0 72px; background: var(--parch); border-bottom: 1px solid var(--stone); }
+    .ccv-hero h1 { font-family: var(--serif); font-size: clamp(2.6rem,6vw,4.6rem); font-weight: 400; line-height: 1.08; color: var(--ink); margin-bottom: 32px; }
+    .ccv-hero h1 em { font-style: italic; color: var(--terra); }
+    .ccv-text p { font-size: clamp(.98rem,1.3vw,1.08rem); font-weight: 300; color: var(--warm); line-height: 1.88; margin-bottom: 16px; }
+    .ccv-text p:last-child { margin-bottom: 0; }
+    .ccv-text p strong { color: var(--ink); font-weight: 500; }
+    .ccv-sec { padding: clamp(56px,8vw,96px) 0; }
+    .ccv-sec h2 { font-size: clamp(1.9rem,3.4vw,2.8rem); }
+
+    /* Formular */
+    .ccv-form { background: var(--white); border: 1px solid var(--stone); border-radius: 4px; padding: clamp(20px,4vw,32px); margin-top: 28px; gap: 14px; }
+    .ccv-form textarea { min-height: 130px; font-size: 1rem; line-height: 1.6; background: var(--sand); }
+    .ccv-counter { align-self: flex-end; font-size: .76rem; color: var(--muted); margin-top: -6px; }
+    .ccv-counter.near { color: var(--terra); font-weight: 500; }
+    .ccv-form .acord { display: flex; gap: 10px; align-items: flex-start; font-size: .86rem; color: var(--warm); line-height: 1.6; font-weight: 300; cursor: pointer; }
+    .ccv-form .acord input { width: auto; margin-top: 4px; accent-color: var(--terra); flex-shrink: 0; }
+    .ccv-form .btn { align-self: flex-start; }
+    .ccv-form .btn[disabled] { opacity: .6; cursor: wait; transform: none; }
+    .ccv-status { font-size: .9rem; min-height: 1.4em; }
+    .ccv-status.ok { color: var(--terra); font-weight: 500; }
+    .ccv-status.err { color: #9a2b1f; }
+    .ccv-note { font-size: .88rem; color: var(--muted); font-weight: 300; line-height: 1.75; margin-top: 18px; }
+
+    /* Caseta de siguranta: deasupra butonului */
+    .ccv-safety { background: #FBEFE6; border: 1px solid #E8C4AA; border-left: 4px solid var(--terra); border-radius: 0 4px 4px 0; padding: 18px 20px; font-size: .92rem; color: var(--ink); line-height: 1.65; }
+    .ccv-safety p { margin-bottom: 10px; }
+    .ccv-safety ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .ccv-safety a { font-weight: 500; color: var(--terra); text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
+
+    /* Propozitii */
+    .ccv-list { list-style: none; margin-top: 28px; border-top: 1px solid var(--stone); }
+    .ccv-list li { font-family: var(--serif); font-style: italic; font-size: clamp(1.2rem,2vw,1.45rem); line-height: 1.45; color: var(--ink); padding: 18px 0; border-bottom: 1px solid var(--stone); }
+
+    .ccv-share { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 24px; }
+    .ccv-copied { font-size: .86rem; color: var(--terra); min-height: 1.4em; margin-top: 10px; }
+
+    .ccv-closing h2 { color: var(--white); }
+    .ccv-closing p { color: rgba(255,253,248,.75); }
+    .ccv-closing .sec-label { color: var(--accent); }
+    .ccv-closing .sec-label::before { background: var(--accent); }
+
+    a:focus-visible, button:focus-visible, textarea:focus-visible, input:focus-visible { outline: 2px solid var(--terra); outline-offset: 3px; }
+  </style>
+<script>
+function toggleMenu() {
+  const menu = document.getElementById('mobile-menu');
+  const btn = document.getElementById('hamburger');
+  if (!menu || !btn) return;
+  btn.classList.toggle('open');
+  menu.classList.toggle('open');
+  document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+}
+function closeMenu() {
+  const menu = document.getElementById('mobile-menu');
+  const btn = document.getElementById('hamburger');
+  if (!menu || !btn) return;
+  btn.classList.remove('open');
+  menu.classList.remove('open');
+  document.body.style.overflow = '';
+}
+</script>
+<script>window.addEventListener('load',function(){var s=document.createElement('script');s.src='https://analytics.ahrefs.com/analytics.js';s.setAttribute('data-key','cLOrPLy/GiE5PpQiabvHXg');s.async=true;document.body.appendChild(s);});</script>
+</head>
+
+<body>
+
+<nav id="nav">
+  <a href="/" class="nav-brand">Edi Vlaston<span>.</span></a>
+  <div class="nav-links">
+    <a href="/barbati">Pentru Ei</a>
+    <a href="/femei">Pentru Ele</a>
+    <a href="/terapie-cuplu">Terapie de cuplu</a>
+    <a href="/despre">Despre</a>
+    <a href="/blog">Blog</a>
+    <a href="/note-din-cabinet">Note din Cabinet</a>
+    <a href="/intrebari-frecvente">Întrebări Frecvente</a>
+    <a href="/preturi">Prețuri</a>
+    <a href="/contact">Contact</a>
+    <button type="button" onclick="openCal()" class="nav-cta" data-cal>Rezervă o primă ședință</button>
+  </div>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Meniu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="/barbati" onclick="closeMenu()">Pentru Ei</a>
+  <a href="/femei" onclick="closeMenu()">Pentru Ele</a>
+  <a href="/terapie-cuplu" onclick="closeMenu()">Terapie de cuplu</a>
+  <a href="/despre" onclick="closeMenu()">Despre</a>
+  <a href="/blog" onclick="closeMenu()">Blog</a>
+  <a href="/note-din-cabinet" onclick="closeMenu()">Note din Cabinet</a>
+  <a href="/intrebari-frecvente" onclick="closeMenu()">Întrebări Frecvente</a>
+  <a href="/preturi" onclick="closeMenu()">Prețuri</a>
+  <a href="/contact" onclick="closeMenu()">Contact</a>
+  <a href="tel:+40744370179" class="mobile-phone" onclick="closeMenu()">📞 0744 370 179</a>
+  <button type="button" onclick="openCal(); closeMenu();" class="mobile-cta" data-cal>Rezervă o primă ședință</button>
+</div>
+
+<main>
+<!-- ── HERO ──────────────────────────────────────────── -->
+<section class="ccv-hero">
+  <div class="container">
+    <div class="ccv-col">
+      <div class="page-hero-tag">Noiembrie · Luna sănătății bărbaților</div>
+      <h1>Tu cu cine <em>vorbești?</em></h1>
+      <div class="ccv-text">
+        <p>Ai oameni în jur. Colegi, prieteni, familie, poate o parteneră. Vorbești cu ei în fiecare zi.</p>
+        <p><strong>Și totuși, există cel puțin un lucru pe care nu l-ai spus niciunuia.</strong></p>
+        <p>În noiembrie, luna în care se vorbește despre sănătatea bărbaților, lasă aici cuvintele pe care nu le poți rosti. Fără nume, fără cont, fără să te vadă cineva.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FORMULAR ──────────────────────────────────────── -->
+<section class="ccv-sec" style="background:var(--sand)">
+  <div class="container">
+    <div class="ccv-col">
+      <div class="sec-label">Anonim</div>
+      <h2 id="lasa-le">Lasă-le aici</h2>
+
+      <form name="propozitie" method="POST" action="/cu-cine-vorbesti" data-netlify="true" netlify-honeypot="bot-field" class="cform ccv-form" id="ccv-form" aria-labelledby="lasa-le" novalidate>
+        <input type="hidden" name="form-name" value="propozitie">
+        <input type="hidden" name="subject" value="Tu cu cine vorbești? · mesaj nou (%{submissionId})">
+        <p style="display:none"><label>Nu completa: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+
+        <label for="ccv-text" style="position:absolute;left:-9999px">Ce vrei să lași aici</label>
+        <textarea id="ccv-text" name="propozitie" maxlength="280" required placeholder="Cuvintele pe care nu le poți rosti." aria-describedby="ccv-counter" autocomplete="off" spellcheck="true"></textarea>
+        <div class="ccv-counter" id="ccv-counter" aria-live="polite">0 / 280</div>
+
+        <label class="acord">
+          <input type="checkbox" name="acord" value="da" required id="ccv-acord">
+          <span>Sunt de acord ca ce am scris să poată fi publicat anonim, pe site sau în animații, cu mici corecturi de formă.</span>
+        </label>
+
+        <div class="ccv-safety" role="note" aria-label="Dacă ești în pericol">
+          <p><strong>Dacă ce ai vrea să scrii este că nu mai vrei să trăiești, nu-l lăsa aici.</strong> Aici nu te poate auzi nimeni la timp. Sună acum:</p>
+          <ul>
+            <li><a href="tel:112">112</a>, dacă ești în pericol imediat</li>
+            <li><a href="tel:116123">116 123</a>, linia de prevenire a tentativelor de suicid</li>
+            <li><a href="tel:0800801200">0800 801 200</a>, TelVerde Antisuicid (gratuit, program de noapte)</li>
+            <li><a href="tel:0374456420">0374 456 420</a>, linia DepreHUB (24/7)</li>
+          </ul>
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="ccv-submit">Trimite</button>
+        <p class="ccv-status" id="ccv-status" role="status" aria-live="polite"></p>
+      </form>
+
+      <p class="ccv-note">Nu cerem nume, email sau telefon. Te rog să nu scrii nume sau detalii după care tu sau altcineva ați putea fi recunoscuți.</p>
+      <p class="ccv-note" style="margin-top:8px">Eu le citesc pe toate. Pe unele le public, anonim. La mesaje nu pot răspunde individual, pentru că nu știu cine le-a scris.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── CE AU SCRIS ALTII ─────────────────────────────── -->
+<section class="ccv-sec" style="background:var(--parch);border-top:1px solid var(--stone);border-bottom:1px solid var(--stone)">
+  <div class="container">
+    <div class="ccv-col">
+      <h2>Ce au scris alții</h2>
+      <div class="ccv-text"><p>Primele propoziții le-am scris eu, din lucruri pe care le aud des în cabinet. Restul vin de la voi, pe măsură ce le primesc.</p></div>
+      <!-- Lista se actualizează manual, de 2–3 ori pe săptămână. Propozițiile noi se adaugă SUS.
+           Moderare: fără nume, locuri de muncă, orașe mici sau detalii identificabile; nimic despre metode,
+           autovătămare sau sinucidere; corecturi doar de formă (diacritice, punctuație). -->
+      <ul class="ccv-list">
+        <li>Nu mai știu când am vorbit ultima dată cu tata despre altceva decât mașini.</li>
+        <li>Mă simt mai liniștit în trafic decât acasă.</li>
+        <li>De doi ani spun că sunt bine. Nu mai știu dacă e adevărat.</li>
+        <li>Am un prieten pe care îl sun de ziua lui. Atât.</li>
+        <li>Mi-e frică să nu semăn cu tata exact în ce nu voiam.</li>
+        <li>Copilul meu mă vede doar obosit.</li>
+        <li>Când ea plânge, nu știu ce să fac cu mâinile.</li>
+        <li>Am fost promovat și n-am avut cui să-i spun, care să se bucure cu adevărat.</li>
+        <li>Uneori stau zece minute în mașină, în parcare, înainte să urc acasă.</li>
+        <li>După divorț, cel mai greu a fost duminica.</li>
+        <li>Mi-e rușine că am nevoie de cineva.</li>
+        <li>Toată lumea vine la mine cu problemele ei. Eu n-am la cine să merg.</li>
+        <li>Prietenii mei cred că mă cunosc.</li>
+        <li>Nu mai știu ce-mi place, știu doar ce am de făcut.</li>
+        <li>Mi-am cumpărat o mașină nouă. Soția a aflat abia când am ajuns acasă.</li>
+        <li>Copiii mei nu știu cine sunt.</li>
+        <li>Îmi e dor de ea și nu știu să-i spun.</li>
+        <li>Îmi place un bărbat.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── SHARE ─────────────────────────────────────────── -->
+<section class="ccv-sec" style="background:var(--sand)">
+  <div class="container">
+    <div class="ccv-col">
+      <h2>Trimite-i asta cuiva</h2>
+      <div class="ccv-text"><p>Omului cu care vorbești. Sau celui cu care ai vrea să vorbești.</p></div>
+      <div class="ccv-share">
+        <a class="btn btn-primary" id="ccv-wa" target="_blank" rel="noopener" href="https://wa.me/?text=Tu%20cu%20cine%20vorbe%C8%99ti%3F%20https%3A%2F%2Fedivlaston.ro%2Fcu-cine-vorbesti">Trimite pe WhatsApp</a>
+        <button type="button" class="btn btn-ghost" id="ccv-copy">Copiază linkul</button>
+      </div>
+      <p class="ccv-copied" id="ccv-copied" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ── INCHEIERE ─────────────────────────────────────── -->
+<section class="ccv-sec ccv-closing" style="background:var(--ink)">
+  <div class="container">
+    <div class="ccv-col ccv-text">
+      <h2>Un loc în care se spune <em style="color:var(--accent)">cu voce tare</em></h2>
+      <p>Un loc în care simți că ești cu adevărat ascultat și înțeles. Terapeutul e acolo doar pentru tine, se deschide să primească orice ești tu dispus să aduci. Nu are niciun interes, nu există un joc sau o intenție ascunsă. Poți să spui cu voce tare toate gândurile tale și să fie primite cu blândețe și bunătate.</p>
+      <p>Cabinet în Primăverii, Sector 1, și online.</p>
+      <div style="margin-top:28px">
+        <button type="button" onclick="openCal()" class="btn btn-primary" style="background:var(--accent)" data-cal>
+          Rezervă o primă ședință
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-in">
+      <div class="footer-brand">Edi Vlaston<span>.</span></div>
+      <div class="footer-links">
+        <a href="/confidentialitate">Confidențialitate</a>
+        <a href="mailto:office@edivlaston.ro">office@edivlaston.ro</a>
+      </div>
+      <span class="footer-copy">© 2026 Cabinet Individual de Psihologie · Cod 22334</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Calendly popup, cu UTM de campanie */
+(function(){
+  var U='https://calendly.com/eduard-vlaston-eiv3?utm_source=site&utm_medium=hub&utm_campaign=cu-cine-vorbesti',loading=false,ready=false,pending=false;
+  function inject(){
+    if(ready||loading)return; loading=true;
+    var s=document.createElement('script');
+    s.src='https://assets.calendly.com/assets/external/widget.js';
+    s.onload=function(){ready=true; if(pending){pending=false; Calendly.initPopupWidget({url:U});}};
+    document.body.appendChild(s);
+  }
+  window.openCal=function(){if(typeof gtag==='function'){gtag('event','calendly_deschis',{pagina:location.pathname});}
+    if(ready&&window.Calendly){Calendly.initPopupWidget({url:U});}
+    else{pending=true; inject();}
+    return false;
+  };
+  ['pointerdown','touchstart','keydown','scroll'].forEach(function(e){
+    window.addEventListener(e,inject,{once:true,passive:true});
+  });
+})();
+</script>
+<script>
+window.addEventListener('scroll', () => { document.getElementById('nav').style.padding = window.scrollY > 60 ? '12px clamp(20px,5vw,56px)' : '18px clamp(20px,5vw,56px)'; });
+</script>
+<!-- Calendly Event Tracking (GA4 + Google Ads; fără Meta pe această pagină) -->
+<script>
+window.addEventListener('message', function(e) {
+  if (!e.data || !e.data.event || e.data.event.indexOf('calendly') !== 0 || typeof gtag !== 'function') return;
+  if (e.data.event === 'calendly.event_type_viewed') gtag('event', 'calendly_calendar_vazut', {'pagina': location.pathname});
+  if (e.data.event === 'calendly.date_and_time_selected') gtag('event', 'calendly_ora_aleasa', {'pagina': location.pathname});
+  if (e.data.event === 'calendly.event_scheduled') {
+    gtag('event', 'programare_calendly', {'event_category': 'conversie', 'event_label': 'Calendly Programare Finalizata'});
+    gtag('event', 'conversion', {'send_to': 'AW-17654719970/VtMcCPnxyc8cEOLLtuJB'});
+  }
+});
+</script>
+<script>
+/* Formular: trimitere AJAX către Netlify Forms. Se măsoară doar evenimentul, fără text. */
+(function(){
+  var form = document.getElementById('ccv-form');
+  var text = document.getElementById('ccv-text');
+  var acord = document.getElementById('ccv-acord');
+  var counter = document.getElementById('ccv-counter');
+  var status = document.getElementById('ccv-status');
+  var submit = document.getElementById('ccv-submit');
+
+  function count(){ var n = text.value.length; counter.textContent = n + ' / 280'; counter.classList.toggle('near', n >= 250); }
+  text.addEventListener('input', count);
+  function say(msg, kind){ status.textContent = msg; status.className = 'ccv-status ' + (kind || ''); }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!text.value.trim()) { say('Scrie mai întâi ce vrei să lași aici.', 'err'); text.focus(); return; }
+    if (!acord.checked) { say('Bifează acordul ca să poți trimite.', 'err'); acord.focus(); return; }
+    submit.disabled = true; say('Se trimite…');
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(form)).toString()
+    }).then(function(r){
+      if (!r.ok) throw new Error(r.status);
+      form.reset(); count();
+      say('Mulțumesc. Am primit.', 'ok');
+      if (typeof gtag === 'function') gtag('event', 'propozitie_trimisa');
+    }).catch(function(){
+      say('N-a mers trimiterea. Mai încearcă o dată peste câteva clipe.', 'err');
+    }).finally(function(){ submit.disabled = false; });
+  });
+
+  /* Copiază linkul */
+  var URL_PAGINA = 'https://edivlaston.ro/cu-cine-vorbesti';
+  var copied = document.getElementById('ccv-copied');
+  document.getElementById('ccv-copy').addEventListener('click', function(){
+    function done(){ copied.textContent = 'Linkul e copiat.'; setTimeout(function(){ copied.textContent = ''; }, 3000); }
+    function fallback(){
+      var t = document.createElement('textarea'); t.value = URL_PAGINA; t.setAttribute('readonly', '');
+      t.style.position = 'absolute'; t.style.left = '-9999px'; document.body.appendChild(t); t.select();
+      try { document.execCommand('copy'); done(); } catch (err) { copied.textContent = URL_PAGINA; }
+      document.body.removeChild(t);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(URL_PAGINA).then(done, fallback);
+    else fallback();
+  });
+})();
+</script>
+</body>
+
+</html>
