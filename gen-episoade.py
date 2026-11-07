@@ -426,6 +426,7 @@ arts = json.load(open("articole.json", encoding="utf-8"))
 pagini = [
     ("/", "monthly", "1.0", "2026-06-27"),
     ("/barbati", "monthly", "0.9", TODAY),
+    ("/cu-cine-vorbesti", "weekly", "0.8", "2026-11-05"),
     ("/femei", "monthly", "0.8", "2026-06-27"),
     ("/terapie-cuplu", "monthly", "0.9", TODAY),
     ("/despre", "monthly", "0.7", "2026-06-27"),
