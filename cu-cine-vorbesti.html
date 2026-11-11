@@ -47,6 +47,16 @@
     .ccv-sec { padding: clamp(56px,8vw,96px) 0; }
     .ccv-sec h2 { font-size: clamp(1.9rem,3.4vw,2.8rem); }
 
+    /* Mobil: hero strâns, ca exemplele să se vadă pe primul ecran */
+    @media (max-width: 640px) {
+      .ccv-hero { padding: 96px 0 28px; }
+      .ccv-hero h1 { font-size: 2.3rem; margin-bottom: 16px; }
+      .ccv-hero .page-hero-tag { margin-bottom: 14px; }
+      .ccv-text p { line-height: 1.65; margin-bottom: 10px; }
+      .ccv-hero + .ccv-sec { padding-top: 28px; }
+      .ccv-hero + .ccv-sec h2 { font-size: 1.7rem; }
+    }
+
     /* Formular */
     .ccv-form { background: var(--white); border: 1px solid var(--stone); border-radius: 4px; padding: clamp(20px,4vw,32px); margin-top: 28px; gap: 14px; }
     .ccv-form textarea { min-height: 130px; font-size: 1rem; line-height: 1.6; background: var(--sand); }
