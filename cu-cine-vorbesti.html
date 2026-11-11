@@ -61,11 +61,16 @@
     .ccv-status.err { color: #9a2b1f; }
     .ccv-note { font-size: .88rem; color: var(--muted); font-weight: 300; line-height: 1.75; margin-top: 18px; }
 
-    /* Caseta de siguranta: deasupra butonului */
-    .ccv-safety { background: #FBEFE6; border: 1px solid #E8C4AA; border-left: 4px solid var(--terra); border-radius: 0 4px 4px 0; padding: 18px 20px; font-size: .92rem; color: var(--ink); line-height: 1.65; }
+    /* Caseta de siguranta: imediat sub buton */
+    .ccv-safety { margin-top: 4px; background: #FBEFE6; border: 1px solid #E8C4AA; border-left: 4px solid var(--terra); border-radius: 0 4px 4px 0; padding: 18px 20px; font-size: .92rem; color: var(--ink); line-height: 1.65; }
     .ccv-safety p { margin-bottom: 10px; }
     .ccv-safety ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
     .ccv-safety a { font-weight: 500; color: var(--terra); text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
+
+    /* Exemple deasupra formularului */
+    .ccv-ex-label { font-size: .86rem; color: var(--muted); margin-top: 18px; }
+    .ccv-ex { list-style: none; margin-top: 8px; border-left: 2px solid var(--stone); padding-left: 16px; display: flex; flex-direction: column; gap: 8px; }
+    .ccv-ex li { font-family: var(--serif); font-style: italic; font-size: clamp(1.05rem,1.7vw,1.2rem); line-height: 1.45; color: var(--ink); }
 
     /* Propozitii */
     .ccv-list { list-style: none; margin-top: 28px; border-top: 1px solid var(--stone); }
@@ -160,6 +165,12 @@ function closeMenu() {
     <div class="ccv-col">
       <div class="sec-label">Fără nume</div>
       <h2 id="lasa-le">Lasă-le aici</h2>
+      <p class="ccv-ex-label">De exemplu:</p>
+      <ul class="ccv-ex">
+        <li>De doi ani spun că sunt bine. Nu mai știu dacă e adevărat.</li>
+        <li>Uneori stau zece minute în mașină, în parcare, înainte să urc acasă.</li>
+        <li>Am un prieten pe care îl sun de ziua lui. Atât.</li>
+      </ul>
 
       <form name="propozitie" method="POST" action="/cu-cine-vorbesti" data-netlify="true" netlify-honeypot="bot-field" class="cform ccv-form" id="ccv-form" aria-labelledby="lasa-le" novalidate>
         <input type="hidden" name="form-name" value="propozitie">
@@ -175,6 +186,9 @@ function closeMenu() {
           <span>Sunt de acord ca ce am scris să poată fi publicat anonim, pe site sau în animații, cu mici corecturi de formă.</span>
         </label>
 
+        <button type="submit" class="btn btn-primary" id="ccv-submit">Trimite</button>
+        <p class="ccv-status" id="ccv-status" role="status" aria-live="polite"></p>
+
         <div class="ccv-safety" role="note" aria-label="Dacă ești în pericol">
           <p><strong>Dacă ce ai vrea să scrii este că nu mai vrei să trăiești, nu-l lăsa aici.</strong> Aici nu te poate auzi nimeni la timp. Sună acum:</p>
           <ul>
@@ -183,9 +197,6 @@ function closeMenu() {
             <li><a href="tel:0374456420">0374 456 420</a>, linia DepreHUB (24/7)</li>
           </ul>
         </div>
-
-        <button type="submit" class="btn btn-primary" id="ccv-submit">Trimite</button>
-        <p class="ccv-status" id="ccv-status" role="status" aria-live="polite"></p>
       </form>
 
       <p class="ccv-note">Nu cerem nume, email sau telefon. Te rog să nu scrii nume sau detalii după care tu sau altcineva ați putea fi recunoscuți.</p>
@@ -206,13 +217,10 @@ function closeMenu() {
       <ul class="ccv-list">
         <li>Nu mai știu când am vorbit ultima dată cu tata despre altceva decât mașini.</li>
         <li>Mă simt mai liniștit în trafic decât acasă.</li>
-        <li>De doi ani spun că sunt bine. Nu mai știu dacă e adevărat.</li>
-        <li>Am un prieten pe care îl sun de ziua lui. Atât.</li>
         <li>Mi-e frică să nu semăn cu tata exact în ce nu voiam.</li>
         <li>Copilul meu mă vede doar obosit.</li>
         <li>Când ea plânge, nu știu ce să fac cu mâinile.</li>
         <li>Am fost promovat și n-am avut cui să-i spun, care să se bucure cu adevărat.</li>
-        <li>Uneori stau zece minute în mașină, în parcare, înainte să urc acasă.</li>
         <li>După divorț, cel mai greu a fost duminica.</li>
         <li>Mi-e rușine că am nevoie de cineva.</li>
         <li>Toată lumea vine la mine cu problemele ei. Eu n-am la cine să merg.</li>
