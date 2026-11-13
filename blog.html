@@ -38,7 +38,7 @@
     .blog-card{background:var(--white);border:1px solid var(--stone);border-radius:8px;overflow:hidden;cursor:pointer;transition:border-color .2s,transform .2s,box-shadow .2s;display:flex;flex-direction:column}
     .blog-card:hover{border-color:var(--bark);transform:translateY(-5px);box-shadow:0 14px 40px rgba(139,94,60,.11)}
     .blog-card-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--parch);display:block}
-    .blog-card-img-placeholder{width:100%;aspect-ratio:16/9;background:var(--parch);display:flex;align-items:center;justify-content:center;font-size:2.5rem}
+    .blog-card-img-placeholder{width:100%;height:5px;background:linear-gradient(90deg,var(--terra),var(--bark))}
     .blog-card-body{padding:24px 22px;flex:1;display:flex;flex-direction:column}
     .blog-cat{font-size:.64rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:10px}
     .blog-card h3{font-family:var(--serif);font-size:1.15rem;font-weight:500;color:var(--ink);margin-bottom:10px;line-height:1.35}
@@ -200,7 +200,7 @@ function closeMenu() {
       <div class="blog-grid" id="blog-grid">
       <!-- CARDURI:START — generat automat de gen-articole.py, nu edita manual -->
       <a class="blog-card" href="/blog/suicid-barbati-romania" style="text-decoration:none;color:inherit">
-        <div class="blog-card-img-placeholder">📖</div>
+        <div class="blog-card-img-placeholder" aria-hidden="true"></div>
         <div class="blog-card-body">
           <div class="blog-cat">Sănătate mintală</div>
           <h3>Suicidul la bărbați în România: semnele care se văd înainte</h3>
@@ -212,7 +212,7 @@ function closeMenu() {
         </div>
       </a>
       <a class="blog-card" href="/blog/chiar-merita-terapia" style="text-decoration:none;color:inherit">
-        <div class="blog-card-img-placeholder">📖</div>
+        <div class="blog-card-img-placeholder" aria-hidden="true"></div>
         <div class="blog-card-body">
           <div class="blog-cat">Despre terapie</div>
           <h3>Chiar merită terapia? Ce se schimbă, de fapt, după primele ședințe</h3>
@@ -224,7 +224,7 @@ function closeMenu() {
         </div>
       </a>
       <a class="blog-card" href="/blog/diferenta-de-libido-in-cuplu" style="text-decoration:none;color:inherit">
-        <div class="blog-card-img-placeholder">📖</div>
+        <div class="blog-card-img-placeholder" aria-hidden="true"></div>
         <div class="blog-card-body">
           <div class="blog-cat">Relații</div>
           <h3>Diferența de libido în cuplu: e despre dorință sau despre limbaj?</h3>
@@ -236,7 +236,7 @@ function closeMenu() {
         </div>
       </a>
       <a class="blog-card" href="/blog/burnout-la-locul-de-munca" style="text-decoration:none;color:inherit">
-        <div class="blog-card-img-placeholder">📖</div>
+        <div class="blog-card-img-placeholder" aria-hidden="true"></div>
         <div class="blog-card-body">
           <div class="blog-cat">Burnout</div>
           <h3>Burnout: am rezistat până când n-am mai putut</h3>
@@ -248,7 +248,7 @@ function closeMenu() {
         </div>
       </a>
       <a class="blog-card" href="/blog/de-ce-nu-trece-anxietatea" style="text-decoration:none;color:inherit">
-        <div class="blog-card-img-placeholder">📖</div>
+        <div class="blog-card-img-placeholder" aria-hidden="true"></div>
         <div class="blog-card-body">
           <div class="blog-cat">Anxietate</div>
           <h3>De ce nu trece anxietatea, deși ai înțeles-o</h3>
@@ -260,7 +260,7 @@ function closeMenu() {
         </div>
       </a>
       <a class="blog-card" href="/blog/burnout-la-medici" style="text-decoration:none;color:inherit">
-        <div class="blog-card-img-placeholder">📖</div>
+        <div class="blog-card-img-placeholder" aria-hidden="true"></div>
         <div class="blog-card-body">
           <div class="blog-cat">Burnout</div>
           <h3>Burnout la medici: de ce ești ultimul pe lista ta de pacienți</h3>
@@ -272,7 +272,7 @@ function closeMenu() {
         </div>
       </a>
       <a class="blog-card" href="/blog/a-fi-tata-dupa-divort" style="text-decoration:none;color:inherit">
-        <div class="blog-card-img-placeholder">📖</div>
+        <div class="blog-card-img-placeholder" aria-hidden="true"></div>
         <div class="blog-card-body">
           <div class="blog-cat">Divorț</div>
           <h3>A fi tată după divorț — fără să dispari din viața lor</h3>
@@ -284,7 +284,7 @@ function closeMenu() {
         </div>
       </a>
       <a class="blog-card" href="/blog/de-ce-faci-tot-bine-si-tot-gresesti" style="text-decoration:none;color:inherit">
-        <div class="blog-card-img-placeholder">📖</div>
+        <div class="blog-card-img-placeholder" aria-hidden="true"></div>
         <div class="blog-card-body">
           <div class="blog-cat">Relații</div>
           <h3>De ce faci tot bine și tot greșești în relație</h3>
@@ -296,7 +296,7 @@ function closeMenu() {
         </div>
       </a>
       <a class="blog-card" href="/blog/cum-sa-recunosti-ce-simti" style="text-decoration:none;color:inherit">
-        <div class="blog-card-img-placeholder">📖</div>
+        <div class="blog-card-img-placeholder" aria-hidden="true"></div>
         <div class="blog-card-body">
           <div class="blog-cat">Emoții</div>
           <h3>Cum să recunoști ce simți cu adevărat</h3>
@@ -380,7 +380,7 @@ function renderCards(articles){
   const grid=document.getElementById('blog-grid');
   grid.innerHTML=articles.map((a,i)=>`
     <a class="blog-card reveal" href="/blog/${a.id}" style="transition-delay:${i*.08}s;text-decoration:none;color:inherit">
-      ${a.imagine?`<img class="blog-card-img" src="${a.imagine}" alt="${a.titlu}" onerror="this.outerHTML='<div class=blog-card-img-placeholder>📖</div>'">`:`<div class="blog-card-img-placeholder">📖</div>`}
+      ${a.imagine?`<img class="blog-card-img" src="${a.imagine}" alt="${a.titlu}" onerror="this.outerHTML='<div class=blog-card-img-placeholder></div>'">`:`<div class="blog-card-img-placeholder" aria-hidden="true"></div>`}
       <div class="blog-card-body">
         <div class="blog-cat">${a.categorie}</div>
         <h3>${a.titlu}</h3>

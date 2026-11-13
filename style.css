@@ -17,6 +17,8 @@ html { scroll-behavior: smooth; font-size: 16px; }
   --accent:  #C4784A;
   --accentl: #D4916A;
   --white:   #FFFDF8;
+  --pine:    #2F4A3F;  /* doar butonul de rezervare */
+  --pinel:   #3D5E50;
 
   --serif: 'Cormorant Garamond', Georgia, serif;
   --sans:  'Jost', system-ui, sans-serif;
@@ -61,8 +63,8 @@ section { position: relative; z-index: 1; }
   text-decoration: none;
 }
 .btn:hover { transform: translateY(-2px); }
-.btn-primary { background: var(--terra); color: var(--white); box-shadow: 0 4px 20px rgba(139,94,60,.22); }
-.btn-primary:hover { background: var(--accent); box-shadow: 0 8px 28px rgba(139,94,60,.32); }
+.btn-primary { background: var(--pine); color: var(--white); box-shadow: 0 4px 20px rgba(47,74,63,.25); }
+.btn-primary:hover { background: var(--pinel); box-shadow: 0 8px 28px rgba(47,74,63,.32); }
 .btn-ghost { background: transparent; color: var(--terra); border: 1.5px solid var(--bark); }
 .btn-ghost:hover { border-color: var(--terra); }
 
@@ -76,9 +78,9 @@ nav {
   border-bottom: 1px solid var(--stone);
   transition: padding .3s;
 }
-.nav-brand { font-family: var(--serif); font-size: 1.15rem; font-weight: 500; color: var(--ink); letter-spacing: .02em; }
+.nav-brand { font-family: var(--serif); font-size: 1.15rem; font-weight: 500; color: var(--ink); letter-spacing: .02em; white-space: nowrap; }
 .nav-brand span { color: var(--terra); }
-.nav-links { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
+.nav-links { display: flex; gap: clamp(12px,1.5vw,24px); align-items: center; flex-wrap: nowrap; white-space: nowrap; }
 .nav-links a, .nav-links .nav-cta { font-size: .72rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); transition: color .2s; }
 .nav-links a:hover, .nav-links a.active { color: var(--terra); }
 
@@ -92,8 +94,8 @@ button:where(.nav-cta, .mobile-cta, .btn, .link-cal) {
 button.link-cal { display: inline; text-align: inherit; }
 .nav-phone { font-size: .75rem; font-weight: 500; color: var(--terra); display: flex; align-items: center; gap: 5px; }
 .nav-phone:hover { color: var(--accent); }
-.nav-cta { background: var(--terra) !important; color: var(--white) !important; padding: 10px 22px !important; border-radius: 2px !important; font-weight: 500 !important; }
-.nav-cta:hover { background: var(--accent) !important; color: var(--white) !important; }
+.nav-cta { background: var(--pine) !important; color: var(--white) !important; padding: 10px 22px !important; border-radius: 2px !important; font-weight: 500 !important; }
+.nav-cta:hover { background: var(--pinel) !important; color: var(--white) !important; }
 .nav-social { display: flex; gap: 8px; align-items: center; }
 .nav-social a { width: 30px; height: 30px; border-radius: 4px; background: rgba(139,94,60,.08); border: 1px solid var(--stone); display: flex; align-items: center; justify-content: center; transition: background .2s, border-color .2s; color: var(--muted) !important; text-transform: none !important; letter-spacing: 0 !important; padding: 0 !important; }
 .nav-social a:hover { background: var(--terra); border-color: var(--terra); color: var(--white) !important; }
@@ -242,13 +244,13 @@ footer { padding: 44px 0; background: var(--ink); }
 .footer-brand { font-family: var(--serif); font-size: .98rem; color: var(--sand); }
 .footer-brand span { color: var(--accent); }
 .footer-links { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
-.footer-links a { font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); transition: color .2s; }
+.footer-links a { font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--bark); transition: color .2s; }
 .footer-links a:hover { color: var(--sand); }
 .footer-social { display: flex; gap: 10px; }
-.footer-social a { width: 34px; height: 34px; border-radius: 4px; background: rgba(255,253,248,.06); border: 1px solid rgba(255,253,248,.1); display: flex; align-items: center; justify-content: center; color: var(--muted); transition: background .2s, color .2s, border-color .2s; }
+.footer-social a { width: 34px; height: 34px; border-radius: 4px; background: rgba(255,253,248,.06); border: 1px solid rgba(255,253,248,.1); display: flex; align-items: center; justify-content: center; color: var(--bark); transition: background .2s, color .2s, border-color .2s; }
 .footer-social a:hover { background: var(--terra); border-color: var(--terra); color: var(--white); }
 .footer-social svg { width: 15px; height: 15px; fill: currentColor; }
-.footer-copy { font-size: .71rem; color: var(--warm); }
+.footer-copy { font-size: .71rem; color: var(--clay); }
 
 /* ── HERO PHOTO ───────────────────────────────────── */
 .photo-wrap { position: relative; border-radius: 8px; overflow: hidden; aspect-ratio: 3/4; background: var(--parch); border: 1px solid var(--stone); box-shadow: 8px 12px 40px rgba(61,43,24,.12); }
@@ -320,7 +322,7 @@ footer { padding: 44px 0; background: var(--ink); }
 }
 .mobile-menu a:hover { color: var(--terra); }
 .mobile-menu .mobile-cta {
-  margin-top: 16px; background: var(--terra); color: var(--white) !important;
+  margin-top: 16px; background: var(--pine); color: var(--white) !important;
   padding: 16px 36px; border-radius: 2px; font-family: var(--sans) !important;
   font-size: .82rem !important; letter-spacing: .1em; text-transform: uppercase;
 }
@@ -340,3 +342,29 @@ footer { padding: 44px 0; background: var(--ink); }
   .page-hero h1 { font-size: clamp(2.2rem, 8vw, 3.5rem); }
   .prog-grid { grid-template-columns: 1fr; gap: 32px; }
 }
+
+/* v59 — meniul desktop pe un singur rând; sub 1180px trece pe hamburger */
+@media(max-width:1380px){
+  .nav-links a, .nav-links .nav-cta { font-size: .66rem; letter-spacing: .06em; }
+  .nav-cta { padding: 9px 14px !important; }
+}
+@media(max-width:1180px){
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+}
+
+/* v59 — respectă setarea „reduce mișcarea” a dispozitivului */
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+
+/* v59 — butonul de rezervare pe secțiunile închise: verde mai deschis, ca să nu se piardă în fundal */
+#cta-band .btn-primary,
+[style*="background:var(--ink)"] .btn-primary,
+[style*="background:var(--deep)"] .btn-primary,
+.pret-card.featured .btn-primary { background: #4A7563 !important; box-shadow: 0 4px 20px rgba(0,0,0,.3); }
+#cta-band .btn-primary:hover,
+[style*="background:var(--ink)"] .btn-primary:hover,
+[style*="background:var(--deep)"] .btn-primary:hover,
+.pret-card.featured .btn-primary:hover { background: #568672 !important; }

@@ -403,9 +403,9 @@ def build_cards_html(arts):
         imagine = a.get("imagine")
         if imagine:
             img = (f'<img class="blog-card-img" src="{html.escape(imagine)}" alt="{titlu}" '
-                   'onerror="this.outerHTML=\'<div class=blog-card-img-placeholder>📖</div>\'">')
+                   'onerror="this.outerHTML=\'<div class=blog-card-img-placeholder></div>\'">')
         else:
-            img = '<div class="blog-card-img-placeholder">📖</div>'
+            img = '<div class="blog-card-img-placeholder" aria-hidden="true"></div>'
         carduri.append(
             f'      <a class="blog-card" href="/blog/{aid}" style="text-decoration:none;color:inherit">\n'
             f'        {img}\n'
