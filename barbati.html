@@ -46,6 +46,9 @@
     #testimoniale-section h2 { color:var(--white); }
     #testimoniale-section h2 em { color:var(--accent); }
     @media(max-width:1024px){ .two-col{grid-template-columns:1fr;gap:40px} }
+    /* v60 — grilele cu stil inline trec pe o coloană pe tabletă și telefon */
+    @media(max-width:860px){ .b-grid{grid-template-columns:1fr !important;gap:36px !important} }
+    @media(max-width:680px){ .profiles{grid-template-columns:1fr !important} }
   </style>
 <script>
 function toggleMenu() {
@@ -308,7 +311,7 @@ function closeMenu() {
 <!-- ── ABORDARE ────────────────────────────────────────── -->
 <section style="padding:var(--gap) 0;background:var(--parch);border-top:1px solid var(--stone);border-bottom:1px solid var(--stone)">
   <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-bottom:56px;align-items:start" class="reveal">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-bottom:56px;align-items:start" class="reveal b-grid">
       <div>
         <div class="sec-label">Cum lucrez</div>
         <h2>Terapie individuală.<br><em>Pentru tine.</em></h2>
@@ -338,7 +341,7 @@ function closeMenu() {
 <!-- ── DE CE EU ─────────────────────────────────────────── -->
 <section style="padding:80px 0;background:var(--ink)">
   <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center" class="reveal">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center" class="reveal b-grid">
       <div>
         <div class="sec-label" style="color:var(--accent)">De ce eu</div>
         <h2 style="color:var(--white)">Nu vorbesc din<br><em style="color:var(--accent)">teorie.</em></h2>
@@ -450,7 +453,7 @@ function closeMenu() {
 <!-- ── FAQ ────────────────────────────────────────────── -->
 <section style="padding:var(--gap) 0;background:var(--parch);border-top:1px solid var(--stone)">
   <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start">
+    <div class="b-grid" style="display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start">
       <div class="reveal">
         <div class="sec-label">Întrebări frecvente</div>
         <h2>Răspunsuri<br><em>directe.</em></h2>
