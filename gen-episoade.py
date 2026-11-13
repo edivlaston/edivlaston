@@ -435,6 +435,8 @@ pagini = [
     ("/intrebari-frecvente", "monthly", "0.7", "2026-06-27"),
     ("/preturi", "monthly", "0.8", TODAY),
     ("/contact", "monthly", "0.6", "2026-04-28"),
+    ("/ghid-anxietate", "monthly", "0.7", "2026-11-02"),
+    ("/terapie-online-romani-strainatate.html", "monthly", "0.7", "2026-11-04"),
 ]
 lines = ['<?xml version="1.0" encoding="UTF-8"?>',
          '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
