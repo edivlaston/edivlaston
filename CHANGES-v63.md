@@ -19,3 +19,8 @@ Sursa: `claude-code-pagina-en-2026-11-23.md`.
 - Meniu, pe toate paginile cu meniu (și în generatoare): „EN” în meniul desktop, pastilă „EN” lângă hamburger pe mobil, „English” în meniul mobil.
 - style.css: stiluri pentru EN; meniul trece în hamburger de la 1290px (înainte 1180px), ca să nu atingă logo-ul.
 - `style.css?v=63` pe toate paginile (CSS-ul are cache 7 zile).
+
+## v63c — 2026-11-23 — SEO pe /en
+
+- H2-urile de pe /en conțin acum termenii căutați („English-speaking therapist”, „couples therapy in English”, „therapy fees in Bucharest” etc.), în același stil.
+- IndexNow: fișierul-cheie `b42214c293f089ab566582520ddae578.txt` în rădăcină; /en, / și /terapie-cuplu trimise la api.indexnow.org (Bing, Yandex etc.). Google nu folosește IndexNow: indexarea se cere din Search Console.
