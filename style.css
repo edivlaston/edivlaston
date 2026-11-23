@@ -83,6 +83,11 @@ nav {
 .nav-links { display: flex; gap: clamp(12px,1.5vw,24px); align-items: center; flex-wrap: nowrap; white-space: nowrap; }
 .nav-links a, .nav-links .nav-cta { font-size: .72rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); transition: color .2s; }
 .nav-links a:hover, .nav-links a.active { color: var(--terra); }
+/* Comutator limbă: EN în meniu (desktop) și pastilă lângă hamburger (mobil) */
+.nav-links a.nav-lang { color: var(--terra); border: 1px solid var(--bark); border-radius: 20px; padding: 4px 10px; letter-spacing: .08em; }
+.nav-links a.nav-lang:hover { border-color: var(--terra); }
+.nav-lang-m { display: none; margin-left: auto; margin-right: 14px; font-size: .7rem; font-weight: 500; letter-spacing: .1em; color: var(--terra); border: 1px solid var(--bark); border-radius: 20px; padding: 6px 12px; line-height: 1; }
+@media(max-width:1290px){ .nav-lang-m { display: inline-flex; align-items: center; min-height: 32px; } }
 
 /* Butoane Calendly: <button> in loc de <a>, ca sa nu poata fi deschise pe calendly.com.
    :where() tine specificitatea la (0,0,1), deci .btn/.nav-cta/.mobile-cta isi pastreaza stilul. */
@@ -348,7 +353,7 @@ footer { padding: 44px 0; background: var(--ink); }
   .nav-links a, .nav-links .nav-cta { font-size: .66rem; letter-spacing: .06em; }
   .nav-cta { padding: 9px 14px !important; }
 }
-@media(max-width:1180px){
+@media(max-width:1290px){
   .nav-links { display: none; }
   .hamburger { display: flex; }
 }

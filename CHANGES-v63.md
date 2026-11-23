@@ -12,3 +12,10 @@ Sursa: `claude-code-pagina-en-2026-11-23.md`.
 ## De verificat după deploy
 
 - /en live, Rich Results Test (FAQPage), test real de formular cu `?gclid=test` și ștergerea mesajului din Netlify.
+
+## v63b — 2026-11-23 — /en refăcută + EN în meniu
+
+- /en: poză în hero (mare pe desktop, avatar pe telefon), „← Main site (RO)” în header și în footer, secțiuni vizuale (pastile, carduri, servicii alăturate, bandă cu abordarea, 3 pași, carduri de preț). Text comprimat; FAQ și JSON-LD neschimbate.
+- Meniu, pe toate paginile cu meniu (și în generatoare): „EN” în meniul desktop, pastilă „EN” lângă hamburger pe mobil, „English” în meniul mobil.
+- style.css: stiluri pentru EN; meniul trece în hamburger de la 1290px (înainte 1180px), ca să nu atingă logo-ul.
+- `style.css?v=63` pe toate paginile (CSS-ul are cache 7 zile).

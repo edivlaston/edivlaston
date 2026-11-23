@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=63">
   <style>
     .legal-wrap { max-width: 820px; margin: 0 auto; padding: 130px clamp(20px,5vw,56px) var(--gap); }
     .legal-wrap h1 { font-family: var(--serif); font-size: clamp(2.4rem, 4.5vw, 3.6rem); font-weight: 400; line-height: 1.1; color: var(--ink); margin-bottom: 18px; }
@@ -101,8 +101,10 @@
     <a href="/blog">Blog</a>
     <a href="/note-din-cabinet">Note din Cabinet</a>
     <a href="/contact">Contact</a>
+    <a href="/en" class="nav-lang" hreflang="en" lang="en" title="English">EN</a>
     <button type="button" onclick="openCal()" class="nav-cta" data-cal>Prima întâlnire — 30 min, gratuită</button>
   </div>
+  <a href="/en" class="nav-lang-m" hreflang="en" lang="en" title="English" aria-label="English version">EN</a>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Meniu">
     <span></span><span></span><span></span>
   </button>
@@ -117,6 +119,7 @@
   <a href="/blog" onclick="closeMenu()">Blog</a>
   <a href="/note-din-cabinet" onclick="closeMenu()">Note din Cabinet</a>
   <a href="/contact" onclick="closeMenu()">Contact</a>
+  <a href="/en" hreflang="en" lang="en" onclick="closeMenu()">English</a>
   <a href="tel:+40744370179" class="mobile-phone" onclick="closeMenu()">📞 0744 370 179</a>
   <button type="button" onclick="openCal(); closeMenu();" class="mobile-cta" data-cal>Prima întâlnire — 30 min, gratuită</button>
 

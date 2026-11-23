@@ -88,8 +88,10 @@ NAV = '''<nav id="nav">
     <a href="/intrebari-frecvente">Întrebări Frecvente</a>
     <a href="/preturi">Prețuri</a>
     <a href="/contact">Contact</a>
+    <a href="/en" class="nav-lang" hreflang="en" lang="en" title="English">EN</a>
     <button type="button" onclick="openCal()" class="nav-cta" data-cal>Rezervă o primă ședință</button>
   </div>
+  <a href="/en" class="nav-lang-m" hreflang="en" lang="en" title="English" aria-label="English version">EN</a>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Meniu">
     <span></span><span></span><span></span>
   </button>
@@ -104,6 +106,7 @@ NAV = '''<nav id="nav">
   <a href="/intrebari-frecvente" onclick="closeMenu()">Întrebări Frecvente</a>
   <a href="/preturi" onclick="closeMenu()">Prețuri</a>
   <a href="/contact" onclick="closeMenu()">Contact</a>
+  <a href="/en" hreflang="en" lang="en" onclick="closeMenu()">English</a>
   <a href="tel:+40744370179" class="mobile-phone" onclick="closeMenu()">📞 0744 370 179</a>
   <button type="button" onclick="openCal(); closeMenu();" class="mobile-cta" data-cal>Rezervă o primă ședință</button>
 </div>'''
@@ -211,7 +214,7 @@ PAGE = '''<!DOCTYPE html>
   <meta name="google-site-verification" content="z14BQ7ieyIuxJ1hAWddXO5ljOwfq92d7fcFSMoB_gn0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/style.css?v=63">
   <!-- Schema Article + Person -->
   <script type="application/ld+json">
   {{
