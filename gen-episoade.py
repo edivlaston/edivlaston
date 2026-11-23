@@ -102,6 +102,7 @@ FOOTER = '''<!-- Bara de contact -->
       <div class="footer-brand">Edi Vlaston<span>.</span></div>
         <a href="mailto:office@edivlaston.ro">office@edivlaston.ro</a></div>
       <a href="/confidentialitate" style="display:block;text-align:center;font-size:.78rem;color:var(--muted);margin:8px 0;">Politica de confidențialitate</a>
+      <a href="/en" hreflang="en" lang="en" style="display:block;text-align:center;font-size:.78rem;color:var(--muted);margin:8px 0;">English</a>
       <span class="footer-copy">© 2026 Cabinet Individual de Psihologie · Cod 22334</span>
     </div>
   </div>
@@ -228,6 +229,7 @@ PAGE = '''<!DOCTYPE html>
 function toggleMenu(){{var m=document.getElementById('mobile-menu'),b=document.getElementById('hamburger');if(!m||!b)return;b.classList.toggle('open');m.classList.toggle('open');document.body.style.overflow=m.classList.contains('open')?'hidden':'';}}
 function closeMenu(){{var m=document.getElementById('mobile-menu'),b=document.getElementById('hamburger');if(m)m.classList.remove('open');if(b)b.classList.remove('open');document.body.style.overflow='';}}
 </script>
+<script>/* sursa vizitei -> campurile ascunse din formularul contact */(function(){{var K='edi_sursa';try{{var ss=window.sessionStorage;if(!ss.getItem(K)){{var q=new URLSearchParams(location.search),v;if(q.get('gclid'))v='google-ads gclid';else if(q.get('gbraid'))v='google-ads gbraid';else if(q.get('wbraid'))v='google-ads wbraid';else if(q.get('utm_source')||q.get('utm_medium')||q.get('utm_campaign'))v='utm: '+[q.get('utm_source')||'-',q.get('utm_medium')||'-',q.get('utm_campaign')||'-'].join(' / ');else v=document.referrer||'direct';ss.setItem(K,String(v).slice(0,300));}}}}catch(e){{}}document.addEventListener('submit',function(e){{try{{var f=e.target;if(!f||f.getAttribute('name')!=='contact')return;var s=f.querySelector('input[name=sursa]'),p=f.querySelector('input[name=pagina]');if(p)p.value=location.pathname;if(s)s.value=window.sessionStorage.getItem(K)||'';}}catch(e){{}}}},true);}})();</script>
 </head>
 <body>
 {nav}
@@ -437,6 +439,7 @@ pagini = [
     ("/contact", "monthly", "0.6", "2026-04-28"),
     ("/ghid-anxietate", "monthly", "0.7", "2026-11-02"),
     ("/terapie-online-romani-strainatate.html", "monthly", "0.7", "2026-11-04"),
+    ("/en", "monthly", "0.8", "2026-11-23"),
 ]
 lines = ['<?xml version="1.0" encoding="UTF-8"?>',
          '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']

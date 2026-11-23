@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preload" as="image" href="edi-vlaston.webp" fetchpriority="high">
   <link rel="canonical" href="https://edivlaston.ro/">
+  <link rel="alternate" hreflang="ro" href="https://edivlaston.ro/">
+  <link rel="alternate" hreflang="en" href="https://edivlaston.ro/en">
+  <link rel="alternate" hreflang="x-default" href="https://edivlaston.ro/">
   <meta name="description" content="Psiholog și psihoterapeut în București, Sector 1, și online. Terapie individuală și de cuplu, centrată pe persoană. Rezervă o primă ședință.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Edi Vlaston — Psihoterapeut">
@@ -135,16 +138,19 @@ function closeMenu() {
       "addressCountry": "RO"
     },
     "priceRange": "280 lei / ședință",
+    "availableLanguage": ["ro", "en"],
     "employee": {
       "@type": "Person",
       "name": "Edi Vlaston",
       "jobTitle": "Psihoterapeut",
+      "knowsLanguage": ["ro", "en"],
       "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "Atestat de liberă practică", "recognizedBy": {"@type": "Organization", "name": "Colegiul Psihologilor din România"}, "identifier": "22334"},
       "url": "https://edivlaston.ro/despre",
       "sameAs": ["https://www.facebook.com/edi.vlaston.psihoterapeut", "https://www.instagram.com/edivlaston.terapeut", "https://hilio.com/ro/a/psihoterapeut-eduard-vlaston", "https://maps.google.com/?cid=5454259869718871138"]
     }
   }
   </script>
+<script>/* sursa vizitei -> campurile ascunse din formularul contact */(function(){var K='edi_sursa';try{var ss=window.sessionStorage;if(!ss.getItem(K)){var q=new URLSearchParams(location.search),v;if(q.get('gclid'))v='google-ads gclid';else if(q.get('gbraid'))v='google-ads gbraid';else if(q.get('wbraid'))v='google-ads wbraid';else if(q.get('utm_source')||q.get('utm_medium')||q.get('utm_campaign'))v='utm: '+[q.get('utm_source')||'-',q.get('utm_medium')||'-',q.get('utm_campaign')||'-'].join(' / ');else v=document.referrer||'direct';ss.setItem(K,String(v).slice(0,300));}}catch(e){}document.addEventListener('submit',function(e){try{var f=e.target;if(!f||f.getAttribute('name')!=='contact')return;var s=f.querySelector('input[name=sursa]'),p=f.querySelector('input[name=pagina]');if(p)p.value=location.pathname;if(s)s.value=window.sessionStorage.getItem(K)||'';}catch(e){}},true);})();</script>
 </head>
 
 <body>
@@ -240,6 +246,7 @@ function closeMenu() {
     </div>
   </div>
 </section>
+<div style="background:var(--sand);text-align:center;padding:4px 20px 22px"><a href="/en" hreflang="en" lang="en" style="font-size:.85rem;color:var(--terra);font-weight:500;text-decoration:none">Sessions in English →</a></div>
 
 <!-- ── INTRO: UN SINGUR DRUM ──────────────────────────── -->
 <section id="intro">
@@ -355,6 +362,7 @@ function closeMenu() {
         <a href="/intrebari-frecvente">Întrebări Frecvente</a>
         <a href="/contact">Contact</a>
         <a href="/confidentialitate">Confidențialitate</a>
+        <a href="/en" hreflang="en" lang="en">English</a>
         <a href="mailto:office@edivlaston.ro">office@edivlaston.ro</a>
         <div class="footer-social">
           <a href="https://www.facebook.com/edi.vlaston.psihoterapeut" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
