@@ -440,6 +440,7 @@ pagini = [
     ("/intrebari-frecvente", "monthly", "0.7", "2026-06-27"),
     ("/preturi", "monthly", "0.8", TODAY),
     ("/contact", "monthly", "0.6", "2026-04-28"),
+    ("/atacuri-de-panica", "monthly", "0.9", "2026-11-26"),
     ("/ghid-anxietate", "monthly", "0.7", "2026-11-02"),
     ("/terapie-online-romani-strainatate.html", "monthly", "0.7", "2026-11-04"),
     ("/en", "monthly", "0.8", "2026-11-23"),
